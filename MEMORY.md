@@ -28,6 +28,22 @@
 - ✅ `twitter-search-skill` - 搜索和抓取 Twitter/X 推文（需要 API key）
 - ✅ `x-trends` - 获取热门话题（补充工具）
 
+**Twitter API 配置**：
+- API Key：已配置（~/.bashrc）
+- 服务提供商：twitterapi.io
+- 限制：免费计划有速率限制（429 错误）
+- 建议：考虑升级到付费计划以获得更高配额
+
+**首次 Twitter 分析（2026-01-30）**：
+- 搜索关键词："AI OR clawdbot"
+- 获取推文数：20 条（受 API 限制）
+- 关键发现：
+  - **Clawdbot 知名度极低**：没有任何推文直接提及
+  - 数据质量偏低：多语言混合，部分 "ai" 为感叹词
+  - 优质内容稀少：仅 1-2 条推文具有实际参考价值
+- 详细报告：`data/x-scraping/analysis-20260129.md`
+- Git 提交：951cd12
+
 **参考市场**：
 - 📌 PromptBase.com - 定价和分类参考
 
