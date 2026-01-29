@@ -116,6 +116,25 @@
 - 状态：运行中（2026-01-29 检测时已运行 53 分钟）
 - 访问地址：http://localhost:8080
 
+**网络问题修复（2026-01-29 14:20 UTC）**：
+- **问题**：容器无法访问外网，所有搜索引擎超时
+- **原因**：iptables FORWARD 链默认策略为 DROP，阻止了容器出站流量
+- **解决方案**：
+  ```bash
+  # 添加允许容器网络流量的规则
+  iptables -I FORWARD 1 -i br-d64f58a6c827 -o enp1s0 -j ACCEPT
+  iptables -I FORWARD 2 -i enp1s0 -o br-d64f58a6c827 -m state --state RELATED,ESTABLISHED -j ACCEPT
+  
+  # 持久化规则
+  apt-get install -y iptables-persistent netfilter-persistent
+  iptables-save > /etc/iptables/rules.v4
+  systemctl enable netfilter-persistent
+  ```
+- **修复结果**：✅ 成功
+  - 容器现在可以正常访问外网
+  - SearXNG 搜索功能正常工作
+  - 返回多个搜索引擎的结果（Brave, Google, DuckDuckGo）
+
 **优势**：
 - ✅ 完全私有，不依赖外部 API
 - ✅ 多搜索引擎聚合
@@ -142,12 +161,15 @@ export SEARXNG_URL=http://localhost:8080
 
 **集成位置**：
 - ✅ searxng Skill 已安装：`/root/clawd/skills/searxng/`
-- ⏳ 需要更新所有 cron 任务使用 SearXNG 替代 web_search
+- ✅ 已启用 cron 任务 `collect-prompts` 和 `web-prompts-collector`（使用 SearXNG）
+- ✅ API 测试成功，可返回 30+ 条搜索结果
 
 **待办事项**：
-- [ ] 更新 cron jobs 配置，将 web-prompts-collector 改用 SearXNG
-- [ ] 测试 SearXNG 搜索 AI 提示词相关内容
-- [ ] 评估搜索质量和结果相关性
+- [x] ✅ 修复 SearXNG 网络连接问题
+- [x] ✅ 持久化 iptables 规则
+- [x] ✅ 测试 SearXNG 搜索 AI 提示词相关内容
+- [ ] ⏳ 评估搜索质量和结果相关性
+- [ ] ⏳ 监控 cron 任务执行情况
 
 ---
 
