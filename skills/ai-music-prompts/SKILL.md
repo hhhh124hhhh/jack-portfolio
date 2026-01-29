@@ -9,6 +9,102 @@ description: AI music prompt templates and best practices for generating music w
 Generate high-quality music prompts for AI music generation tools (Suno, Udio, Mureka, etc.) using proven templates and techniques.
 生成高质量的音乐提示词，用于 AI 音乐生成工具（Suno、Udio、Mureka 等），使用经过验证的模板和技巧。
 
+---
+
+## Mureka V8 快速入门 / Mureka V8 Quick Start
+
+### 为什么选择 Mureka V8 / Why Mureka V8
+
+**Mureka V8** 是由 Skywork AI 开发的最先进 AI 音乐生成器，特别对**中文音乐生成**进行了优化：
+
+- 🎵 **MusiCoT 技术**：使用思维链技术，生成的音乐结构更连贯、专业
+- 🇨🇳 **中文支持优异**：人声真实度达 70%，特别适合普通话和粤语
+- 🌐 **多语言支持**：支持 10+ 种语言，包括普通话、粤语、英语、日语、韩语等
+- 🎤 **专业级人声**：情感表达丰富，发音清晰自然
+- ⚡ **流式生成**：实时听生成过程，提升创作效率
+
+### 中文提示词核心格式 / Chinese Prompt Core Format
+
+针对 Mureka V8 优化的中文提示词格式：
+
+```
+[流派] with [人声类型], [情绪描述], [乐器细节], [速度/能量], [语言特点]
+
+[Genre] with [vocal type], [mood], [instruments], [tempo], [language features]
+```
+
+### 5 个最实用的中文提示词模板 / 5 Essential Chinese Prompt Templates
+
+#### 1. 华语流行情歌 / Mandopop Ballad
+```
+华语流行 with 温暖女声, 深情动人, 钢琴和弦乐, 中速 90-100 BPM, 普通话清晰发音 - 关于思念和爱情的感人情歌
+
+Mandopop with warm female vocals, emotional and touching, piano and strings, mid-tempo 90-100 BPM, clear Mandarin pronunciation - A heartfelt love song about longing and romance
+```
+
+#### 2. 粤语经典抒情 / Cantonese Ballad
+```
+粤语流行 with 沧桑男声, 怀旧感伤, 木吉他, 慢速 75-85 BPM, 粤语标准发音 - 经典港式抒情歌，关于时光流逝
+
+Cantonese pop with weathered male vocals, nostalgic and melancholic, acoustic guitar, slow 75-85 BPM, standard Cantonese pronunciation - Classic Hong Kong style ballad about the passage of time
+```
+
+#### 3. 国风古风 / Chinese Traditional
+```
+古风 with 空灵女声, 悠扬清幽, 古筝和笛子, 慢速 70-80 BPM, 中国风编曲 - 仙侠风格，清幽脱俗的意境
+
+Chinese traditional with ethereal female vocals, melodious and serene, guzheng and bamboo flute, slow 70-80 BPM, Chinese style arrangement - Xianxia (fantasy) style with pure and transcendent atmosphere
+```
+
+#### 4. 中文摇滚 / Chinese Rock
+```
+中文摇滚 with 激昂男声, 充满力量, 电吉他和鼓, 快速 140-150 BPM, 普通话有力表达 - 关于自由和梦想的摇滚颂歌
+
+Chinese rock with passionate male vocals, full of power, electric guitar and drums, fast 140-150 BPM, powerful Mandarin expression - Rock anthem about freedom and dreams
+```
+
+#### 5. 中文说唱 / Chinese Hip-Hop
+```
+中文说唱 with 自信 Flow, 都市风格, Trap 节奏和 808 贝斯, 中速 90-100 BPM, 普通话押韵 - 关于都市生活和奋斗
+
+Chinese hip-hop with confident flow, urban style, Trap rhythm and 808 bass, mid-tempo 90-100 BPM, Mandarin rhyming - About urban life and struggle
+```
+
+### Mureka V8 中文优化要点 / Mureka V8 Chinese Optimization Tips
+
+#### ✅ 情绪描述要具体 / Be Specific with Emotions
+- ✅ 好的例子：深情、伤感、温馨、激昂、空灵、沧桑
+- ❌ 避免模糊：好听、很好、不错
+
+#### ✅ 人声特征要明确 / Define Vocal Characteristics
+- ✅ 好的例子：温暖清澈、磁性低沉、空灵飘渺、高亢有力
+- ❌ 避免简单：女声、男声
+
+#### ✅ 乐器搭配要合理 / Match Instruments Appropriately
+- 流行：钢琴、弦乐、吉他、鼓
+- 古风：古筝、笛子、二胡、琵琶
+- 摇滚：电吉他、贝斯、鼓
+- 电子：合成器、808、鼓机
+
+#### ✅ 语言特点要说明 / Specify Language Features
+- 普通话：标准发音、清晰咬字
+- 粤语：标准粤语、九声准确
+- 方言：四川话、东北话等（如需要）
+
+#### ✅ 提示词长度控制 / Keep Prompt Length in Check
+- 最大长度：1024 字符
+- 建议：200-500 字符为最佳范围
+
+### 更多中文资源 / More Chinese Resources
+
+查看以下章节获取更详细的中文音乐指导：
+- **[Chinese Pop / 华语流行](#chinese-pop-华语流行)** - 华语流行音乐模板
+- **[中文说唱 / Chinese Hip-Hop](#中文说唱-chinese-hip-hop)** - 中文说唱技巧
+- **[古风国风 / Chinese Traditional](#古风-传统-chinese-traditional)** - 中国传统音乐
+- **[中文歌词写作 / Chinese Lyrics](./references/lyrics.md#中文歌词写作-chinese-lyric-writing)** - 中文歌词写作技巧
+
+---
+
 ## Quick Start / 快速入门
 
 ### Basic Prompt Structure / 基础提示词结构
@@ -138,6 +234,175 @@ Hip-hop modern 100 BPM minimal trap beats confident flow - Contemporary rap with
 
 CN: 嘻哈 现代 100 BPM 极简陷阱节拍 自信律动 - 当代说唱，有简约制作和充满魅力的表达
 ```
+
+#### 中文说唱 / Chinese Hip-Hop
+
+##### Mureka V8 中文说唱优势 / Mureka V8 Chinese Rap Advantages
+
+Mureka V8 对中文说唱有专门优化：
+- ✅ **清晰的普通话发音**：咬字清晰，Flow 流畅
+- ✅ **自然的节奏感**：理解中文节奏特点
+- ✅ **丰富的情感表达**：传达歌词情绪
+- ✅ **支持方言**：普通话、粤语、四川话等
+
+##### 普通话说唱 / Mandarin Rap
+
+**基础模板**：
+```
+中文说唱 [情绪] [速度] [节奏] [Flow 风格] - [主题描述]
+
+Chinese hip-hop [mood] [tempo] [rhythm] [flow style] - [theme description]
+```
+
+**示例 Examples**：
+
+1. **都市 Trap / Urban Trap**
+```
+中文说唱 自信 90-100 BPM Trap 节奏 808 贝斯 - 都市生活主题，自信 Flow，普通话押韵
+
+Chinese hip-hop confident 90-100 BPM Trap rhythm 808 bass - Urban life theme, confident flow, Mandarin rhyming
+```
+
+2. **怀旧 Boom Bap / Nostalgic Boom Bap**
+```
+中文说唱 怀旧 85-95 BPM Boom Bap 节奏 采样鼓 - 90年代风格，怀旧主题，放松 Flow
+
+Chinese hip-hop nostalgic 85-95 BPM Boom Bap rhythm sampled drums - 90s style, nostalgic theme, laid-back flow
+```
+
+3. **励志正能量 / Inspirational Positive**
+```
+中文说唱 充满力量 110-120 BPM 强节奏 激昂 Flow - 励志主题，追逐梦想，永不放弃
+
+Chinese hip-hop empowering 110-120 BPM strong rhythm passionate flow - Inspirational theme, chasing dreams, never give up
+```
+
+4. **情感抒情 / Emotional Lyrical**
+```
+中文说唱 深情 80-90 BPM 柔和节奏 诉说 Flow - 情感主题，内心独白，真诚表达
+
+Chinese hip-hop emotional 80-90 BPM soft rhythm storytelling flow - Emotional theme, inner monologue, sincere expression
+```
+
+##### 粤语说唱 / Cantonese Rap
+
+**基础模板**：
+```
+粤语 Rap [情绪] [速度] [节奏] [Flow 风格] - [主题描述]
+
+Cantonese rap [mood] [tempo] [rhythm] [flow style] - [theme description]
+```
+
+**示例 Examples**：
+
+1. **港式 Trap / Hong Kong Trap**
+```
+粤语 Rap 激烈 140 BPM 快节奏 有力 Flow - 街头风格，粤语押韵，节奏感强
+
+Cantonese rap intense 140 BPM fast rhythm powerful flow - Street style, Cantonese rhyming, strong rhythm
+```
+
+2. **粤语叙事 / Cantonese Storytelling**
+```
+粤语 Rap 沧桑 90-100 BPM 中速 节奏感 - 讲故事风格，香港街头，人生感悟
+
+Cantonese rap weathered 90-100 BPM mid-tempo rhythmic - Storytelling style, Hong Kong streets, life reflections
+```
+
+##### 中文说唱 Flow 技巧 / Chinese Rap Flow Techniques
+
+**1. 切分节奏 / Syncopated Rhythm**
+```
+提示词示例：
+中文说唱 切分节奏 95 BPM - 节奏变化丰富，律动感强
+
+Chinese hip-hop syncopated rhythm 95 BPM - Rich rhythm variations, strong groove
+```
+
+**2. 三连音 Flow / Triplet Flow**
+```
+提示词示例：
+中文说唱 三连音 100 BPM 快速 Flow - 三连音技巧，快速连贯
+
+Chinese hip-hop triplet flow 100 BPM fast flow - Triplet technique, fast and connected
+```
+
+**3. 旋律说唱 / Melodic Rap**
+```
+提示词示例：
+中文说唱 旋律感 90 BPM 优美旋律 - 旋律说唱，歌唱感强
+
+Chinese hip-hop melodic 90 BPM beautiful melody - Melodic rap, strong singing quality
+```
+
+##### 中文说唱押韵技巧 / Chinese Rhyming Techniques
+
+**押韵方式 / Rhyme Schemes**：
+
+1. **单押 / Single Rhyme**
+```
+示例：光 (guāng)、方 (fāng)、强 (qiáng)
+提示词：中文说唱 单押 - 简单直接的押韵
+```
+
+2. **双押 / Double Rhyme**
+```
+示例：天空 (tiān kōng)、心中 (xīn zhōng)、风中 (fēng zhōng)
+提示词：中文说唱 双押 - 两字押韵，更丰富
+```
+
+3. **多音节押韵 / Multi-syllable Rhyme**
+```
+示例：一直到天亮 (yī zhí dào tiān liàng)
+      永远在心上 (yǒng yuǎn zài xīn shàng)
+提示词：中文说唱 多音节押韵 - 复杂技巧，高级 Flow
+```
+
+4. **跳押 / Skip Rhyme**
+```
+示例：第一句末尾
+      第三句末尾押韵
+提示词：中文说唱 跳押 - 跨句押韵，技巧性强
+```
+
+##### 方言说唱 / Dialect Rap
+
+**四川话 Rap / Sichuanese Rap**
+```
+四川话说唱 幽默 90 BPM - 川味幽默，风趣表达
+
+Sichuanese rap humorous 90 BPM - Sichuan humor, witty expression
+```
+
+**东北话 Rap / Northeastern Dialect Rap**
+```
+东北话说唱 豪爽 100 BPM - 东北风格，直爽表达
+
+Northeastern dialect rap bold 100 BPM - Northeastern style, straightforward expression
+```
+
+##### 中文说唱主题推荐 / Chinese Rap Theme Suggestions
+
+| 主题 / Theme | 情绪 / Mood | 速度 / Tempo | 示例关键词 / Keywords |
+|--------------|-------------|--------------|----------------------|
+| **都市生活 / Urban Life** | 现实、观察 | 90-100 BPM | 都市、街头、奋斗、梦想 |
+| **励志成长 / Inspirational Growth** | 积极、向上 | 110-120 BPM | 梦想、坚持、突破、成功 |
+| **情感故事 / Emotional Stories** | 深情、真挚 | 80-90 BPM | 爱情、友情、亲情、回忆 |
+| **社会观察 / Social Commentary** | 思考、批判 | 95-105 BPM | 社会、现实、反思、呼吁 |
+| **怀旧回忆 / Nostalgic Memories** | 怀旧、感伤 | 85-95 BPM | 青春、过去、成长、变化 |
+| **轻松快乐 / Lighthearted Fun** | 欢快、幽默 | 100-110 BPM | 快乐、幽默、轻松、派对 |
+
+##### 中文说唱提示词检查清单 / Chinese Rap Prompt Checklist
+
+在创建中文说唱提示词时，确保包含：
+
+- [ ] **明确语言**：普通话、粤语或其他方言
+- [ ] **Flow 风格**：自信、放松、激昂、旋律等
+- [ ] **节奏类型**：Trap、Boom Bap、现代等
+- [ ] **速度指示**：85-140 BPM，根据风格
+- [ ] **主题描述**：都市、励志、情感等
+- [ ] **押韵特点**：如需强调，可说明押韵方式
+- [ ] **情绪氛围**：自信、怀旧、愤怒、欢快等
 
 ### Jazz / 爵士
 
@@ -319,11 +584,105 @@ CN: K-Pop 欢快 120-130 BPM 电子元素 朗朗上口的钩子 偶像人声 - �
 ```
 
 #### Chinese Pop / 华语流行
-```
-Mandarin pop 90-110 BPM melodic piano emotional vocals - Contemporary Chinese pop with beautiful melodies and heartfelt lyrics
 
-CN: 华语流行 90-110 BPM 旋律钢琴 情感人声 - 当代华语流行，有优美旋律和真挚歌词
+##### Mureka V8 特别优化 / Mureka V8 Special Optimization
+
+Mureka V8 对华语流行歌曲表现优异，**人声真实度达 70%**，特别适合普通话和粤语。
+
+**关键优势**：
+- ✅ MusiCoT 技术优化中文声调处理
+- ✅ 自然流畅的旋律线
+- ✅ 清晰准确的发音
+- ✅ 丰富的情感表达
+
+##### 普通话提示词模板 / Mandarin Prompt Templates
+
+**基础模板**：
 ```
+华语流行 [情绪] [速度] [乐器] [人声风格] - [歌曲描述]
+
+Mandarin pop [mood] [tempo] [instruments] [vocal style] - [song description]
+```
+
+**示例 Examples**：
+
+1. **深情情歌 / Emotional Ballad**
+```
+华语流行 深情 90-100 BPM 钢琴弦乐 温暖女声 - 关于思念和爱情的感人情歌，旋律优美动人
+
+Mandarin pop emotional 90-100 BPM piano strings warm female vocals - A heartfelt love song about longing and romance with beautiful melodies
+```
+
+2. **青春励志 / Youthful Inspirational**
+```
+华语流行 充满希望 120-130 BPM 吉他鼓 清新人声 - 关于追逐梦想的励志歌曲，青春阳光
+
+Mandarin pop hopeful 120-130 BPM guitar drums fresh vocals - Inspirational song about chasing dreams, youthful and sunny
+```
+
+3. **都市伤感 / Urban Melancholic**
+```
+华语流行 伤感 80-90 BPM 电子音色 沧桑男声 - 关于都市孤独和失落的伤感歌曲
+
+Mandarin pop melancholic 80-90 BPM electronic textures weathered male vocals - Sad song about urban loneliness and loss
+```
+
+##### 粤语提示词模板 / Cantonese Prompt Templates
+
+**基础模板**：
+```
+粤语流行 [情绪] [速度] [乐器] [人声风格] - [歌曲描述]
+
+Cantonese pop [mood] [tempo] [instruments] [vocal style] - [song description]
+```
+
+**示例 Examples**：
+
+1. **经典港式抒情 / Classic Hong Kong Ballad**
+```
+粤语流行 怀旧 75-85 BPM 钢琴木吉他 沧桑男声 - 经典港式抒情歌，关于时光流逝和人生感悟
+
+Cantonese pop nostalgic 75-85 BPM piano acoustic guitar weathered male vocals - Classic Hong Kong style ballad about the passage of time and life reflections
+```
+
+2. **港式轻快 / Hong Kong Upbeat**
+```
+粤语流行 欢快 110-120 BPM 电子乐 活力女声 - 动感港式流行，都市节拍
+
+Cantonese pop upbeat 110-120 BPM electronic energetic female vocals - Upbeat Hong Kong style pop with urban rhythm
+```
+
+##### 子流派指南 / Subgenre Guide
+
+**Mandopop / 华语流行（现代）**
+- 台湾风格：清新、自然、吉他主导（如：周杰伦、五月天）
+- 大陆风格：电子化、强劲节拍（如：李荣浩、薛之谦）
+- 马来风格：抒情、细腻、多语言（如：光良、品冠）
+
+**Cantopop / 粤语流行**
+- 经典抒情：深情、怀旧、港式韵味（如：张学友、陈奕迅）
+- 现代流行：节奏明快、电子元素（如：邓紫棋、容祖儿）
+- 粤语 R&B：流畅、现代感（如：方大同）
+
+**台语歌 / Taiwanese Pop**
+- 闽南语歌曲：乡土、情感丰富
+- 台语摇滚：豪爽、直接、有力
+
+##### 中文关键词库 / Chinese Keyword Library
+
+**情绪关键词 / Mood Keywords**：
+- 积极：欢快、温馨、励志、甜蜜、充满希望
+- 消极：伤感、忧郁、孤独、痛苦、怀旧
+- 中性：空灵、平静、淡雅、深沉
+
+**人声关键词 / Vocal Keywords**：
+- 女声：温暖清澈、空灵飘渺、高亢有力、甜美可爱
+- 男声：温暖磁性、沧桑成熟、青春阳光、激昂澎湃
+
+**乐器关键词 / Instrument Keywords**：
+- 流行：钢琴、弦乐、吉他、鼓、电子合成
+- 古风：古筝、笛子、二胡、琵琶、中国鼓
+- 摇滚：电吉他、贝斯、鼓、键盘
 
 #### J-Pop / 日本流行
 ```

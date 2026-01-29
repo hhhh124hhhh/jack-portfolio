@@ -722,3 +722,217 @@ CN:
 
 **Remember:** Great lyrics balance emotion, imagery, rhythm, and authenticity. Don't be afraid to experiment and revise until it feels right.
 **记住：** 优秀歌词平衡情感、意象、节奏和真实性。不要害怕实验和修改，直到感觉正确。
+
+---
+
+## 中文歌词写作 / Chinese Lyric Writing
+
+### 中文歌词特点 / Chinese Lyric Characteristics
+
+#### 声调与旋律 / Tones and Melody
+
+**普通话四声 / Mandarin Four Tones**：
+- 阴平（¯）：高平调 - 适合长音、延续音
+- 阳平（´）：升调 - 适合上扬旋律
+- 上声（ˇ）：降升调 - 适合波浪型旋律
+- 去声（ˋ）：降调 - 适合下行旋律
+
+**提示**：创作中文歌词时，注意声调与旋律的协调。Mureka V8 的 MusiCoT 技术能够很好地处理中文声调。
+
+#### 中文押韵技巧 / Chinese Rhyming Techniques
+
+**常见押韵方式 / Common Rhyme Schemes**：
+
+1. **单押 / Single Rhyme**
+```
+示例：光 (guāng)、方 (fāng)、强 (qiáng)
+主题：爱情、梦想、希望
+```
+
+2. **双押 / Double Rhyme**
+```
+示例：天空 (tiān kōng)、心中 (xīn zhōng)、风中 (fēng zhōng)
+主题：自然、情感、思念
+```
+
+3. **对仗 / Parallelism**
+```
+示例：
+山高水长 / 思念绵长
+岁月流转 / 情深意长
+主题：古典、对仗工整
+```
+
+#### 歌词结构 / Lyric Structure
+
+**主歌-副歌结构 / Verse-Chorus Structure**：
+```
+主歌 (Verse) → 副歌 (Chorus) → 主歌 (Verse) → 副歌 (Chorus) → 桥段 (Bridge) → 副歌 (Chorus)
+
+主歌：讲述故事，铺垫情绪
+副歌：情感高潮，核心信息
+桥段：转换视角，推向高潮
+```
+
+### 普通话歌词模板 / Mandarin Lyric Templates
+
+#### 情歌主题 / Love Song Theme
+
+**示例 / Example**：
+```
+主歌 Verse 1：
+窗外的月光洒在床边
+想起你温柔的脸
+时间过得好慢好慢
+思念在夜里蔓延
+
+副歌 Chorus：
+我多么想再见你一面
+告诉你我对你的眷恋
+不管距离多遥远
+我的心永远在你身边
+
+提示词建议：
+华语流行 深情 90 BPM - 关于思念的情歌，主歌叙事，副歌情感高潮
+```
+
+#### 励志主题 / Inspirational Theme
+
+**示例 / Example**：
+```
+主歌 Verse 1：
+跌倒了再爬起来
+梦想不会等待
+汗水浇灌的花盛开
+未来由我主宰
+
+副歌 Chorus：
+追逐梦想，永不放弃
+心中的火焰在燃烧
+超越自我，勇往直前
+成功的路在脚下
+
+提示词建议：
+华语流行 激昂 120 BPM - 励志歌曲，青春热血，充满力量
+```
+
+### 粤语歌词特点 / Cantonese Lyric Characteristics
+
+#### 九声与旋律 / Nine Tones and Melody
+
+粤语有九声，比普通话更复杂，需要注意：
+- 九声：阴平、阴上、阴去、阳平、阳上、阳去、阴入、中入、阳入
+- 粤语歌词要兼顾声调和旋律
+- Mureka V8 对粤语支持优异，尤其适合经典港式抒情
+
+**粤语歌词示例 / Cantonese Lyric Example**：
+```
+主歌 Verse 1：
+旧日片段 浮现眼前
+时光流逝 往事如烟
+岁月无情 改变容颜
+心中感慨 有口难言
+
+副歌 Chorus：
+怀念往昔 美好的日子
+有你相伴 不会孤单
+时光飞逝 珍惜眼前
+这份情谊 永远不变
+
+提示词建议：
+粤语流行 怀旧 80 BPM - 经典港式抒情，时光流逝主题
+```
+
+### 中文歌词写作技巧 / Chinese Lyric Writing Tips
+
+#### ✅ 推荐做法 / Recommended
+
+1. **使用具体意象 / Use Specific Imagery**
+   - ✅ 好：霓虹灯光倒映在雨夜
+   - ❌ 差：外面的灯光很漂亮
+
+2. **情感要真挚 / Emotions Should Be Sincere**
+   - ✅ 好：描述真实感受，有共鸣
+   - ❌ 差：空洞的口号，缺乏真情
+
+3. **注意节奏流畅 / Pay Attention to Flow**
+   - ✅ 好：歌词朗朗上口，易于演唱
+   - ❌ 差：拗口难唱，节奏不协调
+
+4. **善用修辞手法 / Use Rhetorical Devices**
+   - 比喻、拟人、排比
+   - 典故、引用、对仗
+
+5. **符合音乐风格 / Match Musical Style**
+   - 流行：口语化、易懂
+   - 摇滚：直接、有力
+   - 古风：典雅、诗意
+
+#### ❌ 避免错误 / Avoid Mistakes
+
+1. ❌ **陈词滥调 / Clichés**
+   - 避免：你是我的一切、爱你在心口难开
+   - 建议：使用更独特的表达
+
+2. ❌ **过于抽象 / Too Abstract**
+   - 避免：只有抽象概念，缺乏具体内容
+   - 建议：加入具体场景和细节
+
+3. ❌ **自相矛盾 / Self-Contradictory**
+   - 避免：快乐地哭泣、悲伤地微笑
+   - 建议：保持情感逻辑一致
+
+4. ❌ **强行押韵 / Forced Rhymes**
+   - 避免：为了押韵破坏意思
+   - 建议：优先考虑意思，押韵自然即可
+
+### 中文歌词生成提示词 / Chinese Lyric Generation Prompts
+
+#### 主题提示词 / Theme Prompts
+
+**情歌 / Love Song**：
+```
+写一首关于思念的中文情歌，风格深情，包含主歌和副歌，适合 90 BPM 的抒情歌
+```
+
+**励志 / Inspirational**：
+```
+写一首关于追逐梦想的中文励志歌曲，风格激昂，充满正能量，适合 120 BPM 的流行歌
+```
+
+**古风 / Gufeng**：
+```
+写一首古风风格的中文歌词，主题是修仙问道，使用古诗词元素，意境清幽脱俗
+```
+
+#### 风格提示词 / Style Prompts
+
+**流行风格 / Pop Style**：
+```
+创作华语流行歌词，口语化表达，朗朗上口，关于都市生活和爱情
+```
+
+**说唱风格 / Rap Style**：
+```
+创作中文说唱歌词，包含押韵技巧，Flow 流畅，主题是都市奋斗和成长
+```
+
+**古风风格 / Gufeng Style**：
+```
+创作古风歌词，使用四字成语和古诗词元素，意境优美，主题是山水田园
+```
+
+### Mureka V8 中文歌词优势 / Mureka V8 Chinese Lyric Advantages
+
+- ✅ **声调处理优秀**：理解中文声调与旋律关系
+- ✅ **自然流畅**：生成的歌词朗朗上口
+- ✅ **情感丰富**：表达细腻的情感
+- ✅ **支持多语言**：普通话、粤语等
+- ✅ **风格多样**：流行、古风、说唱等
+
+---
+
+**相关资源 / Related Resources**：
+- [Mureka V8 中文优化指南](./mureka-chinese.md)
+- [中国传统音乐](./chinese-traditional.md)
+- [Mureka V8 中文提示词示例](../examples/mureka-chinese-prompts.json)
