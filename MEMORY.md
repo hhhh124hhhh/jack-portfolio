@@ -104,6 +104,53 @@
 - 我们：卖**自动化转换为 Clawdbot Skill 的产品**
 - 目标用户：Clawdbot 用户群体
 
+## 🔧 技术基础设施
+
+### SearXNG 自建搜索服务（2026-01-29）
+
+**重要发现**：用户已有自建的 SearXNG 实例运行中
+
+**运行信息**：
+- Docker 镜像：`searxng/searxng:latest`
+- 运行端口：8080
+- 状态：运行中（2026-01-29 检测时已运行 53 分钟）
+- 访问地址：http://localhost:8080
+
+**优势**：
+- ✅ 完全私有，不依赖外部 API
+- ✅ 多搜索引擎聚合
+- ✅ 无外部 API 依赖，不消耗 Brave API 配额
+- ✅ 完全自主可控
+- ✅ 性能良好
+
+**使用策略**：
+- **优先使用 SearXNG** 进行所有网络搜索
+- 避免使用 `web_search` (Brave API) 以节省 API 配额
+- 所有 cron 任务中的网络搜索都应该使用 SearXNG
+
+**配置方式**：
+```bash
+export SEARXNG_URL=http://localhost:8080
+```
+
+**可用功能**：
+- 网页搜索（默认）
+- 图片搜索
+- 新闻搜索
+- 视频搜索
+- JSON 输出格式（用于程序化处理）
+
+**集成位置**：
+- ✅ searxng Skill 已安装：`/root/clawd/skills/searxng/`
+- ⏳ 需要更新所有 cron 任务使用 SearXNG 替代 web_search
+
+**待办事项**：
+- [ ] 更新 cron jobs 配置，将 web-prompts-collector 改用 SearXNG
+- [ ] 测试 SearXNG 搜索 AI 提示词相关内容
+- [ ] 评估搜索质量和结果相关性
+
+---
+
 ## 设置和偏好
 
 ### 📝 记忆策略偏好
