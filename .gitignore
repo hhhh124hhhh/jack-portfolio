@@ -1,25 +1,10 @@
-# Node modules
-node_modules/
+# Claude 临时文件
+tmpclaude-*/
+.claude/
 
-# Memory files (sensitive)
-memory/
+# 临时目录
+tmp*/
 
-# Logs
-*.log
-
-# Environment variables
-.env
-.env.local
-
-# OS files
+# OS 文件
 .DS_Store
 Thumbs.db
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# Clawdbot internal
-.clawdhub/cache/
