@@ -1,11 +1,87 @@
 ---
 name: tiktok-ai-model-generator
 description: Generate AI model videos for TikTok livestreams using Pinterest, Claude, Nano Banana Pro, and Veo or Kling. Use for creating AI-generated fashion models wearing products, animating them into videos, or building automated TikTok content production workflows. This skill provides a complete 4-step workflow covering Pinterest reference selection, Claude JSON prompt generation, Nano Banana Pro image generation, and video animation. Perfect for e-commerce sellers, content creators, and TikTok marketers who need AI models to showcase products.
+version: 1.0.0
+author: hhhh124hhhh
+license: MIT
+category: Content Creation
+tags: [tiktok, ai-model, video-generation, e-commerce, automation]
+requires: []
 ---
 
 # TikTok AI Model Video Generator
 
 Create AI-generated fashion models wearing your products and animate them into engaging TikTok livestream videos. This workflow combines multiple AI tools to produce realistic, professional product showcase content in under 5 minutes.
+
+## Installation
+
+### 1. Install the Skill
+
+**Option A: via ClawdHub**
+```bash
+clawd skill install tiktok-ai-model-generator
+```
+
+**Option B: Manual Installation**
+```bash
+# Clone or download the .skill file
+# Import to Clawdbot skills directory
+cp tiktok-ai-model-generator.skill ~/.clawd/skills/
+```
+
+### 2. Verify Installation
+```bash
+clawd skill list | grep tiktok-ai-model-generator
+```
+
+### 3. Check Required Tools
+
+This skill requires access to the following external tools (not included):
+
+| Tool | Purpose | Access | Cost |
+|------|---------|--------|------|
+| Pinterest | Visual references | https://pinterest.com | Free |
+| Claude AI | JSON prompt generation | https://claude.ai | Free tier / Paid |
+| Nano Banana Pro | Image generation | https://higgsfield.ai | Free tier / Paid |
+| Veo / Kling AI | Video animation | Via Higgsfield | Free tier / Paid |
+
+### 4. Account Setup
+
+1. **Pinterest Account**
+   - Sign up at https://pinterest.com
+   - Create boards for reference images
+   - No special permissions needed
+
+2. **Claude AI Access**
+   - Sign up at https://claude.ai
+   - Start free tier or purchase credits
+   - Verify access to API or web interface
+
+3. **Higgsfield Account (Nano Banana Pro + Veo/Kling)**
+   - Sign up at https://higgsfield.ai
+   - Access Nano Banana Pro for image generation
+   - Access Veo or Kling for video animation
+   - Check free tier limits
+
+## Dependencies
+
+### Required External Services
+- **Pinterest** - For reference image selection
+- **Claude AI** - For JSON prompt generation
+- **Higgsfield (Nano Banana Pro)** - For AI model image generation
+- **Higgsfield (Veo/Kling)** - For video animation
+
+### Optional Tools
+- **Python 3.8+** - For bundled automation scripts
+- **Image editor** - For product image preparation (Photoshop, GIMP, etc.)
+
+### System Requirements
+- Internet connection for cloud services
+- Web browser (Chrome, Firefox, Safari, Edge)
+- 4GB+ RAM for video editing (optional)
+- Storage space for generated content
+
+## Quick Start
 
 ## Quick Start
 
@@ -367,11 +443,173 @@ Veo Animation: "Subtle hand movement, showing product angles"
 ```
 tiktok-ai-model-generator/
 ├── SKILL.md (this file)
+├── README.md (user documentation)
+├── CHANGELOG.md (version history)
 ├── scripts/
-│   └── generate_workflow.py (optional automation script)
+│   └── generate_claude_prompt.py (JSON prompt generator)
 └── references/
     ├── pinterest_tips.md (Pinterest selection guide)
     └── prompt_templates.md (Reusable JSON templates)
 ```
 
-See bundled scripts and references for automation tools and detailed templates.
+## FAQ
+
+### General Questions
+
+**Q: Is this skill free to use?**
+A: Yes, this skill itself is free. However, the external tools (Claude, Higgsfield) may have free tier limits or paid plans. Check each service for current pricing.
+
+**Q: Can I use this for commercial purposes?**
+A: This skill is licensed under MIT, allowing commercial use. However, verify the licensing terms of the external AI tools (Claude, Higgsfield) for commercial usage.
+
+**Q: How long does it take to generate one video?**
+A: The complete workflow takes approximately 3-5 minutes:
+- Pinterest selection: 1-2 minutes
+- Claude prompt: 1 minute
+- Nano Banana Pro generation: 1-2 minutes
+- Veo/Kling animation: 1-2 minutes
+
+**Q: What image quality do I need for my product?**
+A: Minimum requirements:
+- Resolution: 1024x1024 or higher
+- Background: White or neutral (solid color preferred)
+- Lighting: Professional, even illumination
+- Format: PNG or JPG (high quality)
+- No text, logos, or watermarks
+
+### Tool-Specific Questions
+
+**Q: Do I need programming skills?**
+A: No programming required. The workflow uses web interfaces. Python script included is optional for automation.
+
+**Q: Can I replace Claude with another AI?**
+A: Yes, you can use GPT-4, Gemini, or any LLM that generates structured JSON. The prompt templates are compatible with most models.
+
+**Q: What if I don't have access to Higgsfield?**
+A: Alternatives for each step:
+- Image generation: Midjourney, DALL-E 3, Stable Diffusion
+- Video animation: Runway ML, Pika Labs, Sora
+
+**Q: Can I batch generate multiple images?**
+A: Yes. Nano Banana Pro supports batch generation. For scale, consider API access or professional subscriptions.
+
+### Quality & Optimization
+
+**Q: The AI model doesn't look realistic. What should I do?**
+A: Try these improvements:
+- Increase resolution (2048x2048)
+- Add more specific model appearance details
+- Use higher quality Pinterest reference
+- Adjust "style strength" parameter
+- Regenerate with different random seed
+
+**Q: My product isn't visible in the generated image.**
+A: Solutions:
+- Ensure JSON prompt includes explicit "product in foreground"
+- Check product image has clean white background
+- Add "keep product clearly visible" to prompt
+- Reduce background complexity
+- Test different Pinterest references
+
+**Q: The video animation looks jerky or unnatural.**
+A: Fixes:
+- Use subtle motion keywords: "gentle", "natural", "breathing"
+- Reduce movement complexity
+- Extend video duration (more frames)
+- Try different animation tools (Veo vs Kling)
+- Simplify prompt
+
+### Technical Issues
+
+**Q: I'm getting API rate limit errors.**
+A: Solutions:
+- Wait and retry after cooldown period
+- Upgrade to paid plan for higher limits
+- Batch operations to reduce API calls
+- Use free tiers for all tools simultaneously
+
+**Q: The generated video format is wrong for TikTok.**
+A: Ensure these settings:
+- Resolution: 1080x1920 (9:16 vertical)
+- Format: MP4
+- Duration: 3-5 seconds optimal
+- Frame rate: 24-30 fps
+
+**Q: How do I integrate this into an automated workflow?**
+A: Options:
+- Use the bundled Python script for prompt generation
+- Build API integrations with Claude and Higgsfield
+- Schedule TikTok posts via TikTok API
+- Use automation tools (Zapier, Make.com)
+
+### Use Cases
+
+**Q: Can this work for products other than fashion/jewelry?**
+A: Yes! Works for any visual product:
+- Electronics (phones, headphones)
+- Cosmetics (makeup, skincare)
+- Food & beverages
+- Home decor
+- Fitness equipment
+- Any product that benefits from model demonstration
+
+**Q: Is this suitable for 24/7 livestreams?**
+A: Yes, this is perfect for automated livestreams. Generate 10-20 video variations, loop them, and create continuous content without human models.
+
+**Q: Can I use this for Instagram or YouTube Shorts?**
+A: Absolutely! The workflow is platform-agnostic. Just adjust:
+- Resolution to platform requirements
+- Video duration to platform best practices
+- Style to match platform audience
+
+## Troubleshooting Guide
+
+### Common Error Messages
+
+**Error: "Failed to generate image"**
+- Check: Product image format (PNG/JPG)
+- Check: Background is solid white
+- Check: JSON prompt is valid JSON
+- Solution: Regenerate with different parameters
+
+**Error: "Animation failed to render"**
+- Check: Image resolution matches requirements
+- Check: Animation prompt is clear
+- Check: Tool account has credits
+- Solution: Try shorter prompt, different animation tool
+
+**Error: "Low quality output"**
+- Check: Reference image quality
+- Check: Prompt specificity
+- Check: Tool subscription tier
+- Solution: Upgrade to higher tier, improve prompts
+
+### Performance Tips
+
+**Slow generation times:**
+- Batch operations when possible
+- Use lower resolution for testing
+- Pre-generate during off-peak hours
+- Cache successful prompts for reuse
+
+**Inconsistent results:**
+- Use same Pinterest reference for batch
+- Keep JSON prompt template consistent
+- Note successful parameters
+- Create prompt library
+
+## Getting Help
+
+- **Documentation**: See `references/` folder for detailed guides
+- **Templates**: Use `references/prompt_templates.md` as starting points
+- **Script**: Run `scripts/generate_claude_prompt.py --help` for automation options
+- **Community**: Share results and ask for feedback in social media
+- **Bugs**: Report issues via GitHub repository
+
+## License & Credits
+
+This skill is licensed under MIT License. External tools have their own licensing terms.
+
+**Version**: 1.0.0
+**Last Updated**: 2025-01-30
+**Maintained by**: hhhh124hhhh
