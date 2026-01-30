@@ -308,3 +308,108 @@ If the script fails:
 - Ensure network connectivity
 - Check rate limits (if applicable)
 - Review error messages for specific issues
+
+---
+
+## Improved Script (New!)
+
+The `twitter_search_improved.py` script addresses common issues with Twitter data collection:
+
+### Key Improvements
+
+1. **Smart Query Templates** - Predefined queries for common AI topics
+2. **Language Filtering** - Default English-only, customizable
+3. **Engagement Filtering** - Filter by likes/retweets/replies
+4. **Better Error Handling** - Clear rate limit and invalid key detection
+5. **Real-time Progress** - Page-by-page feedback
+
+### Using the Improved Script
+
+```bash
+# Smart query with engagement filters
+./scripts/run_search_improved.sh --smart-query prompts --min-likes 10 --min-retweets 5
+
+# Custom query with all filters
+./scripts/run_search_improved.sh "\"prompt engineering\" OR \"ChatGPT prompts\"" \
+  --lang en \
+  --min-likes 20 \
+  --min-retweets 10 \
+  --min-replies 5 \
+  --max-results 500
+
+# Clawdbot monitoring
+./scripts/run_search_improved.sh --smart-query clawdbot
+```
+
+### Options (Improved Script)
+
+- `--smart-query TOPIC`: Use predefined templates (prompts, automation, tools, clawdbot)
+- `--lang CODE`: Filter by language (default: en)
+- `--min-likes N`: Minimum like count (default: 0)
+- `--min-retweets N`: Minimum retweet count (default: 0)
+- `--min-replies N`: Minimum reply count (default: 0)
+- `--skip-lang-filter`: Skip language filtering in query
+- `--query-type Latest|Top`: Sort order
+- `--format json|summary`: Output format
+- `--max-results N`: Maximum tweets (default: 1000)
+
+### Smart Query Templates
+
+| Template | Description | Best For |
+|----------|-------------|----------|
+| `prompts` | AI prompts, prompt engineering, ChatGPT/Claude | Skill inspiration |
+| `automation` | AI automation, workflows, agents, tools | Automation skills |
+| `tools` | AI tools, software, applications, startups | Product research |
+| `clawdbot` | Clawdbot-specific searches | Brand monitoring |
+
+### When to Use Improved vs Original
+
+**Use improved script when**:
+- You need high-quality, filtered results
+- Searching for AI/technical content
+- Data quality matters more than quantity
+- You want language filtering
+
+**Use original script when**:
+- You need raw, unfiltered data
+- Your query is highly specific
+- You want full control over Twitter query syntax
+- Language filtering isn't needed
+
+### Example Workflows
+
+**Workflow 1: Find High-Quality AI Prompts for Skills**
+```bash
+./scripts/run_search_improved.sh --smart-query prompts \
+  --lang en \
+  --min-likes 50 \
+  --min-retweets 20 \
+  --max-results 200 \
+  --format json > prompts-data.json
+```
+
+**Workflow 2: Monitor Clawdbot Brand Mentions**
+```bash
+./scripts/run_search_improved.sh --smart-query clawdbot \
+  --query-type Latest \
+  --lang en \
+  --max-results 100
+```
+
+**Workflow 3: Discover AI Automation Trends**
+```bash
+./scripts/run_search_improved.sh --smart-query automation \
+  --query-type Latest \
+  --min-likes 30 \
+  --min-retweets 15 \
+  --max-results 300
+```
+
+### Documentation
+
+See `scripts/IMPROVEMENTS.md` for:
+- Detailed comparison of original vs improved
+- Troubleshooting guide
+- Recommended queries for different use cases
+- Integration with cron jobs
+- Expected results and quality improvements
