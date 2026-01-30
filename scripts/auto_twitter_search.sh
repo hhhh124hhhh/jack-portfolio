@@ -70,6 +70,11 @@ if [ $? -eq 0 ]; then
 
     log "Search completed successfully: $TOTAL_TWEETS tweets found"
 
+    # 去重记录：将新推文记录到去重数据库
+    log "Recording tweets to dedup database..."
+    DEDUP_RESULT=$(node /root/clawd/scripts/dedup-record-from-json.js "$REPORT_FILE" 2>&1)
+    log "$DEDUP_RESULT"
+
     # 生成 Markdown 摘要
     log "Generating markdown summary..."
     export DATE="$DATE"
