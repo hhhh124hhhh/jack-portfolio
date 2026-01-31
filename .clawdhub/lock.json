@@ -16,6 +16,66 @@
     "clawdbot-security-check": {
       "version": "2.2.2",
       "installedAt": 1769599495219
+    },
+    "web-search-exa": {
+      "version": "1.0.1",
+      "installedAt": 1769674152116
+    },
+    "firecrawl-search": {
+      "version": "1.0.0",
+      "installedAt": 1769676083051
+    },
+    "coding-agent": {
+      "version": "1.0.1",
+      "installedAt": 1769676565589
+    },
+    "summarize": {
+      "version": "1.0.0",
+      "installedAt": 1769676570811
+    },
+    "auto-updater": {
+      "version": "1.0.0",
+      "installedAt": 1769676587378
+    },
+    "humanizer": {
+      "version": "1.0.0",
+      "installedAt": 1769676595333
+    },
+    "nano-banana-pro": {
+      "version": "1.0.1",
+      "installedAt": 1769676599691
+    },
+    "bird": {
+      "version": "1.0.0",
+      "installedAt": 1769676619544
+    },
+    "searxng": {
+      "version": "1.0.3",
+      "installedAt": 1769688657929
+    },
+    "tavily-search": {
+      "version": "1.0.0",
+      "installedAt": 1769688711399
+    },
+    "feishu-bridge": {
+      "version": "1.0.0",
+      "installedAt": 1769691649900
+    },
+    "veo": {
+      "version": "1.0.1",
+      "installedAt": 1769767602335
+    },
+    "vap-multimedia-generation": {
+      "version": "1.0.4",
+      "installedAt": 1769767610546
+    },
+    "ai-video-gen": {
+      "version": "1.0.0",
+      "installedAt": 1769767647306
+    },
+    "veo3-video-gen": {
+      "version": "0.1.0",
+      "installedAt": 1769767656034
     }
   }
 }

@@ -1,315 +1,5 @@
 [
   {
-    "tweetId": "2016862013952041194",
-    "url": "https://x.com/iMePlatform/status/2016862013952041194",
-    "author": "iMePlatform",
-    "text": "🖼️ New feature: Trending Photo Styles\n\n😍 Pick popular styles with ready-made examples and turn your photo into a creative result in seconds.\n\n🔥 Image generation now runs on Google’s Nano Banana & N",
-    "scores": {
-      "utility": {
-        "score": 35,
-        "reasons": [
-          "基础内容分",
-          "包含可复制示例",
-          "AI 相关内容"
-        ],
-        "weighted": 7
-      },
-      "innovation": {
-        "score": 70,
-        "reasons": [
-          "使用创新性关键词",
-          "涉及最新技术",
-          "原创内容"
-        ],
-        "weighted": 10.5
-      },
-      "completeness": {
-        "score": 85,
-        "reasons": [
-          "有实质内容",
-          "内容长度适中",
-          "包含示例",
-          "表达清晰",
-          "产品公告/新闻"
-        ],
-        "weighted": 21.25
-      },
-      "engagement": {
-        "score": 77.37971854543099,
-        "reasons": [
-          "1829 点赞 (32.6分)",
-          "1937 转发 (26.3分)",
-          "263 讨论 (17.0分)",
-          "1 收藏 (1.5分)"
-        ],
-        "rawMetrics": {
-          "likes": 1829,
-          "retweets": 1937,
-          "replies": 262,
-          "quotes": 1,
-          "bookmarks": 1,
-          "views": 22801
-        },
-        "weighted": 23.213915563629296
-      },
-      "influence": {
-        "score": 65,
-        "reasons": [
-          "认证账号",
-          "粉丝数 > 10万"
-        ],
-        "authorData": {
-          "username": "iMePlatform",
-          "followers": 170996,
-          "verified": true
-        },
-        "weighted": 6.5
-      }
-    },
-    "totalScore": 68,
-    "grade": "C+",
-    "metrics": {
-      "likes": 1829,
-      "retweets": 1937,
-      "replies": 262,
-      "quotes": 1,
-      "bookmarks": 1,
-      "views": 22801
-    },
-    "createdAt": "Thu Jan 29 13:12:30 +0000 2026"
-  },
-  {
-    "tweetId": "2016862013952041194",
-    "url": "https://x.com/iMePlatform/status/2016862013952041194",
-    "author": "iMePlatform",
-    "text": "🖼️ New feature: Trending Photo Styles\n\n😍 Pick popular styles with ready-made examples and turn your photo into a creative result in seconds.\n\n🔥 Image generation now runs on Google’s Nano Banana & N",
-    "scores": {
-      "utility": {
-        "score": 35,
-        "reasons": [
-          "基础内容分",
-          "包含可复制示例",
-          "AI 相关内容"
-        ],
-        "weighted": 7
-      },
-      "innovation": {
-        "score": 70,
-        "reasons": [
-          "使用创新性关键词",
-          "涉及最新技术",
-          "原创内容"
-        ],
-        "weighted": 10.5
-      },
-      "completeness": {
-        "score": 85,
-        "reasons": [
-          "有实质内容",
-          "内容长度适中",
-          "包含示例",
-          "表达清晰",
-          "产品公告/新闻"
-        ],
-        "weighted": 21.25
-      },
-      "engagement": {
-        "score": 77.37971854543099,
-        "reasons": [
-          "1829 点赞 (32.6分)",
-          "1937 转发 (26.3分)",
-          "263 讨论 (17.0分)",
-          "1 收藏 (1.5分)"
-        ],
-        "rawMetrics": {
-          "likes": 1829,
-          "retweets": 1937,
-          "replies": 262,
-          "quotes": 1,
-          "bookmarks": 1,
-          "views": 22801
-        },
-        "weighted": 23.213915563629296
-      },
-      "influence": {
-        "score": 65,
-        "reasons": [
-          "认证账号",
-          "粉丝数 > 10万"
-        ],
-        "authorData": {
-          "username": "iMePlatform",
-          "followers": 170996,
-          "verified": true
-        },
-        "weighted": 6.5
-      }
-    },
-    "totalScore": 68,
-    "grade": "C+",
-    "metrics": {
-      "likes": 1829,
-      "retweets": 1937,
-      "replies": 262,
-      "quotes": 1,
-      "bookmarks": 1,
-      "views": 22801
-    },
-    "createdAt": "Thu Jan 29 13:12:30 +0000 2026"
-  },
-  {
-    "tweetId": "2016928689431421320",
-    "url": "https://x.com/CultureCrave/status/2016928689431421320",
-    "author": "CultureCrave",
-    "text": "First trailer for Darren Aranofsky's new AI animated series 'On This Day... 1776' \n\n• Tells short narrative stories about the Revolutionary War\n\n• Uses Gen AI tools, including tech made by Google Deep",
-    "scores": {
-      "utility": {
-        "score": 20,
-        "reasons": [
-          "基础内容分",
-          "AI 相关内容"
-        ],
-        "weighted": 4
-      },
-      "innovation": {
-        "score": 45,
-        "reasons": [
-          "使用创新性关键词",
-          "原创内容"
-        ],
-        "weighted": 6.75
-      },
-      "completeness": {
-        "score": 80,
-        "reasons": [
-          "有实质内容",
-          "内容长度适中",
-          "结构清晰",
-          "表达清晰"
-        ],
-        "weighted": 20
-      },
-      "engagement": {
-        "score": 87.43254764446755,
-        "reasons": [
-          "5261 点赞 (37.2分)",
-          "336 转发 (20.2分)",
-          "7522 讨论 (20.0分)",
-          "4032 收藏 (10.0分)"
-        ],
-        "rawMetrics": {
-          "likes": 5261,
-          "retweets": 336,
-          "replies": 2406,
-          "quotes": 5116,
-          "bookmarks": 4032,
-          "views": 5271134
-        },
-        "weighted": 26.229764293340263
-      },
-      "influence": {
-        "score": 65,
-        "reasons": [
-          "认证账号",
-          "粉丝数 > 10万"
-        ],
-        "authorData": {
-          "username": "CultureCrave",
-          "followers": 791531,
-          "verified": true
-        },
-        "weighted": 6.5
-      }
-    },
-    "totalScore": 63,
-    "grade": "C+",
-    "metrics": {
-      "likes": 5261,
-      "retweets": 336,
-      "replies": 2406,
-      "quotes": 5116,
-      "bookmarks": 4032,
-      "views": 5271134
-    },
-    "createdAt": "Thu Jan 29 17:37:26 +0000 2026"
-  },
-  {
-    "tweetId": "2016928689431421320",
-    "url": "https://x.com/CultureCrave/status/2016928689431421320",
-    "author": "CultureCrave",
-    "text": "First trailer for Darren Aranofsky's new AI animated series 'On This Day... 1776' \n\n• Tells short narrative stories about the Revolutionary War\n\n• Uses Gen AI tools, including tech made by Google Deep",
-    "scores": {
-      "utility": {
-        "score": 20,
-        "reasons": [
-          "基础内容分",
-          "AI 相关内容"
-        ],
-        "weighted": 4
-      },
-      "innovation": {
-        "score": 45,
-        "reasons": [
-          "使用创新性关键词",
-          "原创内容"
-        ],
-        "weighted": 6.75
-      },
-      "completeness": {
-        "score": 80,
-        "reasons": [
-          "有实质内容",
-          "内容长度适中",
-          "结构清晰",
-          "表达清晰"
-        ],
-        "weighted": 20
-      },
-      "engagement": {
-        "score": 87.43254764446755,
-        "reasons": [
-          "5261 点赞 (37.2分)",
-          "336 转发 (20.2分)",
-          "7522 讨论 (20.0分)",
-          "4032 收藏 (10.0分)"
-        ],
-        "rawMetrics": {
-          "likes": 5261,
-          "retweets": 336,
-          "replies": 2406,
-          "quotes": 5116,
-          "bookmarks": 4032,
-          "views": 5271134
-        },
-        "weighted": 26.229764293340263
-      },
-      "influence": {
-        "score": 65,
-        "reasons": [
-          "认证账号",
-          "粉丝数 > 10万"
-        ],
-        "authorData": {
-          "username": "CultureCrave",
-          "followers": 791531,
-          "verified": true
-        },
-        "weighted": 6.5
-      }
-    },
-    "totalScore": 63,
-    "grade": "C+",
-    "metrics": {
-      "likes": 5261,
-      "retweets": 336,
-      "replies": 2406,
-      "quotes": 5116,
-      "bookmarks": 4032,
-      "views": 5271134
-    },
-    "createdAt": "Thu Jan 29 17:37:26 +0000 2026"
-  },
-  {
     "tweetId": "2016947883807850906",
     "url": "https://x.com/lexx_aura/status/2016947883807850906",
     "author": "lexx_aura",
@@ -324,7 +14,7 @@
           "包含分步骤指南",
           "AI 相关内容"
         ],
-        "weighted": 20
+        "weighted": 40
       },
       "innovation": {
         "score": 45,
@@ -332,7 +22,7 @@
           "涉及最新技术",
           "原创内容"
         ],
-        "weighted": 6.75
+        "weighted": 9
       },
       "completeness": {
         "score": 45,
@@ -341,7 +31,7 @@
           "内容详细",
           "表达清晰"
         ],
-        "weighted": 11.25
+        "weighted": 6.75
       },
       "engagement": {
         "score": 64.0179938526803,
@@ -359,7 +49,7 @@
           "bookmarks": 544,
           "views": 68497
         },
-        "weighted": 19.20539815580409
+        "weighted": 9.602699077902045
       },
       "influence": {
         "score": 60,
@@ -375,8 +65,8 @@
         "weighted": 6
       }
     },
-    "totalScore": 63,
-    "grade": "C+",
+    "totalScore": 71,
+    "grade": "B",
     "metrics": {
       "likes": 877,
       "retweets": 56,
@@ -386,6 +76,164 @@
       "views": 68497
     },
     "createdAt": "Thu Jan 29 18:53:43 +0000 2026"
+  },
+  {
+    "tweetId": "2016862013952041194",
+    "url": "https://x.com/iMePlatform/status/2016862013952041194",
+    "author": "iMePlatform",
+    "text": "🖼️ New feature: Trending Photo Styles\n\n😍 Pick popular styles with ready-made examples and turn your photo into a creative result in seconds.\n\n🔥 Image generation now runs on Google’s Nano Banana & N",
+    "scores": {
+      "utility": {
+        "score": 35,
+        "reasons": [
+          "基础内容分",
+          "包含可复制示例",
+          "AI 相关内容"
+        ],
+        "weighted": 14
+      },
+      "innovation": {
+        "score": 70,
+        "reasons": [
+          "使用创新性关键词",
+          "涉及最新技术",
+          "原创内容"
+        ],
+        "weighted": 14
+      },
+      "completeness": {
+        "score": 85,
+        "reasons": [
+          "有实质内容",
+          "内容长度适中",
+          "包含示例",
+          "表达清晰",
+          "产品公告/新闻"
+        ],
+        "weighted": 12.75
+      },
+      "engagement": {
+        "score": 77.37971854543099,
+        "reasons": [
+          "1829 点赞 (32.6分)",
+          "1937 转发 (26.3分)",
+          "263 讨论 (17.0分)",
+          "1 收藏 (1.5分)"
+        ],
+        "rawMetrics": {
+          "likes": 1829,
+          "retweets": 1937,
+          "replies": 262,
+          "quotes": 1,
+          "bookmarks": 1,
+          "views": 22801
+        },
+        "weighted": 11.606957781814648
+      },
+      "influence": {
+        "score": 65,
+        "reasons": [
+          "认证账号",
+          "粉丝数 > 10万"
+        ],
+        "authorData": {
+          "username": "iMePlatform",
+          "followers": 170996,
+          "verified": true
+        },
+        "weighted": 6.5
+      }
+    },
+    "totalScore": 59,
+    "grade": "C",
+    "metrics": {
+      "likes": 1829,
+      "retweets": 1937,
+      "replies": 262,
+      "quotes": 1,
+      "bookmarks": 1,
+      "views": 22801
+    },
+    "createdAt": "Thu Jan 29 13:12:30 +0000 2026"
+  },
+  {
+    "tweetId": "2016862013952041194",
+    "url": "https://x.com/iMePlatform/status/2016862013952041194",
+    "author": "iMePlatform",
+    "text": "🖼️ New feature: Trending Photo Styles\n\n😍 Pick popular styles with ready-made examples and turn your photo into a creative result in seconds.\n\n🔥 Image generation now runs on Google’s Nano Banana & N",
+    "scores": {
+      "utility": {
+        "score": 35,
+        "reasons": [
+          "基础内容分",
+          "包含可复制示例",
+          "AI 相关内容"
+        ],
+        "weighted": 14
+      },
+      "innovation": {
+        "score": 70,
+        "reasons": [
+          "使用创新性关键词",
+          "涉及最新技术",
+          "原创内容"
+        ],
+        "weighted": 14
+      },
+      "completeness": {
+        "score": 85,
+        "reasons": [
+          "有实质内容",
+          "内容长度适中",
+          "包含示例",
+          "表达清晰",
+          "产品公告/新闻"
+        ],
+        "weighted": 12.75
+      },
+      "engagement": {
+        "score": 77.37971854543099,
+        "reasons": [
+          "1829 点赞 (32.6分)",
+          "1937 转发 (26.3分)",
+          "263 讨论 (17.0分)",
+          "1 收藏 (1.5分)"
+        ],
+        "rawMetrics": {
+          "likes": 1829,
+          "retweets": 1937,
+          "replies": 262,
+          "quotes": 1,
+          "bookmarks": 1,
+          "views": 22801
+        },
+        "weighted": 11.606957781814648
+      },
+      "influence": {
+        "score": 65,
+        "reasons": [
+          "认证账号",
+          "粉丝数 > 10万"
+        ],
+        "authorData": {
+          "username": "iMePlatform",
+          "followers": 170996,
+          "verified": true
+        },
+        "weighted": 6.5
+      }
+    },
+    "totalScore": 59,
+    "grade": "C",
+    "metrics": {
+      "likes": 1829,
+      "retweets": 1937,
+      "replies": 262,
+      "quotes": 1,
+      "bookmarks": 1,
+      "views": 22801
+    },
+    "createdAt": "Thu Jan 29 13:12:30 +0000 2026"
   },
   {
     "tweetId": "2016936321327988869",
@@ -401,14 +249,14 @@
           "包含实用指南关键词",
           "AI 相关内容"
         ],
-        "weighted": 13
+        "weighted": 26
       },
       "innovation": {
         "score": 20,
         "reasons": [
           "原创内容"
         ],
-        "weighted": 3
+        "weighted": 4
       },
       "completeness": {
         "score": 80,
@@ -418,7 +266,7 @@
           "结构清晰",
           "表达清晰"
         ],
-        "weighted": 20
+        "weighted": 12
       },
       "engagement": {
         "score": 63.967309211625114,
@@ -436,7 +284,7 @@
           "bookmarks": 193,
           "views": 7114
         },
-        "weighted": 19.190192763487534
+        "weighted": 9.595096381743767
       },
       "influence": {
         "score": 60,
@@ -452,8 +300,8 @@
         "weighted": 6
       }
     },
-    "totalScore": 61,
-    "grade": "C+",
+    "totalScore": 58,
+    "grade": "C",
     "metrics": {
       "likes": 247,
       "retweets": 130,
@@ -477,14 +325,14 @@
           "包含提示词模板",
           "AI 相关内容"
         ],
-        "weighted": 12
+        "weighted": 24
       },
       "innovation": {
         "score": 20,
         "reasons": [
           "原创内容"
         ],
-        "weighted": 3
+        "weighted": 4
       },
       "completeness": {
         "score": 55,
@@ -493,7 +341,7 @@
           "内容长度适中",
           "表达清晰"
         ],
-        "weighted": 13.75
+        "weighted": 8.25
       },
       "engagement": {
         "score": 83.10706355733745,
@@ -511,7 +359,7 @@
           "bookmarks": 950,
           "views": 964724
         },
-        "weighted": 24.932119067201235
+        "weighted": 12.466059533600617
       },
       "influence": {
         "score": 60,
@@ -527,8 +375,8 @@
         "weighted": 6
       }
     },
-    "totalScore": 60,
-    "grade": "C+",
+    "totalScore": 55,
+    "grade": "C",
     "metrics": {
       "likes": 5630,
       "retweets": 212,
@@ -552,14 +400,14 @@
           "包含提示词模板",
           "AI 相关内容"
         ],
-        "weighted": 12
+        "weighted": 24
       },
       "innovation": {
         "score": 20,
         "reasons": [
           "原创内容"
         ],
-        "weighted": 3
+        "weighted": 4
       },
       "completeness": {
         "score": 55,
@@ -568,7 +416,7 @@
           "内容长度适中",
           "表达清晰"
         ],
-        "weighted": 13.75
+        "weighted": 8.25
       },
       "engagement": {
         "score": 83.10706355733745,
@@ -586,7 +434,7 @@
           "bookmarks": 950,
           "views": 964724
         },
-        "weighted": 24.932119067201235
+        "weighted": 12.466059533600617
       },
       "influence": {
         "score": 60,
@@ -602,8 +450,8 @@
         "weighted": 6
       }
     },
-    "totalScore": 60,
-    "grade": "C+",
+    "totalScore": 55,
+    "grade": "C",
     "metrics": {
       "likes": 5630,
       "retweets": 212,
@@ -627,14 +475,14 @@
           "包含提示词模板",
           "AI 相关内容"
         ],
-        "weighted": 12
+        "weighted": 24
       },
       "innovation": {
         "score": 20,
         "reasons": [
           "原创内容"
         ],
-        "weighted": 3
+        "weighted": 4
       },
       "completeness": {
         "score": 55,
@@ -643,7 +491,7 @@
           "内容长度适中",
           "表达清晰"
         ],
-        "weighted": 13.75
+        "weighted": 8.25
       },
       "engagement": {
         "score": 84.89504965979333,
@@ -661,7 +509,7 @@
           "bookmarks": 1124,
           "views": 1133343
         },
-        "weighted": 25.468514897937997
+        "weighted": 12.734257448968998
       },
       "influence": {
         "score": 60,
@@ -677,8 +525,8 @@
         "weighted": 6
       }
     },
-    "totalScore": 60,
-    "grade": "C+",
+    "totalScore": 55,
+    "grade": "C",
     "metrics": {
       "likes": 6450,
       "retweets": 252,
@@ -690,10 +538,10 @@
     "createdAt": "Thu Jan 29 19:38:08 +0000 2026"
   },
   {
-    "tweetId": "2016925155277361423",
-    "url": "https://x.com/demishassabis/status/2016925155277361423",
-    "author": "demishassabis",
-    "text": "Thrilled to launch Project Genie, an experimental prototype of the world's most advanced world model. Create entire playable worlds to explore in real-time just from a simple text prompt - kind of min",
+    "tweetId": "2016928689431421320",
+    "url": "https://x.com/CultureCrave/status/2016928689431421320",
+    "author": "CultureCrave",
+    "text": "First trailer for Darren Aranofsky's new AI animated series 'On This Day... 1776' \n\n• Tells short narrative stories about the Revolutionary War\n\n• Uses Gen AI tools, including tech made by Google Deep",
     "scores": {
       "utility": {
         "score": 20,
@@ -701,43 +549,43 @@
           "基础内容分",
           "AI 相关内容"
         ],
-        "weighted": 4
+        "weighted": 8
       },
       "innovation": {
-        "score": 30,
+        "score": 45,
         "reasons": [
-          "原创内容",
-          "探索性内容"
+          "使用创新性关键词",
+          "原创内容"
         ],
-        "weighted": 4.5
+        "weighted": 9
       },
       "completeness": {
-        "score": 65,
+        "score": 80,
         "reasons": [
           "有实质内容",
           "内容长度适中",
-          "表达清晰",
-          "产品公告/新闻"
+          "结构清晰",
+          "表达清晰"
         ],
-        "weighted": 16.25
+        "weighted": 12
       },
       "engagement": {
-        "score": 85.56957125007968,
+        "score": 87.43254764446755,
         "reasons": [
-          "3953 点赞 (36.0分)",
-          "466 转发 (21.4分)",
-          "403 讨论 (18.2分)",
-          "1040 收藏 (10.0分)"
+          "5261 点赞 (37.2分)",
+          "336 转发 (20.2分)",
+          "7522 讨论 (20.0分)",
+          "4032 收藏 (10.0分)"
         ],
         "rawMetrics": {
-          "likes": 3953,
-          "retweets": 466,
-          "replies": 232,
-          "quotes": 171,
-          "bookmarks": 1040,
-          "views": 394627
+          "likes": 5261,
+          "retweets": 336,
+          "replies": 2406,
+          "quotes": 5116,
+          "bookmarks": 4032,
+          "views": 5271134
         },
-        "weighted": 25.670871375023903
+        "weighted": 13.114882146670132
       },
       "influence": {
         "score": 65,
@@ -746,30 +594,30 @@
           "粉丝数 > 10万"
         ],
         "authorData": {
-          "username": "demishassabis",
-          "followers": 607971,
+          "username": "CultureCrave",
+          "followers": 791531,
           "verified": true
         },
         "weighted": 6.5
       }
     },
-    "totalScore": 57,
-    "grade": "C",
+    "totalScore": 49,
+    "grade": "D",
     "metrics": {
-      "likes": 3953,
-      "retweets": 466,
-      "replies": 232,
-      "quotes": 171,
-      "bookmarks": 1040,
-      "views": 394627
+      "likes": 5261,
+      "retweets": 336,
+      "replies": 2406,
+      "quotes": 5116,
+      "bookmarks": 4032,
+      "views": 5271134
     },
-    "createdAt": "Thu Jan 29 17:23:24 +0000 2026"
+    "createdAt": "Thu Jan 29 17:37:26 +0000 2026"
   },
   {
-    "tweetId": "2016925155277361423",
-    "url": "https://x.com/demishassabis/status/2016925155277361423",
-    "author": "demishassabis",
-    "text": "Thrilled to launch Project Genie, an experimental prototype of the world's most advanced world model. Create entire playable worlds to explore in real-time just from a simple text prompt - kind of min",
+    "tweetId": "2016928689431421320",
+    "url": "https://x.com/CultureCrave/status/2016928689431421320",
+    "author": "CultureCrave",
+    "text": "First trailer for Darren Aranofsky's new AI animated series 'On This Day... 1776' \n\n• Tells short narrative stories about the Revolutionary War\n\n• Uses Gen AI tools, including tech made by Google Deep",
     "scores": {
       "utility": {
         "score": 20,
@@ -777,43 +625,43 @@
           "基础内容分",
           "AI 相关内容"
         ],
-        "weighted": 4
+        "weighted": 8
       },
       "innovation": {
-        "score": 30,
+        "score": 45,
         "reasons": [
-          "原创内容",
-          "探索性内容"
+          "使用创新性关键词",
+          "原创内容"
         ],
-        "weighted": 4.5
+        "weighted": 9
       },
       "completeness": {
-        "score": 65,
+        "score": 80,
         "reasons": [
           "有实质内容",
           "内容长度适中",
-          "表达清晰",
-          "产品公告/新闻"
+          "结构清晰",
+          "表达清晰"
         ],
-        "weighted": 16.25
+        "weighted": 12
       },
       "engagement": {
-        "score": 85.56957125007968,
+        "score": 87.43254764446755,
         "reasons": [
-          "3953 点赞 (36.0分)",
-          "466 转发 (21.4分)",
-          "403 讨论 (18.2分)",
-          "1040 收藏 (10.0分)"
+          "5261 点赞 (37.2分)",
+          "336 转发 (20.2分)",
+          "7522 讨论 (20.0分)",
+          "4032 收藏 (10.0分)"
         ],
         "rawMetrics": {
-          "likes": 3953,
-          "retweets": 466,
-          "replies": 232,
-          "quotes": 171,
-          "bookmarks": 1040,
-          "views": 394627
+          "likes": 5261,
+          "retweets": 336,
+          "replies": 2406,
+          "quotes": 5116,
+          "bookmarks": 4032,
+          "views": 5271134
         },
-        "weighted": 25.670871375023903
+        "weighted": 13.114882146670132
       },
       "influence": {
         "score": 65,
@@ -822,100 +670,24 @@
           "粉丝数 > 10万"
         ],
         "authorData": {
-          "username": "demishassabis",
-          "followers": 607971,
+          "username": "CultureCrave",
+          "followers": 791531,
           "verified": true
         },
         "weighted": 6.5
       }
     },
-    "totalScore": 57,
-    "grade": "C",
+    "totalScore": 49,
+    "grade": "D",
     "metrics": {
-      "likes": 3953,
-      "retweets": 466,
-      "replies": 232,
-      "quotes": 171,
-      "bookmarks": 1040,
-      "views": 394627
+      "likes": 5261,
+      "retweets": 336,
+      "replies": 2406,
+      "quotes": 5116,
+      "bookmarks": 4032,
+      "views": 5271134
     },
-    "createdAt": "Thu Jan 29 17:23:24 +0000 2026"
-  },
-  {
-    "tweetId": "2016925155277361423",
-    "url": "https://x.com/demishassabis/status/2016925155277361423",
-    "author": "demishassabis",
-    "text": "Thrilled to launch Project Genie, an experimental prototype of the world's most advanced world model. Create entire playable worlds to explore in real-time just from a simple text prompt - kind of min",
-    "scores": {
-      "utility": {
-        "score": 20,
-        "reasons": [
-          "基础内容分",
-          "AI 相关内容"
-        ],
-        "weighted": 4
-      },
-      "innovation": {
-        "score": 30,
-        "reasons": [
-          "原创内容",
-          "探索性内容"
-        ],
-        "weighted": 4.5
-      },
-      "completeness": {
-        "score": 65,
-        "reasons": [
-          "有实质内容",
-          "内容长度适中",
-          "表达清晰",
-          "产品公告/新闻"
-        ],
-        "weighted": 16.25
-      },
-      "engagement": {
-        "score": 86.08570995715742,
-        "reasons": [
-          "4142 点赞 (36.2分)",
-          "493 转发 (21.5分)",
-          "419 讨论 (18.4分)",
-          "1113 收藏 (10.0分)"
-        ],
-        "rawMetrics": {
-          "likes": 4142,
-          "retweets": 493,
-          "replies": 241,
-          "quotes": 178,
-          "bookmarks": 1113,
-          "views": 417942
-        },
-        "weighted": 25.825712987147224
-      },
-      "influence": {
-        "score": 65,
-        "reasons": [
-          "认证账号",
-          "粉丝数 > 10万"
-        ],
-        "authorData": {
-          "username": "demishassabis",
-          "followers": 608104,
-          "verified": true
-        },
-        "weighted": 6.5
-      }
-    },
-    "totalScore": 57,
-    "grade": "C",
-    "metrics": {
-      "likes": 4142,
-      "retweets": 493,
-      "replies": 241,
-      "quotes": 178,
-      "bookmarks": 1113,
-      "views": 417942
-    },
-    "createdAt": "Thu Jan 29 17:23:24 +0000 2026"
+    "createdAt": "Thu Jan 29 17:37:26 +0000 2026"
   },
   {
     "tweetId": "2016929427784122627",
@@ -929,7 +701,7 @@
           "基础内容分",
           "AI 相关内容"
         ],
-        "weighted": 4
+        "weighted": 8
       },
       "innovation": {
         "score": 55,
@@ -938,7 +710,7 @@
           "原创内容",
           "探索性内容"
         ],
-        "weighted": 8.25
+        "weighted": 11
       },
       "completeness": {
         "score": 55,
@@ -947,7 +719,7 @@
           "内容长度适中",
           "表达清晰"
         ],
-        "weighted": 13.75
+        "weighted": 8.25
       },
       "engagement": {
         "score": 68.86688227595141,
@@ -965,7 +737,7 @@
           "bookmarks": 368,
           "views": 1058834
         },
-        "weighted": 20.66006468278542
+        "weighted": 10.33003234139271
       },
       "influence": {
         "score": 90,
@@ -982,8 +754,8 @@
         "weighted": 9
       }
     },
-    "totalScore": 56,
-    "grade": "C",
+    "totalScore": 47,
+    "grade": "D",
     "metrics": {
       "likes": 771,
       "retweets": 93,
@@ -1006,7 +778,7 @@
           "基础内容分",
           "AI 相关内容"
         ],
-        "weighted": 4
+        "weighted": 8
       },
       "innovation": {
         "score": 55,
@@ -1015,7 +787,7 @@
           "原创内容",
           "探索性内容"
         ],
-        "weighted": 8.25
+        "weighted": 11
       },
       "completeness": {
         "score": 55,
@@ -1024,7 +796,7 @@
           "内容长度适中",
           "表达清晰"
         ],
-        "weighted": 13.75
+        "weighted": 8.25
       },
       "engagement": {
         "score": 68.86688227595141,
@@ -1042,7 +814,7 @@
           "bookmarks": 368,
           "views": 1058834
         },
-        "weighted": 20.66006468278542
+        "weighted": 10.33003234139271
       },
       "influence": {
         "score": 90,
@@ -1059,8 +831,8 @@
         "weighted": 9
       }
     },
-    "totalScore": 56,
-    "grade": "C",
+    "totalScore": 47,
+    "grade": "D",
     "metrics": {
       "likes": 771,
       "retweets": 93,
@@ -1070,828 +842,6 @@
       "views": 1058834
     },
     "createdAt": "Thu Jan 29 17:40:22 +0000 2026"
-  },
-  {
-    "tweetId": "2016889079342698947",
-    "url": "https://x.com/mwx_ai/status/2016889079342698947",
-    "author": "mwx_ai",
-    "text": "🌍MWX | 1st Decentralized AI Marketplace providing plug &amp; play AI solutions for 400M+ SMEs\n🔹3K+ active SMEs\n🔹1,500+ AI purchases\n🔹Supported by 🇮🇩 Ministry of SMEs &amp; Industry, Google, AWS\n",
-    "scores": {
-      "utility": {
-        "score": 20,
-        "reasons": [
-          "基础内容分",
-          "AI 相关内容"
-        ],
-        "weighted": 4
-      },
-      "innovation": {
-        "score": 20,
-        "reasons": [
-          "原创内容"
-        ],
-        "weighted": 3
-      },
-      "completeness": {
-        "score": 55,
-        "reasons": [
-          "有实质内容",
-          "内容长度适中",
-          "表达清晰"
-        ],
-        "weighted": 13.75
-      },
-      "engagement": {
-        "score": 85.29103056245609,
-        "reasons": [
-          "1911 点赞 (32.8分)",
-          "989 转发 (24.0分)",
-          "440 讨论 (18.5分)",
-          "474 收藏 (10.0分)"
-        ],
-        "rawMetrics": {
-          "likes": 1911,
-          "retweets": 989,
-          "replies": 416,
-          "quotes": 24,
-          "bookmarks": 474,
-          "views": 17538
-        },
-        "weighted": 25.587309168736827
-      },
-      "influence": {
-        "score": 80,
-        "reasons": [
-          "认证账号",
-          "粉丝数 > 1万",
-          "AI 领域专家账号"
-        ],
-        "authorData": {
-          "username": "mwx_ai",
-          "followers": 32702,
-          "verified": true
-        },
-        "weighted": 8
-      }
-    },
-    "totalScore": 54,
-    "grade": "C",
-    "metrics": {
-      "likes": 1911,
-      "retweets": 989,
-      "replies": 416,
-      "quotes": 24,
-      "bookmarks": 474,
-      "views": 17538
-    },
-    "createdAt": "Thu Jan 29 15:00:03 +0000 2026"
-  },
-  {
-    "tweetId": "2016889198138322962",
-    "url": "https://x.com/veedstudio/status/2016889198138322962",
-    "author": "veedstudio",
-    "text": "Amazing AI videos NOW from your phone\n\nWith VEED’s mobile app ⚡️\n\n• Pick any AI actor\n• Create AI scripts\n• Get auto captions &amp; smart zoom\n\nShip ads, product demos, explainers\n\n🚨 FREE 500 Credits",
-    "scores": {
-      "utility": {
-        "score": 20,
-        "reasons": [
-          "基础内容分",
-          "AI 相关内容"
-        ],
-        "weighted": 4
-      },
-      "innovation": {
-        "score": 20,
-        "reasons": [
-          "原创内容"
-        ],
-        "weighted": 3
-      },
-      "completeness": {
-        "score": 80,
-        "reasons": [
-          "有实质内容",
-          "内容长度适中",
-          "结构清晰",
-          "表达清晰"
-        ],
-        "weighted": 20
-      },
-      "engagement": {
-        "score": 70.14748725126992,
-        "reasons": [
-          "275 点赞 (24.4分)",
-          "253 转发 (19.2分)",
-          "339 讨论 (17.7分)",
-          "56 收藏 (8.8分)"
-        ],
-        "rawMetrics": {
-          "likes": 275,
-          "retweets": 253,
-          "replies": 328,
-          "quotes": 11,
-          "bookmarks": 56,
-          "views": 7384
-        },
-        "weighted": 21.044246175380977
-      },
-      "influence": {
-        "score": 60,
-        "reasons": [
-          "认证账号",
-          "粉丝数 > 1万"
-        ],
-        "authorData": {
-          "username": "veedstudio",
-          "followers": 18121,
-          "verified": true
-        },
-        "weighted": 6
-      }
-    },
-    "totalScore": 54,
-    "grade": "C",
-    "metrics": {
-      "likes": 275,
-      "retweets": 253,
-      "replies": 328,
-      "quotes": 11,
-      "bookmarks": 56,
-      "views": 7384
-    },
-    "createdAt": "Thu Jan 29 15:00:31 +0000 2026"
-  },
-  {
-    "tweetId": "2016889079342698947",
-    "url": "https://x.com/mwx_ai/status/2016889079342698947",
-    "author": "mwx_ai",
-    "text": "🌍MWX | 1st Decentralized AI Marketplace providing plug &amp; play AI solutions for 400M+ SMEs\n🔹3K+ active SMEs\n🔹1,500+ AI purchases\n🔹Supported by 🇮🇩 Ministry of SMEs &amp; Industry, Google, AWS\n",
-    "scores": {
-      "utility": {
-        "score": 20,
-        "reasons": [
-          "基础内容分",
-          "AI 相关内容"
-        ],
-        "weighted": 4
-      },
-      "innovation": {
-        "score": 20,
-        "reasons": [
-          "原创内容"
-        ],
-        "weighted": 3
-      },
-      "completeness": {
-        "score": 55,
-        "reasons": [
-          "有实质内容",
-          "内容长度适中",
-          "表达清晰"
-        ],
-        "weighted": 13.75
-      },
-      "engagement": {
-        "score": 85.29103056245609,
-        "reasons": [
-          "1911 点赞 (32.8分)",
-          "989 转发 (24.0分)",
-          "440 讨论 (18.5分)",
-          "474 收藏 (10.0分)"
-        ],
-        "rawMetrics": {
-          "likes": 1911,
-          "retweets": 989,
-          "replies": 416,
-          "quotes": 24,
-          "bookmarks": 474,
-          "views": 17538
-        },
-        "weighted": 25.587309168736827
-      },
-      "influence": {
-        "score": 80,
-        "reasons": [
-          "认证账号",
-          "粉丝数 > 1万",
-          "AI 领域专家账号"
-        ],
-        "authorData": {
-          "username": "mwx_ai",
-          "followers": 32702,
-          "verified": true
-        },
-        "weighted": 8
-      }
-    },
-    "totalScore": 54,
-    "grade": "C",
-    "metrics": {
-      "likes": 1911,
-      "retweets": 989,
-      "replies": 416,
-      "quotes": 24,
-      "bookmarks": 474,
-      "views": 17538
-    },
-    "createdAt": "Thu Jan 29 15:00:03 +0000 2026"
-  },
-  {
-    "tweetId": "2016889198138322962",
-    "url": "https://x.com/veedstudio/status/2016889198138322962",
-    "author": "veedstudio",
-    "text": "Amazing AI videos NOW from your phone\n\nWith VEED’s mobile app ⚡️\n\n• Pick any AI actor\n• Create AI scripts\n• Get auto captions &amp; smart zoom\n\nShip ads, product demos, explainers\n\n🚨 FREE 500 Credits",
-    "scores": {
-      "utility": {
-        "score": 20,
-        "reasons": [
-          "基础内容分",
-          "AI 相关内容"
-        ],
-        "weighted": 4
-      },
-      "innovation": {
-        "score": 20,
-        "reasons": [
-          "原创内容"
-        ],
-        "weighted": 3
-      },
-      "completeness": {
-        "score": 80,
-        "reasons": [
-          "有实质内容",
-          "内容长度适中",
-          "结构清晰",
-          "表达清晰"
-        ],
-        "weighted": 20
-      },
-      "engagement": {
-        "score": 70.14748725126992,
-        "reasons": [
-          "275 点赞 (24.4分)",
-          "253 转发 (19.2分)",
-          "339 讨论 (17.7分)",
-          "56 收藏 (8.8分)"
-        ],
-        "rawMetrics": {
-          "likes": 275,
-          "retweets": 253,
-          "replies": 328,
-          "quotes": 11,
-          "bookmarks": 56,
-          "views": 7384
-        },
-        "weighted": 21.044246175380977
-      },
-      "influence": {
-        "score": 60,
-        "reasons": [
-          "认证账号",
-          "粉丝数 > 1万"
-        ],
-        "authorData": {
-          "username": "veedstudio",
-          "followers": 18121,
-          "verified": true
-        },
-        "weighted": 6
-      }
-    },
-    "totalScore": 54,
-    "grade": "C",
-    "metrics": {
-      "likes": 275,
-      "retweets": 253,
-      "replies": 328,
-      "quotes": 11,
-      "bookmarks": 56,
-      "views": 7384
-    },
-    "createdAt": "Thu Jan 29 15:00:31 +0000 2026"
-  },
-  {
-    "tweetId": "2016983302293344333",
-    "url": "https://x.com/greg_price11/status/2016983302293344333",
-    "author": "greg_price11",
-    "text": "I can't think of anything that more sums up this current moment then the fact that the media used an old picture of Renee Good and an AI edited facetune of Alex Pretti in their stories because they de",
-    "scores": {
-      "utility": {
-        "score": 20,
-        "reasons": [
-          "基础内容分",
-          "AI 相关内容"
-        ],
-        "weighted": 4
-      },
-      "innovation": {
-        "score": 20,
-        "reasons": [
-          "原创内容"
-        ],
-        "weighted": 3
-      },
-      "completeness": {
-        "score": 55,
-        "reasons": [
-          "有实质内容",
-          "内容长度适中",
-          "表达清晰"
-        ],
-        "weighted": 13.75
-      },
-      "engagement": {
-        "score": 88.0698171854622,
-        "reasons": [
-          "5865 点赞 (37.7分)",
-          "1102 转发 (24.3分)",
-          "195 讨论 (16.0分)",
-          "600 收藏 (10.0分)"
-        ],
-        "rawMetrics": {
-          "likes": 5865,
-          "retweets": 1102,
-          "replies": 149,
-          "quotes": 46,
-          "bookmarks": 600,
-          "views": 253646
-        },
-        "weighted": 26.42094515563866
-      },
-      "influence": {
-        "score": 65,
-        "reasons": [
-          "认证账号",
-          "粉丝数 > 10万"
-        ],
-        "authorData": {
-          "username": "greg_price11",
-          "followers": 519031,
-          "verified": true
-        },
-        "weighted": 6.5
-      }
-    },
-    "totalScore": 54,
-    "grade": "C",
-    "metrics": {
-      "likes": 5865,
-      "retweets": 1102,
-      "replies": 149,
-      "quotes": 46,
-      "bookmarks": 600,
-      "views": 253646
-    },
-    "createdAt": "Thu Jan 29 21:14:27 +0000 2026"
-  },
-  {
-    "tweetId": "2016983302293344333",
-    "url": "https://x.com/greg_price11/status/2016983302293344333",
-    "author": "greg_price11",
-    "text": "I can't think of anything that more sums up this current moment then the fact that the media used an old picture of Renee Good and an AI edited facetune of Alex Pretti in their stories because they de",
-    "scores": {
-      "utility": {
-        "score": 20,
-        "reasons": [
-          "基础内容分",
-          "AI 相关内容"
-        ],
-        "weighted": 4
-      },
-      "innovation": {
-        "score": 20,
-        "reasons": [
-          "原创内容"
-        ],
-        "weighted": 3
-      },
-      "completeness": {
-        "score": 55,
-        "reasons": [
-          "有实质内容",
-          "内容长度适中",
-          "表达清晰"
-        ],
-        "weighted": 13.75
-      },
-      "engagement": {
-        "score": 86.77487511625895,
-        "reasons": [
-          "5115 点赞 (37.1分)",
-          "975 转发 (23.9分)",
-          "178 讨论 (15.8分)",
-          "506 收藏 (10.0分)"
-        ],
-        "rawMetrics": {
-          "likes": 5115,
-          "retweets": 975,
-          "replies": 134,
-          "quotes": 44,
-          "bookmarks": 506,
-          "views": 221464
-        },
-        "weighted": 26.032462534877684
-      },
-      "influence": {
-        "score": 65,
-        "reasons": [
-          "认证账号",
-          "粉丝数 > 10万"
-        ],
-        "authorData": {
-          "username": "greg_price11",
-          "followers": 519011,
-          "verified": true
-        },
-        "weighted": 6.5
-      }
-    },
-    "totalScore": 53,
-    "grade": "C",
-    "metrics": {
-      "likes": 5115,
-      "retweets": 975,
-      "replies": 134,
-      "quotes": 44,
-      "bookmarks": 506,
-      "views": 221464
-    },
-    "createdAt": "Thu Jan 29 21:14:27 +0000 2026"
-  },
-  {
-    "tweetId": "2016983302293344333",
-    "url": "https://x.com/greg_price11/status/2016983302293344333",
-    "author": "greg_price11",
-    "text": "I can't think of anything that more sums up this current moment then the fact that the media used an old picture of Renee Good and an AI edited facetune of Alex Pretti in their stories because they de",
-    "scores": {
-      "utility": {
-        "score": 20,
-        "reasons": [
-          "基础内容分",
-          "AI 相关内容"
-        ],
-        "weighted": 4
-      },
-      "innovation": {
-        "score": 20,
-        "reasons": [
-          "原创内容"
-        ],
-        "weighted": 3
-      },
-      "completeness": {
-        "score": 55,
-        "reasons": [
-          "有实质内容",
-          "内容长度适中",
-          "表达清晰"
-        ],
-        "weighted": 13.75
-      },
-      "engagement": {
-        "score": 86.77487511625895,
-        "reasons": [
-          "5115 点赞 (37.1分)",
-          "975 转发 (23.9分)",
-          "178 讨论 (15.8分)",
-          "506 收藏 (10.0分)"
-        ],
-        "rawMetrics": {
-          "likes": 5115,
-          "retweets": 975,
-          "replies": 134,
-          "quotes": 44,
-          "bookmarks": 506,
-          "views": 221464
-        },
-        "weighted": 26.032462534877684
-      },
-      "influence": {
-        "score": 65,
-        "reasons": [
-          "认证账号",
-          "粉丝数 > 10万"
-        ],
-        "authorData": {
-          "username": "greg_price11",
-          "followers": 519011,
-          "verified": true
-        },
-        "weighted": 6.5
-      }
-    },
-    "totalScore": 53,
-    "grade": "C",
-    "metrics": {
-      "likes": 5115,
-      "retweets": 975,
-      "replies": 134,
-      "quotes": 44,
-      "bookmarks": 506,
-      "views": 221464
-    },
-    "createdAt": "Thu Jan 29 21:14:27 +0000 2026"
-  },
-  {
-    "tweetId": "2016926928478089623",
-    "url": "https://x.com/Google/status/2016926928478089623",
-    "author": "Google",
-    "text": "Introducing Project Genie: An experimental research prototype powered by Genie 3, our world model, that lets you prompt an interactive world into existence — and then step inside 🌎",
-    "scores": {
-      "utility": {
-        "score": 35,
-        "reasons": [
-          "基础内容分",
-          "包含分步骤指南"
-        ],
-        "weighted": 7
-      },
-      "innovation": {
-        "score": 10,
-        "reasons": [
-          "探索性内容"
-        ],
-        "weighted": 1.5
-      },
-      "completeness": {
-        "score": 45,
-        "reasons": [
-          "有实质内容",
-          "表达清晰",
-          "产品公告/新闻"
-        ],
-        "weighted": 11.25
-      },
-      "engagement": {
-        "score": 77.19565721814811,
-        "reasons": [
-          "1728 点赞 (32.4分)",
-          "243 转发 (19.1分)",
-          "175 讨论 (15.7分)",
-          "606 收藏 (10.0分)"
-        ],
-        "rawMetrics": {
-          "likes": 1728,
-          "retweets": 243,
-          "replies": 78,
-          "quotes": 97,
-          "bookmarks": 606,
-          "views": 373741
-        },
-        "weighted": 23.158697165444433
-      },
-      "influence": {
-        "score": 90,
-        "reasons": [
-          "认证账号",
-          "粉丝数 > 100万",
-          "AI 领域专家账号"
-        ],
-        "authorData": {
-          "username": "Google",
-          "followers": 31615583,
-          "verified": true
-        },
-        "weighted": 9
-      }
-    },
-    "totalScore": 52,
-    "grade": "C",
-    "metrics": {
-      "likes": 1728,
-      "retweets": 243,
-      "replies": 78,
-      "quotes": 97,
-      "bookmarks": 606,
-      "views": 373741
-    },
-    "createdAt": "Thu Jan 29 17:30:27 +0000 2026"
-  },
-  {
-    "tweetId": "2016919987428991107",
-    "url": "https://x.com/TheoMediaAI/status/2016919987428991107",
-    "author": "TheoMediaAI",
-    "text": "Google Genie is seriously mind bending. \nThis is a Text To World prompt of a man walking down Hollywood Blvd. I am not only controlling the movement of the man, but also the camera. \n\nThis is the Worl",
-    "scores": {
-      "utility": {
-        "score": 20,
-        "reasons": [
-          "基础内容分",
-          "AI 相关内容"
-        ],
-        "weighted": 4
-      },
-      "innovation": {
-        "score": 20,
-        "reasons": [
-          "原创内容"
-        ],
-        "weighted": 3
-      },
-      "completeness": {
-        "score": 55,
-        "reasons": [
-          "有实质内容",
-          "内容长度适中",
-          "表达清晰"
-        ],
-        "weighted": 13.75
-      },
-      "engagement": {
-        "score": 76.16964520593275,
-        "reasons": [
-          "1954 点赞 (32.9分)",
-          "144 转发 (17.3分)",
-          "190 讨论 (16.0分)",
-          "887 收藏 (10.0分)"
-        ],
-        "rawMetrics": {
-          "likes": 1954,
-          "retweets": 144,
-          "replies": 123,
-          "quotes": 67,
-          "bookmarks": 887,
-          "views": 180006
-        },
-        "weighted": 22.850893561779824
-      },
-      "influence": {
-        "score": 80,
-        "reasons": [
-          "认证账号",
-          "粉丝数 > 1万",
-          "AI 领域专家账号"
-        ],
-        "authorData": {
-          "username": "TheoMediaAI",
-          "followers": 10774,
-          "verified": true
-        },
-        "weighted": 8
-      }
-    },
-    "totalScore": 52,
-    "grade": "C",
-    "metrics": {
-      "likes": 1954,
-      "retweets": 144,
-      "replies": 123,
-      "quotes": 67,
-      "bookmarks": 887,
-      "views": 180006
-    },
-    "createdAt": "Thu Jan 29 17:02:52 +0000 2026"
-  },
-  {
-    "tweetId": "2016926928478089623",
-    "url": "https://x.com/Google/status/2016926928478089623",
-    "author": "Google",
-    "text": "Introducing Project Genie: An experimental research prototype powered by Genie 3, our world model, that lets you prompt an interactive world into existence — and then step inside 🌎",
-    "scores": {
-      "utility": {
-        "score": 35,
-        "reasons": [
-          "基础内容分",
-          "包含分步骤指南"
-        ],
-        "weighted": 7
-      },
-      "innovation": {
-        "score": 10,
-        "reasons": [
-          "探索性内容"
-        ],
-        "weighted": 1.5
-      },
-      "completeness": {
-        "score": 45,
-        "reasons": [
-          "有实质内容",
-          "表达清晰",
-          "产品公告/新闻"
-        ],
-        "weighted": 11.25
-      },
-      "engagement": {
-        "score": 77.19565721814811,
-        "reasons": [
-          "1728 点赞 (32.4分)",
-          "243 转发 (19.1分)",
-          "175 讨论 (15.7分)",
-          "606 收藏 (10.0分)"
-        ],
-        "rawMetrics": {
-          "likes": 1728,
-          "retweets": 243,
-          "replies": 78,
-          "quotes": 97,
-          "bookmarks": 606,
-          "views": 373741
-        },
-        "weighted": 23.158697165444433
-      },
-      "influence": {
-        "score": 90,
-        "reasons": [
-          "认证账号",
-          "粉丝数 > 100万",
-          "AI 领域专家账号"
-        ],
-        "authorData": {
-          "username": "Google",
-          "followers": 31615583,
-          "verified": true
-        },
-        "weighted": 9
-      }
-    },
-    "totalScore": 52,
-    "grade": "C",
-    "metrics": {
-      "likes": 1728,
-      "retweets": 243,
-      "replies": 78,
-      "quotes": 97,
-      "bookmarks": 606,
-      "views": 373741
-    },
-    "createdAt": "Thu Jan 29 17:30:27 +0000 2026"
-  },
-  {
-    "tweetId": "2016919987428991107",
-    "url": "https://x.com/TheoMediaAI/status/2016919987428991107",
-    "author": "TheoMediaAI",
-    "text": "Google Genie is seriously mind bending. \nThis is a Text To World prompt of a man walking down Hollywood Blvd. I am not only controlling the movement of the man, but also the camera. \n\nThis is the Worl",
-    "scores": {
-      "utility": {
-        "score": 20,
-        "reasons": [
-          "基础内容分",
-          "AI 相关内容"
-        ],
-        "weighted": 4
-      },
-      "innovation": {
-        "score": 20,
-        "reasons": [
-          "原创内容"
-        ],
-        "weighted": 3
-      },
-      "completeness": {
-        "score": 55,
-        "reasons": [
-          "有实质内容",
-          "内容长度适中",
-          "表达清晰"
-        ],
-        "weighted": 13.75
-      },
-      "engagement": {
-        "score": 76.16964520593275,
-        "reasons": [
-          "1954 点赞 (32.9分)",
-          "144 转发 (17.3分)",
-          "190 讨论 (16.0分)",
-          "887 收藏 (10.0分)"
-        ],
-        "rawMetrics": {
-          "likes": 1954,
-          "retweets": 144,
-          "replies": 123,
-          "quotes": 67,
-          "bookmarks": 887,
-          "views": 180006
-        },
-        "weighted": 22.850893561779824
-      },
-      "influence": {
-        "score": 80,
-        "reasons": [
-          "认证账号",
-          "粉丝数 > 1万",
-          "AI 领域专家账号"
-        ],
-        "authorData": {
-          "username": "TheoMediaAI",
-          "followers": 10774,
-          "verified": true
-        },
-        "weighted": 8
-      }
-    },
-    "totalScore": 52,
-    "grade": "C",
-    "metrics": {
-      "likes": 1954,
-      "retweets": 144,
-      "replies": 123,
-      "quotes": 67,
-      "bookmarks": 887,
-      "views": 180006
-    },
-    "createdAt": "Thu Jan 29 17:02:52 +0000 2026"
   },
   {
     "tweetId": "2017005168836145329",
@@ -1906,14 +856,14 @@
           "包含分步骤指南",
           "AI 相关内容"
         ],
-        "weighted": 9
+        "weighted": 18
       },
       "innovation": {
         "score": 20,
         "reasons": [
           "原创内容"
         ],
-        "weighted": 3
+        "weighted": 4
       },
       "completeness": {
         "score": 55,
@@ -1922,7 +872,7 @@
           "内容长度适中",
           "表达清晰"
         ],
-        "weighted": 13.75
+        "weighted": 8.25
       },
       "engagement": {
         "score": 51.85105907157916,
@@ -1940,7 +890,7 @@
           "bookmarks": 81,
           "views": 12166
         },
-        "weighted": 15.555317721473747
+        "weighted": 7.7776588607368735
       },
       "influence": {
         "score": 65,
@@ -1956,7 +906,7 @@
         "weighted": 6.5
       }
     },
-    "totalScore": 48,
+    "totalScore": 45,
     "grade": "D",
     "metrics": {
       "likes": 169,
@@ -1967,6 +917,1129 @@
       "views": 12166
     },
     "createdAt": "Thu Jan 29 22:41:21 +0000 2026"
+  },
+  {
+    "tweetId": "2016926928478089623",
+    "url": "https://x.com/Google/status/2016926928478089623",
+    "author": "Google",
+    "text": "Introducing Project Genie: An experimental research prototype powered by Genie 3, our world model, that lets you prompt an interactive world into existence — and then step inside 🌎",
+    "scores": {
+      "utility": {
+        "score": 35,
+        "reasons": [
+          "基础内容分",
+          "包含分步骤指南"
+        ],
+        "weighted": 14
+      },
+      "innovation": {
+        "score": 10,
+        "reasons": [
+          "探索性内容"
+        ],
+        "weighted": 2
+      },
+      "completeness": {
+        "score": 45,
+        "reasons": [
+          "有实质内容",
+          "表达清晰",
+          "产品公告/新闻"
+        ],
+        "weighted": 6.75
+      },
+      "engagement": {
+        "score": 77.19565721814811,
+        "reasons": [
+          "1728 点赞 (32.4分)",
+          "243 转发 (19.1分)",
+          "175 讨论 (15.7分)",
+          "606 收藏 (10.0分)"
+        ],
+        "rawMetrics": {
+          "likes": 1728,
+          "retweets": 243,
+          "replies": 78,
+          "quotes": 97,
+          "bookmarks": 606,
+          "views": 373741
+        },
+        "weighted": 11.579348582722217
+      },
+      "influence": {
+        "score": 90,
+        "reasons": [
+          "认证账号",
+          "粉丝数 > 100万",
+          "AI 领域专家账号"
+        ],
+        "authorData": {
+          "username": "Google",
+          "followers": 31615583,
+          "verified": true
+        },
+        "weighted": 9
+      }
+    },
+    "totalScore": 43,
+    "grade": "D",
+    "metrics": {
+      "likes": 1728,
+      "retweets": 243,
+      "replies": 78,
+      "quotes": 97,
+      "bookmarks": 606,
+      "views": 373741
+    },
+    "createdAt": "Thu Jan 29 17:30:27 +0000 2026"
+  },
+  {
+    "tweetId": "2016925155277361423",
+    "url": "https://x.com/demishassabis/status/2016925155277361423",
+    "author": "demishassabis",
+    "text": "Thrilled to launch Project Genie, an experimental prototype of the world's most advanced world model. Create entire playable worlds to explore in real-time just from a simple text prompt - kind of min",
+    "scores": {
+      "utility": {
+        "score": 20,
+        "reasons": [
+          "基础内容分",
+          "AI 相关内容"
+        ],
+        "weighted": 8
+      },
+      "innovation": {
+        "score": 30,
+        "reasons": [
+          "原创内容",
+          "探索性内容"
+        ],
+        "weighted": 6
+      },
+      "completeness": {
+        "score": 65,
+        "reasons": [
+          "有实质内容",
+          "内容长度适中",
+          "表达清晰",
+          "产品公告/新闻"
+        ],
+        "weighted": 9.75
+      },
+      "engagement": {
+        "score": 85.56957125007968,
+        "reasons": [
+          "3953 点赞 (36.0分)",
+          "466 转发 (21.4分)",
+          "403 讨论 (18.2分)",
+          "1040 收藏 (10.0分)"
+        ],
+        "rawMetrics": {
+          "likes": 3953,
+          "retweets": 466,
+          "replies": 232,
+          "quotes": 171,
+          "bookmarks": 1040,
+          "views": 394627
+        },
+        "weighted": 12.835435687511952
+      },
+      "influence": {
+        "score": 65,
+        "reasons": [
+          "认证账号",
+          "粉丝数 > 10万"
+        ],
+        "authorData": {
+          "username": "demishassabis",
+          "followers": 607971,
+          "verified": true
+        },
+        "weighted": 6.5
+      }
+    },
+    "totalScore": 43,
+    "grade": "D",
+    "metrics": {
+      "likes": 3953,
+      "retweets": 466,
+      "replies": 232,
+      "quotes": 171,
+      "bookmarks": 1040,
+      "views": 394627
+    },
+    "createdAt": "Thu Jan 29 17:23:24 +0000 2026"
+  },
+  {
+    "tweetId": "2016926928478089623",
+    "url": "https://x.com/Google/status/2016926928478089623",
+    "author": "Google",
+    "text": "Introducing Project Genie: An experimental research prototype powered by Genie 3, our world model, that lets you prompt an interactive world into existence — and then step inside 🌎",
+    "scores": {
+      "utility": {
+        "score": 35,
+        "reasons": [
+          "基础内容分",
+          "包含分步骤指南"
+        ],
+        "weighted": 14
+      },
+      "innovation": {
+        "score": 10,
+        "reasons": [
+          "探索性内容"
+        ],
+        "weighted": 2
+      },
+      "completeness": {
+        "score": 45,
+        "reasons": [
+          "有实质内容",
+          "表达清晰",
+          "产品公告/新闻"
+        ],
+        "weighted": 6.75
+      },
+      "engagement": {
+        "score": 77.19565721814811,
+        "reasons": [
+          "1728 点赞 (32.4分)",
+          "243 转发 (19.1分)",
+          "175 讨论 (15.7分)",
+          "606 收藏 (10.0分)"
+        ],
+        "rawMetrics": {
+          "likes": 1728,
+          "retweets": 243,
+          "replies": 78,
+          "quotes": 97,
+          "bookmarks": 606,
+          "views": 373741
+        },
+        "weighted": 11.579348582722217
+      },
+      "influence": {
+        "score": 90,
+        "reasons": [
+          "认证账号",
+          "粉丝数 > 100万",
+          "AI 领域专家账号"
+        ],
+        "authorData": {
+          "username": "Google",
+          "followers": 31615583,
+          "verified": true
+        },
+        "weighted": 9
+      }
+    },
+    "totalScore": 43,
+    "grade": "D",
+    "metrics": {
+      "likes": 1728,
+      "retweets": 243,
+      "replies": 78,
+      "quotes": 97,
+      "bookmarks": 606,
+      "views": 373741
+    },
+    "createdAt": "Thu Jan 29 17:30:27 +0000 2026"
+  },
+  {
+    "tweetId": "2016925155277361423",
+    "url": "https://x.com/demishassabis/status/2016925155277361423",
+    "author": "demishassabis",
+    "text": "Thrilled to launch Project Genie, an experimental prototype of the world's most advanced world model. Create entire playable worlds to explore in real-time just from a simple text prompt - kind of min",
+    "scores": {
+      "utility": {
+        "score": 20,
+        "reasons": [
+          "基础内容分",
+          "AI 相关内容"
+        ],
+        "weighted": 8
+      },
+      "innovation": {
+        "score": 30,
+        "reasons": [
+          "原创内容",
+          "探索性内容"
+        ],
+        "weighted": 6
+      },
+      "completeness": {
+        "score": 65,
+        "reasons": [
+          "有实质内容",
+          "内容长度适中",
+          "表达清晰",
+          "产品公告/新闻"
+        ],
+        "weighted": 9.75
+      },
+      "engagement": {
+        "score": 85.56957125007968,
+        "reasons": [
+          "3953 点赞 (36.0分)",
+          "466 转发 (21.4分)",
+          "403 讨论 (18.2分)",
+          "1040 收藏 (10.0分)"
+        ],
+        "rawMetrics": {
+          "likes": 3953,
+          "retweets": 466,
+          "replies": 232,
+          "quotes": 171,
+          "bookmarks": 1040,
+          "views": 394627
+        },
+        "weighted": 12.835435687511952
+      },
+      "influence": {
+        "score": 65,
+        "reasons": [
+          "认证账号",
+          "粉丝数 > 10万"
+        ],
+        "authorData": {
+          "username": "demishassabis",
+          "followers": 607971,
+          "verified": true
+        },
+        "weighted": 6.5
+      }
+    },
+    "totalScore": 43,
+    "grade": "D",
+    "metrics": {
+      "likes": 3953,
+      "retweets": 466,
+      "replies": 232,
+      "quotes": 171,
+      "bookmarks": 1040,
+      "views": 394627
+    },
+    "createdAt": "Thu Jan 29 17:23:24 +0000 2026"
+  },
+  {
+    "tweetId": "2016925155277361423",
+    "url": "https://x.com/demishassabis/status/2016925155277361423",
+    "author": "demishassabis",
+    "text": "Thrilled to launch Project Genie, an experimental prototype of the world's most advanced world model. Create entire playable worlds to explore in real-time just from a simple text prompt - kind of min",
+    "scores": {
+      "utility": {
+        "score": 20,
+        "reasons": [
+          "基础内容分",
+          "AI 相关内容"
+        ],
+        "weighted": 8
+      },
+      "innovation": {
+        "score": 30,
+        "reasons": [
+          "原创内容",
+          "探索性内容"
+        ],
+        "weighted": 6
+      },
+      "completeness": {
+        "score": 65,
+        "reasons": [
+          "有实质内容",
+          "内容长度适中",
+          "表达清晰",
+          "产品公告/新闻"
+        ],
+        "weighted": 9.75
+      },
+      "engagement": {
+        "score": 86.08570995715742,
+        "reasons": [
+          "4142 点赞 (36.2分)",
+          "493 转发 (21.5分)",
+          "419 讨论 (18.4分)",
+          "1113 收藏 (10.0分)"
+        ],
+        "rawMetrics": {
+          "likes": 4142,
+          "retweets": 493,
+          "replies": 241,
+          "quotes": 178,
+          "bookmarks": 1113,
+          "views": 417942
+        },
+        "weighted": 12.912856493573612
+      },
+      "influence": {
+        "score": 65,
+        "reasons": [
+          "认证账号",
+          "粉丝数 > 10万"
+        ],
+        "authorData": {
+          "username": "demishassabis",
+          "followers": 608104,
+          "verified": true
+        },
+        "weighted": 6.5
+      }
+    },
+    "totalScore": 43,
+    "grade": "D",
+    "metrics": {
+      "likes": 4142,
+      "retweets": 493,
+      "replies": 241,
+      "quotes": 178,
+      "bookmarks": 1113,
+      "views": 417942
+    },
+    "createdAt": "Thu Jan 29 17:23:24 +0000 2026"
+  },
+  {
+    "tweetId": "2016889079342698947",
+    "url": "https://x.com/mwx_ai/status/2016889079342698947",
+    "author": "mwx_ai",
+    "text": "🌍MWX | 1st Decentralized AI Marketplace providing plug &amp; play AI solutions for 400M+ SMEs\n🔹3K+ active SMEs\n🔹1,500+ AI purchases\n🔹Supported by 🇮🇩 Ministry of SMEs &amp; Industry, Google, AWS\n",
+    "scores": {
+      "utility": {
+        "score": 20,
+        "reasons": [
+          "基础内容分",
+          "AI 相关内容"
+        ],
+        "weighted": 8
+      },
+      "innovation": {
+        "score": 20,
+        "reasons": [
+          "原创内容"
+        ],
+        "weighted": 4
+      },
+      "completeness": {
+        "score": 55,
+        "reasons": [
+          "有实质内容",
+          "内容长度适中",
+          "表达清晰"
+        ],
+        "weighted": 8.25
+      },
+      "engagement": {
+        "score": 85.29103056245609,
+        "reasons": [
+          "1911 点赞 (32.8分)",
+          "989 转发 (24.0分)",
+          "440 讨论 (18.5分)",
+          "474 收藏 (10.0分)"
+        ],
+        "rawMetrics": {
+          "likes": 1911,
+          "retweets": 989,
+          "replies": 416,
+          "quotes": 24,
+          "bookmarks": 474,
+          "views": 17538
+        },
+        "weighted": 12.793654584368413
+      },
+      "influence": {
+        "score": 80,
+        "reasons": [
+          "认证账号",
+          "粉丝数 > 1万",
+          "AI 领域专家账号"
+        ],
+        "authorData": {
+          "username": "mwx_ai",
+          "followers": 32702,
+          "verified": true
+        },
+        "weighted": 8
+      }
+    },
+    "totalScore": 41,
+    "grade": "D",
+    "metrics": {
+      "likes": 1911,
+      "retweets": 989,
+      "replies": 416,
+      "quotes": 24,
+      "bookmarks": 474,
+      "views": 17538
+    },
+    "createdAt": "Thu Jan 29 15:00:03 +0000 2026"
+  },
+  {
+    "tweetId": "2016889198138322962",
+    "url": "https://x.com/veedstudio/status/2016889198138322962",
+    "author": "veedstudio",
+    "text": "Amazing AI videos NOW from your phone\n\nWith VEED’s mobile app ⚡️\n\n• Pick any AI actor\n• Create AI scripts\n• Get auto captions &amp; smart zoom\n\nShip ads, product demos, explainers\n\n🚨 FREE 500 Credits",
+    "scores": {
+      "utility": {
+        "score": 20,
+        "reasons": [
+          "基础内容分",
+          "AI 相关内容"
+        ],
+        "weighted": 8
+      },
+      "innovation": {
+        "score": 20,
+        "reasons": [
+          "原创内容"
+        ],
+        "weighted": 4
+      },
+      "completeness": {
+        "score": 80,
+        "reasons": [
+          "有实质内容",
+          "内容长度适中",
+          "结构清晰",
+          "表达清晰"
+        ],
+        "weighted": 12
+      },
+      "engagement": {
+        "score": 70.14748725126992,
+        "reasons": [
+          "275 点赞 (24.4分)",
+          "253 转发 (19.2分)",
+          "339 讨论 (17.7分)",
+          "56 收藏 (8.8分)"
+        ],
+        "rawMetrics": {
+          "likes": 275,
+          "retweets": 253,
+          "replies": 328,
+          "quotes": 11,
+          "bookmarks": 56,
+          "views": 7384
+        },
+        "weighted": 10.522123087690488
+      },
+      "influence": {
+        "score": 60,
+        "reasons": [
+          "认证账号",
+          "粉丝数 > 1万"
+        ],
+        "authorData": {
+          "username": "veedstudio",
+          "followers": 18121,
+          "verified": true
+        },
+        "weighted": 6
+      }
+    },
+    "totalScore": 41,
+    "grade": "D",
+    "metrics": {
+      "likes": 275,
+      "retweets": 253,
+      "replies": 328,
+      "quotes": 11,
+      "bookmarks": 56,
+      "views": 7384
+    },
+    "createdAt": "Thu Jan 29 15:00:31 +0000 2026"
+  },
+  {
+    "tweetId": "2016889079342698947",
+    "url": "https://x.com/mwx_ai/status/2016889079342698947",
+    "author": "mwx_ai",
+    "text": "🌍MWX | 1st Decentralized AI Marketplace providing plug &amp; play AI solutions for 400M+ SMEs\n🔹3K+ active SMEs\n🔹1,500+ AI purchases\n🔹Supported by 🇮🇩 Ministry of SMEs &amp; Industry, Google, AWS\n",
+    "scores": {
+      "utility": {
+        "score": 20,
+        "reasons": [
+          "基础内容分",
+          "AI 相关内容"
+        ],
+        "weighted": 8
+      },
+      "innovation": {
+        "score": 20,
+        "reasons": [
+          "原创内容"
+        ],
+        "weighted": 4
+      },
+      "completeness": {
+        "score": 55,
+        "reasons": [
+          "有实质内容",
+          "内容长度适中",
+          "表达清晰"
+        ],
+        "weighted": 8.25
+      },
+      "engagement": {
+        "score": 85.29103056245609,
+        "reasons": [
+          "1911 点赞 (32.8分)",
+          "989 转发 (24.0分)",
+          "440 讨论 (18.5分)",
+          "474 收藏 (10.0分)"
+        ],
+        "rawMetrics": {
+          "likes": 1911,
+          "retweets": 989,
+          "replies": 416,
+          "quotes": 24,
+          "bookmarks": 474,
+          "views": 17538
+        },
+        "weighted": 12.793654584368413
+      },
+      "influence": {
+        "score": 80,
+        "reasons": [
+          "认证账号",
+          "粉丝数 > 1万",
+          "AI 领域专家账号"
+        ],
+        "authorData": {
+          "username": "mwx_ai",
+          "followers": 32702,
+          "verified": true
+        },
+        "weighted": 8
+      }
+    },
+    "totalScore": 41,
+    "grade": "D",
+    "metrics": {
+      "likes": 1911,
+      "retweets": 989,
+      "replies": 416,
+      "quotes": 24,
+      "bookmarks": 474,
+      "views": 17538
+    },
+    "createdAt": "Thu Jan 29 15:00:03 +0000 2026"
+  },
+  {
+    "tweetId": "2016889198138322962",
+    "url": "https://x.com/veedstudio/status/2016889198138322962",
+    "author": "veedstudio",
+    "text": "Amazing AI videos NOW from your phone\n\nWith VEED’s mobile app ⚡️\n\n• Pick any AI actor\n• Create AI scripts\n• Get auto captions &amp; smart zoom\n\nShip ads, product demos, explainers\n\n🚨 FREE 500 Credits",
+    "scores": {
+      "utility": {
+        "score": 20,
+        "reasons": [
+          "基础内容分",
+          "AI 相关内容"
+        ],
+        "weighted": 8
+      },
+      "innovation": {
+        "score": 20,
+        "reasons": [
+          "原创内容"
+        ],
+        "weighted": 4
+      },
+      "completeness": {
+        "score": 80,
+        "reasons": [
+          "有实质内容",
+          "内容长度适中",
+          "结构清晰",
+          "表达清晰"
+        ],
+        "weighted": 12
+      },
+      "engagement": {
+        "score": 70.14748725126992,
+        "reasons": [
+          "275 点赞 (24.4分)",
+          "253 转发 (19.2分)",
+          "339 讨论 (17.7分)",
+          "56 收藏 (8.8分)"
+        ],
+        "rawMetrics": {
+          "likes": 275,
+          "retweets": 253,
+          "replies": 328,
+          "quotes": 11,
+          "bookmarks": 56,
+          "views": 7384
+        },
+        "weighted": 10.522123087690488
+      },
+      "influence": {
+        "score": 60,
+        "reasons": [
+          "认证账号",
+          "粉丝数 > 1万"
+        ],
+        "authorData": {
+          "username": "veedstudio",
+          "followers": 18121,
+          "verified": true
+        },
+        "weighted": 6
+      }
+    },
+    "totalScore": 41,
+    "grade": "D",
+    "metrics": {
+      "likes": 275,
+      "retweets": 253,
+      "replies": 328,
+      "quotes": 11,
+      "bookmarks": 56,
+      "views": 7384
+    },
+    "createdAt": "Thu Jan 29 15:00:31 +0000 2026"
+  },
+  {
+    "tweetId": "2016983302293344333",
+    "url": "https://x.com/greg_price11/status/2016983302293344333",
+    "author": "greg_price11",
+    "text": "I can't think of anything that more sums up this current moment then the fact that the media used an old picture of Renee Good and an AI edited facetune of Alex Pretti in their stories because they de",
+    "scores": {
+      "utility": {
+        "score": 20,
+        "reasons": [
+          "基础内容分",
+          "AI 相关内容"
+        ],
+        "weighted": 8
+      },
+      "innovation": {
+        "score": 20,
+        "reasons": [
+          "原创内容"
+        ],
+        "weighted": 4
+      },
+      "completeness": {
+        "score": 55,
+        "reasons": [
+          "有实质内容",
+          "内容长度适中",
+          "表达清晰"
+        ],
+        "weighted": 8.25
+      },
+      "engagement": {
+        "score": 86.77487511625895,
+        "reasons": [
+          "5115 点赞 (37.1分)",
+          "975 转发 (23.9分)",
+          "178 讨论 (15.8分)",
+          "506 收藏 (10.0分)"
+        ],
+        "rawMetrics": {
+          "likes": 5115,
+          "retweets": 975,
+          "replies": 134,
+          "quotes": 44,
+          "bookmarks": 506,
+          "views": 221464
+        },
+        "weighted": 13.016231267438842
+      },
+      "influence": {
+        "score": 65,
+        "reasons": [
+          "认证账号",
+          "粉丝数 > 10万"
+        ],
+        "authorData": {
+          "username": "greg_price11",
+          "followers": 519011,
+          "verified": true
+        },
+        "weighted": 6.5
+      }
+    },
+    "totalScore": 40,
+    "grade": "D",
+    "metrics": {
+      "likes": 5115,
+      "retweets": 975,
+      "replies": 134,
+      "quotes": 44,
+      "bookmarks": 506,
+      "views": 221464
+    },
+    "createdAt": "Thu Jan 29 21:14:27 +0000 2026"
+  },
+  {
+    "tweetId": "2017010542888534296",
+    "url": "https://x.com/jmattmiller/status/2017010542888534296",
+    "author": "jmattmiller",
+    "text": "Remember when we thought we had to be experts to get anything out of ChatGPT? Nowadays, it’s less about \"engineering\" and more about clear communication. The best part? Teaching students how to prompt",
+    "scores": {
+      "utility": {
+        "score": 40,
+        "reasons": [
+          "基础内容分",
+          "包含实用指南关键词",
+          "AI 相关内容"
+        ],
+        "weighted": 16
+      },
+      "innovation": {
+        "score": 45,
+        "reasons": [
+          "使用创新性关键词",
+          "原创内容"
+        ],
+        "weighted": 9
+      },
+      "completeness": {
+        "score": 55,
+        "reasons": [
+          "有实质内容",
+          "内容长度适中",
+          "表达清晰"
+        ],
+        "weighted": 8.25
+      },
+      "engagement": {
+        "score": 4.771212547196624,
+        "reasons": [
+          "2 点赞 (4.8分)"
+        ],
+        "rawMetrics": {
+          "likes": 2,
+          "retweets": 0,
+          "replies": 0,
+          "quotes": 0,
+          "bookmarks": 0,
+          "views": 221
+        },
+        "weighted": 0.7156818820794936
+      },
+      "influence": {
+        "score": 65,
+        "reasons": [
+          "认证账号",
+          "粉丝数 > 10万"
+        ],
+        "authorData": {
+          "username": "jmattmiller",
+          "followers": 123920,
+          "verified": true
+        },
+        "weighted": 6.5
+      }
+    },
+    "totalScore": 40,
+    "grade": "D",
+    "metrics": {
+      "likes": 2,
+      "retweets": 0,
+      "replies": 0,
+      "quotes": 0,
+      "bookmarks": 0,
+      "views": 221
+    },
+    "createdAt": "Thu Jan 29 23:02:42 +0000 2026"
+  },
+  {
+    "tweetId": "2016919987428991107",
+    "url": "https://x.com/TheoMediaAI/status/2016919987428991107",
+    "author": "TheoMediaAI",
+    "text": "Google Genie is seriously mind bending. \nThis is a Text To World prompt of a man walking down Hollywood Blvd. I am not only controlling the movement of the man, but also the camera. \n\nThis is the Worl",
+    "scores": {
+      "utility": {
+        "score": 20,
+        "reasons": [
+          "基础内容分",
+          "AI 相关内容"
+        ],
+        "weighted": 8
+      },
+      "innovation": {
+        "score": 20,
+        "reasons": [
+          "原创内容"
+        ],
+        "weighted": 4
+      },
+      "completeness": {
+        "score": 55,
+        "reasons": [
+          "有实质内容",
+          "内容长度适中",
+          "表达清晰"
+        ],
+        "weighted": 8.25
+      },
+      "engagement": {
+        "score": 76.16964520593275,
+        "reasons": [
+          "1954 点赞 (32.9分)",
+          "144 转发 (17.3分)",
+          "190 讨论 (16.0分)",
+          "887 收藏 (10.0分)"
+        ],
+        "rawMetrics": {
+          "likes": 1954,
+          "retweets": 144,
+          "replies": 123,
+          "quotes": 67,
+          "bookmarks": 887,
+          "views": 180006
+        },
+        "weighted": 11.425446780889912
+      },
+      "influence": {
+        "score": 80,
+        "reasons": [
+          "认证账号",
+          "粉丝数 > 1万",
+          "AI 领域专家账号"
+        ],
+        "authorData": {
+          "username": "TheoMediaAI",
+          "followers": 10774,
+          "verified": true
+        },
+        "weighted": 8
+      }
+    },
+    "totalScore": 40,
+    "grade": "D",
+    "metrics": {
+      "likes": 1954,
+      "retweets": 144,
+      "replies": 123,
+      "quotes": 67,
+      "bookmarks": 887,
+      "views": 180006
+    },
+    "createdAt": "Thu Jan 29 17:02:52 +0000 2026"
+  },
+  {
+    "tweetId": "2016983302293344333",
+    "url": "https://x.com/greg_price11/status/2016983302293344333",
+    "author": "greg_price11",
+    "text": "I can't think of anything that more sums up this current moment then the fact that the media used an old picture of Renee Good and an AI edited facetune of Alex Pretti in their stories because they de",
+    "scores": {
+      "utility": {
+        "score": 20,
+        "reasons": [
+          "基础内容分",
+          "AI 相关内容"
+        ],
+        "weighted": 8
+      },
+      "innovation": {
+        "score": 20,
+        "reasons": [
+          "原创内容"
+        ],
+        "weighted": 4
+      },
+      "completeness": {
+        "score": 55,
+        "reasons": [
+          "有实质内容",
+          "内容长度适中",
+          "表达清晰"
+        ],
+        "weighted": 8.25
+      },
+      "engagement": {
+        "score": 86.77487511625895,
+        "reasons": [
+          "5115 点赞 (37.1分)",
+          "975 转发 (23.9分)",
+          "178 讨论 (15.8分)",
+          "506 收藏 (10.0分)"
+        ],
+        "rawMetrics": {
+          "likes": 5115,
+          "retweets": 975,
+          "replies": 134,
+          "quotes": 44,
+          "bookmarks": 506,
+          "views": 221464
+        },
+        "weighted": 13.016231267438842
+      },
+      "influence": {
+        "score": 65,
+        "reasons": [
+          "认证账号",
+          "粉丝数 > 10万"
+        ],
+        "authorData": {
+          "username": "greg_price11",
+          "followers": 519011,
+          "verified": true
+        },
+        "weighted": 6.5
+      }
+    },
+    "totalScore": 40,
+    "grade": "D",
+    "metrics": {
+      "likes": 5115,
+      "retweets": 975,
+      "replies": 134,
+      "quotes": 44,
+      "bookmarks": 506,
+      "views": 221464
+    },
+    "createdAt": "Thu Jan 29 21:14:27 +0000 2026"
+  },
+  {
+    "tweetId": "2016919987428991107",
+    "url": "https://x.com/TheoMediaAI/status/2016919987428991107",
+    "author": "TheoMediaAI",
+    "text": "Google Genie is seriously mind bending. \nThis is a Text To World prompt of a man walking down Hollywood Blvd. I am not only controlling the movement of the man, but also the camera. \n\nThis is the Worl",
+    "scores": {
+      "utility": {
+        "score": 20,
+        "reasons": [
+          "基础内容分",
+          "AI 相关内容"
+        ],
+        "weighted": 8
+      },
+      "innovation": {
+        "score": 20,
+        "reasons": [
+          "原创内容"
+        ],
+        "weighted": 4
+      },
+      "completeness": {
+        "score": 55,
+        "reasons": [
+          "有实质内容",
+          "内容长度适中",
+          "表达清晰"
+        ],
+        "weighted": 8.25
+      },
+      "engagement": {
+        "score": 76.16964520593275,
+        "reasons": [
+          "1954 点赞 (32.9分)",
+          "144 转发 (17.3分)",
+          "190 讨论 (16.0分)",
+          "887 收藏 (10.0分)"
+        ],
+        "rawMetrics": {
+          "likes": 1954,
+          "retweets": 144,
+          "replies": 123,
+          "quotes": 67,
+          "bookmarks": 887,
+          "views": 180006
+        },
+        "weighted": 11.425446780889912
+      },
+      "influence": {
+        "score": 80,
+        "reasons": [
+          "认证账号",
+          "粉丝数 > 1万",
+          "AI 领域专家账号"
+        ],
+        "authorData": {
+          "username": "TheoMediaAI",
+          "followers": 10774,
+          "verified": true
+        },
+        "weighted": 8
+      }
+    },
+    "totalScore": 40,
+    "grade": "D",
+    "metrics": {
+      "likes": 1954,
+      "retweets": 144,
+      "replies": 123,
+      "quotes": 67,
+      "bookmarks": 887,
+      "views": 180006
+    },
+    "createdAt": "Thu Jan 29 17:02:52 +0000 2026"
+  },
+  {
+    "tweetId": "2016983302293344333",
+    "url": "https://x.com/greg_price11/status/2016983302293344333",
+    "author": "greg_price11",
+    "text": "I can't think of anything that more sums up this current moment then the fact that the media used an old picture of Renee Good and an AI edited facetune of Alex Pretti in their stories because they de",
+    "scores": {
+      "utility": {
+        "score": 20,
+        "reasons": [
+          "基础内容分",
+          "AI 相关内容"
+        ],
+        "weighted": 8
+      },
+      "innovation": {
+        "score": 20,
+        "reasons": [
+          "原创内容"
+        ],
+        "weighted": 4
+      },
+      "completeness": {
+        "score": 55,
+        "reasons": [
+          "有实质内容",
+          "内容长度适中",
+          "表达清晰"
+        ],
+        "weighted": 8.25
+      },
+      "engagement": {
+        "score": 88.0698171854622,
+        "reasons": [
+          "5865 点赞 (37.7分)",
+          "1102 转发 (24.3分)",
+          "195 讨论 (16.0分)",
+          "600 收藏 (10.0分)"
+        ],
+        "rawMetrics": {
+          "likes": 5865,
+          "retweets": 1102,
+          "replies": 149,
+          "quotes": 46,
+          "bookmarks": 600,
+          "views": 253646
+        },
+        "weighted": 13.21047257781933
+      },
+      "influence": {
+        "score": 65,
+        "reasons": [
+          "认证账号",
+          "粉丝数 > 10万"
+        ],
+        "authorData": {
+          "username": "greg_price11",
+          "followers": 519031,
+          "verified": true
+        },
+        "weighted": 6.5
+      }
+    },
+    "totalScore": 40,
+    "grade": "D",
+    "metrics": {
+      "likes": 5865,
+      "retweets": 1102,
+      "replies": 149,
+      "quotes": 46,
+      "bookmarks": 600,
+      "views": 253646
+    },
+    "createdAt": "Thu Jan 29 21:14:27 +0000 2026"
   },
   {
     "tweetId": "2017003920103788923",
@@ -1980,14 +2053,14 @@
           "基础内容分",
           "AI 相关内容"
         ],
-        "weighted": 4
+        "weighted": 8
       },
       "innovation": {
         "score": 20,
         "reasons": [
           "原创内容"
         ],
-        "weighted": 3
+        "weighted": 4
       },
       "completeness": {
         "score": 55,
@@ -1996,7 +2069,7 @@
           "内容长度适中",
           "表达清晰"
         ],
-        "weighted": 13.75
+        "weighted": 8.25
       },
       "engagement": {
         "score": 55.47514745672061,
@@ -2014,7 +2087,7 @@
           "bookmarks": 87,
           "views": 26986
         },
-        "weighted": 16.642544237016182
+        "weighted": 8.321272118508091
       },
       "influence": {
         "score": 65,
@@ -2030,7 +2103,7 @@
         "weighted": 6.5
       }
     },
-    "totalScore": 44,
+    "totalScore": 35,
     "grade": "D",
     "metrics": {
       "likes": 290,
@@ -2041,6 +2114,79 @@
       "views": 26986
     },
     "createdAt": "Thu Jan 29 22:36:23 +0000 2026"
+  },
+  {
+    "tweetId": "2016968764554657976",
+    "url": "https://x.com/HP/status/2016968764554657976",
+    "author": "HP",
+    "text": "The future of work is lighter, smarter, and faster—HP EliteBoard G1a, the world’s first full AI PC built into a keyboard, turns any USB‑C display into your streamlined workspace with one cable. \n\nMaxi",
+    "scores": {
+      "utility": {
+        "score": 20,
+        "reasons": [
+          "基础内容分",
+          "AI 相关内容"
+        ],
+        "weighted": 8
+      },
+      "innovation": {
+        "score": 20,
+        "reasons": [
+          "原创内容"
+        ],
+        "weighted": 4
+      },
+      "completeness": {
+        "score": 55,
+        "reasons": [
+          "有实质内容",
+          "内容长度适中",
+          "表达清晰"
+        ],
+        "weighted": 8.25
+      },
+      "engagement": {
+        "score": 24.401085065843397,
+        "reasons": [
+          "17 点赞 (12.6分)",
+          "8 转发 (7.6分)",
+          "3 讨论 (4.2分)"
+        ],
+        "rawMetrics": {
+          "likes": 17,
+          "retweets": 8,
+          "replies": 3,
+          "quotes": 0,
+          "bookmarks": 0,
+          "views": 1063
+        },
+        "weighted": 3.6601627598765094
+      },
+      "influence": {
+        "score": 70,
+        "reasons": [
+          "认证账号",
+          "粉丝数 > 100万"
+        ],
+        "authorData": {
+          "username": "HP",
+          "followers": 1096744,
+          "verified": true
+        },
+        "weighted": 7
+      }
+    },
+    "totalScore": 31,
+    "grade": "D",
+    "metrics": {
+      "likes": 17,
+      "retweets": 8,
+      "replies": 3,
+      "quotes": 0,
+      "bookmarks": 0,
+      "views": 1063
+    },
+    "createdAt": "Thu Jan 29 20:16:41 +0000 2026"
   },
   {
     "tweetId": "2017013843692773773",
@@ -2054,7 +2200,7 @@
           "基础内容分",
           "AI 相关内容"
         ],
-        "weighted": 4
+        "weighted": 8
       },
       "innovation": {
         "score": 0,
@@ -2067,7 +2213,7 @@
           "有实质内容",
           "表达清晰"
         ],
-        "weighted": 8.75
+        "weighted": 5.25
       },
       "engagement": {
         "score": 64.43446640862969,
@@ -2085,7 +2231,7 @@
           "bookmarks": 106,
           "views": 49582
         },
-        "weighted": 19.330339922588905
+        "weighted": 9.665169961294453
       },
       "influence": {
         "score": 85,
@@ -2102,7 +2248,7 @@
         "weighted": 8.5
       }
     },
-    "totalScore": 41,
+    "totalScore": 31,
     "grade": "D",
     "metrics": {
       "likes": 609,
@@ -2113,76 +2259,6 @@
       "views": 49582
     },
     "createdAt": "Thu Jan 29 23:15:49 +0000 2026"
-  },
-  {
-    "tweetId": "2016980894788080127",
-    "url": "https://x.com/ScinnAI/status/2016980894788080127",
-    "author": "ScinnAI",
-    "text": "Jill Valentine\nSFW\n#ResidentEvil https://t.co/8EY84J9GYR",
-    "scores": {
-      "utility": {
-        "score": 10,
-        "reasons": [
-          "基础内容分"
-        ],
-        "weighted": 2
-      },
-      "innovation": {
-        "score": 0,
-        "reasons": [],
-        "weighted": 0
-      },
-      "completeness": {
-        "score": 35,
-        "reasons": [
-          "有实质内容",
-          "表达清晰"
-        ],
-        "weighted": 8.75
-      },
-      "engagement": {
-        "score": 79.86889860533165,
-        "reasons": [
-          "12696 点赞 (40.0分)",
-          "573 转发 (22.1分)",
-          "12 讨论 (7.8分)",
-          "2301 收藏 (10.0分)"
-        ],
-        "rawMetrics": {
-          "likes": 12696,
-          "retweets": 573,
-          "replies": 11,
-          "quotes": 1,
-          "bookmarks": 2301,
-          "views": 66799
-        },
-        "weighted": 23.960669581599493
-      },
-      "influence": {
-        "score": 50,
-        "reasons": [
-          "粉丝数 > 1万",
-          "AI 领域专家账号"
-        ],
-        "authorData": {
-          "username": "ScinnAI",
-          "followers": 12661,
-          "verified": false
-        },
-        "weighted": 5
-      }
-    },
-    "totalScore": 40,
-    "grade": "D",
-    "metrics": {
-      "likes": 12696,
-      "retweets": 573,
-      "replies": 11,
-      "quotes": 1,
-      "bookmarks": 2301,
-      "views": 66799
-    },
-    "createdAt": "Thu Jan 29 21:04:53 +0000 2026"
   },
   {
     "tweetId": "2016957235721601504",
@@ -2196,7 +2272,7 @@
           "基础内容分",
           "AI 相关内容"
         ],
-        "weighted": 4
+        "weighted": 8
       },
       "innovation": {
         "score": 0,
@@ -2209,7 +2285,7 @@
           "有实质内容",
           "表达清晰"
         ],
-        "weighted": 8.75
+        "weighted": 5.25
       },
       "engagement": {
         "score": 71.79735816119367,
@@ -2227,7 +2303,7 @@
           "bookmarks": 421,
           "views": 135636
         },
-        "weighted": 21.539207448358102
+        "weighted": 10.769603724179051
       },
       "influence": {
         "score": 60,
@@ -2243,7 +2319,7 @@
         "weighted": 6
       }
     },
-    "totalScore": 40,
+    "totalScore": 30,
     "grade": "D",
     "metrics": {
       "likes": 1735,
@@ -2267,7 +2343,7 @@
           "基础内容分",
           "AI 相关内容"
         ],
-        "weighted": 4
+        "weighted": 8
       },
       "innovation": {
         "score": 0,
@@ -2280,7 +2356,7 @@
           "有实质内容",
           "表达清晰"
         ],
-        "weighted": 8.75
+        "weighted": 5.25
       },
       "engagement": {
         "score": 70.16769224754238,
@@ -2298,7 +2374,7 @@
           "bookmarks": 135,
           "views": 66262
         },
-        "weighted": 21.05030767426271
+        "weighted": 10.525153837131356
       },
       "influence": {
         "score": 60,
@@ -2314,7 +2390,7 @@
         "weighted": 6
       }
     },
-    "totalScore": 40,
+    "totalScore": 30,
     "grade": "D",
     "metrics": {
       "likes": 987,
@@ -2327,10 +2403,10 @@
     "createdAt": "Thu Jan 29 20:39:16 +0000 2026"
   },
   {
-    "tweetId": "2016938099683557430",
-    "url": "https://x.com/rjNUFC/status/2016938099683557430",
-    "author": "rjNUFC",
-    "text": "This AI shite needs to stop man. Wait for Ashley Cole haha. https://t.co/vTxhGGOa35",
+    "tweetId": "2016985444823482707",
+    "url": "https://x.com/HALBERDSTUDIOS/status/2016985444823482707",
+    "author": "HALBERDSTUDIOS",
+    "text": "Pixel art not made with AI 🎨 https://t.co/1UEdrORDpA",
     "scores": {
       "utility": {
         "score": 20,
@@ -2338,7 +2414,7 @@
           "基础内容分",
           "AI 相关内容"
         ],
-        "weighted": 4
+        "weighted": 8
       },
       "innovation": {
         "score": 0,
@@ -2351,7 +2427,220 @@
           "有实质内容",
           "表达清晰"
         ],
-        "weighted": 8.75
+        "weighted": 5.25
+      },
+      "engagement": {
+        "score": 59.34402413290579,
+        "reasons": [
+          "458 点赞 (26.6分)",
+          "82 转发 (15.4分)",
+          "19 讨论 (9.1分)",
+          "44 收藏 (8.3分)"
+        ],
+        "rawMetrics": {
+          "likes": 458,
+          "retweets": 82,
+          "replies": 12,
+          "quotes": 7,
+          "bookmarks": 44,
+          "views": 11759
+        },
+        "weighted": 8.901603619935868
+      },
+      "influence": {
+        "score": 60,
+        "reasons": [
+          "认证账号",
+          "粉丝数 > 1万"
+        ],
+        "authorData": {
+          "username": "HALBERDSTUDIOS",
+          "followers": 30648,
+          "verified": true
+        },
+        "weighted": 6
+      }
+    },
+    "totalScore": 28,
+    "grade": "D",
+    "metrics": {
+      "likes": 458,
+      "retweets": 82,
+      "replies": 12,
+      "quotes": 7,
+      "bookmarks": 44,
+      "views": 11759
+    },
+    "createdAt": "Thu Jan 29 21:22:58 +0000 2026"
+  },
+  {
+    "tweetId": "2016985444823482707",
+    "url": "https://x.com/HALBERDSTUDIOS/status/2016985444823482707",
+    "author": "HALBERDSTUDIOS",
+    "text": "Pixel art not made with AI 🎨 https://t.co/1UEdrORDpA",
+    "scores": {
+      "utility": {
+        "score": 20,
+        "reasons": [
+          "基础内容分",
+          "AI 相关内容"
+        ],
+        "weighted": 8
+      },
+      "innovation": {
+        "score": 0,
+        "reasons": [],
+        "weighted": 0
+      },
+      "completeness": {
+        "score": 35,
+        "reasons": [
+          "有实质内容",
+          "表达清晰"
+        ],
+        "weighted": 5.25
+      },
+      "engagement": {
+        "score": 59.34402413290579,
+        "reasons": [
+          "458 点赞 (26.6分)",
+          "82 转发 (15.4分)",
+          "19 讨论 (9.1分)",
+          "44 收藏 (8.3分)"
+        ],
+        "rawMetrics": {
+          "likes": 458,
+          "retweets": 82,
+          "replies": 12,
+          "quotes": 7,
+          "bookmarks": 44,
+          "views": 11759
+        },
+        "weighted": 8.901603619935868
+      },
+      "influence": {
+        "score": 60,
+        "reasons": [
+          "认证账号",
+          "粉丝数 > 1万"
+        ],
+        "authorData": {
+          "username": "HALBERDSTUDIOS",
+          "followers": 30648,
+          "verified": true
+        },
+        "weighted": 6
+      }
+    },
+    "totalScore": 28,
+    "grade": "D",
+    "metrics": {
+      "likes": 458,
+      "retweets": 82,
+      "replies": 12,
+      "quotes": 7,
+      "bookmarks": 44,
+      "views": 11759
+    },
+    "createdAt": "Thu Jan 29 21:22:58 +0000 2026"
+  },
+  {
+    "tweetId": "2016985444823482707",
+    "url": "https://x.com/HALBERDSTUDIOS/status/2016985444823482707",
+    "author": "HALBERDSTUDIOS",
+    "text": "Pixel art not made with AI 🎨 https://t.co/1UEdrORDpA",
+    "scores": {
+      "utility": {
+        "score": 20,
+        "reasons": [
+          "基础内容分",
+          "AI 相关内容"
+        ],
+        "weighted": 8
+      },
+      "innovation": {
+        "score": 0,
+        "reasons": [],
+        "weighted": 0
+      },
+      "completeness": {
+        "score": 35,
+        "reasons": [
+          "有实质内容",
+          "表达清晰"
+        ],
+        "weighted": 5.25
+      },
+      "engagement": {
+        "score": 60.780884236715124,
+        "reasons": [
+          "532 点赞 (27.3分)",
+          "93 转发 (15.8分)",
+          "19 讨论 (9.1分)",
+          "52 收藏 (8.6分)"
+        ],
+        "rawMetrics": {
+          "likes": 532,
+          "retweets": 93,
+          "replies": 12,
+          "quotes": 7,
+          "bookmarks": 52,
+          "views": 13287
+        },
+        "weighted": 9.117132635507268
+      },
+      "influence": {
+        "score": 60,
+        "reasons": [
+          "认证账号",
+          "粉丝数 > 1万"
+        ],
+        "authorData": {
+          "username": "HALBERDSTUDIOS",
+          "followers": 30652,
+          "verified": true
+        },
+        "weighted": 6
+      }
+    },
+    "totalScore": 28,
+    "grade": "D",
+    "metrics": {
+      "likes": 532,
+      "retweets": 93,
+      "replies": 12,
+      "quotes": 7,
+      "bookmarks": 52,
+      "views": 13287
+    },
+    "createdAt": "Thu Jan 29 21:22:58 +0000 2026"
+  },
+  {
+    "tweetId": "2016938099683557430",
+    "url": "https://x.com/rjNUFC/status/2016938099683557430",
+    "author": "rjNUFC",
+    "text": "This AI shite needs to stop man. Wait for Ashley Cole haha. https://t.co/vTxhGGOa35",
+    "scores": {
+      "utility": {
+        "score": 20,
+        "reasons": [
+          "基础内容分",
+          "AI 相关内容"
+        ],
+        "weighted": 8
+      },
+      "innovation": {
+        "score": 0,
+        "reasons": [],
+        "weighted": 0
+      },
+      "completeness": {
+        "score": 35,
+        "reasons": [
+          "有实质内容",
+          "表达清晰"
+        ],
+        "weighted": 5.25
       },
       "engagement": {
         "score": 83.29432727229403,
@@ -2369,7 +2658,7 @@
           "bookmarks": 634,
           "views": 375935
         },
-        "weighted": 24.988298181688208
+        "weighted": 12.494149090844104
       },
       "influence": {
         "score": 10,
@@ -2384,7 +2673,7 @@
         "weighted": 1
       }
     },
-    "totalScore": 39,
+    "totalScore": 27,
     "grade": "D",
     "metrics": {
       "likes": 4126,
@@ -2408,7 +2697,7 @@
           "基础内容分",
           "AI 相关内容"
         ],
-        "weighted": 4
+        "weighted": 8
       },
       "innovation": {
         "score": 0,
@@ -2421,7 +2710,7 @@
           "有实质内容",
           "表达清晰"
         ],
-        "weighted": 8.75
+        "weighted": 5.25
       },
       "engagement": {
         "score": 83.29432727229403,
@@ -2439,7 +2728,7 @@
           "bookmarks": 634,
           "views": 375935
         },
-        "weighted": 24.988298181688208
+        "weighted": 12.494149090844104
       },
       "influence": {
         "score": 10,
@@ -2454,7 +2743,7 @@
         "weighted": 1
       }
     },
-    "totalScore": 39,
+    "totalScore": 27,
     "grade": "D",
     "metrics": {
       "likes": 4126,
@@ -2478,7 +2767,7 @@
           "基础内容分",
           "AI 相关内容"
         ],
-        "weighted": 4
+        "weighted": 8
       },
       "innovation": {
         "score": 0,
@@ -2491,7 +2780,7 @@
           "有实质内容",
           "表达清晰"
         ],
-        "weighted": 8.75
+        "weighted": 5.25
       },
       "engagement": {
         "score": 85.04357404384936,
@@ -2509,7 +2798,7 @@
           "bookmarks": 754,
           "views": 441768
         },
-        "weighted": 25.513072213154807
+        "weighted": 12.756536106577403
       },
       "influence": {
         "score": 10,
@@ -2524,7 +2813,7 @@
         "weighted": 1
       }
     },
-    "totalScore": 39,
+    "totalScore": 27,
     "grade": "D",
     "metrics": {
       "likes": 4865,
@@ -2537,6 +2826,148 @@
     "createdAt": "Thu Jan 29 18:14:50 +0000 2026"
   },
   {
+    "tweetId": "2017012733816737826",
+    "url": "https://x.com/Rossmac212/status/2017012733816737826",
+    "author": "Rossmac212",
+    "text": "AI got the Ashley Cole one a bit wrong😂                                       https://t.co/pl7JCeDwOS",
+    "scores": {
+      "utility": {
+        "score": 20,
+        "reasons": [
+          "基础内容分",
+          "AI 相关内容"
+        ],
+        "weighted": 8
+      },
+      "innovation": {
+        "score": 0,
+        "reasons": [],
+        "weighted": 0
+      },
+      "completeness": {
+        "score": 35,
+        "reasons": [
+          "有实质内容",
+          "表达清晰"
+        ],
+        "weighted": 5.25
+      },
+      "engagement": {
+        "score": 45.72009791238708,
+        "reasons": [
+          "105 点赞 (20.3分)",
+          "13 转发 (9.2分)",
+          "21 讨论 (9.4分)",
+          "23 收藏 (6.9分)"
+        ],
+        "rawMetrics": {
+          "likes": 105,
+          "retweets": 13,
+          "replies": 17,
+          "quotes": 4,
+          "bookmarks": 23,
+          "views": 11176
+        },
+        "weighted": 6.858014686858062
+      },
+      "influence": {
+        "score": 65,
+        "reasons": [
+          "认证账号",
+          "粉丝数 > 10万"
+        ],
+        "authorData": {
+          "username": "Rossmac212",
+          "followers": 169327,
+          "verified": true
+        },
+        "weighted": 6.5
+      }
+    },
+    "totalScore": 27,
+    "grade": "D",
+    "metrics": {
+      "likes": 105,
+      "retweets": 13,
+      "replies": 17,
+      "quotes": 4,
+      "bookmarks": 23,
+      "views": 11176
+    },
+    "createdAt": "Thu Jan 29 23:11:24 +0000 2026"
+  },
+  {
+    "tweetId": "2016884797214220551",
+    "url": "https://x.com/jimgeraghty/status/2016884797214220551",
+    "author": "jimgeraghty",
+    "text": "How I feel being besieged by AI prompts, automatic AI-based searches, and AI-ification of every app: https://t.co/NCFboWEhdA",
+    "scores": {
+      "utility": {
+        "score": 20,
+        "reasons": [
+          "基础内容分",
+          "AI 相关内容"
+        ],
+        "weighted": 8
+      },
+      "innovation": {
+        "score": 0,
+        "reasons": [],
+        "weighted": 0
+      },
+      "completeness": {
+        "score": 35,
+        "reasons": [
+          "有实质内容",
+          "表达清晰"
+        ],
+        "weighted": 5.25
+      },
+      "engagement": {
+        "score": 40.35344886984518,
+        "reasons": [
+          "108 点赞 (20.4分)",
+          "14 转发 (9.4分)",
+          "8 讨论 (6.7分)",
+          "5 收藏 (3.9分)"
+        ],
+        "rawMetrics": {
+          "likes": 108,
+          "retweets": 14,
+          "replies": 7,
+          "quotes": 1,
+          "bookmarks": 5,
+          "views": 2786
+        },
+        "weighted": 6.053017330476777
+      },
+      "influence": {
+        "score": 65,
+        "reasons": [
+          "认证账号",
+          "粉丝数 > 10万"
+        ],
+        "authorData": {
+          "username": "jimgeraghty",
+          "followers": 120551,
+          "verified": true
+        },
+        "weighted": 6.5
+      }
+    },
+    "totalScore": 26,
+    "grade": "D",
+    "metrics": {
+      "likes": 108,
+      "retweets": 14,
+      "replies": 7,
+      "quotes": 1,
+      "bookmarks": 5,
+      "views": 2786
+    },
+    "createdAt": "Thu Jan 29 14:43:02 +0000 2026"
+  },
+  {
     "tweetId": "2016959338523611621",
     "url": "https://x.com/OpenAI/status/2016959338523611621",
     "author": "OpenAI",
@@ -2547,7 +2978,7 @@
         "reasons": [
           "基础内容分"
         ],
-        "weighted": 2
+        "weighted": 4
       },
       "innovation": {
         "score": 0,
@@ -2575,7 +3006,7 @@
           "bookmarks": 973,
           "views": 415907
         },
-        "weighted": 25.599155220372012
+        "weighted": 12.799577610186006
       },
       "influence": {
         "score": 90,
@@ -2592,7 +3023,7 @@
         "weighted": 9
       }
     },
-    "totalScore": 37,
+    "totalScore": 26,
     "grade": "D",
     "metrics": {
       "likes": 4245,
@@ -2605,10 +3036,10 @@
     "createdAt": "Thu Jan 29 19:39:14 +0000 2026"
   },
   {
-    "tweetId": "2016985444823482707",
-    "url": "https://x.com/HALBERDSTUDIOS/status/2016985444823482707",
-    "author": "HALBERDSTUDIOS",
-    "text": "Pixel art not made with AI 🎨 https://t.co/1UEdrORDpA",
+    "tweetId": "2016884797214220551",
+    "url": "https://x.com/jimgeraghty/status/2016884797214220551",
+    "author": "jimgeraghty",
+    "text": "How I feel being besieged by AI prompts, automatic AI-based searches, and AI-ification of every app: https://t.co/NCFboWEhdA",
     "scores": {
       "utility": {
         "score": 20,
@@ -2616,7 +3047,7 @@
           "基础内容分",
           "AI 相关内容"
         ],
-        "weighted": 4
+        "weighted": 8
       },
       "innovation": {
         "score": 0,
@@ -2629,51 +3060,51 @@
           "有实质内容",
           "表达清晰"
         ],
-        "weighted": 8.75
+        "weighted": 5.25
       },
       "engagement": {
-        "score": 59.34402413290579,
+        "score": 40.35344886984518,
         "reasons": [
-          "458 点赞 (26.6分)",
-          "82 转发 (15.4分)",
-          "19 讨论 (9.1分)",
-          "44 收藏 (8.3分)"
+          "108 点赞 (20.4分)",
+          "14 转发 (9.4分)",
+          "8 讨论 (6.7分)",
+          "5 收藏 (3.9分)"
         ],
         "rawMetrics": {
-          "likes": 458,
-          "retweets": 82,
-          "replies": 12,
-          "quotes": 7,
-          "bookmarks": 44,
-          "views": 11759
+          "likes": 108,
+          "retweets": 14,
+          "replies": 7,
+          "quotes": 1,
+          "bookmarks": 5,
+          "views": 2786
         },
-        "weighted": 17.803207239871735
+        "weighted": 6.053017330476777
       },
       "influence": {
-        "score": 60,
+        "score": 65,
         "reasons": [
           "认证账号",
-          "粉丝数 > 1万"
+          "粉丝数 > 10万"
         ],
         "authorData": {
-          "username": "HALBERDSTUDIOS",
-          "followers": 30648,
+          "username": "jimgeraghty",
+          "followers": 120551,
           "verified": true
         },
-        "weighted": 6
+        "weighted": 6.5
       }
     },
-    "totalScore": 37,
+    "totalScore": 26,
     "grade": "D",
     "metrics": {
-      "likes": 458,
-      "retweets": 82,
-      "replies": 12,
-      "quotes": 7,
-      "bookmarks": 44,
-      "views": 11759
+      "likes": 108,
+      "retweets": 14,
+      "replies": 7,
+      "quotes": 1,
+      "bookmarks": 5,
+      "views": 2786
     },
-    "createdAt": "Thu Jan 29 21:22:58 +0000 2026"
+    "createdAt": "Thu Jan 29 14:43:02 +0000 2026"
   },
   {
     "tweetId": "2016959338523611621",
@@ -2686,7 +3117,7 @@
         "reasons": [
           "基础内容分"
         ],
-        "weighted": 2
+        "weighted": 4
       },
       "innovation": {
         "score": 0,
@@ -2714,7 +3145,7 @@
           "bookmarks": 973,
           "views": 415907
         },
-        "weighted": 25.599155220372012
+        "weighted": 12.799577610186006
       },
       "influence": {
         "score": 90,
@@ -2731,7 +3162,7 @@
         "weighted": 9
       }
     },
-    "totalScore": 37,
+    "totalScore": 26,
     "grade": "D",
     "metrics": {
       "likes": 4245,
@@ -2744,16 +3175,15 @@
     "createdAt": "Thu Jan 29 19:39:14 +0000 2026"
   },
   {
-    "tweetId": "2016985444823482707",
-    "url": "https://x.com/HALBERDSTUDIOS/status/2016985444823482707",
-    "author": "HALBERDSTUDIOS",
-    "text": "Pixel art not made with AI 🎨 https://t.co/1UEdrORDpA",
+    "tweetId": "2016980894788080127",
+    "url": "https://x.com/ScinnAI/status/2016980894788080127",
+    "author": "ScinnAI",
+    "text": "Jill Valentine\nSFW\n#ResidentEvil https://t.co/8EY84J9GYR",
     "scores": {
       "utility": {
-        "score": 20,
+        "score": 10,
         "reasons": [
-          "基础内容分",
-          "AI 相关内容"
+          "基础内容分"
         ],
         "weighted": 4
       },
@@ -2768,51 +3198,51 @@
           "有实质内容",
           "表达清晰"
         ],
-        "weighted": 8.75
+        "weighted": 5.25
       },
       "engagement": {
-        "score": 59.34402413290579,
+        "score": 79.86889860533165,
         "reasons": [
-          "458 点赞 (26.6分)",
-          "82 转发 (15.4分)",
-          "19 讨论 (9.1分)",
-          "44 收藏 (8.3分)"
+          "12696 点赞 (40.0分)",
+          "573 转发 (22.1分)",
+          "12 讨论 (7.8分)",
+          "2301 收藏 (10.0分)"
         ],
         "rawMetrics": {
-          "likes": 458,
-          "retweets": 82,
-          "replies": 12,
-          "quotes": 7,
-          "bookmarks": 44,
-          "views": 11759
+          "likes": 12696,
+          "retweets": 573,
+          "replies": 11,
+          "quotes": 1,
+          "bookmarks": 2301,
+          "views": 66799
         },
-        "weighted": 17.803207239871735
+        "weighted": 11.980334790799747
       },
       "influence": {
-        "score": 60,
+        "score": 50,
         "reasons": [
-          "认证账号",
-          "粉丝数 > 1万"
+          "粉丝数 > 1万",
+          "AI 领域专家账号"
         ],
         "authorData": {
-          "username": "HALBERDSTUDIOS",
-          "followers": 30648,
-          "verified": true
+          "username": "ScinnAI",
+          "followers": 12661,
+          "verified": false
         },
-        "weighted": 6
+        "weighted": 5
       }
     },
-    "totalScore": 37,
+    "totalScore": 26,
     "grade": "D",
     "metrics": {
-      "likes": 458,
-      "retweets": 82,
-      "replies": 12,
-      "quotes": 7,
-      "bookmarks": 44,
-      "views": 11759
+      "likes": 12696,
+      "retweets": 573,
+      "replies": 11,
+      "quotes": 1,
+      "bookmarks": 2301,
+      "views": 66799
     },
-    "createdAt": "Thu Jan 29 21:22:58 +0000 2026"
+    "createdAt": "Thu Jan 29 21:04:53 +0000 2026"
   },
   {
     "tweetId": "2016959338523611621",
@@ -2825,7 +3255,7 @@
         "reasons": [
           "基础内容分"
         ],
-        "weighted": 2
+        "weighted": 4
       },
       "innovation": {
         "score": 0,
@@ -2853,7 +3283,7 @@
           "bookmarks": 1033,
           "views": 452303
         },
-        "weighted": 25.831916530312373
+        "weighted": 12.915958265156187
       },
       "influence": {
         "score": 90,
@@ -2870,7 +3300,7 @@
         "weighted": 9
       }
     },
-    "totalScore": 37,
+    "totalScore": 26,
     "grade": "D",
     "metrics": {
       "likes": 4530,
@@ -2883,16 +3313,15 @@
     "createdAt": "Thu Jan 29 19:39:14 +0000 2026"
   },
   {
-    "tweetId": "2016985444823482707",
-    "url": "https://x.com/HALBERDSTUDIOS/status/2016985444823482707",
-    "author": "HALBERDSTUDIOS",
-    "text": "Pixel art not made with AI 🎨 https://t.co/1UEdrORDpA",
+    "tweetId": "2016989786054283679",
+    "url": "https://x.com/lapis_micha/status/2016989786054283679",
+    "author": "lapis_micha",
+    "text": "あと少しがんばりましょうね✨\n#アーリャ SFW anime-style illustration. No nudity. https://t.co/tICHdpxOl6",
     "scores": {
       "utility": {
-        "score": 20,
+        "score": 10,
         "reasons": [
-          "基础内容分",
-          "AI 相关内容"
+          "基础内容分"
         ],
         "weighted": 4
       },
@@ -2907,150 +3336,7 @@
           "有实质内容",
           "表达清晰"
         ],
-        "weighted": 8.75
-      },
-      "engagement": {
-        "score": 60.780884236715124,
-        "reasons": [
-          "532 点赞 (27.3分)",
-          "93 转发 (15.8分)",
-          "19 讨论 (9.1分)",
-          "52 收藏 (8.6分)"
-        ],
-        "rawMetrics": {
-          "likes": 532,
-          "retweets": 93,
-          "replies": 12,
-          "quotes": 7,
-          "bookmarks": 52,
-          "views": 13287
-        },
-        "weighted": 18.234265271014536
-      },
-      "influence": {
-        "score": 60,
-        "reasons": [
-          "认证账号",
-          "粉丝数 > 1万"
-        ],
-        "authorData": {
-          "username": "HALBERDSTUDIOS",
-          "followers": 30652,
-          "verified": true
-        },
-        "weighted": 6
-      }
-    },
-    "totalScore": 37,
-    "grade": "D",
-    "metrics": {
-      "likes": 532,
-      "retweets": 93,
-      "replies": 12,
-      "quotes": 7,
-      "bookmarks": 52,
-      "views": 13287
-    },
-    "createdAt": "Thu Jan 29 21:22:58 +0000 2026"
-  },
-  {
-    "tweetId": "2017010542888534296",
-    "url": "https://x.com/jmattmiller/status/2017010542888534296",
-    "author": "jmattmiller",
-    "text": "Remember when we thought we had to be experts to get anything out of ChatGPT? Nowadays, it’s less about \"engineering\" and more about clear communication. The best part? Teaching students how to prompt",
-    "scores": {
-      "utility": {
-        "score": 40,
-        "reasons": [
-          "基础内容分",
-          "包含实用指南关键词",
-          "AI 相关内容"
-        ],
-        "weighted": 8
-      },
-      "innovation": {
-        "score": 45,
-        "reasons": [
-          "使用创新性关键词",
-          "原创内容"
-        ],
-        "weighted": 6.75
-      },
-      "completeness": {
-        "score": 55,
-        "reasons": [
-          "有实质内容",
-          "内容长度适中",
-          "表达清晰"
-        ],
-        "weighted": 13.75
-      },
-      "engagement": {
-        "score": 4.771212547196624,
-        "reasons": [
-          "2 点赞 (4.8分)"
-        ],
-        "rawMetrics": {
-          "likes": 2,
-          "retweets": 0,
-          "replies": 0,
-          "quotes": 0,
-          "bookmarks": 0,
-          "views": 221
-        },
-        "weighted": 1.4313637641589871
-      },
-      "influence": {
-        "score": 65,
-        "reasons": [
-          "认证账号",
-          "粉丝数 > 10万"
-        ],
-        "authorData": {
-          "username": "jmattmiller",
-          "followers": 123920,
-          "verified": true
-        },
-        "weighted": 6.5
-      }
-    },
-    "totalScore": 36,
-    "grade": "D",
-    "metrics": {
-      "likes": 2,
-      "retweets": 0,
-      "replies": 0,
-      "quotes": 0,
-      "bookmarks": 0,
-      "views": 221
-    },
-    "createdAt": "Thu Jan 29 23:02:42 +0000 2026"
-  },
-  {
-    "tweetId": "2016989786054283679",
-    "url": "https://x.com/lapis_micha/status/2016989786054283679",
-    "author": "lapis_micha",
-    "text": "あと少しがんばりましょうね✨\n#アーリャ SFW anime-style illustration. No nudity. https://t.co/tICHdpxOl6",
-    "scores": {
-      "utility": {
-        "score": 10,
-        "reasons": [
-          "基础内容分"
-        ],
-        "weighted": 2
-      },
-      "innovation": {
-        "score": 0,
-        "reasons": [],
-        "weighted": 0
-      },
-      "completeness": {
-        "score": 35,
-        "reasons": [
-          "有实质内容",
-          "表达清晰"
-        ],
-        "weighted": 8.75
+        "weighted": 5.25
       },
       "engagement": {
         "score": 64.19970381397246,
@@ -3068,7 +3354,7 @@
           "bookmarks": 223,
           "views": 7952
         },
-        "weighted": 19.259911144191737
+        "weighted": 9.629955572095868
       },
       "influence": {
         "score": 60,
@@ -3084,7 +3370,7 @@
         "weighted": 6
       }
     },
-    "totalScore": 36,
+    "totalScore": 25,
     "grade": "D",
     "metrics": {
       "likes": 1246,
@@ -3097,79 +3383,6 @@
     "createdAt": "Thu Jan 29 21:40:13 +0000 2026"
   },
   {
-    "tweetId": "2016968764554657976",
-    "url": "https://x.com/HP/status/2016968764554657976",
-    "author": "HP",
-    "text": "The future of work is lighter, smarter, and faster—HP EliteBoard G1a, the world’s first full AI PC built into a keyboard, turns any USB‑C display into your streamlined workspace with one cable. \n\nMaxi",
-    "scores": {
-      "utility": {
-        "score": 20,
-        "reasons": [
-          "基础内容分",
-          "AI 相关内容"
-        ],
-        "weighted": 4
-      },
-      "innovation": {
-        "score": 20,
-        "reasons": [
-          "原创内容"
-        ],
-        "weighted": 3
-      },
-      "completeness": {
-        "score": 55,
-        "reasons": [
-          "有实质内容",
-          "内容长度适中",
-          "表达清晰"
-        ],
-        "weighted": 13.75
-      },
-      "engagement": {
-        "score": 24.401085065843397,
-        "reasons": [
-          "17 点赞 (12.6分)",
-          "8 转发 (7.6分)",
-          "3 讨论 (4.2分)"
-        ],
-        "rawMetrics": {
-          "likes": 17,
-          "retweets": 8,
-          "replies": 3,
-          "quotes": 0,
-          "bookmarks": 0,
-          "views": 1063
-        },
-        "weighted": 7.320325519753019
-      },
-      "influence": {
-        "score": 70,
-        "reasons": [
-          "认证账号",
-          "粉丝数 > 100万"
-        ],
-        "authorData": {
-          "username": "HP",
-          "followers": 1096744,
-          "verified": true
-        },
-        "weighted": 7
-      }
-    },
-    "totalScore": 35,
-    "grade": "D",
-    "metrics": {
-      "likes": 17,
-      "retweets": 8,
-      "replies": 3,
-      "quotes": 0,
-      "bookmarks": 0,
-      "views": 1063
-    },
-    "createdAt": "Thu Jan 29 20:16:41 +0000 2026"
-  },
-  {
     "tweetId": "2017008936604541346",
     "url": "https://x.com/Shararti_Ai/status/2017008936604541346",
     "author": "Shararti_Ai",
@@ -3180,7 +3393,7 @@
         "reasons": [
           "基础内容分"
         ],
-        "weighted": 2
+        "weighted": 4
       },
       "innovation": {
         "score": 0,
@@ -3193,7 +3406,7 @@
           "有实质内容",
           "表达清晰"
         ],
-        "weighted": 8.75
+        "weighted": 5.25
       },
       "engagement": {
         "score": 54.50219259801869,
@@ -3211,7 +3424,7 @@
           "bookmarks": 6,
           "views": 1765
         },
-        "weighted": 16.350657779405605
+        "weighted": 8.175328889702802
       },
       "influence": {
         "score": 80,
@@ -3228,7 +3441,7 @@
         "weighted": 8
       }
     },
-    "totalScore": 35,
+    "totalScore": 25,
     "grade": "D",
     "metrics": {
       "likes": 291,
@@ -3239,219 +3452,6 @@
       "views": 1765
     },
     "createdAt": "Thu Jan 29 22:56:19 +0000 2026"
-  },
-  {
-    "tweetId": "2017012733816737826",
-    "url": "https://x.com/Rossmac212/status/2017012733816737826",
-    "author": "Rossmac212",
-    "text": "AI got the Ashley Cole one a bit wrong😂                                       https://t.co/pl7JCeDwOS",
-    "scores": {
-      "utility": {
-        "score": 20,
-        "reasons": [
-          "基础内容分",
-          "AI 相关内容"
-        ],
-        "weighted": 4
-      },
-      "innovation": {
-        "score": 0,
-        "reasons": [],
-        "weighted": 0
-      },
-      "completeness": {
-        "score": 35,
-        "reasons": [
-          "有实质内容",
-          "表达清晰"
-        ],
-        "weighted": 8.75
-      },
-      "engagement": {
-        "score": 45.72009791238708,
-        "reasons": [
-          "105 点赞 (20.3分)",
-          "13 转发 (9.2分)",
-          "21 讨论 (9.4分)",
-          "23 收藏 (6.9分)"
-        ],
-        "rawMetrics": {
-          "likes": 105,
-          "retweets": 13,
-          "replies": 17,
-          "quotes": 4,
-          "bookmarks": 23,
-          "views": 11176
-        },
-        "weighted": 13.716029373716124
-      },
-      "influence": {
-        "score": 65,
-        "reasons": [
-          "认证账号",
-          "粉丝数 > 10万"
-        ],
-        "authorData": {
-          "username": "Rossmac212",
-          "followers": 169327,
-          "verified": true
-        },
-        "weighted": 6.5
-      }
-    },
-    "totalScore": 33,
-    "grade": "D",
-    "metrics": {
-      "likes": 105,
-      "retweets": 13,
-      "replies": 17,
-      "quotes": 4,
-      "bookmarks": 23,
-      "views": 11176
-    },
-    "createdAt": "Thu Jan 29 23:11:24 +0000 2026"
-  },
-  {
-    "tweetId": "2016884797214220551",
-    "url": "https://x.com/jimgeraghty/status/2016884797214220551",
-    "author": "jimgeraghty",
-    "text": "How I feel being besieged by AI prompts, automatic AI-based searches, and AI-ification of every app: https://t.co/NCFboWEhdA",
-    "scores": {
-      "utility": {
-        "score": 20,
-        "reasons": [
-          "基础内容分",
-          "AI 相关内容"
-        ],
-        "weighted": 4
-      },
-      "innovation": {
-        "score": 0,
-        "reasons": [],
-        "weighted": 0
-      },
-      "completeness": {
-        "score": 35,
-        "reasons": [
-          "有实质内容",
-          "表达清晰"
-        ],
-        "weighted": 8.75
-      },
-      "engagement": {
-        "score": 40.35344886984518,
-        "reasons": [
-          "108 点赞 (20.4分)",
-          "14 转发 (9.4分)",
-          "8 讨论 (6.7分)",
-          "5 收藏 (3.9分)"
-        ],
-        "rawMetrics": {
-          "likes": 108,
-          "retweets": 14,
-          "replies": 7,
-          "quotes": 1,
-          "bookmarks": 5,
-          "views": 2786
-        },
-        "weighted": 12.106034660953554
-      },
-      "influence": {
-        "score": 65,
-        "reasons": [
-          "认证账号",
-          "粉丝数 > 10万"
-        ],
-        "authorData": {
-          "username": "jimgeraghty",
-          "followers": 120551,
-          "verified": true
-        },
-        "weighted": 6.5
-      }
-    },
-    "totalScore": 31,
-    "grade": "D",
-    "metrics": {
-      "likes": 108,
-      "retweets": 14,
-      "replies": 7,
-      "quotes": 1,
-      "bookmarks": 5,
-      "views": 2786
-    },
-    "createdAt": "Thu Jan 29 14:43:02 +0000 2026"
-  },
-  {
-    "tweetId": "2016884797214220551",
-    "url": "https://x.com/jimgeraghty/status/2016884797214220551",
-    "author": "jimgeraghty",
-    "text": "How I feel being besieged by AI prompts, automatic AI-based searches, and AI-ification of every app: https://t.co/NCFboWEhdA",
-    "scores": {
-      "utility": {
-        "score": 20,
-        "reasons": [
-          "基础内容分",
-          "AI 相关内容"
-        ],
-        "weighted": 4
-      },
-      "innovation": {
-        "score": 0,
-        "reasons": [],
-        "weighted": 0
-      },
-      "completeness": {
-        "score": 35,
-        "reasons": [
-          "有实质内容",
-          "表达清晰"
-        ],
-        "weighted": 8.75
-      },
-      "engagement": {
-        "score": 40.35344886984518,
-        "reasons": [
-          "108 点赞 (20.4分)",
-          "14 转发 (9.4分)",
-          "8 讨论 (6.7分)",
-          "5 收藏 (3.9分)"
-        ],
-        "rawMetrics": {
-          "likes": 108,
-          "retweets": 14,
-          "replies": 7,
-          "quotes": 1,
-          "bookmarks": 5,
-          "views": 2786
-        },
-        "weighted": 12.106034660953554
-      },
-      "influence": {
-        "score": 65,
-        "reasons": [
-          "认证账号",
-          "粉丝数 > 10万"
-        ],
-        "authorData": {
-          "username": "jimgeraghty",
-          "followers": 120551,
-          "verified": true
-        },
-        "weighted": 6.5
-      }
-    },
-    "totalScore": 31,
-    "grade": "D",
-    "metrics": {
-      "likes": 108,
-      "retweets": 14,
-      "replies": 7,
-      "quotes": 1,
-      "bookmarks": 5,
-      "views": 2786
-    },
-    "createdAt": "Thu Jan 29 14:43:02 +0000 2026"
   },
   {
     "tweetId": "2016978473546400064",
@@ -3465,7 +3465,7 @@
           "基础内容分",
           "AI 相关内容"
         ],
-        "weighted": 4
+        "weighted": 8
       },
       "innovation": {
         "score": 0,
@@ -3478,7 +3478,7 @@
           "有实质内容",
           "表达清晰"
         ],
-        "weighted": 8.75
+        "weighted": 5.25
       },
       "engagement": {
         "score": 29.24508919708686,
@@ -3496,7 +3496,7 @@
           "bookmarks": 1,
           "views": 5481
         },
-        "weighted": 8.773526759126057
+        "weighted": 4.386763379563028
       },
       "influence": {
         "score": 65,
@@ -3512,7 +3512,7 @@
         "weighted": 6.5
       }
     },
-    "totalScore": 28,
+    "totalScore": 24,
     "grade": "D",
     "metrics": {
       "likes": 41,
@@ -3536,7 +3536,7 @@
           "基础内容分",
           "AI 相关内容"
         ],
-        "weighted": 4
+        "weighted": 8
       },
       "innovation": {
         "score": 0,
@@ -3549,7 +3549,7 @@
           "有实质内容",
           "表达清晰"
         ],
-        "weighted": 8.75
+        "weighted": 5.25
       },
       "engagement": {
         "score": 3.010299956639812,
@@ -3564,7 +3564,7 @@
           "bookmarks": 0,
           "views": 26
         },
-        "weighted": 0.9030899869919435
+        "weighted": 0.45154499349597177
       },
       "influence": {
         "score": 65,
@@ -3604,14 +3604,14 @@
           "基础内容分",
           "AI 相关内容"
         ],
-        "weighted": 4
+        "weighted": 8
       },
       "innovation": {
         "score": 25,
         "reasons": [
           "使用创新性关键词"
         ],
-        "weighted": 3.75
+        "weighted": 5
       },
       "completeness": {
         "score": 35,
@@ -3619,7 +3619,7 @@
           "有实质内容",
           "表达清晰"
         ],
-        "weighted": 8.75
+        "weighted": 5.25
       },
       "engagement": {
         "score": 0,
@@ -3647,7 +3647,7 @@
         "weighted": 0.5
       }
     },
-    "totalScore": 17,
+    "totalScore": 19,
     "grade": "D",
     "metrics": {
       "likes": 0,

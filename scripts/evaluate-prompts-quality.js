@@ -19,11 +19,11 @@ const DEFAULT_CONFIG = {
   reportPath: '/root/clawd/reports/quality-evaluation-report.md',
   // 评分权重配置（调整为更适合当前数据集）
   weights: {
-    utility: 0.20,      // 实用性 20%（降低，因为很多推文不含 prompt 模板）
-    innovation: 0.15,   // 创新性 15%
-    completeness: 0.25, // 完整性 25%（提高，新闻类内容也应获得一定分数）
-    engagement: 0.30,   // 热度 30%（提高，高互动代表内容有价值）
-    influence: 0.10    // 作者影响力 10%
+    utility: 0.4,      // 实用性 20%（降低，因为很多推文不含 prompt 模板）
+    innovation: 0.2,   // 创新性 15%
+    completeness: 0.15, // 完整性 25%（提高，新闻类内容也应获得一定分数）
+    engagement: 0.15,   // 热度 30%（提高，高互动代表内容有价值）
+    influence: 0.1    // 作者影响力 10%
   }
 };
 

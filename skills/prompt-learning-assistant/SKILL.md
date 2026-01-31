@@ -1,6 +1,6 @@
 ---
 name: prompt-learning-assistant
-description: Systematic learning of 58+ AI prompt engineering techniques with real-world cases, personalized learning paths, and quick reference. Perfect for AI beginners to experts who want to master prompt engineering through structured lessons, practical examples, and progressive difficulty levels from beginner to advanced.
+description: Systematic learning of 58+ AI prompt engineering techniques with real-world cases and personalized learning paths.
 ---
 
 # Prompt Learning Assistant - 提示词工程学习助手
