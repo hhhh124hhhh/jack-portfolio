@@ -36,10 +36,11 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 Add whatever helps you do your job. This is your cheat sheet.
 
 ### Search Preferences
-- **Preferred:** searXNG (local instance)
-- **Avoid:** Brave Search API (configuration issues)
-- **Reason:** User unable to configure Brave search properly
-- **Usage:** Always use searXNG for web searches unless explicitly asked otherwise
+- **🚨 MANDATORY: ONLY use searXNG** for all web searches
+- **FORBIDDEN:** Never use Brave Search API
+- **Reason:** User explicitly requires searXNG exclusively
+- **Usage:** Always use searXNG skill for any web search needs
+- **Exception:** Only use other search methods if explicitly requested by user
 
 ### API Keys
 - **Twitter/X API Key**: 已配置 (从 ~/.bashrc 加载)
@@ -48,7 +49,43 @@ Add whatever helps you do your job. This is your cheat sheet.
   - 服务提供商：twitterapi.io
   - 注意：此 key 已配置，脚本会自动加载
 
-- **ClawdHub Token**: `clh_6aVBxdBkWmSOoZN9tUDX1nABYZFMqO_ARPUbHbkboj4`
+- **ClawdHub Token**: `clh_3y5KFMb3ulzh_wxIyRqm05YvfVgHbkGHvVxF80FQzbQ` (新)
   - 用途：ClawdHub CLI 认证 (用于发布和搜索技能)
   - 使用命令：`clawdhub login` (会提示输入 token)
-  - 更新时间：2026-01-30
+  - 更新时间：2026-01-31
+  - 旧 token (已废弃): `clh_6aVBxdBkWmSOoZN9tUDX1nABYZFMqO_ARPUbHbkboj4`
+
+### Coding Agent
+- **认知**: 使用 coding-agent 就是使用 Claude
+- **用途**: 编程任务、代码编写、调试
+- **调用方式**: 使用 `coding-agent` skill
+- **原理**: 实际上调用的是 Claude 的编程能力
+- **⚠️ 重要规则**: 所有文件操作和编程任务必须使用 coding-agent，不要自己直接执行文件！
+  - 用户明确要求："你执行还是用 coding-agent 把，我发现你本身执行文件都能力很弱"
+  - coding-agent 使用的是 Claude，能力强于我自己直接操作
+  - 记录时间：2026-01-31
+
+### NL to Exec Tool (自然语言命令解释器)
+- **路径**: `/root/clawd/scripts/nl-to-exec.sh`
+- **用途**: 将自然语言请求转换为可执行命令并执行
+- **特点**:
+  - 维护上下文记忆（用户偏好、任务历史、学习模式）
+  - 使用子代理处理复杂请求
+  - 内置常见任务模式匹配
+  - 任务历史记录（JSON 格式）
+- **使用方式**:
+  - 交互模式: `bash /root/clawd/scripts/nl-to-exec.sh`
+  - 单次执行: `bash /root/clawd/scripts/nl-to-exec.sh execute "你的需求"`
+  - 查看上下文: `bash /root/clawd/scripts/nl-to-exec.sh context`
+  - 查看历史: `bash /root/clawd/scripts/nl-to-exec.sh history`
+- **内置模式**:
+  - "批量处理skill" → 执行 batch-process-all-skills.sh
+  - "上传skill" → 执行 batch-upload-skills-v3.sh
+  - "转换prompt" → 执行 convert-prompts-to-skills.py
+  - "搜索 X AI提示词" → 执行 search-x-prompts.py
+  - "评估提示词" → 执行 evaluate-prompts.py
+- **记忆位置**: `/root/clawd/memory/nl-exec/`
+  - `context.json` - 上下文信息
+  - `tasks/` - 任务历史（JSON 文件）
+  - `sessions/` - 子代理会话记录
+- **使用频率**: 高（经常使用）
