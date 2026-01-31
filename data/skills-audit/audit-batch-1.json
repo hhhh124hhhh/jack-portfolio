@@ -1,0 +1,87 @@
+{
+  "batch": 1,
+  "skills": [
+    {
+      "filename": "10-of-my-most-popular-text-to-image-series-prompts-78b0897e.skill",
+      "title": "10 of My Most Popular Text-To-Image Series (+Prompts)",
+      "prompt": "generate a bunch of images, then you curate the results to handpick the best ones",
+      "实用性": 6,
+      "创新性": 4,
+      "完整性": 16,
+      "热度": 20,
+      "专业性": 2,
+      "totalScore": 48,
+      "rating": "D",
+      "suggestedPrice": 0,
+      "notes": "Prompt 过于通用，缺乏具体指导，实用性低"
+    },
+    {
+      "filename": "15-inspiring-examples-of-midjourney-color-prompts--d5f6c66e.skill",
+      "title": "15 Inspiring Examples of Midjourney Color Prompts in Action",
+      "prompt": "a fantasy landscape with a vibrant, sunset-inspired color palette of orange, pink, and purple.",
+      "实用性": 9,
+      "创新性": 8,
+      "完整性": 16,
+      "热度": 22,
+      "专业性": 3,
+      "totalScore": 58,
+      "rating": "C",
+      "suggestedPrice": 0,
+      "notes": "Prompt 较具体，有明确的色彩指导，但来源专业性一般"
+    },
+    {
+      "filename": "5-ai-prompts-that-will-transform-your-writing-fore-222d9418.skill",
+      "title": "5 AI Prompts That Will Transform Your Writing Forever | Bernard Marr",
+      "prompt": "write a (blog post/novel/speech etc)",
+      "实用性": 6,
+      "创新性": 4,
+      "完整性": 14,
+      "热度": 20,
+      "专业性": 4,
+      "totalScore": 48,
+      "rating": "D",
+      "suggestedPrice": 0,
+      "notes": "Prompt 过于通用，类型标注错误（写作但标注为Image Generation）"
+    },
+    {
+      "filename": "50-ai-templates-to-save-time-and-improve-productiv-545d62aa.skill",
+      "title": "50+ AI Templates to Save Time and Improve Productivity | ClickUp",
+      "prompt": "Write a technical document explaining how to set up a new server,\" you'll",
+      "实用性": 12,
+      "创新性": 6,
+      "完整性": 14,
+      "热度": 20,
+      "专业性": 3,
+      "totalScore": 55,
+      "rating": "C",
+      "suggestedPrice": 0,
+      "notes": "Prompt 具体程度中等，有明确场景，但类型标注错误"
+    },
+    {
+      "filename": "50-viral-gemini-ai-prompts-ready-to-copy-paste-for-335a199b.skill",
+      "title": "50+ Viral Gemini AI Prompts Ready to Copy & Paste for Portraits, Couples, and Families",
+      "prompt": "Three women posing in urban street fashion, dramatic lighting, stylish hairstyles, using reference faces",
+      "实用性": 14,
+      "创新性": 8,
+      "完整性": 16,
+      "热度": 22,
+      "专业性": 3,
+      "totalScore": 63,
+      "rating": "C+",
+      "suggestedPrice": 0.99,
+      "notes": "Prompt 具体且实用，有明确场景和元素，综合质量最好"
+    }
+  ],
+  "summary": {
+    "total": 5,
+    "aPlus": 0,
+    "a": 0,
+    "bPlus": 0,
+    "b": 0,
+    "cPlus": 1,
+    "c": 2,
+    "d": 2
+  },
+  "auditDate": "2026-01-31",
+  "auditNotes": "本批次 Skill 质量普遍偏低，主要问题：1) Prompt 过于通用，缺乏具体指导 2) 多个文件类型标注错误 3) 来源专业性一般。建议重新采集更高质量的 Prompt。"
+}

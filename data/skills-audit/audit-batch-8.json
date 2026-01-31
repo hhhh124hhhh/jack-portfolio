@@ -1,0 +1,172 @@
+{
+  "batch_id": "audit-batch-8",
+  "audit_date": "2026-01-31T11:10:00Z",
+  "total_files": 5,
+  "summary": {
+    "accepted": 0,
+    "rejected": 5,
+    "average_score": 34.8,
+    "best_file": "the-ultimate-guide-to-writing-effective-ai-prompts-e33e853e.skill",
+    "best_score": 51
+  },
+  "files": [
+    {
+      "filename": "the-2026-guide-to-prompt-engineering-ibm-4a7e73bd.skill",
+      "name": "The 2026 Guide to Prompt Engineering - IBM",
+      "prompt": "s GPT, DALL-E, Stable Diffusion, Anthropic",
+      "source": "IBM (engineering)",
+      "url": "https://www.ibm.com/think/prompt-engineering",
+      "scores": {
+        "utility": 0,
+        "innovation": 0,
+        "completeness": 10,
+        "popularity": 5,
+        "authority": 5,
+        "total": 20
+      },
+      "assessment": {
+        "utility": "Prompt是一个关键词列表，不是有效的prompt，没有使用价值",
+        "innovation": "无创新，只是简单列举模型名称",
+        "completeness": "文档结构完整，但prompt内容错误",
+        "popularity": "prompt engineering是热门话题",
+        "authority": "IBM是权威来源"
+      },
+      "grade": "D",
+      "recommended_price": null,
+      "status": "不收录",
+      "issues": [
+        "Prompt无效：只是关键词列表而非有效prompt",
+        "提取错误：明显是从页面错误提取的内容"
+      ]
+    },
+    {
+      "filename": "the-ultimate-guide-to-writing-effective-ai-prompts-65c2a3a3.skill",
+      "name": "The ultimate guide to writing effective AI prompts - Work Life by Atlassian",
+      "prompt": "write a simple prompt like \"Write an email to [contact] welcoming them to the company,\" but you can add more context with a persona in order to get a better r",
+      "source": "Atlassian (writing)",
+      "url": "https://www.atlassian.com/blog/artificial-intelligence/ultimate-guide-writing-ai-prompts",
+      "scores": {
+        "utility": 10,
+        "innovation": 5,
+        "completeness": 10,
+        "popularity": 8,
+        "authority": 5,
+        "total": 38
+      },
+      "assessment": {
+        "utility": "Prompt不完整，结尾被截断，部分有用但不实用",
+        "innovation": "提到了使用persona的想法，有一定参考价值",
+        "completeness": "文档完整，但prompt被截断",
+        "popularity": "AI prompts主题热度很高",
+        "authority": "Atlassian是知名公司"
+      },
+      "grade": "D",
+      "recommended_price": null,
+      "status": "不收录",
+      "issues": [
+        "Prompt不完整：结尾被截断（'get a better r'）",
+        "内容质量低：更像是一段说明而非实际prompt"
+      ]
+    },
+    {
+      "filename": "the-ultimate-guide-to-writing-effective-ai-prompts-e33e853e.skill",
+      "name": "The ultimate guide to writing effective AI prompts - Work Life by Atlassian",
+      "prompt": "Write an email to [contact] to schedule a meeting on [day]",
+      "source": "Atlassian (writing)",
+      "url": "https://www.atlassian.com/blog/artificial-intelligence/ultimate-guide-writing-ai-prompts",
+      "scores": {
+        "utility": 20,
+        "innovation": 3,
+        "completeness": 15,
+        "popularity": 8,
+        "authority": 5,
+        "total": 51
+      },
+      "assessment": {
+        "utility": "有明确的使用场景（邮件模板），简单实用",
+        "innovation": "非常基础的邮件模板，缺乏创新",
+        "completeness": "文档和prompt都完整",
+        "popularity": "AI prompts主题热度很高",
+        "authority": "Atlassian是知名公司"
+      },
+      "grade": "C",
+      "recommended_price": "免费",
+      "status": "收录",
+      "issues": [
+        "缺乏创新：过于简单的基础模板",
+        "价值有限：网上随处可见类似模板"
+      ]
+    },
+    {
+      "filename": "use-prompt-templates-generative-ai-on-vertex-ai-go-b2e80920.skill",
+      "name": "Use prompt templates | Generative AI on Vertex AI | Google Cloud",
+      "prompt": ". In the animal_activity column, enter",
+      "source": "Google Cloud (general)",
+      "url": "https://cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/prompt-templates",
+      "scores": {
+        "utility": 5,
+        "innovation": 0,
+        "completeness": 10,
+        "popularity": 5,
+        "authority": 5,
+        "total": 25
+      },
+      "assessment": {
+        "utility": "不完整的句子片段，没有实际使用价值",
+        "innovation": "无创新",
+        "completeness": "文档完整，但prompt内容错误",
+        "popularity": "Vertex AI有一定热度",
+        "authority": "Google Cloud是权威来源"
+      },
+      "grade": "D",
+      "recommended_price": null,
+      "status": "不收录",
+      "issues": [
+        "Prompt无效：不完整的句子片段",
+        "提取错误：明显是从页面错误提取的内容"
+      ]
+    },
+    {
+      "filename": "use-prompt-templates-generative-ai-on-vertex-ai-go-b5765981.skill",
+      "name": "Use prompt templates | Generative AI on Vertex AI | Google Cloud",
+      "prompt": ". Optional: To view different results, adjust the prompt, model, or parameters, and click Submit. Learn more about prompting strategies. Learn about responsible AI best practices and Vertex AI",
+      "source": "Google Cloud (general)",
+      "url": "https://cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/prompt-templates",
+      "scores": {
+        "utility": 15,
+        "innovation": 0,
+        "completeness": 10,
+        "popularity": 10,
+        "authority": 5,
+        "total": 40
+      },
+      "assessment": {
+        "utility": "提供了一般性建议，但不是实际可用的prompt",
+        "innovation": "无创新，只是操作说明",
+        "completeness": "文档完整，但内容是操作说明而非prompt",
+        "popularity": "Vertex AI和prompt策略热度较高",
+        "authority": "Google Cloud是权威来源"
+      },
+      "grade": "D",
+      "recommended_price": null,
+      "status": "不收录",
+      "issues": [
+        "内容类型错误：这是操作说明而非可用的prompt",
+        "实用性低：无法直接使用"
+      ]
+    }
+  ],
+  "conclusion": {
+    "overall_quality": "极差",
+    "main_issues": [
+      "4个文件的prompt提取错误或不完整",
+      "只有1个文件勉强可用但缺乏创新",
+      "大部分文件没有实际使用价值"
+    ],
+    "recommendations": [
+      "检查prompt提取算法，修复截断和错误提取问题",
+      "提高prompt质量筛选标准",
+      "建议重新抓取并处理这些来源的内容"
+    ]
+  }
+}

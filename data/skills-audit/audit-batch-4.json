@@ -1,0 +1,124 @@
+{
+  "batch_id": "batch-4",
+  "audit_date": "2026-01-31",
+  "total_skills": 5,
+  "skills": [
+    {
+      "file": "ai-image-prompts-for-eye-catching-marketing-creati-d97f99e2.skill",
+      "name": "AI Image Prompts for Eye-Catching Marketing Creatives",
+      "prompt": "A product photo of running shoes on white marble in a minimalist studio, shot with natural lighting and shallow depth of field.",
+      "source": "typeface.ai",
+      "scores": {
+        "实用性 (30%)": 22,
+        "创新性 (20%)": 12,
+        "完整性 (20%)": 16,
+        "热度 (25%)": 20,
+        "专业性 (5%)": 2
+      },
+      "total_score": 72,
+      "rating": "B",
+      "price": "$1.99",
+      "comments": "提示词具体，有明确的产品摄影场景。但内容相对简单，属于常见的电商产品摄影提示词。来源为一般博客，专业性一般。AI图像生成和营销是热门主题。"
+    },
+    {
+      "file": "ai-prompts-5-best-techniques-for-writing-prompts-279e77b3.skill",
+      "name": "AI Prompts: 5 Best Techniques for Writing Prompts",
+      "prompt": "generate a more effective response by integrating the provided knowledge before the final",
+      "source": "newsdata.io",
+      "scores": {
+        "实用性 (30%)": 12,
+        "创新性 (20%)": 8,
+        "完整性 (20%)": 16,
+        "热度 (25%)": 16,
+        "专业性 (5%)": 2
+      },
+      "total_score": 54,
+      "rating": "C",
+      "price": "免费",
+      "comments": "提示词不够具体，缺乏明确的使用场景。内容较为泛化，实际指导意义有限。来源为一般新闻数据平台，专业性低。"
+    },
+    {
+      "file": "ai-prompts-5-best-techniques-for-writing-prompts-ee46eff2.skill",
+      "name": "AI Prompts: 5 Best Techniques for Writing Prompts (duplicate)",
+      "prompt": "write an article on cybersecurity, we will first prompt the model to generate some facts, types, or techniques for cybersecurity",
+      "source": "newsdata.io",
+      "scores": {
+        "实用性 (30%)": 18,
+        "创新性 (20%)": 10,
+        "完整性 (20%)": 16,
+        "热度 (25%)": 16,
+        "专业性 (5%)": 2
+      },
+      "total_score": 62,
+      "rating": "C+",
+      "price": "$0.99",
+      "comments": "提示词相对具体，有明确的写作主题（网络安全文章）。使用了两段式提示策略，具有一定实用性。创新性一般，文档完整。"
+    },
+    {
+      "file": "any-prompt-tips-for-someone-new-to-midjourney-9f5dbedd.skill",
+      "name": "Any prompt tips for someone new to midjourney?",
+      "prompt": "t be afraid to play around with the --chaos and --sref random filters. If you don",
+      "source": "reddit.com/r/midjourney",
+      "scores": {
+        "实用性 (30%)": 8,
+        "创新性 (20%)": 10,
+        "完整性 (20%)": 12,
+        "热度 (25%)": 18,
+        "专业性 (5%)": 1
+      },
+      "total_score": 49,
+      "rating": "D",
+      "price": "不收录",
+      "comments": "提示词不完整，语法错误严重（'t be afraid'应为'Don't be afraid'）。虽然提到了--chaos和--sref参数，但内容被截断，无法直接使用。来源为Reddit社区讨论，专业性较低。"
+    },
+    {
+      "file": "best-practices-for-llm-prompt-engineering-palantir-4a296dff.skill",
+      "name": "Best practices for LLM prompt engineering • Palantir",
+      "prompt": "Summarize my framework options for developing a web application.",
+      "source": "palantir.com",
+      "scores": {
+        "实用性 (30%)": 16,
+        "创新性 (20%)": 12,
+        "完整性 (20%)": 16,
+        "热度 (25%)": 20,
+        "专业性 (5%)": 5
+      },
+      "total_score": 69,
+      "rating": "C+",
+      "price": "$0.99",
+      "comments": "提示词具体，有明确的技术应用场景（Web开发框架总结）。Palantir作为知名企业，来源具有较高权威性。但提示词较为简单，创新性一般。LLM和prompt engineering是热门主题。"
+    }
+  ],
+  "summary": {
+    "A+": 0,
+    "A": 0,
+    "B+": 0,
+    "B": 1,
+    "C+": 2,
+    "C": 1,
+    "D": 1,
+    "average_score": 61.2,
+    "recommendations": [
+      "建议收录B级及以上技能（1个）：AI图像营销提示词",
+      "建议考虑C+级技能（2个）：网络安全文章写作、Palantir框架总结",
+      "不建议收录D级技能（1个）：Midjourney新手提示（提示词不完整且有错误）",
+      "建议提供免费试用：C级技能（1个）"
+    ]
+  },
+  "audit_standards": {
+    "实用性 (30%)": "提示词是否具体？是否有明确的使用场景？",
+    "创新性 (20%)": "提示词是否独特？是否有新颖的角度？",
+    "完整性 (20%)": "Skill 文档是否完整？",
+    "热度 (25%)": "从文件名判断主题热度",
+    "专业性 (5%)": "是否来自权威来源"
+  },
+  "grading_scale": {
+    "A+ (90-100)": "$9.99",
+    "A (85-89)": "$4.99",
+    "B+ (80-84)": "$2.99",
+    "B (70-79)": "$1.99",
+    "C+ (60-69)": "$0.99",
+    "C (50-59)": "免费",
+    "D (0-49)": "不收录"
+  }
+}

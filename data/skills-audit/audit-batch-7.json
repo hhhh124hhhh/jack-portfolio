@@ -1,0 +1,140 @@
+{
+  "batch_id": 7,
+  "audit_date": "2026-01-31",
+  "total_skills": 5,
+  "summary": {
+    "passed": 0,
+    "failed": 5,
+    "avg_score": 7
+  },
+  "skills": [
+    {
+      "file": "r-promptengineering-on-reddit-after-1000-hours-of--94ff76c5.skill",
+      "name": "r/PromptEngineering on Reddit: After 1000 hours of prompt engineering",
+      "source": "Reddit r/PromptEngineering",
+      "original_url": "https://www.reddit.com/r/PromptEngineering/comments/1nt7x7v/after_1000_hours_of_prompt_engineering_i_found/",
+      "scores": {
+        "实用性": 0,
+        "创新性": 0,
+        "完整性": 0,
+        "热度": 5,
+        "专业性": 2
+      },
+      "total_score": 7,
+      "grade": "D",
+      "price": "不收录",
+      "prompt": "s almost like the structure, out performs the prompt. You",
+      "issues": [
+        "Prompt内容不完整，只是残缺的句子片段",
+        "描述也是残缺的，无法理解完整内容",
+        "类型标注为Image Generation，但内容无法使用"
+      ],
+      "notes": "内容提取失败，prompt不完整，无法实际使用"
+    },
+    {
+      "file": "r-promptengineering-on-reddit-after-1000-hours-of--e2cf1489.skill",
+      "name": "r/PromptEngineering on Reddit: After 1000 hours of prompt engineering",
+      "source": "Reddit r/PromptEngineering",
+      "original_url": "https://www.reddit.com/r/PromptEngineering/comments/1nt7x7v/after_1000_hours_of_prompt_engineering_i_found/",
+      "scores": {
+        "实用性": 0,
+        "创新性": 0,
+        "完整性": 0,
+        "热度": 5,
+        "专业性": 2
+      },
+      "total_score": 7,
+      "grade": "D",
+      "price": "不收录",
+      "prompt": "ve got me and my Unicode keyboard. I think I need to get hired because phew if that",
+      "issues": [
+        "Prompt内容不完整，只是残缺的句子片段",
+        "描述残缺，无法理解完整内容",
+        "类型标注为Image Generation，但内容与图像生成无关"
+      ],
+      "notes": "内容提取失败，prompt是随机的句子片段，完全无法使用"
+    },
+    {
+      "file": "r-promptengineering-on-reddit-ai-prompting-tips-fr-cad7c366.skill",
+      "name": "r/PromptEngineering on Reddit: AI Prompting Tips from a Power User",
+      "source": "Reddit r/PromptEngineering",
+      "original_url": "https://www.reddit.com/r/PromptEngineering/comments/1j5ymik/ai_prompting_tips_from_a_power_user_how_to_get/",
+      "scores": {
+        "实用性": 0,
+        "创新性": 0,
+        "完整性": 0,
+        "热度": 5,
+        "专业性": 2
+      },
+      "total_score": 7,
+      "grade": "D",
+      "price": "不收录",
+      "prompt": "write a framework first, then use that framework to generate the content",
+      "issues": [
+        "Prompt过于简短，只是一句建议，不是完整可用的prompt",
+        "缺乏具体的使用场景和操作步骤",
+        "类型标注为Image Generation，但内容是关于写作框架的"
+      ],
+      "notes": "内容不完整，只是简单的一句话建议，缺乏可执行性"
+    },
+    {
+      "file": "responsible-prompting-course-llm-prompt-templates--cd3cd6fd.skill",
+      "name": "responsible-prompting-course/LLM Prompt Templates",
+      "source": "IBM GitHub",
+      "original_url": "https://github.com/IBM/responsible-prompting-course/blob/master/LLM%20Prompt%20Templates.ipynb",
+      "scores": {
+        "实用性": 0,
+        "创新性": 0,
+        "完整性": 0,
+        "热度": 5,
+        "专业性": 3
+      },
+      "total_score": 8,
+      "grade": "D",
+      "price": "不收录",
+      "prompt": ".join( [role, do, context, content, dont, output, assessment, iteration ] )\n",
+      "issues": [
+        "Prompt只是代码片段，不是完整可用的prompt",
+        "缺少上下文和说明，无法单独使用",
+        "类型标注为Image Generation，但内容是代码片段"
+      ],
+      "notes": "内容提取失败，只是代码片段而非实际prompt模板"
+    },
+    {
+      "file": "stable-diffusion-prompt-guide-basic-to-advanced-ex-750475b1.skill",
+      "name": "Stable Diffusion Prompt Guide: Basic to Advanced & Examples",
+      "source": "aiarty.com",
+      "original_url": "https://www.aiarty.com/stable-diffusion-prompts/stable-diffusion-prompt-guide.htm",
+      "scores": {
+        "实用性": 0,
+        "创新性": 0,
+        "完整性": 0,
+        "热度": 5,
+        "专业性": 1
+      },
+      "total_score": 6,
+      "grade": "D",
+      "price": "不收录",
+      "prompt": "t forget to detail the preferred ... image, with common prompts like front view, side view, back view, looking back, eye contact, from above, portrait, headshot, close-up, and bird",
+      "issues": [
+        "Prompt内容不完整，开头缺少主语",
+        "只是一些零散的关键词列表，没有形成完整prompt",
+        "缺少具体的使用说明和示例"
+      ],
+      "notes": "内容提取失败，prompt不完整且缺少上下文"
+    }
+  ],
+  "audit_notes": [
+    "本批次5个skill文件全部质量不合格",
+    "共同问题：内容提取失败，prompt都是不完整或无意义的文本片段",
+    "所有文件的类型标注几乎都是Image Generation，但很多内容与图像生成无关",
+    "这批文件看起来是内容抓取过程中出现技术问题导致的",
+    "建议：检查内容提取流程，确保提取完整的prompt内容"
+  ],
+  "recommendations": [
+    "这批skill不应收录到平台",
+    "需要重新提取或人工审核原始链接的内容",
+    "建议修复内容提取脚本，确保prompt完整性",
+    "加强类型标注的准确性检查"
+  ]
+}

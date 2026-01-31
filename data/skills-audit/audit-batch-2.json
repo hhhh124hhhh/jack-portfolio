@@ -1,0 +1,230 @@
+{
+  "batch_id": "batch-2",
+  "audit_date": "2026-01-31",
+  "total_skills": 5,
+  "summary": {
+    "A_plus": 0,
+    "A": 0,
+    "B_plus": 0,
+    "B": 0,
+    "C_plus": 0,
+    "C": 0,
+    "D": 5
+  },
+  "skills": [
+    {
+      "file": "/root/clawd/dist/skills/50-viral-gemini-ai-prompts-ready-to-copy-paste-for-4ac228ab.skill",
+      "name": "A Beginner's Guide to ChatGPT Prompt Engineering",
+      "scores": {
+        "practicality": {
+          "score": 0,
+          "max_score": 30,
+          "notes": "Prompt 内容错误：', it might predict the next word as' 只是句子片段，无法使用"
+        },
+        "innovation": {
+          "score": 0,
+          "max_score": 20,
+          "notes": "无创新性，内容不完整"
+        },
+        "completeness": {
+          "score": 10,
+          "max_score": 20,
+          "notes": "有 SKILL.md 和 metadata.json，但内容提取严重错误"
+        },
+        "popularity": {
+          "score": 0,
+          "max_score": 25,
+          "notes": "文件名是 Gemini 提示词，实际内容是 ChatGPT 教程，完全不匹配"
+        },
+        "professionalism": {
+          "score": 1,
+          "max_score": 5,
+          "notes": "来源为 DataCamp（相对权威），但内容错误导致分值很低"
+        }
+      },
+      "total_score": 11,
+      "grade": "D",
+      "price": "不收录",
+      "issues": [
+        "文件名与实际内容不匹配",
+        "Prompt 提取错误，只是句子片段",
+        "实用性为零"
+      ],
+      "recommendation": "不收录，内容严重错误"
+    },
+    {
+      "file": "/root/clawd/dist/skills/50-viral-gemini-ai-prompts-ready-to-copy-paste-for-aefb3d26.skill",
+      "name": "AI Assistant Prompt Template Examples",
+      "scores": {
+        "practicality": {
+          "score": 8,
+          "max_score": 30,
+          "notes": "Prompt 只有简单的一句话：'You are an AI Assistant that helps users with text in Microsoft Office applications'，缺乏具体指导"
+        },
+        "innovation": {
+          "score": 2,
+          "max_score": 20,
+          "notes": "常见的角色设定，无创新性"
+        },
+        "completeness": {
+          "score": 12,
+          "max_score": 20,
+          "notes": "文档结构完整，但内容过于简单"
+        },
+        "popularity": {
+          "score": 0,
+          "max_score": 25,
+          "notes": "文件名是 Gemini 提示词，实际内容是 Office AI 助手，不匹配"
+        },
+        "professionalism": {
+          "score": 1,
+          "max_score": 5,
+          "notes": "来源为 Templafy Help center，商业网站"
+        }
+      },
+      "total_score": 23,
+      "grade": "D",
+      "price": "不收录",
+      "issues": [
+        "文件名与实际内容不匹配",
+        "Prompt 过于简单，缺乏实用价值",
+        "与文件名承诺的 '50 Viral Gemini AI Prompts' 完全不符"
+      ],
+      "recommendation": "不收录，内容与承诺严重不符"
+    },
+    {
+      "file": "/root/clawd/dist/skills/50-viral-gemini-ai-prompts-ready-to-copy-paste-for-e41bb853.skill",
+      "name": "AI Image Generation Prompts",
+      "scores": {
+        "practicality": {
+          "score": 5,
+          "max_score": 30,
+          "notes": "Prompt 是图片生成提示，适合特定场景，但价值有限"
+        },
+        "innovation": {
+          "score": 3,
+          "max_score": 20,
+          "notes": "普通的图片生成提示，无创新性"
+        },
+        "completeness": {
+          "score": 12,
+          "max_score": 20,
+          "notes": "文档结构完整"
+        },
+        "popularity": {
+          "score": 0,
+          "max_score": 25,
+          "notes": "文件名是 Gemini 提示词，实际内容是图片生成，不匹配"
+        },
+        "professionalism": {
+          "score": 2,
+          "max_score": 5,
+          "notes": "来源为 Details Flowers Blog，花艺行业博客"
+        }
+      },
+      "total_score": 22,
+      "grade": "D",
+      "price": "不收录",
+      "issues": [
+        "文件名与实际内容不匹配",
+        "Prompt 只是单一图片生成提示，与文件名承诺的 '50 Prompts' 不符",
+        "目标用户群体狭窄（花艺相关）"
+      ],
+      "recommendation": "不收录，内容与承诺严重不符"
+    },
+    {
+      "file": "/root/clawd/dist/skills/50-viral-gemini-ai-prompts-ready-to-copy-paste-for-e7b5d316.skill",
+      "name": "AI Image Generation Prompts (duplicate)",
+      "scores": {
+        "practicality": {
+          "score": 5,
+          "max_score": 30,
+          "notes": "Prompt 是图片生成提示，适合特定场景，但价值有限"
+        },
+        "innovation": {
+          "score": 3,
+          "max_score": 20,
+          "notes": "普通的图片生成提示，无创新性"
+        },
+        "completeness": {
+          "score": 12,
+          "max_score": 20,
+          "notes": "文档结构完整"
+        },
+        "popularity": {
+          "score": 0,
+          "max_score": 25,
+          "notes": "文件名是 Gemini 提示词，实际内容是图片生成，不匹配"
+        },
+        "professionalism": {
+          "score": 2,
+          "max_score": 5,
+          "notes": "来源为 Details Flowers Blog，花艺行业博客"
+        }
+      },
+      "total_score": 22,
+      "grade": "D",
+      "price": "不收录",
+      "issues": [
+        "与 Skill 3 内容重复（同一来源）",
+        "文件名与实际内容不匹配",
+        "Prompt 只是单一图片生成提示，与文件名承诺不符"
+      ],
+      "recommendation": "不收录，重复内容且与承诺不符"
+    },
+    {
+      "file": "/root/clawd/dist/skills/a-beginner-s-guide-to-chatgpt-prompt-engineering-d-1a601e99.skill",
+      "name": "AI Image Generation Prompts",
+      "scores": {
+        "practicality": {
+          "score": 5,
+          "max_score": 30,
+          "notes": "Prompt 是图片生成提示，适合特定场景"
+        },
+        "innovation": {
+          "score": 3,
+          "max_score": 20,
+          "notes": "普通的图片生成提示，无创新性"
+        },
+        "completeness": {
+          "score": 12,
+          "max_score": 20,
+          "notes": "文档结构完整"
+        },
+        "popularity": {
+          "score": 5,
+          "max_score": 25,
+          "notes": "文件名是 ChatGPT Prompt Engineering 教程，实际内容是图片生成，部分不匹配"
+        },
+        "professionalism": {
+          "score": 2,
+          "max_score": 5,
+          "notes": "来源为 Details Flowers Blog，花艺行业博客"
+        }
+      },
+      "total_score": 27,
+      "grade": "D",
+      "price": "不收录",
+      "issues": [
+        "文件名与实际内容不匹配",
+        "文件名承诺是教程，实际只有单一图片生成提示",
+        "与 Skill 3 和 Skill 4 内容重复"
+      ],
+      "recommendation": "不收录，内容与承诺不符"
+    }
+  ],
+  "overall_findings": {
+    "critical_issues": [
+      "所有 5 个文件都存在文件名与实际内容不匹配的问题",
+      "文件名承诺 '50 Viral Gemini AI Prompts' 或 'ChatGPT Prompt Engineering 教程'，但实际内容完全是其他主题",
+      "Skills 3、4、5 内容重复（都来自同一图片生成提示来源）",
+      "大部分 Prompt 提取不完整或过于简单，缺乏实用价值"
+    ],
+    "recommendations": [
+      "重新审核 skill 文件生成流程，确保文件名与内容匹配",
+      "改进 Prompt 提取算法，确保完整性和准确性",
+      "避免重复上传相同内容的 skill 文件",
+      "建议删除或重新生成这批 skill 文件"
+    ]
+  }
+}

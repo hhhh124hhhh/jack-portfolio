@@ -1,0 +1,155 @@
+{
+  "batch_id": "batch-6",
+  "audit_date": "2026-01-31",
+  "total_skills": 5,
+  "skills": [
+    {
+      "file": "/root/clawd/dist/skills/free-ai-prompt-generator-for-chatgpt-gemini-more-q-6e800b2c.skill",
+      "name": "free-ai-prompt-generator-for-chatgpt-gemini-more-q-6e800b2c",
+      "title": "Free AI Prompt Generator for ChatGPT, Gemini & More | QuillBot",
+      "prompt": "Write an AI prompt for a job description that attracts top talent",
+      "source": "QuillBot",
+      "source_url": "https://quillbot.com/ai-writing-tools/ai-prompt-generator",
+      "type": "Image Generation",
+      "scores": {
+        "practicality": 22.5,
+        "innovation": 12,
+        "completeness": 16,
+        "popularity": 18.75,
+        "professionalism": 3.5
+      },
+      "total_score": 72.75,
+      "grade": "B",
+      "price": "$1.99",
+      "evaluation": {
+        "practicality": "具体的应用场景（招聘文案），实用性强，但过于简单",
+        "innovation": "常见的招聘提示词，缺乏独特角度",
+        "completeness": "文档结构完整，包含来源和元数据",
+        "popularity": "AI提示词生成是热门话题",
+        "professionalism": "QuillBot是知名写作工具平台，有一定权威性"
+      }
+    },
+    {
+      "file": "/root/clawd/dist/skills/generative-ai-prompt-samples-generative-ai-on-vert-49f1ea7f.skill",
+      "name": "generative-ai-prompt-samples-generative-ai-on-vert-49f1ea7f",
+      "title": "Generative AI prompt samples | Generative AI on Vertex AI | Google Cloud Documentation",
+      "prompt": "write a summary based on customer reviews of a beach in California",
+      "source": "Google Cloud Documentation",
+      "source_url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery",
+      "type": "Image Generation",
+      "scores": {
+        "practicality": 18,
+        "innovation": 14,
+        "completeness": 16,
+        "popularity": 15,
+        "professionalism": 4.5
+      },
+      "total_score": 67.5,
+      "grade": "C+",
+      "price": "$0.99",
+      "evaluation": {
+        "practicality": "有具体场景（总结评论），但应用范围有限",
+        "innovation": "海滩评论总结有一定新意",
+        "completeness": "文档结构完整",
+        "popularity": "Vertex AI主题热度中等",
+        "professionalism": "Google官方文档，权威性高"
+      }
+    },
+    {
+      "file": "/root/clawd/dist/skills/harpa-ai-crafting-exceptional-prompts-for-midjourn-05e5faa9.skill",
+      "name": "harpa-ai-crafting-exceptional-prompts-for-midjourn-05e5faa9",
+      "title": "HARPA AI | Crafting Exceptional Prompts for Midjourney",
+      "prompt": ", and Midjourney would fragment this into",
+      "source": "HARPA AI",
+      "source_url": "https://harpa.ai/blog/ultimate-midjourney-prompts-guide",
+      "type": "Image Generation",
+      "scores": {
+        "practicality": 0,
+        "innovation": 0,
+        "completeness": 8,
+        "popularity": 18.75,
+        "professionalism": 3
+      },
+      "total_score": 29.75,
+      "grade": "D",
+      "price": "不收录",
+      "evaluation": {
+        "practicality": "Prompt被截断，无法使用",
+        "innovation": "内容不完整，无法评估",
+        "completeness": "Prompt严重截断，不完整",
+        "popularity": "Midjourney是热门图像生成工具",
+        "professionalism": "HARPA AI是AI工具博客"
+      }
+    },
+    {
+      "file": "/root/clawd/dist/skills/how-to-craft-the-perfect-prompt-70fa4961.skill",
+      "name": "how-to-craft-the-perfect-prompt-70fa4961",
+      "title": "How To CRAFT The Perfect Prompt",
+      "prompt": "You are a children's book writer writing for children aged 10-18 you write in the style of JK Rowling",
+      "source": "Alexander F. Young",
+      "source_url": "https://blog.alexanderfyoung.com/how-to-craft-the-perfect-prompt/",
+      "type": "Image Generation",
+      "scores": {
+        "practicality": 25,
+        "innovation": 17,
+        "completeness": 16,
+        "popularity": 13,
+        "professionalism": 3
+      },
+      "total_score": 74,
+      "grade": "B",
+      "price": "$1.99",
+      "evaluation": {
+        "practicality": "system prompt示例，明确的使用场景和角色设定",
+        "innovation": "JK Rowling风格的儿童文学创作，角度新颖",
+        "completeness": "文档结构完整",
+        "popularity": "prompt工程和儿童文学主题热度中等",
+        "professionalism": "个人博客，权威性一般"
+      }
+    },
+    {
+      "file": "/root/clawd/dist/skills/introduction-to-prompt-templates-in-langchain-come-35ee588c.skill",
+      "name": "introduction-to-prompt-templates-in-langchain-come-35ee588c",
+      "title": "Introduction to Prompt Templates in LangChain - Comet",
+      "prompt": "create a "summarize article" template and reuse it anytime you want",
+      "source": "Comet",
+      "source_url": "https://www.comet.com/site/blog/introduction-to-prompt-templates-in-langchain/",
+      "type": "Image Generation",
+      "scores": {
+        "practicality": 24,
+        "innovation": 13,
+        "completeness": 16,
+        "popularity": 16,
+        "professionalism": 4
+      },
+      "total_score": 73,
+      "grade": "B",
+      "price": "$1.99",
+      "evaluation": {
+        "practicality": "具体的应用场景（文章总结），实用性高",
+        "innovation": "prompt模板概念有一定新意，但不够独特",
+        "completeness": "文档结构完整",
+        "popularity": "LangChain是热门框架，主题热度高",
+        "professionalism": "Comet是专业的ML平台"
+      }
+    }
+  ],
+  "summary": {
+    "total_a_plus": 0,
+    "total_a": 0,
+    "total_b_plus": 0,
+    "total_b": 3,
+    "total_c_plus": 1,
+    "total_c": 0,
+    "total_d": 1,
+    "average_score": 63.4,
+    "recommended_for_publish": 4,
+    "not_recommended": 1
+  },
+  "notes": [
+    "Skill #3 (harpa-ai) 的Prompt被截断，内容不完整，建议不收录",
+    "所有Skill的类型标注为'Image Generation'，但实际内容多为文本prompt，存在类型标注问题",
+    "Skill #1, #4, #5 质量较好，属于B级，有一定商业价值",
+    "Skill #2 质量中等，属于C+级"
+  ]
+}

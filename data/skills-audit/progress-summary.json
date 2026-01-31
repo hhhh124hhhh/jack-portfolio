@@ -1,0 +1,98 @@
+{
+  "audit_start_time": "2026-01-31 11:04",
+  "last_update": "2026-01-31 11:12",
+  "total_skills_to_audit": 40,
+  "total_batches": 8,
+  "batches_completed": 3,
+  "batches_in_progress": 5,
+  "skills_completed": 15,
+  "skills_remaining": 25,
+
+  "batches_status": {
+    "batch-1": {
+      "completed": true,
+      "completion_time": "2026-01-31 11:08",
+      "total": 5,
+      "summary": {
+        "aPlus": 0,
+        "a": 0,
+        "bPlus": 0,
+        "b": 0,
+        "cPlus": 1,
+        "c": 2,
+        "d": 2
+      },
+      "avg_score": 54.4
+    },
+    "batch-2": {
+      "completed": false
+    },
+    "batch-3": {
+      "completed": false
+    },
+    "batch-4": {
+      "completed": true,
+      "completion_time": "2026-01-31 11:10",
+      "total": 5,
+      "summary": {
+        "aPlus": 0,
+        "a": 0,
+        "bPlus": 0,
+        "b": 1,
+        "cPlus": 2,
+        "c": 1,
+        "d": 1
+      },
+      "avg_score": 61.2
+    },
+    "batch-5": {
+      "completed": false
+    },
+    "batch-6": {
+      "completed": false
+    },
+    "batch-7": {
+      "completed": true,
+      "completion_time": "2026-01-31 11:11",
+      "total": 5,
+      "summary": {
+        "aPlus": 0,
+        "a": 0,
+        "bPlus": 0,
+        "b": 0,
+        "cPlus": 0,
+        "c": 0,
+        "d": 5
+      },
+      "avg_score": 7.0
+    },
+    "batch-8": {
+      "completed": false
+    }
+  },
+
+  "combined_summary": {
+    "total_audited": 15,
+    "aPlus": 0,
+    "a": 0,
+    "bPlus": 0,
+    "b": 1,
+    "cPlus": 3,
+    "c": 3,
+    "d": 8,
+    "overall_avg_score": 40.87
+  },
+
+  "key_findings": [
+    "第7批次质量极差，所有内容提取失败",
+    "目前没有A+或A级skills",
+    "最高分：第4批的AI图像营销提示词（72分，B级）",
+    "整体质量偏低，平均分40.87分"
+  ],
+
+  "potential_issues": [
+    "内容提取脚本可能存在问题，导致prompt不完整",
+    "类型标注错误严重（多个非Image Generation内容被标注为Image Generation）",
+    "来源数据质量参差不齐，需要更严格的内容筛选"
+  ]
+}

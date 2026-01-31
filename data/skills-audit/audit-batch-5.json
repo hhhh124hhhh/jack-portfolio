@@ -1,0 +1,242 @@
+{
+  "batch_id": "batch-5",
+  "timestamp": "2026-01-31T00:00:00Z",
+  "total_skills": 5,
+  "skills": [
+    {
+      "file": "best-practices-for-prompt-engineering-with-the-ope-f26e9557.skill",
+      "name": "Best practices for prompt engineering with the OpenAI API",
+      "source": "OpenAI Help Center",
+      "url": "https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-the-openai-api",
+      "prompt": "Write a simple python function that # 1",
+      "scores": {
+        "实用性": {
+          "score": 5,
+          "max": 30,
+          "weight": 0.3,
+          "comment": "提示词不完整（# 1被截断），没有明确的使用场景，实用性极低"
+        },
+        "创新性": {
+          "score": 3,
+          "max": 20,
+          "weight": 0.2,
+          "comment": "通用性太强，没有独特性或新颖角度"
+        },
+        "完整性": {
+          "score": 3,
+          "max": 20,
+          "weight": 0.2,
+          "comment": "提示词被截断，文档过于简陋，完整性不足"
+        },
+        "热度": {
+          "score": 20,
+          "max": 25,
+          "weight": 0.25,
+          "comment": "Prompt engineering是热门主题，且来自OpenAI官方指南"
+        },
+        "专业性": {
+          "score": 5,
+          "max": 5,
+          "weight": 0.05,
+          "comment": "来自OpenAI官方权威来源"
+        }
+      },
+      "total_score": 36,
+      "max_score": 100,
+      "grade": "D",
+      "price": "不收录",
+      "recommendation": "不收录 - 提示词不完整，质量严重不足"
+    },
+    {
+      "file": "best-stable-diffusion-prompts-guide-with-examples-b5e23001.skill",
+      "name": "Best Stable Diffusion Prompts Guide with Examples",
+      "source": "Mockey.ai Blog",
+      "url": "https://mockey.ai/blog/stable-diffusion-prompts-guide/",
+      "prompt": "create an image similar to a particular artist",
+      "scores": {
+        "实用性": {
+          "score": 8,
+          "max": 30,
+          "weight": 0.3,
+          "comment": "过于通用，没有指定具体艺术家或场景，实用性较低"
+        },
+        "创新性": {
+          "score": 5,
+          "max": 20,
+          "weight": 0.2,
+          "comment": "常见的Stable Diffusion提示词需求，缺乏独特性"
+        },
+        "完整性": {
+          "score": 6,
+          "max": 20,
+          "weight": 0.2,
+          "comment": "文档简单，缺乏详细说明和示例"
+        },
+        "热度": {
+          "score": 22,
+          "max": 25,
+          "weight": 0.25,
+          "comment": "Stable Diffusion是热门的AI图像生成工具，关注度很高"
+        },
+        "专业性": {
+          "score": 3,
+          "max": 5,
+          "weight": 0.05,
+          "comment": "来自Mockey.ai博客，非官方或权威机构"
+        }
+      },
+      "total_score": 44,
+      "max_score": 100,
+      "grade": "D",
+      "price": "不收录",
+      "recommendation": "不收录 - 提示词过于通用，缺乏实际应用价值"
+    },
+    {
+      "file": "developing-writing-prompts-center-for-excellence-i-d6362a24.skill",
+      "name": "Developing Writing Prompts | Center for Excellence in Teaching and Learning",
+      "source": "UConn Center for Excellence in Teaching and Learning",
+      "url": "https://cetl.uconn.edu/resources/teaching-and-learning-assessment/teaching-and-learning-assessment-overview/assessment-design/developing-writing-prompts/",
+      "prompt": "Write an essay that will be posted in your e-portfolio in which you describe your favorite childhood toy",
+      "scores": {
+        "实用性": {
+          "score": 12,
+          "max": 30,
+          "weight": 0.3,
+          "comment": "明确的教育场景作文提示，但适用面相对有限"
+        },
+        "创新性": {
+          "score": 6,
+          "max": 20,
+          "weight": 0.2,
+          "comment": "常见的作文写作提示词，缺乏新颖角度"
+        },
+        "完整性": {
+          "score": 6,
+          "max": 20,
+          "weight": 0.2,
+          "comment": "文档信息不全面，缺乏详细说明"
+        },
+        "热度": {
+          "score": 10,
+          "max": 25,
+          "weight": 0.25,
+          "comment": "教育写作提示，关注度相对较低"
+        },
+        "专业性": {
+          "score": 4,
+          "max": 5,
+          "weight": 0.05,
+          "comment": "来自UConn教学与学习中心，教育领域专业性强"
+        }
+      },
+      "total_score": 38,
+      "max_score": 100,
+      "grade": "D",
+      "price": "不收录",
+      "recommendation": "不收录 - 小众教育场景，普适性较低"
+    },
+    {
+      "file": "examples-of-prompts-prompt-engineering-guide-61f443e2.skill",
+      "name": "Examples of Prompts | Prompt Engineering Guide",
+      "source": "PromptingGuide.ai",
+      "url": "https://www.promptingguide.ai/introduction/examples",
+      "prompt": "s create a conversational system that",
+      "scores": {
+        "实用性": {
+          "score": 3,
+          "max": 30,
+          "weight": 0.3,
+          "comment": "提示词不完整（开头的's'是语法错误），无法直接使用"
+        },
+        "创新性": {
+          "score": 4,
+          "max": 20,
+          "weight": 0.2,
+          "comment": "极其普通且不完整的提示词，毫无独特性"
+        },
+        "完整性": {
+          "score": 2,
+          "max": 20,
+          "weight": 0.2,
+          "comment": "提示词有严重语法错误和截断，文档质量极差"
+        },
+        "热度": {
+          "score": 20,
+          "max": 25,
+          "weight": 0.25,
+          "comment": "Prompt engineering是热门主题，来自专业指南"
+        },
+        "专业性": {
+          "score": 5,
+          "max": 5,
+          "weight": 0.05,
+          "comment": "来自PromptingGuide.ai专业平台"
+        }
+      },
+      "total_score": 34,
+      "max_score": 100,
+      "grade": "D",
+      "price": "不收录",
+      "recommendation": "不收录 - 提示词有严重语法错误，质量极低"
+    },
+    {
+      "file": "examples-of-prompts-prompt-engineering-guide-647441e3.skill",
+      "name": "Examples of Prompts | Prompt Engineering Guide",
+      "source": "PromptingGuide.ai",
+      "url": "https://www.promptingguide.ai/introduction/examples",
+      "prompt": "create a conversational system that's able to generate more technical and scientific responses to questions",
+      "scores": {
+        "实用性": {
+          "score": 12,
+          "max": 30,
+          "weight": 0.3,
+          "comment": "概念清晰，可用于技术问答系统，但缺少具体实现细节"
+        },
+        "创新性": {
+          "score": 7,
+          "max": 20,
+          "weight": 0.2,
+          "comment": "相对明确的技术问答需求，但仍较为通用，创新性有限"
+        },
+        "完整性": {
+          "score": 12,
+          "max": 20,
+          "weight": 0.2,
+          "comment": "概念完整，但缺乏使用示例和详细说明"
+        },
+        "热度": {
+          "score": 23,
+          "max": 25,
+          "weight": 0.25,
+          "comment": "Prompt engineering和AI对话系统是当前热门技术方向"
+        },
+        "专业性": {
+          "score": 5,
+          "max": 5,
+          "weight": 0.05,
+          "comment": "来自PromptingGuide.ai专业平台"
+        }
+      },
+      "total_score": 59,
+      "max_score": 100,
+      "grade": "C",
+      "price": "免费",
+      "recommendation": "免费 - 基本可用但质量一般，适合免费提供"
+    }
+  ],
+  "summary": {
+    "A+": 0,
+    "A": 0,
+    "B+": 0,
+    "B": 0,
+    "C+": 0,
+    "C": 1,
+    "D": 4,
+    "不收录": 4,
+    "推荐收录": 1,
+    "平均分": 42.2,
+    "最高分": 59,
+    "最低分": 34,
+    "批次质量评估": "本批次质量较差，5个技能中有4个需要不收录。主要问题包括：提示词不完整或被截断（2个）、提示词过于通用缺乏实用性（2个）、语法错误（1个）。唯一可收录的技能（647441e3）得分59分，仅达到C级免费标准。建议改进skill生成流程，避免截断和语法错误问题。"
+  }
+}
