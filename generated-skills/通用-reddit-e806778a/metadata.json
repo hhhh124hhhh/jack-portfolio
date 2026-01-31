@@ -1,0 +1,10 @@
+{
+  "name": "通用 Prompt from reddit",
+  "version": "1.0.0",
+  "description": "Hello r/LanguageTechnology,\n\nI'm not as familiar with statistics as I am with formal linguistics, so",
+  "author": "Clawdbot",
+  "type": "通用",
+  "source": "reddit",
+  "url": "https://www.reddit.com/r/LanguageTechnology/comments/1qfe2tv/statistical_nlp_question_on_bayesian/",
+  "created_at": "2026-01-30T20:48:50.627060"
+}

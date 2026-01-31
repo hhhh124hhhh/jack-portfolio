@@ -1,0 +1,10 @@
+{
+  "name": "通用 Prompt from reddit",
+  "version": "1.0.0",
+  "description": "What are the most important problems in this space in academia and industry?\n\n  \nI'm not an NLP rese",
+  "author": "Clawdbot",
+  "type": "通用",
+  "source": "reddit",
+  "url": "https://www.reddit.com/r/LanguageTechnology/comments/1qjrir4/what_are_the_most_important_problems_in_nlp_in/",
+  "created_at": "2026-01-30T20:48:50.626590"
+}

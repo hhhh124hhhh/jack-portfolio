@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-01-30T20:48:50.627307",
+  "total_data": 144,
+  "converted_skills": 6,
+  "skipped": 138,
+  "by_type": {
+    "生图": 0,
+    "生视频": 0,
+    "AI 编码": 3,
+    "提示词工程": 1,
+    "通用": 2,
+    "total": 6,
+    "skipped": 138
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Google Imagen 3 - 超写实风景",
+  "version": "1.0.0",
+  "description": "使用 Google Imagen 3 生成超写实的风景照片",
+  "author": "Clawdbot",
+  "type": "谷歌生图",
+  "quality_score": 95,
+  "created_at": "2026-01-30T21:03:58.118766"
+}

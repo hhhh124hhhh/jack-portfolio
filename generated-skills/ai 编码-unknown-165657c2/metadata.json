@@ -1,0 +1,10 @@
+{
+  "name": "AI 编码 Prompt from N/A",
+  "version": "1.0.0",
+  "description": "This is handy because you don’t need to manually construct message objects — the template handles it",
+  "author": "Clawdbot",
+  "type": "AI 编码",
+  "source": "N/A",
+  "url": "https://mirascope.com/blog/langchain-prompt-template",
+  "created_at": "2026-01-30T20:48:50.625193"
+}

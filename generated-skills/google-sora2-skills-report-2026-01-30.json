@@ -1,0 +1,8 @@
+{
+  "timestamp": "2026-01-30T21:03:58.152161",
+  "total_skills": 6,
+  "google_image_skills": 3,
+  "sora2_skills": 3,
+  "packaged_skills": 6,
+  "output_dir": "/root/clawd/dist/skills"
+}

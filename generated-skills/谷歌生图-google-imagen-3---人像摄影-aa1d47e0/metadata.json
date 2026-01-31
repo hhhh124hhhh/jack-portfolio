@@ -1,0 +1,9 @@
+{
+  "name": "Google Imagen 3 - 人像摄影",
+  "version": "1.0.0",
+  "description": "使用 Google Imagen 3 生成专业人像摄影",
+  "author": "Clawdbot",
+  "type": "谷歌生图",
+  "quality_score": 92,
+  "created_at": "2026-01-30T21:03:58.121518"
+}
