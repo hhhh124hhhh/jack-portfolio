@@ -95,15 +95,20 @@ main() {
     log "🚀 AI 提示词自动化流程开始"
     log "=========================================="
 
-    # 阶段 1: 数据收集
-    log ""
-    log "[阶段 1/4] 数据收集"
-    send_notification "info" "开始数据收集..."
+    # 标记：是否有新数据
+    HAS_NEW_DATA=false
 
-    if bash /root/clawd/scripts/collect-all-sources-prompts.sh >> "$LOG_FILE" 2>&1; then
-        TOTAL_COLLECTED=$(tail -50 "$LOG_FILE" | grep "📊 总收集:" | tail -1 | awk '{print $NF}' || echo "0")
-        log_info "✅ 数据收集完成: $TOTAL_COLLECTED 条"
-        send_notification "success" "数据收集完成！收集了 ${TOTAL_COLLECTED} 条提示词"
+    # 阶段 1: 数据收集 (V2 - Firecrawl + Twitter)
+    log ""
+    log "[阶段 1/4] 数据收集 (V2 - Firecrawl + Twitter)"
+
+    if bash /root/clawd/scripts/collect-all-sources-prompts-v2.sh >> "$LOG_FILE" 2>&1; then
+        TOTAL_COLLECTED=$(tail -50 "$LOG_FILE" | grep "📊 总收集:" | tail -1 | sed 's/.*总收集: //' | sed 's/ 条//' | awk '{$1=$1};1' || echo "0")
+        TOTAL_PROMPTS=$(tail -50 "$LOG_FILE" | grep "📝 总提示词:" | tail -1 | sed 's/.*总提示词: //' | sed 's/ 个//' | awk '{$1=$1};1' || echo "0")
+        log_info "✅ 数据收集完成: $TOTAL_COLLECTED 条, $TOTAL_PROMPTS 提示词"
+        if [ "$TOTAL_COLLECTED" -gt 0 ]; then
+            HAS_NEW_DATA=true
+        fi
     else
         log_error "❌ 数据收集失败"
         send_notification "error" "数据收集失败，请检查日志"
@@ -113,31 +118,31 @@ main() {
     # 阶段 2: 转换成 Skills
     log ""
     log "[阶段 2/4] 转换成 Skills"
-    send_notification "info" "开始转换成 Skills..."
 
     if node /root/clawd/scripts/tweet-to-skill-converter.js >> "$LOG_FILE" 2>&1; then
-        SKILLS_GENERATED=$(tail -50 "$LOG_FILE" | grep "生成:" | tail -1 | awk '{print $NF}' || echo "0")
-        SKILLS_CONVERTED=$(tail -50 "$LOG_FILE" | grep "转换完成！" | tail -1 | awk '{print $3}' || echo "0")
+        SKILLS_GENERATED=$(tail -50 "$LOG_FILE" | grep "转换完成！生成了" | sed 's/.*生成了 //' | sed 's/ 个.*//' | awk '{$1=$1};1' || echo "0")
+        SKILLS_CONVERTED=$(tail -50 "$LOG_FILE" | grep "转换完成！" | grep -oP '\d+(?= 个 Skill 文件)' | tail -1 || echo "0")
         log_info "✅ 转换完成: 生成了 $SKILLS_GENERATED 个 Skill"
-        send_notification "success" "Skill 转换完成！生成了 ${SKILLS_GENERATED} 个 Skill"
+        if [ "$SKILLS_GENERATED" -gt 0 ]; then
+            HAS_NEW_DATA=true
+        fi
     else
         log_warn "⚠️  Skill 转换部分失败（可能没有新数据）"
-        send_notification "warning" "Skill 转换: 没有新数据需要转换"
     fi
 
     # 阶段 3: 发布到 ClawdHub
     log ""
     log "[阶段 3/4] 发布到 ClawdHub"
-    send_notification "info" "开始发布到 ClawdHub..."
 
     if bash /root/clawd/scripts/auto-publish-skills.sh >> "$LOG_FILE" 2>&1; then
         PUBLISHED_COUNT=$(tail -50 "$LOG_FILE" | grep "✅ Successfully published:" | wc -l || echo "0")
         FAILED_COUNT=$(tail -50 "$LOG_FILE" | grep "❌ Failed to publish:" | wc -l || echo "0")
         log_info "✅ 发布完成: 成功 $PUBLISHED_COUNT 个，失败 $FAILED_COUNT 个"
-        send_notification "success" "Skill 发布完成！成功 ${PUBLISHED_COUNT} 个，失败 ${FAILED_COUNT} 个"
+        if [ "$PUBLISHED_COUNT" -gt 0 ]; then
+            HAS_NEW_DATA=true
+        fi
     else
         log_warn "⚠️  发布失败或没有新 Skill"
-        send_notification "warning" "Skill 发布: 没有新 Skill 需要发布"
     fi
 
     # 阶段 4: 生成报告
@@ -155,13 +160,13 @@ main() {
 
 | 阶段 | 状态 | 详情 |
 |------|------|------|
-| 1. 数据收集 | ✅ 完成 | ${TOTAL_COLLECTED} 条提示词 |
+| 1. 数据收集 | ✅ 完成 | ${TOTAL_COLLECTED} 条提示词, ${TOTAL_PROMPTS} 提取 |
 | 2. Skill 转换 | ✅ 完成 | ${SKILLS_GENERATED} 个 Skill |
 | 3. ClawdHub 发布 | ✅ 完成 | ${PUBLISHED_COUNT} 成功, ${FAILED_COUNT} 失败 |
 
 ## 📈 数据统计
 
-**数据源**: Reddit, GitHub, Hacker News, SearXNG
+**数据源**: Reddit, GitHub, Hacker News, SearXNG, Firecrawl 🔥, Twitter/X 🐦
 
 **收集数据**:
 - Reddit prompts: $(wc -l /root/clawd/data/prompts/reddit-prompts.jsonl 2>/dev/null || echo "0")
@@ -206,29 +211,11 @@ EOF
 
     git push origin master 2>&1 | tee -a "$LOG_FILE" || log_warn "⚠️  Git push 失败或已最新"
 
-    # 总结通知
+    # 总结通知（仅在有新数据时发送）
     log ""
     log "=========================================="
     log "✅ 自动化流程完成！"
     log "=========================================="
-
-    SUMMARY="📊 **自动化流程完成！**
-
-**流程统计**:
-• 数据收集: ${TOTAL_COLLECTED} 条
-• Skill 转换: ${SKILLS_GENERATED} 个
-• ClawdHub 发布: ${PUBLISHED_COUNT} 成功
-• 失败: ${FAILED_COUNT} 个
-
-**报告**: ${REPORT_FILE}
-**详情**: 查看完整日志: ${LOG_FILE}
-🚀 **下一个周期**: 6 小时后
-📱 **通知**: 已发送到 Feishu 和 Slack
-
----
-*自动化运行*"
-
-    send_notification "success" "$SUMMARY"
 
     log ""
     log "=========================================="
@@ -240,6 +227,33 @@ EOF
     log "ClawdHub 发布: ${PUBLISHED_COUNT} 成功, ${FAILED_COUNT} 失败"
     log "报告: $REPORT_FILE"
     log "日志: $LOG_FILE"
+
+    # 只在有新数据时发送通知
+    if [ "$HAS_NEW_DATA" = true ]; then
+        log_info "有新数据，发送通知..."
+
+        SUMMARY="📊 **自动化流程完成！**
+
+**流程统计**:
+• 数据收集: ${TOTAL_COLLECTED} 条, ${TOTAL_PROMPTS} 提示词
+• Skill 转换: ${SKILLS_GENERATED} 个
+• ClawdHub 发布: ${PUBLISHED_COUNT} 成功
+• 失败: ${FAILED_COUNT} 个
+
+**数据源**: Reddit, GitHub, Hacker News, SearXNG, Firecrawl 🔥, Twitter/X 🐦
+
+**报告**: ${REPORT_FILE}
+**详情**: 查看完整日志: ${LOG_FILE}
+🚀 **下一个周期**: 明天 9:00
+📱 **通知**: 已发送到 Feishu 和 Slack
+
+---
+*自动化运行*"
+
+        send_notification "success" "$SUMMARY"
+    else
+        log_info "没有新数据，跳过通知"
+    fi
 }
 
 # 运行主函数
