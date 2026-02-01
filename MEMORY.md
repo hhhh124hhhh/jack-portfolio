@@ -734,3 +734,183 @@ clawdbot gateway restart
 - 完整说明：`/root/clawd/cron-setup/README.md`
 
 ---
+
+## 🔧 Python 脚本命名和环境变量最佳实践（2026-02-01）
+
+### 重要教训
+
+#### 1. Python 文件命名规范（⚠️ 永远记住）
+
+**规则**：
+- ✅ **永远使用下划线**：`script_name.py`
+- ❌ **禁止使用连字符**：`script-name.py`
+
+**原因**：
+- Python 将连字符解释为减号运算符
+- `import collect-prompts-enhanced` 会变成 `collect - prompts - enhanced`（减法）
+- 导致 `SyntaxError: invalid syntax`
+
+**正确示例**：
+```bash
+# ❌ 错误
+my-script.py
+collect-prompts-enhanced.py
+api-handler.py
+
+# ✅ 正确
+my_script.py
+collect_prompts_enhanced.py
+api_handler.py
+```
+
+**遵循标准**：
+- PEP 8（Python 官方风格指南）
+- 所有 Python 包和模块都使用下划线
+
+#### 2. 环境变量配置规范
+
+**本地服务**：
+```bash
+# ✅ 正确 - 本地服务使用 localhost
+SEARXNG_URL=http://localhost:8080
+DATABASE_URL=http://localhost:5432
+REDIS_URL=http://127.0.0.1:6379
+
+# ❌ 错误 - 避免使用外部 IP
+SEARXNG_URL=http://149.13.91.232:8080
+```
+
+**远程服务**：
+```bash
+# ✅ 优先使用域名（更稳定）
+API_URL=https://api.example.com
+DATABASE_URL=postgres://db.example.com:5432
+
+# ⚠️ IP 作为最后选择（仅当没有域名时）
+REMOTE_API=192.168.1.100:8080
+```
+
+**Docker 容器通信**：
+```bash
+# ✅ 使用服务名（推荐）
+API_URL=http://api-service:8080
+DB_URL=postgres://postgres-service:5432/mydb
+
+# ⚠️ 容器内部网络 IP（不推荐，可能变化）
+API_URL=http://172.18.0.3:8080
+```
+
+#### 3. 环境变量管理最佳实践
+
+**集中管理**：
+```
+/root/clawd/.env.d/
+├── searxng.env       # SearXNG 相关
+├── twitter.env       # Twitter API 相关
+├── database.env      # 数据库相关
+└── redis.env         # Redis 相关
+```
+
+**配置加载**：
+```bash
+# 在脚本中加载环境变量
+if [ -f /root/clawd/.env.d/searxng.env ]; then
+    export $(grep -v '^#' /root/clawd/.env.d/searxng.env | xargs)
+fi
+```
+
+**文档化**：
+```bash
+# .env 文件注释示例
+# SearXNG 搜索服务配置
+# 本地服务地址（容器间通信）
+SEARXNG_URL=http://localhost:8080
+
+# Twitter API 配置
+# 从 ~/.bashrc 加载
+TWITTER_API_KEY=${TWITTER_API_KEY}
+```
+
+#### 4. 调试连接问题的标准流程
+
+当遇到服务连接问题时，按以下顺序检查：
+
+1. **检查环境变量**
+   ```bash
+   echo $SEARXNG_URL
+   env | grep SEARXNG
+   ```
+
+2. **测试连通性**
+   ```bash
+   # 测试 TCP 连接
+   curl -I http://localhost:8080
+   telnet localhost 8080
+   
+   # 测试 DNS（如果是域名）
+   nslookup api.example.com
+   ping api.example.com
+   ```
+
+3. **检查 Docker 网络**（如果使用容器）
+   ```bash
+   # 查看容器网络
+   docker network ls
+   docker network inspect bridge
+   
+   # 查看容器状态
+   docker ps
+   docker inspect <container-name>
+   ```
+
+4. **查看日志**
+   ```bash
+   # 查看容器日志
+   docker logs <container-name> --tail 100
+   
+   # 查看应用日志
+   tail -f /var/log/application.log
+   ```
+
+#### 5. 预防清单
+
+**创建新 Python 脚本时**：
+- [ ] 文件名使用下划线：`my_script.py`
+- [ ] 避免特殊字符（空格、连字符等）
+- [ ] 符合 PEP 8 命名规范
+- [ ] 文件名与模块名一致
+
+**配置新服务时**：
+- [ ] 本地服务使用 `localhost`
+- [ ] 远程服务优先使用域名
+- [ ] 环境变量集中管理在 `.env.d/`
+- [ ] 添加注释说明用途
+- [ ] 测试连通性
+
+**调试连接问题时**：
+- [ ] 检查环境变量配置
+- [ ] 使用 curl/ping 测试连通性
+- [ ] 检查 Docker 网络（容器场景）
+- [ ] 查看日志确认错误信息
+
+#### 6. 常见错误和解决方案
+
+| 错误 | 原因 | 解决方案 |
+|------|------|----------|
+| `SyntaxError: invalid syntax` | 文件名使用连字符 | 改为下划线 |
+| `Connection refused` | 外部 IP 不对或服务未启动 | 使用 localhost，检查服务状态 |
+| `NameError` | 模块导入失败（文件名问题） | 检查文件名和引用是否一致 |
+| `Timeout` | 网络不通或防火墙阻止 | 检查 iptables，测试连通性 |
+| `ECONNREFUSED` | 端口错误或服务未监听 | 检查服务端口配置 |
+
+### 相关技术文档
+- PEP 8 - Style Guide for Python Code: https://peps.python.org/pep-0008/
+- Python 模块命名规范: https://docs.python.org/3/tutorial/modules.html
+
+---
+
+*最后更新：2026-02-01 19:16*
+- 记录 Python 文件命名规范（下划线 vs 连字符）
+- 记录环境变量配置最佳实践（本地服务用 localhost）
+- 添加调试连接问题的标准流程
+- 添加预防清单

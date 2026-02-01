@@ -106,6 +106,29 @@ Reactions are lightweight social signals. Humans use them constantly — they sa
 
 Skills provide your tools. When you need one, check its `SKILL.md`. Keep local notes (camera names, SSH details, voice preferences) in `TOOLS.md`.
 
+### ⚠️ Tool Usage Gotchas - Lessons Learned
+
+**2026-02-01 - read 工具限制:**
+- `read` 工具**只能读取文件，不能读取目录**
+- 错误示例：`read` + `~/clawd/scripts` → `EISDIR: illegal operation on a directory, read`
+- 正确做法：
+  - 列出目录内容：使用 `exec ls -la /path/to/directory`
+  - 查看目录中的特定文件：先 `ls` 找到文件名，再 `read` 文件
+  - 查找文件：使用 `find` 或 `exec find /path -type f -name "*.py"`
+- **规则**：在调用 `read` 之前，先用 `ls` 确认路径是文件而非目录
+
+**2026-02-01 - Python 文件命名规范:**
+- Python 文件名**必须使用下划线**，不能使用连字符
+- 错误示例：`my-script.py` → `import my-script` 会变成 `my - script`（减法运算）
+- 正确做法：文件名使用下划线 `my_script.py`
+- **规则**：创建 Python 文件时，永远使用下划线命名（符合 PEP 8）
+
+**2026-02-01 - 环境变量配置（本地服务）:**
+- 本地服务应使用 `localhost` 或 `127.0.0.1`，避免使用外部 IP
+- 错误示例：`SEARXNG_URL=http://149.13.91.232:8080`（外部 IP 可能变化）
+- 正确做法：`SEARXNG_URL=http://localhost:8080`
+- **规则**：本地服务始终使用 localhost，环境变量集中管理在 `.env.d/`
+
 **🎭 Voice Storytelling:** If you have `sag` (ElevenLabs TTS), use voice for stories, movie summaries, and "storytime" moments! Way more engaging than walls of text. Surprise people with funny voices.
 
 **📝 Platform Formatting:**
