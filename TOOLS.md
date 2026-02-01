@@ -49,11 +49,21 @@ Add whatever helps you do your job. This is your cheat sheet.
   - 服务提供商：twitterapi.io
   - 注意：此 key 已配置，脚本会自动加载
 
-- **ClawdHub Token**: `clh_3y5KFMb3ulzh_wxIyRqm05YvfVgHbkGHvVxF80FQzbQ` (新)
+- **ClawdHub Token**: `clh_Ki_M1Xiws5Qzi83gqdZhYG3jXSuZOnEfQOxhaRsjHcw`
   - 用途：ClawdHub CLI 认证 (用于发布和搜索技能)
-  - 使用命令：`clawdhub login` (会提示输入 token)
-  - 更新时间：2026-01-31
+  - 配置位置：`~/.config/clawdhub/config.json`
+  - Registry: `https://www.clawhub.ai/api` ⚠️ 必须使用此 URL
+  - 更新时间：2026-02-01
+  - 状态：✅ 已配置并验证 (可以发布、搜索和安装技能)
   - 旧 token (已废弃): `clh_6aVBxdBkWmSOoZN9tUDX1nABYZFMqO_ARPUbHbkboj4`
+  - 更旧 token (已废弃): `clh_3y5KFMb3ulzh_wxIyRqm05YvfVgHbkGHvVxF80FQzbQ`
+
+  **重要提示**：
+  - ⚠️ Registry URL 必须是 `https://www.clawhub.ai/api`，不是 `clawdhub.com` 或 `clawhub.ai`
+  - 服务器环境不支持浏览器认证，必须直接编辑配置文件
+  - `clawdhub whoami` 命令可能返回 Unauthorized，但不影响其他功能
+  - 使用 `clawdhub list` 和 `clawdhub search` 验证 token 是否有效
+  - 发布技能时必须明确指定 `--registry https://www.clawhub.ai/api`
 
 ### Coding Agent
 - **认知**: 使用 coding-agent 就是使用 Claude

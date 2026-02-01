@@ -1,9 +1,0 @@
-{
-  "name": "Google Veo - 动态城市夜景",
-  "version": "1.0.0",
-  "description": "使用 Google Veo 生成动态城市夜景视频",
-  "author": "Clawdbot",
-  "type": "谷歌生图",
-  "quality_score": 90,
-  "created_at": "2026-01-30T21:03:58.119733"
-}

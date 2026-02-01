@@ -3,7 +3,7 @@
 基于系统级 Agent 的提示词质量评分系统
 
 功能特性：
-- 使用 Clawdbot sessions_spawn 调用系统内置 LLM 进行评估
+- 使用 Clawdbot agent --local 调用系统内置 LLM 进行评估
 - 评估提示词质量、实用性、完整性、创新性
 - 输出 0-100 分和详细评估理由
 - 批量处理已有数据
@@ -110,7 +110,7 @@ class Config:
 
 
 class AgentEvaluator:
-    """系统级 Agent 评估器 - 使用 sessions_spawn"""
+    """系统级 Agent 评估器 - 使用 clawdbot agent --local"""
 
     def __init__(self, config: Config):
         self.config = config
@@ -120,7 +120,7 @@ class AgentEvaluator:
         evaluation_prompt = self._build_evaluation_prompt(prompt_text)
 
         try:
-            # 使用 sessions_spawn 调用系统内置 LLM
+            # 使用 clawdbot agent --local 调用系统内置 LLM
             result = self._call_agent(evaluation_prompt)
             parsed_result = self._parse_response(result, prompt_text)
             return parsed_result
@@ -172,18 +172,17 @@ class AgentEvaluator:
 重要：只输出 JSON，不要包含任何解释或格式化文本。"""
 
     def _call_agent(self, prompt: str) -> str:
-        """调用系统级 Agent - 使用 sessions_spawn"""
-        # 构建 clawdbot sessions_spawn 命令
-        # 注意：这里需要通过 API 或子进程调用
-        # 由于 Clawdbot 不直接提供 Python API，我们使用子进程调用
+        """调用系统级 Agent - 使用 clawdbot agent --local"""
+        # 构建 clawdbot agent 命令
+        # 使用 --local 运行本地 agent，--json 获取 JSON 输出
 
         cmd = [
             'clawdbot',
-            'sessions',
-            'spawn',
-            '--task', prompt,
-            '--timeout', str(self.config.timeout_seconds),
-            '--cleanup', 'delete'  # 评估完成后删除会话
+            'agent',
+            '--local',
+            '--json',
+            '--message', prompt,
+            '--timeout', str(self.config.timeout_seconds)
         ]
 
         try:
@@ -196,17 +195,49 @@ class AgentEvaluator:
             )
 
             # 解析输出
-            # sessions_spawn 会将结果返回到主会话，我们需要从输出中提取
             output = result.stdout
 
-            # 尝试从输出中提取 JSON
-            import re
-            json_match = re.search(r'\{[\s\S]*\}', output)
-            if json_match:
-                return json_match.group(0)
+            # 检查命令是否成功
+            if result.returncode != 0:
+                error_msg = result.stderr or output
+                logger.error(f"Agent 命令执行失败: {error_msg}")
+                raise RuntimeError(f"Agent 命令失败: {error_msg}")
 
-            # 如果没有找到 JSON，返回原始输出
-            return output
+            # 尝试解析 JSON 输出
+            try:
+                data = json.loads(output)
+
+                # clawdbot agent --json 返回的格式：
+                # { "reply": "...", "usage": {...}, ... }
+                # 我们需要提取 reply 字段
+                if 'reply' in data:
+                    reply = data['reply']
+
+                    # 尝试从 reply 中提取 JSON
+                    import re
+                    json_match = re.search(r'\{[\s\S]*\}', reply)
+                    if json_match:
+                        return json_match.group(0)
+
+                    # 如果 reply 本身就是 JSON
+                    try:
+                        return json.dumps(json.loads(reply))
+                    except:
+                        return reply
+
+                # 如果没有 reply 字段，返回原始输出
+                return output
+
+            except json.JSONDecodeError as e:
+                logger.error(f"解析 agent 输出 JSON 失败: {e}")
+                logger.debug(f"原始输出: {output}")
+                # 如果 JSON 解析失败，尝试直接从输出中提取
+                import re
+                json_match = re.search(r'\{[\s\S]*\}', output)
+                if json_match:
+                    return json_match.group(0)
+
+                return output
 
         except subprocess.TimeoutExpired:
             logger.error(f"Agent 调用超时")

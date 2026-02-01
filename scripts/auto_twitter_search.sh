@@ -355,7 +355,7 @@ PYTHON_SCRIPT
 - Report: twitter-report-${DATE}-${TIME}.json
 - Summary: twitter-summary-${DATE}-${TIME}.md" || log "No changes to commit"
 
-    git push origin main 2>&1 | tee -a "$LOG_FILE" || log "WARNING: Git push failed or already up to date"
+    git push origin master 2>&1 | tee -a "$LOG_FILE" || log "WARNING: Git push failed or already up to date"
 
     log "Report committed and pushed to repository"
 

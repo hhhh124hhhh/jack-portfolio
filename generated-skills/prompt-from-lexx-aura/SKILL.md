@@ -1,3 +1,8 @@
+---
+name: prompt-from-lexx-aura
+description: AI prompt template converted from a Twitter post. Use when creating AI prompts for specific tasks or exploring prompt engineering techniques.
+---
+
 # AI Prompt Template Skill
 
 ## Description

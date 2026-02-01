@@ -106,7 +106,7 @@ main() {
             continue
         fi
         
-        display_name=$(grep "^# " "$skill_md_path" 2>/dev/null | head -1 | cut -d '#' -f2 | xargs)
+        display_name=$(grep "^# " "$skill_md_path" 2>/dev/null | head -1 | cut -d '#' -f2 | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
         if [ -z "$display_name" ]; then
             display_name="$skill_name"
         fi

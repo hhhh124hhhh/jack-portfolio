@@ -1,6 +1,6 @@
 ---
 name: ai-portrait-generator
-description: Generate ultra-photorealistic portraits using structured JSON prompts. Use when creating AI-generated portraits, character art, or realistic human images with cinematic quality and detailed specifications.
+description: Generate AI-powered portrait images using various models and techniques. Use when creating character portraits, avatars, or stylized portrait images.
 ---
 
 # AI Portrait Generator

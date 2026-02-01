@@ -39,8 +39,10 @@ def should_notify():
 - Calendar 事件提醒（<2h）
 - Twitter/social 通知
 - Weather 更新
+- ClawdHub Token 状态检查（每 24 小时一次）
 - 成就系统进度检查（每 4 小时一次）
 - 自动化流程监控（每 6 小时一次）
+- ClawdHub 技能统计跟踪（每天早上 9 点，通过 cron 自动执行）
 
 ## 深夜监工任务（23:00-07:00）
 - **审查代理检查**: 使用 `/root/clawd/scripts/check-review-agent.sh` 检查 review-agent 和 achievement-system-dev 的状态
@@ -67,6 +69,18 @@ def should_notify():
 2. 终端工具开发进度
 3. 成就数据收集状态
 4. 发送进度报告到 Slack/Feishu
+```
+
+### ClawdHub Token 状态检查（每 24 小时）
+```bash
+# 检查脚本
+/root/clawd/scripts/check-clawdhub-token-auto.sh
+
+# 检查内容
+1. Token 是否有效（通过 clawdhub search 测试）
+2. 记录到 memory/clawdhub-token-check.log
+3. 如果无效，记录告警到 memory/clawdhub-token-alerts.txt
+4. Token 有效则静默，无效则通知用户更新
 ```
 
 ### 自动化流程监控（每 6 小时）
