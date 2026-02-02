@@ -862,17 +862,21 @@
         </div>
     </section>
 
-        <section class="contact" id="contact">
+    <section class="contact" id="contact">
         <h2 class="section-title reveal">联系我</h2>
         <p class="reveal">如果你对 AI 技能开发、自动化工作流或任何有趣的项目感兴趣，欢迎随时联系我！</p>
         <div class="contact-links reveal">
-            <a href="mailto:hhhh124hhhh@qq.com" class="contact-link">
+            <a href="mailto:jack@example.com" class="contact-link">
                 <span>📧</span>
-                <span class="mono">hhhh124hhhh@qq.com</span>
+                <span class="mono">jack@example.com</span>
             </a>
-            <a href="https://github.com/hhhh124hhhh" class="contact-link">
+            <a href="#" class="contact-link">
                 <span>💻</span>
-                <span class="mono">github.com/hhhh124hhhh</span>
+                <span class="mono">github.com/jack</span>
+            </a>
+            <a href="#" class="contact-link">
+                <span>💬</span>
+                <span class="mono">Slack</span>
             </a>
         </div>
     </section>
