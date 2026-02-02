@@ -1,0 +1,26 @@
+{
+  "name": "ai-portrait-generator",
+  "version": "1.0.0",
+  "description": "Generate AI-powered portrait images using various models and techniques. Use when creating character portraits, avatars, or stylized portrait images.",
+  "main": "SKILL.md",
+  "keywords": [
+    "ai",
+    "portrait",
+    "image-generation",
+    "avatar",
+    "character",
+    "photorealistic",
+    "prompts"
+  ],
+  "author": "jack happy",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "SKILL.md",
+    "assets",
+    "references",
+    "scripts"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "merc-income-guide",
+  "version": "1.0.0",
+  "description": "Complete guide to making $42/hr on Mercor platform. Use when you want to start freelancing on Mercor, optimize your profile, or maximize earnings on the platform.",
+  "main": "SKILL.md",
+  "keywords": [
+    "freelancing",
+    "mercor",
+    "income",
+    "guide",
+    "remote-work",
+    "earning"
+  ],
+  "author": "jack happy",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "SKILL.md",
+    "assets",
+    "references",
+    "scripts"
+  ]
+}
