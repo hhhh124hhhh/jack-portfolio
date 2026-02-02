@@ -1,37 +1,134 @@
 ---
 name: prompt-to-skill-converter
-description: "Automated workflow to discover AI prompts from X (Twitter), evaluate their commercial potential, and convert high-quality prompts into Clawdbot Skills using Claude's skill creation methodology. Use when building a profitable skills marketplace by mining social media for prompt patterns and turning them into distributable skills. The workflow includes: (1) searching X for AI prompts using keywords and engagement filters, (2) analyzing prompt quality and commercial viability, (3) transforming prompts into structured SKILL.md files, (4) packaging skills for ClawdHub distribution, and (5) publishing to the marketplace."
+description: "Automated end-to-end workflow to discover AI prompts from multiple sources (Twitter/X, Reddit, GitHub, Hacker News, SearXNG, Firecrawl), evaluate their commercial potential, and convert high-quality prompts into Clawdbot Skills using Claude's skill creation methodology. Use when building a profitable skills marketplace by mining social media, code repositories, and web content for prompt patterns and turning them into distributable skills. The workflow includes: (1) collecting prompts from diverse sources (Twitter API, Reddit API, GitHub search, Hacker News, SearXNG metasearch, Firecrawl web scraping), (2) analyzing prompt quality and commercial viability, (3) transforming prompts into structured SKILL.md files, (4) packaging skills for ClawdHub distribution, and (5) publishing to the marketplace with registry configuration."
 ---
 
 # Prompt To Skill Converter
 
 ## Overview
 
-Automated workflow for discovering AI prompts from X (Twitter) and converting them into commercial Clawdbot Skills. Uses Claude's skill creation methodology to transform tweet content into properly structured, distributable skills with automatic packaging and marketplace publishing.
+**转换发布层** - 自动化工作流，将高质量提示词转换为 Clawdbot Skills 并发布到 ClawdHub。
+
+**架构定位**：
+```
+┌─────────────────────┐
+│ x-prompt-hunter     │ ← 数据发现层（去重+评估）
+└─────────┬───────────┘
+        │ 高质量提示词
+        ▼
+┌─────────────────────┐
+│ prompt-to-skill-    │ ← 转换发布层（SKILL.md + ClawdHub）
+│ converter          │
+└─────────────────────┘
+```
+
+**注意**：此技能依赖 **x-prompt-hunter** 数据发现层。建议先使用 x-prompt-hunter 进行提示词去重和评估，然后使用本技能进行转换和发布。
 
 ## Core Workflow
 
 ```
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│  1. Search X    │───▶│  2. Evaluate    │───▶│  3. Convert     │
-│     for Prompts │    │  & Filter       │    │  to Skill       │
+│  1. Load High   │───▶│  2. Convert     │───▶│  3. Package     │
+│  Quality Prompts│    │  to Skills      │    │  & Test        │
+│  (from x-       │    │                 │    │                 │
+│   prompt-hunter)│    │                 │    │                 │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
                                                           │
                                                           ▼
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│  5. Publish to  │◀───│  4. Package     │◀───│     Test        │
-│  ClawdHub       │    │  for Distrib.   │    │     Skill       │
+┌─────────────────┐    ┌─────────────────┌─────────────────┐
+│  5. Publish to  │◀───│  4. Validate     │◀───│  Quality Check  │
+│  ClawdHub       │    │  & Document     │    │                 │
+│  (with --registry)│   │                 │    │                 │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
 ```
 
+## Data Sources
+
+### Recommended Workflow (Two-Stage Architecture)
+
+**Stage 1: Data Discovery & Quality Control (x-prompt-hunter)**
+```bash
+# 使用 x-prompt-hunter 进行去重和评估
+cd /root/clawd/skills/x-prompt-hunter
+
+# 完整流程：抓取 → 去重 → 评估 → 生成报告
+python3 main.py pipeline --query "AI prompts" --limit 100 --evaluate-limit 30
+
+# 高质量提示词输出到: data/prompts_deduplicated.json
+# 评估结果输出到: data/evaluation_results.json
+```
+
+**Stage 2: Conversion & Publishing (prompt-to-skill-converter)**
+```bash
+# 加载高质量提示词并转换为 Skills
+cd /root/clawd/skills/prompt-to-skill-converter
+
+# 转换为 Skills
+python3 scripts/convert-prompts-to-skills.py \
+  --input /root/clawd/skills/x-prompt-hunter/data/evaluation_results.json \
+  --quality-threshold 80
+
+# 打包并发布
+python3 /usr/lib/node_modules/clawdbot/skills/skill-creator/scripts/package_skill.py /root/clawd/skills/<skill-name>
+clawdhub publish <skill-name>.skill --registry https://www.clawhub.ai/api
+```
+
+### Legacy Data Sources (Direct Collection)
+
+**注意**：以下收集方法为遗留功能，建议优先使用 **x-prompt-hunter** 的数据发现层。
+
+**Social Media:**
+- **Twitter/X**: Real-time prompt discovery via API (bird CLI)
+- **Reddit**: Community-driven prompt collections and discussions
+
+**Developer Platforms:**
+- **GitHub**: Prompt libraries in code repositories, README files, issues
+
+**News & Discussion:**
+- **Hacker News**: Tech-focused prompt discussions and resources
+
+**Web Search & Scraping:**
+- **SearXNG**: Privacy-respecting metasearch across multiple engines
+- **Firecrawl**: AI-powered web scraping for JavaScript-heavy sites
+
+### One-Command Full Workflow (Legacy)
+
+**注意**：此为遗留工作流，建议使用上述两阶段架构。
+
+```bash
+# Run complete workflow (collect → evaluate → convert → package → publish)
+bash scripts/full-prompt-workflow.sh
+
+# With options:
+bash scripts/full-prompt-workflow.sh --quality-threshold 60 --test-mode
+```
+
+This script integrates all components automatically and provides end-to-end automation.
+
 ## Prerequisites
 
-1. **Twitter API Key**: Configure in `~/.bashrc` (see twitter-search skill)
-2. **ClawdHub Token**: Set up for publishing (already configured: `clh_6aVBxdBkWmSOoZN9tUDX1nABYZFMqO_ARPUbHbkboj4`)
-3. **Python 3+**: Required for automation scripts
-4. **Skill Creation Scripts**: Available from skill-creator (`init_skill.py`, `package_skill.py`)
+### API Keys & Tokens
+1. **Twitter API Key**: Configure in `~/.bashrc` (see twitter-search skill) - Used for Twitter/X prompt collection
+2. **Reddit API Credentials**: Required for Reddit data collection (create app at reddit.com/prefs/apps)
+3. **GitHub Personal Access Token**: For GitHub API access (optional, increases rate limits)
+4. **ClawdHub Token**: Set up for publishing (already configured: `clh_Ki_M1Xiws5Qzi83gqdZhYG3jXSuZOnEfQOxhaRsjHcw`)
+   - **Important**: Registry URL must be `https://www.clawhub.ai/api`
 
-## Step 1: Search X for AI Prompts
+### Software Requirements
+5. **Python 3.8+**: Required for automation scripts
+6. **SearXNG Instance**: Local or remote metasearch instance (optional, see searxng skill)
+7. **Firecrawl API Key**: For advanced web scraping (optional, see firecrawl skill)
+8. **Skill Creation Scripts**: Available from skill-creator (`init_skill.py`, `package_skill.py`)
+
+### CLI Tools
+- **bird CLI**: `npm install -g @sugarcube/cli` (for Twitter API)
+- **ClawdHub CLI**: Included with Clawdbot (for publishing)
+
+## Step 1: Collect Prompts from Multiple Sources
+
+Collect AI prompts from diverse sources for comprehensive coverage and quality.
+
+### Source 1: Twitter/X (Social Media)
 
 Use the twitter-search skill to discover high-quality prompts with engagement metrics.
 
@@ -112,6 +209,136 @@ cat /root/clawd/data/prompts/twitter-prompts.jsonl | jq '.'
   "replies": 23
 }
 ```
+
+### Source 2: Reddit (Community Content)
+
+Collect prompts from Reddit communities focused on AI, prompt engineering, and specific domains.
+
+```bash
+# Run Reddit collection script
+bash scripts/collect-prompts-reddit.sh
+
+# Data saved to: /root/clawd/data/prompts/reddit-prompts.jsonl
+```
+
+**Target Subreddits:**
+- r/ChatGPT, r/PromptEngineering, r/artificial
+- Domain-specific: r/datasets, r/MachineLearning, r/LocalLLaMA
+
+**Advantages:**
+- Community-vetted quality (upvotes = engagement)
+- Detailed discussions and refinements
+- Diverse perspectives and use cases
+
+### Source 3: GitHub (Developer Resources)
+
+Search for prompt libraries and prompt-related code repositories.
+
+```bash
+# Run GitHub collection script
+bash scripts/collect-prompts-github.sh
+
+# Data saved to: /root/clawd/data/prompts/github-prompts.jsonl
+```
+
+**Search Patterns:**
+- Repository names: "prompt-library", "awesome-prompts", "prompt-templates"
+- File patterns: `README.md`, `prompts.md`, `PROMPTS.md`
+- Code comments and documentation
+
+**Advantages:**
+- High-quality, developer-focused prompts
+- Well-documented and structured
+- Often includes usage examples
+
+### Source 4: Hacker News (Tech Discussions)
+
+Extract prompts from HN discussions and comments.
+
+```bash
+# Run Hacker News collection script
+bash scripts/collect-prompts-hn.sh
+
+# Data saved to: /root/clawd/data/prompts/hn-prompts.jsonl
+```
+
+**Search Criteria:**
+- Stories with "prompt" or "prompt engineering"
+- Comments mentioning prompt techniques
+- Show HN discussions about AI tools
+
+**Advantages:**
+- Tech-savvy audience
+- Informed discussions
+- Trend detection
+
+### Source 5: SearXNG (Metasearch)
+
+Use privacy-respecting metasearch to find prompt-related content across multiple search engines.
+
+```bash
+# Run SearXNG collection script
+bash scripts/collect-prompts-searxng.sh
+
+# Data saved to: /root/clawd/data/prompts/searxng-prompts.jsonl
+```
+
+**Configuration:**
+```bash
+# Set SearXNG instance URL (in .env.d/)
+export SEARXNG_URL=http://localhost:8080
+
+# Or use a public instance
+export SEARXNG_URL=https://searx.be
+```
+
+**Advantages:**
+- No API rate limits
+- Multiple search engines in one query
+- Privacy-focused
+- Customizable search filters
+
+### Source 6: Firecrawl (Advanced Web Scraping)
+
+Use AI-powered web scraping for JavaScript-heavy sites and complex web pages.
+
+```bash
+# Run Firecrawl collection script
+bash scripts/collect-prompts-firecrawl.sh
+
+# Data saved to: /root/clawd/data/prompts/firecrawl-prompts.jsonl
+```
+
+**Configuration:**
+```bash
+# Set Firecrawl API key (in .env.d/)
+export FIRECRAWL_API_KEY=your_api_key_here
+```
+
+**Advantages:**
+- Handles JavaScript-rendered content
+- Bypasses anti-bot measures
+- Extracts clean, LLM-ready data
+- Supports crawling entire sites
+
+**Use Cases:**
+- Scrape prompt library websites
+- Extract prompts from documentation sites
+- Collect from specialized AI platforms
+
+### Unified Collection Workflow
+
+For comprehensive collection, use the integrated multi-source collector:
+
+```bash
+# Collect from all configured sources
+bash scripts/collect-prompts-all.sh
+
+# Or run the full workflow (includes collection)
+bash scripts/full-prompt-workflow.sh --collect-only
+```
+
+**Output:** All sources save to unified format in `/root/clawd/data/prompts/`
 
 ## Step 2: Evaluate & Filter Prompts
 
@@ -278,18 +505,57 @@ Before publishing, test the skill:
 
 ## Step 5: Publish to ClawdHub
 
-Publish packaged skills to the marketplace.
+Publish packaged skills to the marketplace with proper registry configuration.
 
 ### Publishing Workflow
 
 ```bash
 # Login to ClawdHub (first time only)
 clawdhub login
-# Enter token: clh_6aVBxdBkWmSOoZN9tUDX1nABYZFMqO_ARPUbHbkboj4
+# Enter token: clh_Ki_M1Xiws5Qzi83gqdZhYG3jXSuZOnEfQOxhaRsjHcw
 
-# Publish skill
-clawdhub publish <skill-name>.skill
+# Publish skill with explicit registry URL (recommended)
+clawdhub publish <skill-name>.skill --registry https://www.clawhub.ai/api
 ```
+
+### Important: Registry Configuration
+
+**Critical**: Always specify the registry URL when publishing:
+
+```bash
+# ✅ Correct: Explicit registry
+clawdhub publish my-skill.skill --registry https://www.clawhub.ai/api
+
+# ❌ Wrong: May publish to wrong registry
+clawdhub publish my-skill.skill
+```
+
+**Why This Matters:**
+- ClawdHub has changed registry URLs over time
+- Using explicit `--registry` ensures publication to the correct destination
+- Old URLs like `clawdhub.com` or `clawhub.ai` may redirect incorrectly
+
+### Publishing Script (Automation)
+
+The automated publishing script includes proper registry configuration:
+
+```bash
+# Use the automated publishing script
+bash scripts/batch-upload-skills-v3.sh
+
+# This script:
+# - Scans for packaged skills
+# - Validates each .skill file
+# - Publishes with --registry https://www.clawhub.ai/api
+# - Generates a detailed report
+```
+
+**Script Features:**
+- ✅ Batch publishing of multiple skills
+- ✅ Automatic registry URL injection
+- ✅ Error handling and retry logic
+- ✅ Progress tracking and logging
+- ✅ Report generation
 
 ### Skill Metadata Preparation
 
@@ -363,6 +629,81 @@ python3 scripts/collect_prompts.py --query "prompts" --max-results 200 --output 
 - Saves structured JSON output
 - Supports scheduled runs (cron)
 
+### scripts/collect_prompts_enhanced.py 🔥
+
+增强版 AI 提示词收集系统（最新推荐版本）：
+
+```bash
+# 基本使用（使用默认配置）
+python3 scripts/collect_prompts_enhanced.py
+
+# 指定输出目录
+python3 scripts/collect_prompts_enhanced.py --output-dir /custom/path
+
+# 快速测试模式（2 个查询，每个最多 3 个结果）
+python3 scripts/collect_prompts_enhanced.py --quick-test
+
+# 查看帮助
+python3 scripts/collect_prompts_enhanced.py --help
+```
+
+**Phase 1 核心特性：**
+- ✅ **扩展的搜索关键词库**：50+ 查询组合
+- ✅ **智能关键词组合策略**：自动生成有效查询
+- ✅ **高级搜索结果过滤**：基于域名、URL 模式
+- ✅ **增强的提示词提取算法**：改进的正则表达式
+- ✅ **中英文双语搜索**：覆盖更广的内容源
+- ✅ **自动分类和质量评分**：0-100 分质量评估
+- ✅ **完整的错误处理**：日志记录和优雅退出
+- ✅ **并发处理支持**：最多 3 个并发请求
+- ✅ **JSONL 格式输出**：便于后续处理
+
+**数据输出：**
+- 文件：`/root/clawd/data/prompts/collected/prompts-enhanced-{timestamp}.jsonl`
+- 格式：每行一个 JSON 对象
+- 包含字段：
+  - `timestamp`: 收集时间
+  - `query`: 搜索查询
+  - `url`: 来源 URL
+  - `domain`: 域名
+  - `content`: 提取的内容
+  - `prompts`: 提取的提示词列表
+  - `prompt_count`: 提示词数量
+  - `type`: 提示词类型（image-generation, text-generation, video-generation, general）
+  - `quality_score`: 质量分数（0-100）
+  - `is_truncated`: 是否被截断
+
+**搜索关键词分类：**
+- 基础关键词组合（prompt + AI + type + action）
+- 专业提示词网站（PromptBase, LearnPrompting 等）
+- 平台特定提示词（Midjourney, DALL-E, Stable Diffusion）
+- 任务特定查询（代码、写作、设计等）
+- 质量导向查询（best, top, high-quality）
+
+**依赖：**
+- Python 3.8+
+- `requests` 库
+- SearXNG 实例（环境变量 `SEARXNG_URL`）
+
+**配置：**
+- `SEARXNG_URL`: SearXNG 服务地址（默认：http://localhost:8080）
+- `MAX_RESULTS_PER_QUERY`: 每个查询的最大结果数（默认：10）
+- `MAX_WORKERS`: 并发工作线程数（默认：3）
+- `REQUEST_DELAY`: 请求延迟（默认：1.5 秒）
+
+**改进点（相比旧脚本）：**
+1. 更准确的提示词提取（减少导航栏、页脚干扰）
+2. 更智能的质量评分算法
+3. 更好的错误处理和日志记录
+4. 支持快速测试模式
+5. 自动分类提示词类型
+6. 检测提示词截断
+
+**使用建议：**
+- 首次使用建议先用 `--quick-test` 验证配置
+- 根据测试结果调整查询词和过滤规则
+- 将收集的提示词用于后续的评估和转换流程
+
 ### scripts/evaluate_prompts.py
 
 Scores and ranks prompts:
@@ -376,6 +717,105 @@ python3 scripts/evaluate_prompts.py /tmp/prompts.json --threshold 30 --output /t
 - Applies scoring criteria
 - Filters by threshold
 - Outputs ranked list
+
+### scripts/convert-prompts-to-skills.py 🔥
+
+将收集的提示词批量转换为 Clawdbot Skills：
+
+```bash
+# 基本使用（使用默认输入文件）
+python3 scripts/convert-prompts-to-skills.py
+
+# 指定输入文件
+python3 scripts/convert-prompts-to-skills.py --input /path/to/prompts.jsonl
+
+# 指定质量阈值（只转换高质量提示词）
+python3 scripts/convert-prompts-to-skills.py --quality-threshold 60
+
+# 指定输出目录
+python3 scripts/convert-prompts-to-skills.py --output-dir /root/clawd/skills
+
+# 查看帮助
+python3 scripts/convert-prompts-to-skills.py --help
+```
+
+**核心功能：**
+- ✅ **批量转换**：处理 JSONL 格式的提示词数据
+- ✅ **智能分类**：根据提示词类型自动分类
+- ✅ **质量过滤**：只转换高质量提示词
+- ✅ **自动命名**：生成符合规范的 skill 名称
+- ✅ **SKILL.md 生成**：自动创建结构化的技能文档
+- ✅ **进度跟踪**：显示转换进度和统计信息
+- ✅ **错误处理**：跳过无效提示词，记录错误日志
+
+**转换流程：**
+1. 读取输入文件（JSONL 格式）
+2. 解析每个提示词对象
+3. 根据质量分数过滤（默认阈值：50）
+4. 生成唯一的 skill 名称（kebab-case）
+5. 创建 skill 目录结构
+6. 生成 SKILL.md 文件（包含 frontmatter 和内容）
+7. 记录转换结果到日志
+
+**输出结构：**
+```
+/root/clawd/skills/
+├── example-prompt-skill/
+│   ├── SKILL.md
+│   └── (optional scripts/ or references/)
+├── another-prompt-skill/
+│   ├── SKILL.md
+│   └── (optional scripts/ or references/)
+...
+```
+
+**生成的 SKILL.md 包含：**
+- `name`: skill 名称（kebab-case）
+- `description`: 基于 prompt 内容自动生成
+- Overview: 简要说明
+- Workflow: 使用步骤
+- Examples: 使用示例
+- Resources: 相关资源（如有）
+
+**配置选项：**
+- `--input`: 输入文件路径（默认：自动查找最新的 prompts 文件）
+- `--output-dir`: 输出目录（默认：/root/clawd/skills）
+- `--quality-threshold`: 质量阈值（默认：50）
+- `--dry-run`: 预览模式，不实际创建文件
+
+**使用示例：**
+
+```bash
+# 1. 使用 enhanced 收集脚本收集提示词
+python3 scripts/collect_prompts_enhanced.py
+
+# 2. 转换为 skills（只转换质量 >= 60 的提示词）
+python3 scripts/convert-prompts-to-skills.py --quality-threshold 60
+
+# 3. 预览模式（查看会创建哪些 skills，但不实际创建）
+python3 scripts/convert-prompts-to-skills.py --dry-run
+
+# 4. 查看转换统计
+python3 scripts/convert-prompts-to-skills.py --stats
+```
+
+**输出统计：**
+- 处理的提示词总数
+- 转换成功的 skills 数
+- 跳过的提示词数（质量不足）
+- 错误数
+- 转换耗时
+
+**依赖：**
+- Python 3.8+
+- `json`、`pathlib`、`re` 等标准库
+- 已收集的提示词数据（JSONL 格式）
+
+**注意事项：**
+- 生成的 SKILL.md 需要人工审查和优化
+- 建议先使用 `--dry-run` 预览
+- 转换后需要使用 `package_skill.py` 打包
+- 发布前需要充分测试
 
 ### scripts/batch_convert.py
 
@@ -516,6 +956,8 @@ crontab -e
 
 ## Example: End-to-End Workflow
 
+### Traditional Manual Workflow
+
 ```bash
 # 1. Collect prompts
 python3 scripts/collect_prompts.py --query "prompts" --max-results 200 --output /tmp/prompts.json
@@ -530,7 +972,92 @@ python3 scripts/batch_convert.py /tmp/ranked.json --interactive
 python3 /usr/lib/node_modules/clawdbot/skills/skill-creator/scripts/package_skill.py /root/clawd/skills/<skill-name>
 
 # 5. Publish
-clawdhub publish <skill-name>.skill
+clawdhub publish <skill-name>.skill --registry https://www.clawhub.ai/api
+```
+
+### Full Automated Workflow (Recommended) 🔥
+
+Use the integrated workflow script for complete automation:
+
+```bash
+# Run complete workflow with default settings
+bash scripts/full-prompt-workflow.sh
+
+# With custom quality threshold
+bash scripts/full-prompt-workflow.sh --quality-threshold 70
+
+# Test mode (no publishing)
+bash scripts/full-prompt-workflow.sh --test-mode
+
+# Verbose output
+bash scripts/full-prompt-workflow.sh --verbose
+
+# Show help
+bash scripts/full-prompt-workflow.sh --help
+```
+
+**What It Does:**
+
+1. **Phase 1: Data Collection**
+   - Collects from all configured sources (Twitter, Reddit, GitHub, HN, SearXNG, Firecrawl)
+   - Saves unified JSONL format to `/root/clawd/data/prompts/collected/`
+   - Removes duplicates across sources
+
+2. **Phase 2: Evaluation & Filtering**
+   - Applies quality scoring (0-100)
+   - Filters by threshold (default: 60)
+   - Categorizes prompts by type
+
+3. **Phase 3: Conversion to Skills**
+   - Generates unique skill names
+   - Creates SKILL.md files with proper structure
+   - Generates supporting documentation
+
+4. **Phase 4: Packaging**
+   - Validates each skill
+   - Creates `.skill` packages
+   - Checks for errors
+
+5. **Phase 5: Publishing**
+   - Publishes to ClawdHub with `--registry https://www.clawhub.ai/api`
+   - Generates detailed report
+   - Skips if test mode enabled
+
+**Output:**
+
+```
+/root/clawd/
+├── data/prompts/
+│   ├── collected/           # Collected data (JSONL)
+│   └── processed/           # Processed and filtered
+├── skills/                  # Generated skills
+│   ├── prompt-skill-1/
+│   │   └── SKILL.md
+│   └── prompt-skill-2/
+│       └── SKILL.md
+├── reports/
+│   └── workflow-<timestamp>.txt
+```
+
+**Report Contents:**
+- Collection statistics (per source)
+- Quality distribution
+- Skills created
+- Packaging results
+- Publishing status
+- Errors and warnings
+
+**Schedule with Cron:**
+
+```bash
+# Run daily at 9 AM
+0 9 * * * cd /root/clawd && bash scripts/full-prompt-workflow.sh
+
+# Run every 6 hours
+0 */6 * * * cd /root/clawd && bash scripts/full-prompt-workflow.sh --quality-threshold 70
+
+# Run weekly on Monday 8 AM
+0 8 * * 1 cd /root/clawd && bash scripts/full-prompt-workflow.sh --test-mode
 ```
 
 ## Troubleshooting
@@ -554,16 +1081,111 @@ clawdhub publish <skill-name>.skill
 - Verify ClawdHub token
 - Check internet connection
 - Validate .skill file format
+- **Important**: Ensure `--registry https://www.clawhub.ai/api` is specified
+
+## scripts/full-prompt-workflow.sh 🔥
+
+完整的端到端自动化工作流脚本，整合了数据收集、评估、转换、打包和发布。
+
+### 功能概述
+
+此脚本提供了一键式自动化，将整个提示词转换为 Skill 的流程整合为一个命令：
+
+```bash
+bash scripts/full-prompt-workflow.sh [OPTIONS]
+```
+
+### 命令选项
+
+| 选项 | 默认值 | 说明 |
+|------|--------|------|
+| `--quality-threshold` | 60 | 质量阈值（0-100），只转换高于此分数的提示词 |
+| `--test-mode` | false | 测试模式，不实际发布到 ClawdHub |
+| `--verbose` | false | 详细输出模式 |
+| `--dry-run` | false | 预览模式，不执行任何操作 |
+| `--help` | - | 显示帮助信息 |
+
+### 工作流阶段
+
+**Phase 1: 数据收集**
+- 收集来自 Twitter, Reddit, GitHub, HN, SearXNG, Firecrawl 的提示词
+- 保存到 `/root/clawd/data/prompts/collected/`
+- 自动去重
+
+**Phase 2: 评估和过滤**
+- 应用质量评分（0-100）
+- 根据阈值过滤
+- 保存到 `/root/clawd/data/prompts/processed/`
+
+**Phase 3: 转换为 Skills**
+- 生成 SKILL.md 文件
+- 创建 skill 目录结构
+- 保存到 `/root/clawd/skills/`
+
+**Phase 4: 打包**
+- 验证每个 skill
+- 创建 `.skill` 包
+- 检查完整性
+
+**Phase 5: 发布**
+- 发布到 ClawdHub（带 `--registry https://www.clawhub.ai/api`）
+- 生成详细报告
+- 测试模式下跳过
+
+### 使用示例
+
+```bash
+# 基本使用
+bash scripts/full-prompt-workflow.sh
+
+# 提高质量阈值
+bash scripts/full-prompt-workflow.sh --quality-threshold 80
+
+# 测试模式（不发布）
+bash scripts/full-prompt-workflow.sh --test-mode --verbose
+```
+
+### 输出报告
+
+生成结构化报告到 `/root/clawd/reports/workflow-<timestamp>.txt`，包含：
+
+- 每个阶段的统计信息
+- 收集的提示词数量
+- 质量分布
+- 创建的 skills 数量
+- 发布状态
+- 错误和警告
+
+### Cron 集成
+
+```bash
+# 每天早上 9 点运行
+0 9 * * * cd /root/clawd && bash scripts/full-prompt-workflow.sh >> /root/clawd/logs/cron-workflow.log 2>&1
+```
 
 ## Resources
 
 ### Required Skills
-- **twitter-search-skill**: For prompt discovery
+- **twitter-search-skill**: For Twitter/X prompt discovery
 - **skill-creator**: For skill creation framework
+- **searxng**: For privacy-respecting metasearch
+- **firecrawl-scraper**: For advanced web scraping
+- **twitter-reader**: For fetching Twitter post content
+- **firecrawl**: For web search and scraping via Firecrawl API
 
 ### External Dependencies
-- **Twitter API Key**: From twitterapi.io
-- **ClawdHub Token**: Already configured
+- **Twitter API Key**: From twitterapi.io (configured in `~/.bashrc`)
+- **Reddit API Credentials**: From reddit.com/prefs/apps (for Reddit data collection)
+- **GitHub Personal Access Token**: From github.com/settings/tokens (optional, increases rate limits)
+- **SearXNG Instance**: Local or remote metasearch instance (optional)
+- **Firecrawl API Key**: From firecrawl.dev (optional, for advanced scraping)
+- **ClawdHub Token**: Already configured (`clh_Ki_M1Xiws5Qzi83gqdZhYG3jXSuZOnEfQOxhaRsjHcw`)
+  - **Registry URL**: `https://www.clawhub.ai/api` (critical for publishing)
+
+### CLI Tools
+- **bird CLI**: `npm install -g @sugarcube/cli` (for Twitter API)
+- **ClawdHub CLI**: Included with Clawdbot (for publishing)
+- **Python 3.8+**: Required for automation scripts
 
 ### Documentation
 - Skill Creator Guide: `/usr/lib/node_modules/clawdbot/skills/skill-creator/SKILL.md`
