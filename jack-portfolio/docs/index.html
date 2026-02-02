@@ -57,7 +57,7 @@
                 linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
             background-size: 60px 60px;
             animation: gridMove 20s linear infinite;
-            z-index: -2;
+            z-index: -1;
             pointer-events: none;
         }
 
@@ -65,205 +65,6 @@
             0% { transform: translate(0, 0); }
             100% { transform: translate(60px, 60px); }
         }
-
-        /* 可视化组件样式 */
-        
-        /* 滚动进度条 */
-        #scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
-            z-index: 9999;
-            transition: width 0.1s ease;
-            box-shadow: 0 0 10px var(--accent-glow);
-        }
-
-        /* 打字机效果 */
-        .typewriter {
-            overflow: hidden;
-            border-right: 3px solid var(--accent-primary);
-            white-space: nowrap;
-            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-        }
-
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: var(--accent-primary); }
-        }
-
-        /* 光标跟随效果 */
-        #cursor-glow {
-            position: fixed;
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9998;
-            transition: transform 0.1s ease;
-            mix-blend-mode: screen;
-        }
-
-        /* 粒子背景 */
-        #particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: var(--accent-primary);
-            border-radius: 50%;
-            opacity: 0.3;
-            animation: float 15s infinite ease-in-out;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0) translateX(0);
-                opacity: 0.3;
-            }
-            50% {
-                transform: translateY(-100px) translateX(50px);
-                opacity: 0.6;
-            }
-        }
-
-        /* 数字滚动动画 */
-        .count-up {
-            display: inline-block;
-            transition: all 0.3s ease;
-        }
-
-        .count-up.updated {
-            transform: scale(1.2);
-            color: var(--accent-primary);
-        }
-
-        /* 技能雷达图 */
-        .radar-chart {
-            width: 250px;
-            height: 250px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
-            border: 1px solid var(--border-color);
-        }
-
-        .radar-point {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: var(--accent-primary);
-            border-radius: 50%;
-            box-shadow: 0 0 15px var(--accent-glow);
-            animation: pulse-point 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse-point {
-            0%, 100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-            50% {
-                transform: scale(1.5);
-                opacity: 0.6;
-            }
-        }
-
-        /* 技能进度条 */
-        .skill-bars {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .skill-bar-container {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .skill-bar-label {
-            width: 120px;
-            font-weight: 600;
-        }
-
-        .skill-bar {
-            flex: 1;
-            height: 8px;
-            background: var(--bg-tertiary);
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .skill-bar-fill {
-            height: 100%;
-            background: var(--gradient-1);
-            border-radius: 4px;
-            width: 0;
-            transition: width 1.5s ease;
-        }
-
-        .skill-bar-fill.animated {
-            animation: fill-bar 1.5s ease-out forwards;
-        }
-
-        @keyframes fill-bar {
-            to { width: var(--target-width); }
-        }
-
-        /* GitHub 贡献图模拟 */
-        .contribution-grid {
-            display: grid;
-            grid-template-columns: repeat(52, 1fr);
-            gap: 3px;
-            padding: 1rem;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 0.5rem;
-            margin-top: 2rem;
-        }
-
-        .contribution-cell {
-            width: 12px;
-            height: 12px;
-            background: var(--bg-tertiary);
-            border-radius: 2px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .contribution-cell:hover {
-            transform: scale(1.8);
-            z-index: 10;
-            box-shadow: 0 0 10px var(--accent-glow);
-        }
-
-        .contribution-1 { background: rgba(59, 130, 246, 0.2); }
-        .contribution-2 { background: rgba(59, 130, 246, 0.4); }
-        .contribution-3 { background: rgba(59, 130, 246, 0.6); }
-        .contribution-4 { background: rgba(59, 130, 246, 0.8); }
-        .contribution-5 { background: var(--accent-primary); }
 
         /* Navigation */
         nav {
@@ -441,7 +242,6 @@
         .stat-card:hover {
             transform: translateY(-5px);
             border-color: var(--accent-primary);
-            box-shadow: 0 0 20px var(--accent-glow);
         }
 
         .stat-value {
@@ -567,12 +367,10 @@
             border-radius: 1rem;
             overflow: hidden;
             transition: all 0.3s ease;
-            transform-style: preserve-3d;
-            perspective: 1000px;
         }
 
         .project-card:hover {
-            transform: translateY(-10px) rotateX(5deg);
+            transform: translateY(-10px);
             border-color: var(--accent-primary);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
@@ -757,7 +555,6 @@
             background: var(--bg-tertiary);
             border-color: var(--accent-primary);
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px var(--accent-glow);
         }
 
         .contact-link span {
@@ -820,15 +617,6 @@
     </style>
 </head>
 <body>
-    <!-- 光标跟随效果 -->
-    <div id="cursor-glow"></div>
-    
-    <!-- 粒子背景 -->
-    <canvas id="particles"></canvas>
-    
-    <!-- 滚动进度条 -->
-    <div id="scroll-progress"></div>
-
     <div class="bg-grid"></div>
 
     <nav>
@@ -846,7 +634,7 @@
             <span class="badge-dot"></span>
             <span>AI 技能开发者</span>
         </div>
-        <h1 class="typewriter">jack</h1>
+        <h1>jack</h1>
         <p>探索 AI 自动化边界 · 构建智能技能生态 · 重新定义人机协作</p>
         <div class="hero-actions">
             <a href="#projects" class="btn btn-primary">
@@ -861,15 +649,15 @@
 
     <section class="stats">
         <div class="stat-card reveal">
-            <div class="stat-value mono count-up">100+</div>
+            <div class="stat-value mono">100+</div>
             <div class="stat-label">AI 技能开发</div>
         </div>
         <div class="stat-card reveal">
-            <div class="stat-value mono count-up">50+</div>
+            <div class="stat-value mono">50+</div>
             <div class="stat-label">自动化流程</div>
         </div>
         <div class="stat-card reveal">
-            <div class="stat-value mono count-up">30K+</div>
+            <div class="stat-value mono">30K+</div>
             <div class="stat-label">Moltbot 社区</div>
         </div>
         <div class="stat-card reveal">
@@ -917,59 +705,6 @@
                 </div>
             </div>
         </div>
-        
-        <!-- 技能雷达图 -->
-        <div class="reveal" style="text-align: center; margin-top: 3rem;">
-            <h3 style="font-weight: 600; margin-bottom: 1.5rem;">技能分布</h3>
-            <div style="display: flex; justify-content: center; align-items: center; gap: 3rem; flex-wrap: wrap;">
-                <div class="radar-chart">
-                    <div class="radar-point" style="top: 15%; left: 50%;"></div>
-                    <div class="radar-point" style="top: 30%; left: 85%;"></div>
-                    <div class="radar-point" style="top: 55%; left: 80%;"></div>
-                    <div class="radar-point" style="top: 70%; left: 50%;"></div>
-                    <div class="radar-point" style="top: 55%; left: 20%;"></div>
-                    <div class="radar-point" style="top: 30%; left: 15%;"></div>
-                </div>
-                <div class="skill-bars" style="flex: 1; min-width: 300px;">
-                    <div class="skill-bar-container">
-                        <div class="skill-bar-label">Python</div>
-                        <div class="skill-bar">
-                            <div class="skill-bar-fill" style="--target-width: 90%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-bar-container">
-                        <div class="skill-bar-label">AI/ML</div>
-                        <div class="skill-bar">
-                            <div class="skill-bar-fill" style="--target-width: 85%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-bar-container">
-                        <div class="skill-bar-label">Automation</div>
-                        <div class="skill-bar">
-                            <div class="skill-bar-fill" style="--target-width: 88%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-bar-container">
-                        <div class="skill-bar-label">Frontend</div>
-                        <div class="skill-bar">
-                            <div class="skill-bar-fill" style="--target-width: 75%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-bar-container">
-                        <div class="skill-bar-label">Backend</div>
-                        <div class="skill-bar">
-                            <div class="skill-bar-fill" style="--target-width: 80%;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- GitHub 贡献图模拟 -->
-        <div class="reveal" style="margin-top: 3rem;">
-            <h3 style="font-weight: 600; margin-bottom: 1rem;">活动概览</h3>
-            <div class="contribution-grid" id="contribution-grid"></div>
-        </div>
     </section>
 
     <section class="projects" id="projects">
@@ -987,7 +722,7 @@
                         <span class="project-tag">CLI</span>
                         <span class="project-tag">Gameification</span>
                     </div>
-                    <a href="./achievement-system/" class="project-link">
+                    <a href="#" class="project-link">
                         <span>查看详情</span>
                         <span class="mono">→</span>
                     </a>
@@ -1006,7 +741,7 @@
                         <span class="project-tag">Automation</span>
                         <span class="project-tag">AI</span>
                     </div>
-                    <a href="./achievement-system/" class="project-link">
+                    <a href="#" class="project-link">
                         <span>查看详情</span>
                         <span class="mono">→</span>
                     </a>
@@ -1025,7 +760,7 @@
                         <span class="project-tag">AI</span>
                         <span class="project-tag">Community</span>
                     </div>
-                    <a href="./achievement-system/" class="project-link">
+                    <a href="#" class="project-link">
                         <span>查看详情</span>
                         <span class="mono">→</span>
                     </a>
@@ -1044,7 +779,7 @@
                         <span class="project-tag">Privacy</span>
                         <span class="project-tag">Search</span>
                     </div>
-                    <a href="./achievement-system/" class="project-link">
+                    <a href="#" class="project-link">
                         <span>查看详情</span>
                         <span class="mono">→</span>
                     </a>
@@ -1063,7 +798,7 @@
                         <span class="project-tag">AI</span>
                         <span class="project-tag">Market</span>
                     </div>
-                    <a href="./achievement-system/" class="project-link">
+                    <a href="#" class="project-link">
                         <span>查看详情</span>
                         <span class="mono">→</span>
                     </a>
@@ -1082,7 +817,7 @@
                         <span class="project-tag">API</span>
                         <span class="project-tag">Cron</span>
                     </div>
-                    <a href="./achievement-system/" class="project-link">
+                    <a href="#" class="project-link">
                         <span>查看详情</span>
                         <span class="mono">→</span>
                     </a>
@@ -1131,13 +866,17 @@
         <h2 class="section-title reveal">联系我</h2>
         <p class="reveal">如果你对 AI 技能开发、自动化工作流或任何有趣的项目感兴趣，欢迎随时联系我！</p>
         <div class="contact-links reveal">
-            <a href="mailto:hhhh124hhhh@qq.com" class="contact-link">
+            <a href="mailto:jack@example.com" class="contact-link">
                 <span>📧</span>
-                <span class="mono">hhhh124hhhh@qq.com</span>
+                <span class="mono">jack@example.com</span>
             </a>
-            <a href="https://github.com/hhhh124hhhh" class="contact-link">
+            <a href="#" class="contact-link">
                 <span>💻</span>
-                <span class="mono">github.com/hhhh124hhhh</span>
+                <span class="mono">github.com/jack</span>
+            </a>
+            <a href="#" class="contact-link">
+                <span>💬</span>
+                <span class="mono">Slack</span>
             </a>
         </div>
     </section>
@@ -1147,124 +886,7 @@
     </footer>
 
     <script>
-        // 滚动进度条
-        window.addEventListener('scroll', () => {
-            const scrollProgress = document.getElementById('scroll-progress');
-            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const progress = (scrollTop / scrollHeight) * 100;
-            scrollProgress.style.width = progress + '%';
-        });
-
-        // 光标跟随效果
-        document.addEventListener('mousemove', (e) => {
-            const cursorGlow = document.getElementById('cursor-glow');
-            cursorGlow.style.transform = `translate(${e.clientX - 100}px, ${e.clientY - 100}px)`;
-        });
-
-        // 粒子背景
-        const canvas = document.getElementById('particles');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        const particles = [];
-        const particleCount = 50;
-
-        for (let i = 0; i < particleCount; i++) {
-            particles.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                size: Math.random() * 3 + 1,
-                speedX: Math.random() * 2 - 1,
-                speedY: Math.random() * 2 - 1
-            });
-        }
-
-        function animateParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            particles.forEach(particle => {
-                particle.x += particle.speedX;
-                particle.y += particle.speedY;
-
-                if (particle.x < 0) particle.x = canvas.width;
-                if (particle.x > canvas.width) particle.x = 0;
-                if (particle.y < 0) particle.y = canvas.height;
-                if (particle.y > canvas.height) particle.y = 0;
-
-                ctx.beginPath();
-                ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(59, 130, 246, 0.3)';
-                ctx.fill();
-            });
-
-            requestAnimationFrame(animateParticles);
-        }
-
-        animateParticles();
-
-        // 窗口大小改变时重置画布
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-
-        // 数字滚动动画
-        function animateNumbers() {
-            const countUps = document.querySelectorAll('.count-up');
-            
-            countUps.forEach(element => {
-                const finalValue = element.textContent;
-                const numbers = finalValue.match(/\d+/);
-                if (numbers) {
-                    const target = parseInt(numbers[0]);
-                    let current = 0;
-                    const increment = target / 50;
-                    
-                    const interval = setInterval(() => {
-                        current += increment;
-                        if (current >= target) {
-                            current = target;
-                            clearInterval(interval);
-                        }
-                        
-                        let displayValue = Math.floor(current).toString();
-                        if (finalValue.includes('K')) {
-                            displayValue += 'K+';
-                        } else if (finalValue.includes('+')) {
-                            displayValue += '+';
-                        }
-                        element.textContent = displayValue;
-                    }, 30);
-                }
-            });
-        }
-
-        // 技能进度条动画
-        function animateSkillBars() {
-            const skillBars = document.querySelectorAll('.skill-bar-fill');
-            skillBars.forEach(bar => {
-                setTimeout(() => {
-                    bar.classList.add('animated');
-                }, 500);
-            });
-        }
-
-        // 生成 GitHub 贡献图
-        function generateContributionGrid() {
-            const grid = document.getElementById('contribution-grid');
-            if (!grid) return;
-            
-            // 生成 52 周的格子
-            for (let i = 0; i < 364; i++) {
-                const cell = document.createElement('div');
-                cell.className = 'contribution-cell contribution-' + (Math.floor(Math.random() * 5) + 1);
-                grid.appendChild(cell);
-            }
-        }
-
-        // 滚动显现动画
+        // Scroll Reveal Animation
         function reveal() {
             const reveals = document.querySelectorAll('.reveal');
             reveals.forEach(element => {
@@ -1278,7 +900,10 @@
             });
         }
 
-        // 平滑滚动
+        window.addEventListener('scroll', reveal);
+        reveal(); // Initial check
+
+        // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -1292,24 +917,14 @@
             });
         });
 
-        // 视差滚动效果
+        // Add parallax effect to hero
         window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
             const hero = document.querySelector('.hero');
             if (hero) {
-                const scrolled = window.pageYOffset;
                 hero.style.transform = `translateY(${scrolled * 0.3}px)`;
             }
         });
-
-        // 初始化
-        window.addEventListener('load', () => {
-            reveal();
-            animateNumbers();
-            animateSkillBars();
-            generateContributionGrid();
-        });
-
-        window.addEventListener('scroll', reveal);
     </script>
 </body>
 </html>
