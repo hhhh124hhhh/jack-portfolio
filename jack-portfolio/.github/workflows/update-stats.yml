@@ -1,0 +1,76 @@
+name: Update Portfolio Stats
+
+on:
+  # 定时任务：每天 UTC 00:00 (北京时间 08:00)
+  schedule:
+    - cron: '0 0 * * *'
+  # 手动触发
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Update Statistics
+        run: |
+          # 创建更新脚本
+          cat > update-stats.py << 'EOF'
+          #!/usr/bin/env python3
+          import re
+          import json
+          from datetime import datetime
+
+          # 更新统计数据
+          stats = {
+            "skills": 100,
+            "automation_flows": 50,
+            "community_participation": "30K+",
+            "curiosity": "∞",
+            "last_updated": datetime.now().isoformat()
+          }
+
+          # 更新 HTML
+          with open('index.html', 'r', encoding='utf-8') as f:
+            content = f.read()
+
+          # 更新技能数
+          content = re.sub(
+            r'<div class="stat-number">\d+</div>\s*<div class="stat-label">AI 技能开发</div>',
+            f'<div class="stat-number">{stats["skills"]}</div>\n                  <div class="stat-label">AI 技能开发</div>',
+            content
+          )
+
+          # 更新自动化流程数
+          content = re.sub(
+            r'<div class="stat-number">\d+</div>\s*<div class="stat-label">自动化流程</div>',
+            f'<div class="stat-number">{stats["automation_flows"]}</div>\n                  <div class="stat-label">自动化流程</div>',
+            content
+          )
+
+          # 保存
+          with open('index.html', 'w', encoding='utf-8') as f:
+            f.write(content)
+
+          print(f"Updated stats: {stats}")
+          EOF
+
+          python3 update-stats.py
+
+      - name: Commit and Push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git diff --staged --quiet || git commit -m "Update portfolio stats [skip ci]"
+          git push
