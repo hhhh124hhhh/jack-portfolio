@@ -5,14 +5,24 @@ import os
 from pathlib import Path
 from typing import Dict, Any, Optional
 
-# 获取数据目录路径
-DATA_DIR = Path(__file__).parent.parent / "data"
+# 获取用户数据目录
+# 优先使用 XDG_DATA_HOME，否则使用 ~/.achievement-system
+XDG_DATA_HOME = Path(os.environ.get('XDG_DATA_HOME', '~/.local/share')).expanduser()
+DATA_DIR = XDG_DATA_HOME / "achievement-system"
+
 ACHIEVEMENTS_FILE = DATA_DIR / "achievements.json"
 PROGRESS_FILE = DATA_DIR / "progress.json"
 
 
+def ensure_data_dir() -> None:
+    """确保数据目录存在"""
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+
+
 def load_achievements() -> Dict[str, Any]:
     """加载成就配置文件"""
+    ensure_data_dir()
+
     if not ACHIEVEMENTS_FILE.exists():
         return {"achievements": []}
 
@@ -26,8 +36,9 @@ def load_achievements() -> Dict[str, Any]:
 
 def save_achievements(data: Dict[str, Any]) -> bool:
     """保存成就配置文件"""
+    ensure_data_dir()
+
     try:
-        ACHIEVEMENTS_FILE.parent.mkdir(parents=True, exist_ok=True)
         with open(ACHIEVEMENTS_FILE, 'w', encoding='utf-8') as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
         return True
@@ -38,6 +49,8 @@ def save_achievements(data: Dict[str, Any]) -> bool:
 
 def load_progress() -> Dict[str, Any]:
     """加载用户进度文件"""
+    ensure_data_dir()
+
     if not PROGRESS_FILE.exists():
         return {
             "user_id": "default",
@@ -69,8 +82,9 @@ def load_progress() -> Dict[str, Any]:
 
 def save_progress(progress: Dict[str, Any]) -> bool:
     """保存用户进度文件"""
+    ensure_data_dir()
+
     try:
-        PROGRESS_FILE.parent.mkdir(parents=True, exist_ok=True)
         with open(PROGRESS_FILE, 'w', encoding='utf-8') as f:
             json.dump(progress, f, indent=2, ensure_ascii=False)
         return True
@@ -86,3 +100,9 @@ def get_achievement_by_id(achievement_id: str) -> Optional[Dict[str, Any]]:
         if achievement.get("id") == achievement_id:
             return achievement
     return None
+
+
+def get_data_dir() -> Path:
+    """获取数据目录路径"""
+    ensure_data_dir()
+    return DATA_DIR
