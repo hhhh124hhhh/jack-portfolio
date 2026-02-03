@@ -237,7 +237,7 @@ def stats():
     stats_text.append("\n")
 
     stats_text.append(f"总积分: ", style="white")
-    stats_text.append(f"{stats_data['total_points']}", style="gold bold")
+    stats_text.append(f"{stats_data['total_points']}", style="yellow bold")
 
     console.print(Panel(stats_text, title="[bold]📊 成就统计[/bold]", border_style="cyan"))
     console.print()
@@ -313,11 +313,11 @@ def add(achievement_id: str, amount: int):
         # 如果解锁了成就，显示庆祝信息
         if unlocked:
             console.print(Panel(
-                f"[bold gold]🏆 {unlocked.get('icon')} {unlocked.get('name')}[/bold gold]\n"
+                f"[bold yellow]🏆 {unlocked.get('icon')} {unlocked.get('name')}[/bold yellow]\n"
                 f"[dim]{unlocked.get('description')}[/dim]\n"
                 f"[bold green]+{unlocked.get('points', 0)} 积分[/bold green]",
                 title="[bold]🎉 成就解锁！[/bold]",
-                border_style="gold"
+                border_style="yellow"
             ))
     else:
         console.print(f"[yellow]⚠️  {message}[/yellow]")

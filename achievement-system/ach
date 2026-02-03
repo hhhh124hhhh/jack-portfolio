@@ -1,14 +1,7 @@
-#!/usr/bin/env python3
-"""成就系统命令行入口"""
+#!/bin/bash
+# Achievement System CLI Wrapper
 
-import sys
-from pathlib import Path
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
 
-# 将 src 目录添加到 Python 路径
-src_path = Path(__file__).parent / "src"
-sys.path.insert(0, str(src_path))
-
-from cli import cli
-
-if __name__ == "__main__":
-    cli()
+python3 -c "import sys; sys.path.insert(0, 'src'); from cli import cli; cli()" "$@"
