@@ -24,7 +24,10 @@ class AchievementStats:
 
         try:
             with open(STATS_FILE, 'r', encoding='utf-8') as f:
-                return json.load(f)
+                stats = json.load(f)
+                # 将 tools_used 列表转换为 set
+                stats["execution"]["tools_used"] = set(stats["execution"]["tools_used"])
+                return stats
         except (json.JSONDecodeError, IOError):
             return self._get_default_stats()
 
@@ -84,7 +87,12 @@ class AchievementStats:
         """增加工具调用次数"""
         self.stats["execution"]["total_tool_calls"] += 1
         if tool_name and tool_name not in self.stats["execution"]["tools_used"]:
-            self.stats["execution"]["tools_used"].add(tool_name)
+            if isinstance(self.stats["execution"]["tools_used"], list):
+                self.stats["execution"]["tools_used"] = list(set(self.stats["execution"]["tools_used"]))
+                if tool_name not in self.stats["execution"]["tools_used"]:
+                    self.stats["execution"]["tools_used"].append(tool_name)
+            else:
+                self.stats["execution"]["tools_used"].add(tool_name)
             self.stats["execution"]["unique_tools_used"] = len(self.stats["execution"]["tools_used"])
         self.save()
 
