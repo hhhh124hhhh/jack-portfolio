@@ -1,0 +1,53 @@
+{
+  "achievements": [
+    {
+      "id": "hello_world",
+      "name": "Hello World",
+      "description": "第一次使用成就系统",
+      "icon": "🌟",
+      "points": 10,
+      "category": "system"
+    },
+    {
+      "id": "daily_login",
+      "name": "每日打卡",
+      "description": "连续 7 天登录",
+      "icon": "📅",
+      "points": 30,
+      "category": "habit",
+      "requirements": {
+        "count": 7
+      }
+    },
+    {
+      "id": "code_master",
+      "name": "代码大师",
+      "description": "累计 1000 行代码",
+      "icon": "💻",
+      "points": 50,
+      "category": "development",
+      "requirements": {
+        "count": 1000
+      }
+    },
+    {
+      "id": "first_commit",
+      "name": "首次提交",
+      "description": "完成第一次 Git 提交",
+      "icon": "🎯",
+      "points": 10,
+      "category": "git"
+    },
+    {
+      "id": "code_review",
+      "name": "代码审查",
+      "description": "完成 5 次代码审查",
+      "icon": "🔍",
+      "points": 20,
+      "category": "development",
+      "requirements": {
+        "count": 5
+      }
+    }
+  ]
+}
