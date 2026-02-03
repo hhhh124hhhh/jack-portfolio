@@ -3,6 +3,7 @@
 from datetime import datetime
 from typing import Dict, Any, List, Optional
 from storage import load_achievements, save_progress, load_progress, get_achievement_by_id
+from stats import get_stats_instance
 
 
 class AchievementManager:
@@ -11,6 +12,7 @@ class AchievementManager:
     def __init__(self):
         self.achievements = load_achievements()
         self.progress = load_progress()
+        self.stats = get_stats_instance()
 
     def update_progress(self, achievement_id: str, amount: int = 1) -> tuple[bool, str, Optional[Dict[str, Any]]]:
         """
@@ -18,7 +20,7 @@ class AchievementManager:
 
         Args:
             achievement_id: 成就 ID
-            amount: 增加的进度数量
+            amount: 增加的进度数量（仅用于手动添加的成就）
 
         Returns:
             (success, message, unlocked_achievement)
@@ -31,35 +33,42 @@ class AchievementManager:
         if achievement_id in self.progress.get("unlocked_achievements", []):
             return False, f"成就 '{achievement.get('name')}' 已解锁", None
 
-        # 初始化进度
-        if "progress" not in self.progress:
-            self.progress["progress"] = {}
+        # 检查是否在自动追踪的进度映射中
+        stats_progress = self.stats.get_progress(achievement_id)
 
-        if achievement_id not in self.progress["progress"]:
-            # 从 requirements 中获取目标值
-            requirements = achievement.get("requirements", {})
-            target = requirements.get("count", 1) if requirements else 1
-            self.progress["progress"][achievement_id] = {
-                "current": 0,
-                "target": target
-            }
+        if stats_progress:
+            # 自动追踪的成就：从 stats 获取进度
+            current = stats_progress["current"]
+            target = stats_progress["target"]
+        else:
+            # 手动管理的成就：使用传统的 amount 方式
+            if "progress" not in self.progress:
+                self.progress["progress"] = {}
 
-        # 更新进度
-        current = self.progress["progress"][achievement_id]["current"]
-        target = self.progress["progress"][achievement_id]["target"]
-        new_current = min(current + amount, target)
+            if achievement_id not in self.progress["progress"]:
+                requirements = achievement.get("requirements", {})
+                target = requirements.get("count", 1) if requirements else 1
+                self.progress["progress"][achievement_id] = {
+                    "current": 0,
+                    "target": target
+                }
 
-        self.progress["progress"][achievement_id]["current"] = new_current
+            current = self.progress["progress"][achievement_id]["current"]
+            target = self.progress["progress"][achievement_id]["target"]
+            new_current = min(current + amount, target)
+            self.progress["progress"][achievement_id]["current"] = new_current
+            current = new_current
 
         # 检查是否达成目标
-        if new_current >= target:
+        if current >= target:
             unlocked = self.unlock_achievement(achievement_id)
             if unlocked:
                 return True, f"🎉 恭喜！成就 '{achievement.get('name')}' 已解锁！", achievement
-            return False, f"进度已更新：{new_current}/{target}，但解锁失败", None
+            return False, f"进度已更新：{current}/{target}，但解锁失败", None
         else:
-            self._save_progress()
-            return True, f"进度已更新：{new_current}/{target}", None
+            if stats_progress is None:  # 只有手动管理的成就才保存进度
+                self._save_progress()
+            return True, f"进度已更新：{current}/{target}", None
 
     def unlock_achievement(self, achievement_id: str) -> Optional[Dict[str, Any]]:
         """
@@ -115,6 +124,14 @@ class AchievementManager:
         # 检查是否有进度要求
         requirements = achievement.get("requirements", {})
         if requirements:
+            # 从 stats 获取进度
+            stats_progress = self.stats.get_progress(achievement_id)
+            if stats_progress:
+                current = stats_progress["current"]
+                target = stats_progress["target"]
+                return current >= target
+
+            # 从手动管理的进度获取
             if "progress" in self.progress and achievement_id in self.progress["progress"]:
                 current = self.progress["progress"][achievement_id]["current"]
                 target = self.progress["progress"][achievement_id]["target"]
@@ -161,6 +178,12 @@ class AchievementManager:
 
     def get_progress_for_achievement(self, achievement_id: str) -> Optional[Dict[str, int]]:
         """获取特定成就的进度"""
+        # 优先从 stats 获取（自动追踪）
+        stats_progress = self.stats.get_progress(achievement_id)
+        if stats_progress:
+            return stats_progress
+
+        # 其次从手动管理的进度获取
         if "progress" not in self.progress:
             return None
         return self.progress["progress"].get(achievement_id)

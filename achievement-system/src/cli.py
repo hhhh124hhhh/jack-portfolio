@@ -17,17 +17,19 @@ from storage import (
     load_achievements, save_achievements, save_progress,
     get_achievement_by_id
 )
+from stats import get_stats_instance, AchievementStats
 
 # 初始化 Rich Console（深色主题）
 console = Console(theme=None)
 
 
 @click.group()
-@click.version_option(version="1.0.0", prog_name="ach")
+@click.version_option(version="2.0.0", prog_name="ach")
 def cli():
-    """成就系统 - 个人成长追踪工具 🏆
+    """成就系统 - AI 助手成长追踪工具 🏆
 
-    使用深色科技风格的命令行工具，帮助你追踪和成就目标！
+    专为 AI 助手设计的成就系统，追踪工具调用、任务完成、
+    代码编写等真实工作成果。
     """
     pass
 
@@ -44,51 +46,157 @@ def init():
     ) as progress:
         task = progress.add_task("创建数据文件...", total=None)
 
-        # 默认成就配置
+        # AI 助手专属成就配置
         default_achievements = {
             "achievements": [
+                # 执行类
                 {
-                    "id": "hello_world",
-                    "name": "Hello World",
-                    "description": "第一次使用成就系统",
-                    "icon": "🌟",
-                    "points": 10,
-                    "category": "system"
+                    "id": "first_task",
+                    "name": "初次对话",
+                    "description": "完成第一个用户任务",
+                    "icon": "💬",
+                    "points": 1,
+                    "category": "execution"
                 },
                 {
-                    "id": "daily_login",
-                    "name": "每日打卡",
-                    "description": "连续 7 天登录",
-                    "icon": "📅",
-                    "points": 30,
-                    "category": "habit",
-                    "requirements": {"count": 7}
-                },
-                {
-                    "id": "code_master",
-                    "name": "代码大师",
-                    "description": "累计 1000 行代码",
-                    "icon": "💻",
+                    "id": "hundred_calls",
+                    "name": "百次执行",
+                    "description": "执行 100 个工具命令",
+                    "icon": "⚡",
                     "points": 50,
-                    "category": "development",
+                    "category": "execution",
+                    "requirements": {"count": 100}
+                },
+                {
+                    "id": "thousand_calls",
+                    "name": "千次调用",
+                    "description": "调用 API/工具 1000 次",
+                    "icon": "🚀",
+                    "points": 100,
+                    "category": "execution",
                     "requirements": {"count": 1000}
                 },
                 {
-                    "id": "first_commit",
-                    "name": "首次提交",
-                    "description": "完成第一次 Git 提交",
-                    "icon": "🎯",
-                    "points": 10,
-                    "category": "git"
+                    "id": "multi_tool",
+                    "name": "多面手",
+                    "description": "使用过 10 种不同的工具",
+                    "icon": "🛠️",
+                    "points": 30,
+                    "category": "execution",
+                    "requirements": {"count": 10}
+                },
+
+                # 智力类
+                {
+                    "id": "memory_master",
+                    "name": "记忆大师",
+                    "description": "记录 500 条重要信息",
+                    "icon": "🧠",
+                    "points": 50,
+                    "category": "intelligence",
+                    "requirements": {"count": 500}
                 },
                 {
-                    "id": "code_review",
-                    "name": "代码审查",
-                    "description": "完成 5 次代码审查",
+                    "id": "search_expert",
+                    "name": "搜索达人",
+                    "description": "搜索 100 次",
                     "icon": "🔍",
-                    "points": 20,
-                    "category": "development",
-                    "requirements": {"count": 5}
+                    "points": 30,
+                    "category": "intelligence",
+                    "requirements": {"count": 100}
+                },
+                {
+                    "id": "code_expert",
+                    "name": "代码专家",
+                    "description": "编写 5000 行代码",
+                    "icon": "💻",
+                    "points": 100,
+                    "category": "intelligence",
+                    "requirements": {"count": 5000}
+                },
+                {
+                    "id": "debug_expert",
+                    "name": "调试高手",
+                    "description": "解决 50 个 bug",
+                    "icon": "🐛",
+                    "points": 50,
+                    "category": "intelligence",
+                    "requirements": {"count": 50}
+                },
+
+                # 协作类
+                {
+                    "id": "assistant_star",
+                    "name": "助手之星",
+                    "description": "帮助用户完成 100 个任务",
+                    "icon": "⭐",
+                    "points": 100,
+                    "category": "collaboration",
+                    "requirements": {"count": 100}
+                },
+                {
+                    "id": "efficiency_king",
+                    "name": "效率之王",
+                    "description": "连续工作 24 小时无错误",
+                    "icon": "⏱️",
+                    "points": 50,
+                    "category": "collaboration",
+                    "requirements": {"count": 24}
+                },
+                {
+                    "id": "multithread",
+                    "name": "多线程",
+                    "description": "同时管理 3 个子代理",
+                    "icon": "🔀",
+                    "points": 30,
+                    "category": "collaboration",
+                    "requirements": {"count": 3}
+                },
+                {
+                    "id": "punctual",
+                    "name": "准时达",
+                    "description": "在心跳响应中按时回复 100 次",
+                    "icon": "📨",
+                    "points": 30,
+                    "category": "collaboration",
+                    "requirements": {"count": 100}
+                },
+
+                # 项目类
+                {
+                    "id": "project_starter",
+                    "name": "项目启动",
+                    "description": "开始一个新项目",
+                    "icon": "🎯",
+                    "points": 10,
+                    "category": "project"
+                },
+                {
+                    "id": "deploy_master",
+                    "name": "部署成功",
+                    "description": "完成 3 个项目部署",
+                    "icon": "🚀",
+                    "points": 50,
+                    "category": "project",
+                    "requirements": {"count": 3}
+                },
+                {
+                    "id": "git_master",
+                    "name": "Git 达人",
+                    "description": "Git 提交 100 次",
+                    "icon": "📝",
+                    "points": 50,
+                    "category": "project",
+                    "requirements": {"count": 100}
+                },
+                {
+                    "id": "doc_expert",
+                    "name": "文档专家",
+                    "description": "编写 50 篇文档",
+                    "icon": "📚",
+                    "points": 50,
+                    "category": "project",
+                    "requirements": {"count": 50}
                 }
             ]
         }
@@ -98,7 +206,7 @@ def init():
 
         # 重置用户进度
         default_progress = {
-            "user_id": "default",
+            "user_id": "momo-ai",
             "unlocked_achievements": [],
             "progress": {},
             "statistics": {
@@ -113,7 +221,8 @@ def init():
 
     console.print("\n[bold green]✨ 成就系统已成功初始化！[/bold green]\n")
     console.print("使用 [cyan]ach list[/cyan] 查看所有成就")
-    console.print("使用 [cyan]ach status[/cyan] 查看当前进度\n")
+    console.print("使用 [cyan]ach status[/cyan] 查看当前进度")
+    console.print("使用 [cyan]ach stats[/cyan] 查看统计数据\n")
 
 
 @cli.command()
@@ -126,16 +235,19 @@ def list():
     console.print("\n[bold cyan]📋 成就列表[/bold cyan]\n")
 
     # 按分类组织
-    categories = {}
-    for achievement in all_achievements:
-        category = achievement.get("category", "default")
-        if category not in categories:
-            categories[category] = []
-        categories[category].append(achievement)
+    categories = {
+        "execution": "执行",
+        "intelligence": "智力",
+        "collaboration": "协作",
+        "project": "项目"
+    }
 
-    # 显示每个分类
-    for category, achievements in categories.items():
-        console.print(f"[bold yellow]📁 {category.upper()}[/bold yellow]")
+    for cat_key, cat_name in categories.items():
+        category_achievements = [a for a in all_achievements if a.get("category") == cat_key]
+        if not category_achievements:
+            continue
+
+        console.print(f"[bold yellow]📁 {cat_name.upper()}[/bold yellow]")
 
         table = Table(show_header=True, header_style="bold magenta", show_lines=True)
         table.add_column("图标", style="bold", width=4)
@@ -144,7 +256,7 @@ def list():
         table.add_column("积分", style="green", width=8)
         table.add_column("状态", width=10)
 
-        for achievement in achievements:
+        for achievement in category_achievements:
             achievement_id = achievement.get("id")
             is_unlocked = achievement_id in unlocked_ids
 
@@ -199,14 +311,6 @@ def status():
                 console.print(f"    [dim]{bar}[/dim]")
             else:
                 console.print(f"  {item['icon']} [cyan]{item['name']}[/cyan] - [dim]0/1[/dim]")
-        console.print()
-
-    # 未开始
-    not_started = [s for s in locked if "current" not in s]
-    if not_started:
-        console.print("[dim]🔘 未开始[/dim]")
-        for item in not_started:
-            console.print(f"  [dim]{item['icon']} {item['name']}[/dim]")
         console.print()
 
 
