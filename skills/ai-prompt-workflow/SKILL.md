@@ -1,6 +1,25 @@
 ---
 name: ai-prompt-workflow
 description: "整合的 AI 提示词自动化工作流 - 一键完成从数据发现到发布的完整流程。集成 x-prompt-hunter（语义去重 + LLM 评估 + Langfuse 追踪）和 prompt-to-skill-converter（转换 + 打包 + 发布）。支持 GitHub、HuggingFace、Twitter、Reddit、Hacker News、SearXNG、Firecrawl 等多源数据抓取，自动评估质量，转换为 Clawdbot Skills 并发布到 ClawdHub。"
+metadata:
+  {
+    "clawdbot": {
+      "emoji": "🔄",
+      "requires": {
+        "bins": ["python3"],
+        "env": [
+          "ANTHROPIC_API_KEY",
+          "LANGFUSE_PUBLIC_KEY",
+          "LANGFUSE_SECRET_KEY",
+          "GITHUB_TOKEN",
+          "HUGGINGFACE_TOKEN",
+          "TWITTER_API_KEY",
+          "CLAWDHUB_TOKEN"
+        ]
+      },
+      "primaryEnv": "ANTHROPIC_API_KEY"
+    }
+  }
 ---
 
 # AI Prompt Workflow - 整合的自动化工作流
