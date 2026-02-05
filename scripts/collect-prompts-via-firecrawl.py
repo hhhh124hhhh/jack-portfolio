@@ -24,40 +24,55 @@ if not API_KEY:
     print("❌ FIRECRAWL_API_KEY 环境变量未设置")
     exit(1)
 
-# 要抓取的 AI 提示词相关网站列表
+# 要抓取的电商视频和图片生成相关网站列表
 URLS_TO_SCRAPE = [
-    # AI 提示词教程和指南
-    "https://www.promptingguide.ai/",
-    "https://platform.openai.com/docs/guides/prompt-engineering",
-    "https://github.com/dair-ai/Prompt-Engineering-Guide",
-    "https://www.deeplearning.ai/ai-notes/prompt-engineering/",
-    "https://github.com/f/awesome-chatgpt-prompts",
-    "https://github.com/mattnigh/ChatGPT3-Free-Prompt-List",
+    # 电商视频生成教程
+    "https://www.adobe.com/express/feature/video/create/ecommerce-video",
+    "https://www.canva.com/templates/s/ecommerce-product-videos/",
+    "https://www.wondershare.com/ecommerce-video-maker.html",
 
-    # AI 工具平台
-    "https://www.promptbase.com/",
-    "https://flowgpt.com/",
-    "https://huggingface.co/prompts",
+    # Sora 和 OpenAI 视频生成
+    "https://openai.com/sora",
+    "https://platform.openai.com/docs/guides/sora",
+    "https://github.com/openai/sora",
 
-    # 教程和博客
-    "https://simonwillison.net/tags/llm/",
-    "https://www.anthropic.com/index/prompt-engineering",
-    "https://docs.anthropic.com/claude/docs/prompt-engineering",
-    "https://www.kdnuggets.com/tag/prompt-engineering",
+    # Google Veo 和视频生成
+    "https://deepmind.google/technologies/veo/",
+    "https://cloud.google.com/vertex-ai/generative-ai/docs/video/veo",
 
-    # 社区资源
-    "https://www.reddit.com/r/ChatGPTPromptGenius/",
-    "https://www.reddit.com/r/LocalLLaMA/",
-    "https://www.reddit.com/r/PromptEngineering/",
+    # 电商图片生成
+    "https://www.midjourney.com/docs/quick-start",
+    "https://platform.openai.com/docs/guides/dall-e-3",
+    "https://stability.ai/blog/stable-diffusion-3-release",
+
+    # 产品摄影 AI
+    "https://www.peppertype.ai/ai-product-photography",
+    "https://www.flair.ai/",
+    "https://www.pebblely.com/",
+
+    # 电商 AI 工具
+    "https://www.claid.ai/",
+    "https://www.photoroom.com/",
+    "https://www.remove.bg/",
+
+    # GitHub 电商/视频/图片生成资源
+    "https://github.com/topics/ecommerce-ai",
+    "https://github.com/topics/video-generation-ai",
+    "https://github.com/topics/image-generation-ai",
 ]
 
 # 搜索查询
 SEARCH_QUERIES = [
-    "AI prompt engineering best practices 2026",
-    "ChatGPT prompts for developers",
-    "Claude prompt techniques",
-    "AI art prompts midjourney",
-    "prompt templates for business",
+    "e-commerce video generation AI prompts",
+    "product video AI prompts 2026",
+    "Sora 2 video prompts for marketing",
+    "Google Veo video generation prompts",
+    "e-commerce image generation prompts",
+    "product photo AI prompts Midjourney",
+    "DALL-E 3 e-commerce prompts",
+    "Stable Diffusion product photography",
+    "AI video editing prompts for e-commerce",
+    "text to video prompts workflow",
 ]
 
 def scrape_with_jina_ai(url: str) -> Dict[str, Any]:

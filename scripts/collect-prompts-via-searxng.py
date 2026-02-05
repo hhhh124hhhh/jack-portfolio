@@ -42,39 +42,61 @@ logger.addHandler(logging.StreamHandler())
 # SearXNG 配置
 SEARXNG_URL = os.getenv("SEARXNG_URL", "http://localhost:8080")
 
-# 搜索关键词 - 针对高质量来源
+# 搜索关键词 - 聚焦电商视频和图片生成
 SEARCH_QUERIES = [
-    # 专业提示词网站
-    "PromptBase best prompts",
-    "awesome-chatgpt-prompts github",
-    "LearnPrompting engineering guide",
+    # 电商视频生成
+    "e-commerce video generation prompts",
+    "product video AI prompts",
+    "marketing video prompt templates",
+    "AI video for e-commerce workflow",
 
-    # 技术博客和教程
-    "Midjourney prompt tutorial examples",
-    "DALL-E 3 prompt examples guide",
-    "Stable Diffusion prompt engineering",
-    "AI art prompt best practices",
+    # Sora2 视频
+    "Sora 2 video prompts examples",
+    "OpenAI Sora prompt engineering",
+    "Sora video generation tips",
+    "text to video Sora prompts",
 
-    # GitHub 资源
-    "site:github.com \"prompt engineering\"",
-    "site:github.com \"AI prompts\"",
-    "site:github.com \"ChatGPT prompts\"",
+    # 谷歌视频
+    "Google Veo video prompts",
+    "Google video AI generation prompts",
+    "Google DeepMind video prompts",
+    "Veo video prompt guide",
 
-    # 技术平台
-    "site:medium.com \"prompt engineering\"",
-    "site:dev.to \"AI prompts\"",
-    "site:hashnode.com \"prompt guide\"",
+    # 电商图片生成
+    "e-commerce image generation prompts",
+    "product photo AI prompts",
+    "marketing image prompt templates",
+    "AI product photography prompts",
 
-    # 视频生成
-    "Runway ML prompt examples",
-    "Pika Labs prompt guide",
-    "Kling AI prompt examples",
-    "Veo video prompts",
+    # Midjourney 商业用途
+    "Midjourney e-commerce prompts",
+    "Midjourney product photography",
+    "Midjourney marketing prompts",
+    "Midjourney commercial use prompts",
 
-    # 特定用途
-    "professional ChatGPT prompts",
-    "business AI prompt templates",
-    "educational AI prompts",
+    # Stable Diffusion 商业
+    "Stable Diffusion e-commerce",
+    "Stable Diffusion product images",
+    "Stable Diffusion marketing workflow",
+    "Stable Diffusion business prompts",
+
+    # DALL-E 3 商业
+    "DALL-E 3 e-commerce prompts",
+    "DALL-E 3 product photography",
+    "DALL-E 3 marketing prompts",
+    "business DALL-E 3 workflow",
+
+    # 视频生成工具
+    "Runway ML video prompts",
+    "Pika Labs video prompts",
+    "Kling AI video generation",
+    "AI video editing prompts",
+
+    # GitHub 资源（电商/视频/图片）
+    "site:github.com \"e-commerce\" \"prompt\"",
+    "site:github.com \"video\" \"generation\" \"prompt\"",
+    "site:github.com \"image\" \"generation\" \"prompt\"",
+    "site:github.com \"product\" \"photo\" \"AI\"",
 ]
 
 # 高质量域名白名单
