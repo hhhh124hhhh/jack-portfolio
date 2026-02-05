@@ -1,0 +1,80 @@
+# 数据收集器配置
+# 作者：Momo (Clawdbot Team)
+# 创建日期：2026-02-05
+
+# 数据源配置
+data_sources:
+  # GitHub 配置
+  github:
+    enabled: true
+    frequency: daily
+    repos:
+      - f/awesome-chatgpt-prompts
+      - dair-ai/Prompt-Engineering-Guide
+      - github.com/awesome-chatgpt-prompts
+      
+  # Reddit 配置
+  reddit:
+    enabled: true
+    frequency: "6h"
+    subreddits:
+      - ChatGPT
+      - ChatGPTcoding
+      - OpenAI
+      - MachineLearning
+      
+  # Twitter 配置
+  twitter:
+    enabled: true
+    frequency: "2h"
+    keywords:
+      - "#ChatGPT"
+      - "#promptengineering"
+      - "#AI"
+      
+  # Hacker News 配置
+  hackernews:
+    enabled: true
+    frequency: "12h"
+      
+  # SearXNG 配置
+  searxng:
+    enabled: true
+    frequency: daily
+    keywords:
+      - "ChatGPT prompt"
+      - "prompt engineering"
+      - "AI prompt template"
+      - "prompt best practices"
+      
+  # HuggingFace 配置
+  huggingface:
+    enabled: true
+    frequency: weekly
+    datasets:
+      - "dair-ai/Prompt-Engineering-Guide"
+
+# 去重配置
+deduplication:
+  md5_enabled: true
+  semantic_enabled: true
+  semantic_threshold: 0.95
+  embedding_model: all-MiniLM-L6-v2
+
+# 存储配置
+storage:
+  data_dir: /root/clawd/data/prompts/collected
+  file_format: jsonl
+  max_file_size: 100MB
+
+# 错误处理配置
+error_handling:
+  max_retries: 3
+  retry_delay: 30
+  retry_backoff: 2
+
+# 日志配置
+logging:
+  level: INFO
+  log_dir: /root/clawd/logs
+  log_file: collect-prompts.log

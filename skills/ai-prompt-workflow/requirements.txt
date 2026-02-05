@@ -1,0 +1,33 @@
+# AI Prompt Workflow - 整合技能依赖
+# 此文件包含 x-prompt-hunter 和 prompt-to-skill-converter 的所有依赖
+
+# 核心依赖
+sentence-transformers>=2.2.0
+PyGithub>=1.59.0
+datasets>=2.14.0
+anthropic>=0.18.0
+langfuse>=2.0.0
+pyyaml>=6.0
+
+# 数据处理
+pandas>=2.0.0
+numpy>=1.24.0
+
+# HTTP 和 API
+requests>=2.31.0
+urllib3>=2.0.0
+
+# 文本处理
+regex>=2023.10.3
+
+# 日志和配置
+python-dotenv>=1.0.0
+
+# Twitter API (如果使用 bird CLI 则不需要 Python 依赖)
+# tweepy>=4.14.0
+
+# Reddit API
+# praw>=7.7.0
+
+# GitHub API
+# github3.py>=3.2.0

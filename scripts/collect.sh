@@ -1,0 +1,1 @@
+/root/clawd/scripts/collect-prompts.sh

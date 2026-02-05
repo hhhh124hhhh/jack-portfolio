@@ -1,0 +1,89 @@
+# 评分标准配置
+# 作者：Momo (Clawdbot Team)
+# 创建日期：2026-02-05
+
+# 内容类型配置
+content_types:
+  Prompt:
+    dimensions:
+      - name: 实用性
+        weight: 0.5
+        max_score: 50
+        description: "明确任务指令、输出要求、应用场景"
+      - name: 清晰度
+        weight: 0.3
+        max_score: 30
+        description: "结构清晰、逻辑连贯、无歧义"
+      - name: 独特性
+        weight: 0.2
+        max_score: 20
+        description: "独特角度、非通用模板、具体领域应用"
+    threshold: 70
+    description: "可直接用于 AI 模型的单个或一组指令"
+    
+  Workflow:
+    dimensions:
+      - name: 完整性
+        weight: 0.3
+        max_score: 30
+        description: "明确步骤、多个步骤、预期结果"
+      - name: 可扩展性
+        weight: 0.2
+        max_score: 20
+        description: "参数化设计、自定义选项、可添加步骤"
+      - name: 实用性
+        weight: 0.3
+        max_score: 30
+        description: "应用场景、工具说明、问题解决"
+      - name: 可复用性
+        weight: 0.2
+        max_score: 20
+        description: "通用性、模板化、独立模块"
+    threshold: 65
+    description: "多步骤的执行流程，通常需要联网或工具调用"
+    
+  Industry Knowledge:
+    dimensions:
+      - name: 专业深度
+        weight: 0.4
+        max_score: 40
+        description: "专业知识、具体数据、技术细节、深入分析"
+      - name: 实用性
+        weight: 0.4
+        max_score: 40
+        description: "最佳实践、优化建议、操作步骤、效果验证"
+      - name: 系统性
+        weight: 0.2
+        max_score: 20
+        description: "系统框架、层次结构、总结展望"
+    threshold: 70
+    description: "特定领域的专业知识和经验总结"
+    
+  Guide:
+    dimensions:
+      - name: 指导性
+        weight: 0.4
+        max_score: 40
+        description: "明确指导、步骤说明、示例案例、常见问题"
+      - name: 结构性
+        weight: 0.3
+        max_score: 30
+        description: "清晰章节、标题结构、层次分明"
+      - name: 实用性
+        weight: 0.3
+        max_score: 30
+        description: "实际应用、工具推荐、注意事项、学习建议"
+    threshold: 75
+    description: "理论框架、方法论、系统性指导"
+
+# 质量等级配置
+quality_levels:
+  high:
+    description: "高质量内容，可以直接转换"
+    color: "green"
+  medium:
+    description: "中等质量，需要补充或改进"
+    color: "yellow"
+  low:
+    description: "低质量，不建议转换"
+    color: "red"

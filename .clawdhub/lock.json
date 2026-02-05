@@ -92,6 +92,14 @@
     "kokoro-tts": {
       "version": "0.1.0",
       "installedAt": 1769915207804
+    },
+    "vap-media": {
+      "version": "1.0.4",
+      "installedAt": 1770098059808
+    },
+    "video-agent": {
+      "version": "1.0.1",
+      "installedAt": 1770161644040
     }
   }
 }

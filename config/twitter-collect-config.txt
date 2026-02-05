@@ -1,0 +1,19 @@
+# Twitter 收集配置
+# 最后更新: 2026-02-01 21:04
+
+# Twitter 收集状态
+ENABLE_TWITTER_COLLECT=false
+
+# 禁用原因
+# Twitter API 有请求限制，可能影响整个自动化流程
+# 暂时禁用以稳定其他数据源的收集
+
+# 如何重新启用
+# 1. 设置环境变量: export ENABLE_TWITTER_COLLECT=true
+# 2. 或者在脚本中修改默认值
+# 3. 更新本文件为 ENABLE_TWITTER_COLLECT=true
+
+# 备注
+# 数据量预计减少: 10-20%
+# 影响范围: collect-all-sources-prompts-v2.sh
+# 状态检查: grep ENABLE_TWITTER_COLLECT /root/clawd/config/twitter-collect-config.txt

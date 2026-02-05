@@ -1,0 +1,100 @@
+# 自动分类层配置
+# 作者：Momo (Clawdbot Team)
+# 创建日期：2026-02-05
+
+# 分类模型配置
+classification_model:
+  type: llm
+  model: claude-3-5-sonnet
+  confidence_threshold: 0.7
+
+# 内容类型配置
+content_types:
+  Prompt:
+    keywords:
+      - 请
+      - 生成
+      - 你是一个
+      - 扮演
+      - act as
+    rules:
+      - condition: "你是一个.*请.*"
+        type: "Prompt"
+        confidence: 0.95
+      - condition: "扮演.*请.*"
+        type: "Prompt"
+        confidence: 0.95
+        
+  Workflow:
+    keywords:
+      - 步骤
+      - 流程
+      - 然后
+      - 最后
+      - 第一步
+    rules:
+      - condition: "第一步.*第二步.*第三步"
+        type: "Workflow"
+        confidence: 0.90
+        
+  Industry Knowledge:
+    keywords:
+      - 经验
+      - 最佳实践
+      - 优化
+      - 性能
+    rules:
+      - condition: "(经验|最佳实践|优化).*\d+.*条"
+        type: "Industry Knowledge"
+        confidence: 0.85
+        
+  Guide:
+    keywords:
+      - 指南
+      - 教程
+      - 方法
+      - 原则
+    rules:
+      - condition: "(指南|教程|方法)"
+        type: "Guide"
+        confidence: 0.80
+
+# 分类规则配置
+classification_rules:
+  priority:
+    - rules
+    - keywords
+    - llm
+    
+  fallback:
+    type: "Guide"
+    confidence: 0.50
+
+# 验证规则配置
+validation_rules:
+  length_validation:
+    enabled: true
+    prompt_max_length: 1000
+    guide_min_length: 300
+    
+  structure_validation:
+    enabled: true
+    workflow_requires_steps: true
+    industry_requires_code: true
+    
+  confidence_validation:
+    enabled: true
+    high_threshold: 0.9
+    review_threshold: 0.7
+
+# 存储配置
+storage:
+  data_dir: /root/clawd/data/prompts/classified
+  file_format: jsonl
+  max_file_size: 100MB
+
+# 日志配置
+logging:
+  level: INFO
+  log_dir: /root/clawd/logs
+  log_file: classify-content.log

@@ -1,0 +1,129 @@
+# Prompt Collection Configuration
+# 提示词收集配置文件
+
+# Twitter/X 搜索配置
+twitter:
+  # API 配置
+  api_endpoint: "https://api.twitterapi.io/v2/tweets/search/recent"
+  api_key_env: "TWITTER_API_KEY"
+
+  # 搜索查询（优化格式，提高单次请求效率）
+  search_queries:
+    - "AI prompts (#AIPrompts OR #promptengineering) -is:retweet lang:en"
+    - "ChatGPT prompts (#ChatGPT OR #GPT4) -is:retweet lang:en"
+    - "Midjourney prompts (#Midjourney OR #AIArt) -is:retweet lang:en"
+    - "Claude prompts (#ClaudeAI) -is:retweet lang:en"
+    - "AI writing prompts (#AIWriting) -is:retweet lang:en"
+
+  # 标签过滤（只包含这些标签的推文）
+  hashtag_filters:
+    - "#AIPrompts"
+    - "#promptengineering"
+    - "#ChatGPT"
+    - "#GPT4"
+    - "#Midjourney"
+    - "#AIArt"
+    - "#ClaudeAI"
+    - "#AIWriting"
+
+  # 账号白名单（优先收集这些账号的内容）
+  account_whitelist:
+    - "openai"
+    - "AnthropicAI"
+    - "midjourney"
+    - "firdouskhan"
+    - "goodfellow"
+
+  # 缓存配置
+  cache:
+    enabled: true
+    cache_dir: "/root/clawd/cache/twitter"
+    cache_ttl_hours: 24
+
+  # 搜索参数
+  max_results_per_query: 100
+  max_total_results: 500
+
+# GitHub 数据源配置
+github:
+  # 要抓取的仓库列表
+  repositories:
+    - owner: "f"
+      repo: "awesome-chatgpt-prompts"
+      branch: "main"
+      files:
+        - "README.md"
+    - owner: "dair-ai"
+      repo: "Prompt-Engineering-Guide"
+      branch: "main"
+      files:
+        - "README.md"
+    - owner: "microsoft"
+      repo: "prompt-engine"
+      branch: "main"
+      files:
+        - "README.md"
+        - "docs/"
+    - owner: "anthropics"
+      repo: "prompt-engineering-interactive-tutorial"
+      branch: "main"
+      files:
+        - "README.md"
+
+  # API 配置
+  api_endpoint: "https://api.github.com"
+  cache_dir: "/root/clawd/cache/github"
+  cache_ttl_hours: 72
+
+# LLM 评估配置
+llm_evaluation:
+  # Claude API 配置
+  api_endpoint: "https://api.anthropic.com/v1/messages"
+  api_key_env: "ANTHROPIC_API_KEY"
+  model: "claude-3-5-sonnet-20241022"
+
+  # 评估维度和权重
+  dimensions:
+    quality:
+      weight: 0.35
+      description: "提示词的质量和清晰度"
+    usefulness:
+      weight: 0.30
+      description: "提示词的实用性"
+    completeness:
+      weight: 0.20
+      description: "提示词的完整性"
+    innovation:
+      weight: 0.15
+      description: "提示词的创新性"
+
+  # 评分阈值
+  thresholds:
+    excellent: 85
+    good: 70
+    average: 50
+
+  # 批量处理配置
+  batch_size: 10
+  max_retries: 3
+  retry_delay_seconds: 2
+
+# 输出配置
+output:
+  data_dir: "/root/clawd/data/prompts"
+  reports_dir: "/root/clawd/reports"
+  logs_dir: "/root/clawd/logs"
+
+  # 文件格式
+  format: "jsonl"
+
+  # 质量过滤（只保留高于此分数的提示词）
+  min_quality_score: 60
+
+# 日志配置
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "/root/clawd/logs/prompts-collection.log"
+  max_bytes: 10485760  # 10MB
+  backup_count: 5

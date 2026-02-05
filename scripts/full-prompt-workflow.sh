@@ -119,16 +119,36 @@ main() {
     log ""
     log "[阶段 2/4] 转换成 Skills"
 
+    # 2.1 从推文转换（Twitter/X）
     if node /root/clawd/scripts/tweet-to-skill-converter.js >> "$LOG_FILE" 2>&1; then
-        SKILLS_GENERATED=$(tail -50 "$LOG_FILE" | grep "转换完成！生成了" | sed 's/.*生成了 //' | sed 's/ 个.*//' | awk '{$1=$1};1' || echo "0")
-        SKILLS_CONVERTED=$(tail -50 "$LOG_FILE" | grep "转换完成！" | grep -oP '\d+(?= 个 Skill 文件)' | tail -1 || echo "0")
-        log_info "✅ 转换完成: 生成了 $SKILLS_GENERATED 个 Skill"
-        if [ "$SKILLS_GENERATED" -gt 0 ]; then
+        SKILLS_FROM_TWEETS=$(tail -50 "$LOG_FILE" | grep "转换完成！生成了" | sed 's/.*生成了 //' | sed 's/ 个.*//' | awk '{$1=$1};1' || echo "0")
+        SKILLS_CONVERTED_TWEETS=$(tail -50 "$LOG_FILE" | grep "转换完成！" | grep -oP '\d+(?= 个 Skill 文件)' | tail -1 || echo "0")
+        log_info "✅ 推文转换: 生成了 $SKILLS_FROM_TWEETS 个 Skill"
+        if [ "$SKILLS_FROM_TWEETS" -gt 0 ]; then
             HAS_NEW_DATA=true
         fi
     else
-        log_warn "⚠️  Skill 转换部分失败（可能没有新数据）"
+        log_warn "⚠️  推文转换失败（可能没有新数据）"
     fi
+
+    # 2.2 从收集的提示词转换（所有数据源）
+    log ""
+    log "[转换收集的提示词]"
+    if python3 /root/clawd/scripts/convert-prompts-to-skills.py >> "$LOG_FILE" 2>&1; then
+        SKILLS_FROM_PROMPTS=$(tail -100 "$LOG_FILE" | grep "成功转换:" | tail -1 | sed 's/.*成功转换: //' | sed 's/ 个.*//' | awk '{$1=$1};1' || echo "0")
+        SKILLS_CONVERTED_PROMPTS=$(tail -100 "$LOG_FILE" | grep "打包: 生成" | sed 's/.*生成 //' | sed 's/ 个.*//' | awk '{$1=$1};1' || echo "0")
+        log_info "✅ 提示词转换: 成功转换 $SKILLS_FROM_PROMPTS 个 Skill"
+        if [ "$SKILLS_FROM_PROMPTS" -gt 0 ]; then
+            HAS_NEW_DATA=true
+        fi
+    else
+        log_warn "⚠️  提示词转换失败"
+    fi
+
+    # 总计生成的 Skills
+    SKILLS_GENERATED=$((SKILLS_FROM_TWEETS + SKILLS_FROM_PROMPTS))
+    SKILLS_CONVERTED=$((SKILLS_CONVERTED_TWEETS + SKILLS_CONVERTED_PROMPTS))
+    log_info "✅ 转换完成: 总共生成了 $SKILLS_GENERATED 个 Skill"
 
     # 阶段 3: 发布到 ClawdHub
     log ""
@@ -166,7 +186,7 @@ main() {
 
 ## 📈 数据统计
 
-**数据源**: Reddit, GitHub, Hacker News, SearXNG, Firecrawl 🔥, Twitter/X 🐦
+**数据源**: Reddit, GitHub, Hacker News, SearXNG, Firecrawl 🔥, Twitter/X 🐦 (⏸️ 已禁用)
 
 **收集数据**:
 - Reddit prompts: $(wc -l /root/clawd/data/prompts/reddit-prompts.jsonl 2>/dev/null || echo "0")
@@ -240,7 +260,7 @@ EOF
 • ClawdHub 发布: ${PUBLISHED_COUNT} 成功
 • 失败: ${FAILED_COUNT} 个
 
-**数据源**: Reddit, GitHub, Hacker News, SearXNG, Firecrawl 🔥, Twitter/X 🐦
+**数据源**: Reddit, GitHub, Hacker News, SearXNG, Firecrawl 🔥, Twitter/X 🐦 (⏸️ 已禁用)
 
 **报告**: ${REPORT_FILE}
 **详情**: 查看完整日志: ${LOG_FILE}

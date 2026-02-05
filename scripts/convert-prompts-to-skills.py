@@ -306,8 +306,27 @@ def main():
                         prompt_data = json.loads(line)
                         stats["total_processed"] += 1
                         
-                        # 检查质量分数
+                        # 检查质量分数 - 支持多种分数字段和范围
                         quality_score = prompt_data.get('quality_score', 0)
+                        
+                        # 如果是 collected.jsonl (SearXNG 数据)，使用 score 字段并映射到 0-100
+                        if file_type == "collected":
+                            raw_score = prompt_data.get('score', 0)
+                            # SearXNG 的 score 范围是 0-5，需要映射到 0-100
+                            quality_score = raw_score * 20
+                        
+                        # 如果是 firecrawl 数据，计算质量分数
+                        elif file_type == "firecrawl":
+                            content = prompt_data.get('content', '')
+                            word_count = len(content.split())
+                            # 根据内容长度和提示词数量计算分数
+                            prompts_found = prompt_data.get('prompts_found', 0)
+                            quality_score = min(90, word_count / 10 + prompts_found * 10)
+                        
+                        # GitHub awesome prompts 的分数范围较小，给予额外加分
+                        elif file_type == "github-awesome" and quality_score > 0:
+                            quality_score = min(90, quality_score * 4)
+                        
                         if quality_score < MIN_QUALITY_SCORE:
                             # 记录低质量跳过
                             log_entry = {
