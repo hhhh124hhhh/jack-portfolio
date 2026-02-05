@@ -74,18 +74,20 @@ else
     GITHUB_COUNT=0
 fi
 
-# 源 3: Hacker News
+# 源 3: Hacker News - 已移除（只存储链接，不存储内容）
 log ""
-log "[3/6] 📰 收集 Hacker News AI 内容..."
-if python3 /root/clawd/scripts/collect-hackernews.py >> "$LOG_FILE" 2>&1; then
-    HN_COUNT=$(tail -1 /root/clawd/data/prompts/hacker-news-ai.jsonl 2>/dev/null | wc -l || echo "0")
-    SOURCE_COUNT+=("HackerNews: $HN_COUNT")
-    TOTAL_COLLECTED=$((TOTAL_COLLECTED + HN_COUNT))
-    log_info "✅ Hacker News 收集完成: $HN_COUNT 条"
-else
-    log_warn "⚠️  Hacker News 收集失败或无新数据"
-    HN_COUNT=0
-fi
+log "[3/6] 📰 Hacker News 数据源已移除（不存储内容）"
+log_warn "⚠️  Hacker News 是链接分享网站，不存储完整内容，不适合用作提示词数据源"
+HN_COUNT=0
+# if python3 /root/clawd/scripts/collect-hackernews.py >> "$LOG_FILE" 2>&1; then
+#     HN_COUNT=$(tail -1 /root/clawd/data/prompts/hacker-news-ai.jsonl 2>/dev/null | wc -l || echo "0")
+#     SOURCE_COUNT+=("HackerNews: $HN_COUNT")
+#     TOTAL_COLLECTED=$((TOTAL_COLLECTED + HN_COUNT))
+#     log_info "✅ Hacker News 收集完成: $HN_COUNT 条"
+# else
+#     log_warn "⚠️  Hacker News 收集失败或无新数据"
+#     HN_COUNT=0
+# fi
 
 # 源 4: SearXNG
 log ""

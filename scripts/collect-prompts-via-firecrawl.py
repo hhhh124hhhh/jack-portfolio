@@ -66,10 +66,10 @@ def scrape_url(url: str, app: Firecrawl) -> Dict[str, Any]:
 
         result = app.scrape(
             url,
-            formats=["markdown"],
+            formats=["markdown"],  # 优化：只提取 markdown，更快
             only_main_content=True,
-            wait_for=3000,  # 等待 3 秒让 JS 渲染
-            timeout=30000,
+            wait_for=5000,  # 增加到 5 秒，让 JS 完全渲染
+            timeout=60000,  # 增加到 60 秒超时
             max_age=86400,  # 1 天缓存
         )
 
@@ -84,16 +84,30 @@ def scrape_url(url: str, app: Firecrawl) -> Dict[str, Any]:
                 else:
                     title = str(result.metadata)[:100]
 
+            markdown_content = result.markdown
+            
+            # 如果内容为空或太短，标记为失败
+            if not markdown_content or len(markdown_content.strip()) < 50:
+                print(f"  ⚠️  内容过短或为空: {len(markdown_content)} 字符")
+                return {
+                    "url": url, 
+                    "title": title,
+                    "content": "",
+                    "word_count": 0,
+                    "success": False, 
+                    "error": "Content too short or empty"
+                }
+            
             return {
                 "url": url,
                 "title": title,
-                "content": result.markdown,
-                "word_count": len(result.markdown.split()),
+                "content": markdown_content,
+                "word_count": len(markdown_content.split()),
                 "success": True
             }
         else:
             print(f"  ❌ 抓取失败: 无内容返回")
-            return {"url": url, "success": False, "error": "No content"}
+            return {"url": url, "success": False, "error": "No content returned"}
 
     except Exception as e:
         print(f"  ❌ 抓取失败: {e}")
@@ -189,6 +203,39 @@ def extract_prompts_from_content(content: str, title: str, url: str) -> List[str
 
     return prompts[:5]  # 最多返回 5 个
 
+def calculate_quality_score(content: str) -> int:
+    """计算内容质量分数 (0-100)"""
+    score = 0
+    
+    # 长度评分
+    length = len(content)
+    if 100 <= length <= 500:
+        score += 20
+    elif 501 <= length <= 1000:
+        score += 30
+    elif 1001 <= length <= 2000:
+        score += 25
+    elif 2001 <= length <= 5000:
+        score += 15
+    elif length > 5000:
+        score += 10
+    
+    # 关键词评分
+    quality_keywords = [
+        'prompt', 'generate', 'create', 'write', 'design',
+        'best', 'effective', 'professional', 'guide', 'tutorial'
+    ]
+    content_lower = content.lower()
+    score += min(30, sum(3 for kw in quality_keywords if kw in content_lower))
+    
+    # 结构评分
+    if '\n\n' in content:
+        score += 10  # 有段落分隔
+    if any(marker in content for marker in ['##', '###', '**', '1.', '2.']):
+        score += 15  # 有标题或列表
+    
+    return min(100, score)
+
 def main():
     timestamp = datetime.now().isoformat()
     all_entries = []
@@ -212,27 +259,58 @@ def main():
 
         if result.get("success"):
             scraped_count += 1
-
-            # 提取提示词
-            prompts = extract_prompts_from_content(
-                result.get("content", ""),
-                result.get("title", ""),
-                url
-            )
-
-            entry = {
-                "timestamp": timestamp,
-                "source": "firecrawl",
-                "method": "scrape",
-                "url": url,
-                "title": result.get("title", ""),
-                "content": result.get("content", "")[:2000],  # 限制内容长度
-                "word_count": result.get("word_count", 0),
-                "prompts_found": len(prompts),
-                "prompts": prompts[:3],  # 保存前 3 个提示词
-                "stealth_used": result.get("stealth_used", False)
-            }
-            all_entries.append(entry)
+            
+            # 获取完整内容
+            full_content = result.get("content", "")
+            title = result.get("title", "")
+            
+            # 保存页面内容本身作为提示词
+            # 如果内容太长则截取
+            content_to_save = full_content[:15000] if len(full_content) > 15000 else full_content
+            
+            if content_to_save:
+                # 计算质量分数
+                quality_score = calculate_quality_score(content_to_save)
+                
+                entry = {
+                    "timestamp": timestamp,
+                    "source": "firecrawl",
+                    "method": "scrape",
+                    "url": url,
+                    "title": title,
+                    "content": content_to_save,
+                    "word_count": len(content_to_save.split()),
+                    "quality_score": quality_score,
+                    "success": True,
+                    "stealth_used": result.get("stealth_used", False)
+                }
+                all_entries.append(entry)
+                print(f"  ✅ 保存页面内容 ({len(content_to_save)} 字符, 质量分数: {quality_score})")
+            
+            # 额外提取提示词（作为补充）
+            prompts = extract_prompts_from_content(full_content, title, url)
+            
+            if prompts:
+                print(f"  💡 额外提取 {len(prompts)} 个提示词")
+                
+                # 只保存前 3 个额外提示词
+                for i, prompt in enumerate(prompts[:3], 1):
+                    # 避免与主内容重复（简单检查）
+                    if len(prompt) < len(full_content) * 0.5:  # 提示词比正文短很多
+                        quality_score = calculate_quality_score(prompt)
+                        
+                        entry = {
+                            "timestamp": timestamp,
+                            "source": "firecrawl",
+                            "method": "scrape",
+                            "url": url,
+                            "title": f"{title} (extracted-{i})",
+                            "content": prompt,
+                            "quality_score": quality_score,
+                            "success": True,
+                            "stealth_used": result.get("stealth_used", False)
+                        }
+                        all_entries.append(entry)
         else:
             failed_count += 1
             entry = {
@@ -262,25 +340,58 @@ def main():
         search_count += len(results)
 
         for result in results:
-            prompts = extract_prompts_from_content(
-                result.get("content", ""),
-                result.get("title", ""),
-                result.get("url", "")
-            )
-
-            entry = {
-                "timestamp": timestamp,
-                "source": "firecrawl",
-                "method": "search",
-                "search_query": query,
-                "url": result.get("url", ""),
-                "title": result.get("title", ""),
-                "content": result.get("content", "")[:2000],
-                "word_count": result.get("word_count", 0),
-                "prompts_found": len(prompts),
-                "prompts": prompts[:3]
-            }
-            all_entries.append(entry)
+            # 获取完整内容
+            full_content = result.get("content", "")
+            title = result.get("title", "")
+            url = result.get("url", "")
+            
+            # 保存页面内容本身作为提示词
+            # 如果内容太长则截取
+            content_to_save = full_content[:15000] if len(full_content) > 15000 else full_content
+            
+            if content_to_save:
+                # 计算质量分数
+                quality_score = calculate_quality_score(content_to_save)
+                
+                entry = {
+                    "timestamp": timestamp,
+                    "source": "firecrawl",
+                    "method": "search",
+                    "search_query": query,
+                    "url": url,
+                    "title": title,
+                    "content": content_to_save,
+                    "word_count": len(content_to_save.split()),
+                    "quality_score": quality_score,
+                    "success": True
+                }
+                all_entries.append(entry)
+                print(f"  ✅ 保存页面内容 ({len(content_to_save)} 字符, 质量分数: {quality_score})")
+            
+            # 额外提取提示词（作为补充）
+            prompts = extract_prompts_from_content(full_content, title, url)
+            
+            if prompts:
+                print(f"  💡 额外提取 {len(prompts)} 个提示词")
+                
+                # 只保存前 3 个额外提示词
+                for i, prompt in enumerate(prompts[:3], 1):
+                    # 避免与主内容重复
+                    if len(prompt) < len(full_content) * 0.5:  # 提示词比正文短很多
+                        quality_score = calculate_quality_score(prompt)
+                        
+                        entry = {
+                            "timestamp": timestamp,
+                            "source": "firecrawl",
+                            "method": "search",
+                            "search_query": query,
+                            "url": url,
+                            "title": f"{title} (extracted-{i})",
+                            "content": prompt,
+                            "quality_score": quality_score,
+                            "success": True
+                        }
+                        all_entries.append(entry)
 
         time.sleep(2)
 

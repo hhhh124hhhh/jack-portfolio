@@ -423,38 +423,57 @@ def main():
             logger.debug(f"      URL: {url}")
 
             # 获取页面内容
-            content = fetch_page_content(url)
+            page_content = fetch_page_content(url)
 
-            if not content:
+            if not page_content:
                 logger.warning(f"      获取内容失败")
                 continue
 
-            # 提取提示词
-            prompts = extract_prompts_from_content(content, max_prompts=15)
+            # 保存页面内容本身作为提示词
+            # 优先保存完整正文，如果正文太长则截取
+            content_to_save = page_content[:15000] if len(page_content) > 15000 else page_content
+            prompt_type = classify_prompt_type(content_to_save)
+            quality_score = calculate_quality_score(content_to_save)
 
-            if not prompts:
-                logger.debug(f"      未找到提示词")
-                continue
+            prompt_data = {
+                'content': content_to_save,
+                'title': title,
+                'source': 'searxng',
+                'url': url,
+                'type': prompt_type,
+                'quality_score': quality_score,
+                'collected_at': datetime.now().isoformat(),
+                'search_query': query
+            }
 
-            logger.info(f"      找到 {len(prompts)} 个提示词")
+            all_prompts.append(prompt_data)
+            logger.info(f"      保存页面内容 ({len(content_to_save)} 字符)")
 
-            # 处理每个提示词
-            for prompt in prompts:
-                prompt_type = classify_prompt_type(prompt)
-                quality_score = calculate_quality_score(prompt)
+            # 提取提示词（额外提取，作为补充）
+            prompts = extract_prompts_from_content(page_content, max_prompts=15)
 
-                prompt_data = {
-                    'content': prompt,
-                    'title': title,
-                    'source': 'searxng',
-                    'url': url,
-                    'type': prompt_type,
-                    'quality_score': quality_score,
-                    'collected_at': datetime.now().isoformat(),
-                    'search_query': query
-                }
+            if prompts:
+                logger.info(f"      额外提取 {len(prompts)} 个提示词")
 
-                all_prompts.append(prompt_data)
+                # 处理每个额外提示词
+                for prompt in prompts[:3]:  # 只保存前 3 个
+                    # 避免与主内容重复
+                    if prompt not in page_content:
+                        prompt_type = classify_prompt_type(prompt)
+                        quality_score = calculate_quality_score(prompt)
+
+                        prompt_data = {
+                            'content': prompt,
+                            'title': f"{title} (extracted)",
+                            'source': 'searxng',
+                            'url': url,
+                            'type': prompt_type,
+                            'quality_score': quality_score,
+                            'collected_at': datetime.now().isoformat(),
+                            'search_query': query
+                        }
+
+                        all_prompts.append(prompt_data)
 
         # 搜索间隔，避免过于频繁
         time.sleep(2)

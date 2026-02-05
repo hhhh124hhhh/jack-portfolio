@@ -80,7 +80,10 @@ def infer_type(content):
 
 def create_skill_from_prompt(prompt_data, inferred_type, processed_hashes, processed_skill_names, log_file):
     """从 prompt 创建 skill（增强版）"""
-    content = prompt_data.get('content', '').strip()
+    # 兼容 content 和 prompt 字段
+    content = prompt_data.get('content') or prompt_data.get('prompt') or ''
+    content = content.strip()
+    
     title = prompt_data.get('title', 'AI Skill')
     source = prompt_data.get('source', '')
     url = prompt_data.get('url', '')
@@ -360,7 +363,8 @@ def main():
                             continue
                         
                         # 推断类型
-                        content = prompt_data.get('content', '')
+                        # 兼容 content 和 prompt 字段
+                        content = prompt_data.get('content') or prompt_data.get('prompt') or ''
                         inferred_type = infer_type(content)
                         
                         # 更新类型统计
