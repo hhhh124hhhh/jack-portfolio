@@ -139,3 +139,15 @@ HTTP 402: {"error":"Unauthorized","message":"Credits is not enough.Please rechar
 **清理脚本**：`/root/clawd/scripts/backup-and-flush-memory.sh`
 
 ---
+
+## 工作流脚本修复（2026-02-05 11:15）
+
+**问题**：`full-prompt-workflow.sh` 没有使用新架构的 4 层漏斗模型
+
+**修复内容**：
+- 旧工作流（4 阶段）：收集 → 转换 → 发布 → 报告
+- 新工作流（8 阶段）：收集 → 分类 → 评分 → 筛选 → 补充 → 转换 → 发布 → 报告
+
+**备份**：`/root/clawd/scripts/full-prompt-workflow-v1-backup.sh`
+
+---
