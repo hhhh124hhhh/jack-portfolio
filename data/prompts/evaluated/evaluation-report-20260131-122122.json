@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-01-31T12:21:22.335908",
+  "total_evaluated": 0,
+  "quality_distribution": {
+    "high": 0,
+    "medium": 0,
+    "low": 0
+  },
+  "average_score": 0,
+  "output_file": "/root/clawd/data/prompts/evaluated/evaluated-prompts-20260131-122122.jsonl"
+}

@@ -1,0 +1,18 @@
+{
+  "timestamp": "20260205-080113",
+  "total_items": 4,
+  "classified_count": 4,
+  "output_file": "/root/clawd/data/prompts/classified/classified-20260205-080113.jsonl",
+  "saved_count": 4,
+  "classification_distribution": {
+    "Prompt": 1,
+    "Workflow": 0,
+    "Industry Knowledge": 1,
+    "Guide": 2
+  },
+  "confidence_distribution": {
+    "high_confidence": 1,
+    "needs_review": 0,
+    "uncertain": 3
+  }
+}
