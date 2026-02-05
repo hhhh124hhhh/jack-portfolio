@@ -1,0 +1,43 @@
+{
+  "timestamp": "20260205-131130",
+  "input_file": "/root/clawd/data/prompts/classified/classified-20260205-130520.jsonl",
+  "input_count": 980,
+  "output_file": "/root/clawd/data/prompts/cleaned/cleaned-20260205-131130.jsonl",
+  "output_count": 150,
+  "saved_count": 150,
+  "total_removed": 830,
+  "removal_rate": "84.7%",
+  "cleaning_steps": {
+    "empty_content": {
+      "total": 980,
+      "removed": 239,
+      "kept": 741,
+      "removal_rate": "24.4%"
+    },
+    "too_short": {
+      "total": 741,
+      "removed": 14,
+      "kept": 727,
+      "removal_rate": "1.9%"
+    },
+    "duplicates": {
+      "total": 727,
+      "removed": 525,
+      "kept": 202,
+      "unique": 202,
+      "removal_rate": "72.2%"
+    },
+    "navigation_footer": {
+      "total": 202,
+      "removed": 52,
+      "kept": 150,
+      "removal_rate": "25.7%"
+    },
+    "special_format": {
+      "total": 150,
+      "removed": 0,
+      "kept": 150,
+      "removal_rate": "0.0%"
+    }
+  }
+}

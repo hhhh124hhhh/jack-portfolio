@@ -32,6 +32,7 @@ class Config:
     # 数据目录
     DATA_DIR = project_root / "data/prompts"
     CLASSIFIED_DIR = DATA_DIR / "classified"
+    CLEANED_DIR = DATA_DIR / "cleaned"
     SCORED_DIR = DATA_DIR / "scored"
     
     # 配置文件路径
@@ -453,16 +454,23 @@ def main():
     """主流程"""
     logger.info("Starting content scoring...")
     
-    # 1. 读取分类的数据
-    jsonl_files = list(Config.CLASSIFIED_DIR.glob("*.jsonl"))
+    # 1. 读取清洗后的数据（优先）或分类的数据
+    cleaned_files = list(Config.CLEANED_DIR.glob("*.jsonl"))
     
-    if not jsonl_files:
-        logger.warning("No classified data found")
-        return {}
-    
-    # 读取最新的文件
-    latest_file = max(jsonl_files, key=lambda p: p.stat().st_mtime)
-    logger.info(f"Reading from {latest_file}")
+    if cleaned_files:
+        # 优先使用清洗后的数据
+        latest_file = max(cleaned_files, key=lambda p: p.stat().st_mtime)
+        logger.info(f"Reading cleaned data from {latest_file}")
+    else:
+        # 如果没有清洗后的数据，使用分类的数据
+        jsonl_files = list(Config.CLASSIFIED_DIR.glob("*.jsonl"))
+        
+        if not jsonl_files:
+            logger.warning("No cleaned or classified data found")
+            return {}
+        
+        latest_file = max(jsonl_files, key=lambda p: p.stat().st_mtime)
+        logger.info(f"No cleaned data found, reading classified data from {latest_file}")
     
     with open(latest_file, 'r', encoding='utf-8') as f:
         items = [json.loads(line) for line in f]

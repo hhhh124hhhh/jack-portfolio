@@ -129,6 +129,20 @@ main() {
         log_warn "⚠️  自动分类失败或没有新数据（需要先运行数据收集）"
     fi
 
+    # 阶段 2.5/8: 数据清洗层
+    log ""
+    log "[阶段 2.5/8] 数据清洗层 (Layer 2.5)"
+
+    if python3 /root/clawd/skills/ai-prompt-workflow/scripts/clean-data.py >> "$LOG_FILE" 2>&1; then
+        CLEANED_COUNT=$(tail -50 "$LOG_FILE" | grep "Cleaning completed:" | tail -1 | sed 's/.*items saved //' | awk '{print $1}' || echo "0")
+        log_info "✅ 数据清洗完成: $CLEANED_COUNT 条"
+        if [ "$CLEANED_COUNT" -gt 0 ]; then
+            HAS_NEW_DATA=true
+        fi
+    else
+        log_warn "⚠️  数据清洗失败或没有新数据（需要先运行分类）"
+    fi
+
     # 阶段 3/8: 分类评分层
     log ""
     log "[阶段 3/8] 分类评分层 (Layer 3)"
@@ -140,7 +154,7 @@ main() {
             HAS_NEW_DATA=true
         fi
     else
-        log_warn "⚠️  分类评分失败或没有新数据（需要先运行数据收集和分类）"
+        log_warn "⚠️  分类评分失败或没有新数据（需要先运行数据收集、分类和清洗）"
     fi
 
     # 阶段 4/8: 质量筛选层
