@@ -358,7 +358,7 @@ log ""
 log "提交到 Git..."
 cd /root/clawd
 
-git add data/prompts/*.jsonl reports/all-sources-report-v2-*.md 2>/dev/null || true
+git add data/prompts/*.jsonl data/prompts/collected/*.jsonl reports/all-sources-report-v2-*.md 2>/dev/null || true
 git commit -m "全源 Prompt 收集 V2 - $DATE $TIME (Firecrawl + Twitter)
 
 收集统计：
@@ -369,11 +369,13 @@ git commit -m "全源 Prompt 收集 V2 - $DATE $TIME (Firecrawl + Twitter)
 • Firecrawl: $FIRECRAWL_COUNT 条, $FIRECRAWL_PROMPTS 提示词 🔥
 • Twitter: $TWITTER_COUNT 条, $TWITTER_PROMPTS 提示词 🐦
 • 总计: $TOTAL_COLLECTED 条, $TOTAL_PROMPTS 提示词
+• 合并文件: $MERGED_FILE
 
 新功能：
 • Firecrawl 集成（解决 403 问题）
 • Twitter/X 集成（暂时禁用）
 • 自动提示词提取
+• 数据源合并到 collected/merged-*.jsonl
 
 报告: $REPORT_FILE" || log_warn "⚠️  没有变更需要提交"
 
@@ -396,13 +398,15 @@ FEISHU_MESSAGE="✅ 全源 Prompt 收集完成 (V2)！
 • **总计**: $TOTAL_COLLECTED 条, $TOTAL_PROMPTS 提示词
 
 📄 **报告**: $REPORT_FILE
+📦 **合并文件**: $MERGED_FILE
 
 🔄 **Git**: 已提交并推送
 
 🆕 **新功能**:
 • Firecrawl 集成 (解决 403 问题)
 • Twitter/X 集成 (暂时禁用)
-• 自动提示词提取"
+• 自动提示词提取
+• 数据源合并到 collected/merged-*.jsonl"
 
 clawdbot message send \
   --channel feishu \
@@ -422,13 +426,15 @@ SLACK_MESSAGE="✅ 全源 Prompt 收集完成 (V2)！
 • **总计**: $TOTAL_COLLECTED 条, $TOTAL_PROMPTS 提示词
 
 📄 **报告**: $REPORT_FILE
+📦 **合并文件**: $MERGED_FILE
 
 🔄 **Git**: 已提交并推送
 
 🆕 **新功能**:
 • Firecrawl 集成 (解决 403 问题)
 • Twitter/X 集成 (暂时禁用)
-• 自动提示词提取"
+• 自动提示词提取
+• 数据源合并到 collected/merged-*.jsonl"
 
 clawdbot message send \
   --channel slack \
@@ -436,6 +442,66 @@ clawdbot message send \
   --message "$SLACK_MESSAGE" >> "$LOG_FILE" 2>&1 || log_warn "⚠️  Slack 通知发送失败"
 
 log_info "✅ 通知已发送"
+
+
+# ========== 合并所有数据源到统一文件 ==========
+log ""
+log "=========================================="
+log "🔄 合并所有数据源"
+log "=========================================="
+
+TIMESTAMP=$(date +%Y%m%d-%H%M%S)
+MERGED_FILE="/root/clawd/data/prompts/collected/merged-$TIMESTAMP.jsonl"
+MERGED_COUNT=0
+
+# 创建合并文件
+> "$MERGED_FILE"
+
+# 合并 Reddit
+if [ -f /root/clawd/data/prompts/reddit-prompts.jsonl ] && [ -s /root/clawd/data/prompts/reddit-prompts.jsonl ]; then
+    cat /root/clawd/data/prompts/reddit-prompts.jsonl >> "$MERGED_FILE"
+    ADDED=$(wc -l < /root/clawd/data/prompts/reddit-prompts.jsonl)
+    log_info "✅ 合并 Reddit: $ADDED 条"
+    MERGED_COUNT=$((MERGED_COUNT + ADDED))
+fi
+
+# 合并 GitHub
+if [ -f /root/clawd/data/prompts/github-awesome-prompts.jsonl ] && [ -s /root/clawd/data/prompts/github-awesome-prompts.jsonl ]; then
+    cat /root/clawd/data/prompts/github-awesome-prompts.jsonl >> "$MERGED_FILE"
+    ADDED=$(wc -l < /root/clawd/data/prompts/github-awesome-prompts.jsonl)
+    log_info "✅ 合并 GitHub: $ADDED 条"
+    MERGED_COUNT=$((MERGED_COUNT + ADDED))
+fi
+
+# 合并 SearXNG
+if [ -f /root/clawd/data/prompts/collected.jsonl ] && [ -s /root/clawd/data/prompts/collected.jsonl ]; then
+    cat /root/clawd/data/prompts/collected.jsonl >> "$MERGED_FILE"
+    ADDED=$(wc -l < /root/clawd/data/prompts/collected.jsonl)
+    log_info "✅ 合并 SearXNG: $ADDED 条"
+    MERGED_COUNT=$((MERGED_COUNT + ADDED))
+fi
+
+# 合并 Firecrawl
+if [ -f /root/clawd/data/prompts/firecrawl-prompts.jsonl ] && [ -s /root/clawd/data/prompts/firecrawl-prompts.jsonl ]; then
+    cat /root/clawd/data/prompts/firecrawl-prompts.jsonl >> "$MERGED_FILE"
+    ADDED=$(wc -l < /root/clawd/data/prompts/firecrawl-prompts.jsonl)
+    log_info "✅ 合并 Firecrawl: $ADDED 条"
+    MERGED_COUNT=$((MERGED_COUNT + ADDED))
+fi
+
+# 合并 Twitter
+if [ -f /root/clawd/data/prompts/twitter-prompts.jsonl ] && [ -s /root/clawd/data/prompts/twitter-prompts.jsonl ]; then
+    cat /root/clawd/data/prompts/twitter-prompts.jsonl >> "$MERGED_FILE"
+    ADDED=$(wc -l < /root/clawd/data/prompts/twitter-prompts.jsonl)
+    log_info "✅ 合并 Twitter: $ADDED 条"
+    MERGED_COUNT=$((MERGED_COUNT + ADDED))
+fi
+
+log ""
+log_info "✅ 合并完成: $MERGED_COUNT 条 → $MERGED_FILE"
+
+# 更新 latest 链接
+ln -sf "$(basename "$MERGED_FILE")" /root/clawd/data/prompts/collected/latest.jsonl
 
 log ""
 log "=========================================="
@@ -449,8 +515,7 @@ done
 log ""
 log "📊 总收集: $TOTAL_COLLECTED 条"
 log "📝 总提示词: $TOTAL_PROMPTS 个"
-log "📄 报告: $REPORT_FILE"
-log "🔄 Git: 已提交并推送"
+log "📄 合并文件: $MERGED_FILE"
 log "=========================================="
 
 exit 0

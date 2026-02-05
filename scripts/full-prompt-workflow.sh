@@ -126,7 +126,7 @@ main() {
             HAS_NEW_DATA=true
         fi
     else
-        log_warn "⚠️  自动分类失败（可能没有新数据）"
+        log_warn "⚠️  自动分类失败或没有新数据（需要先运行数据收集）"
     fi
 
     # 阶段 3/8: 分类评分层
@@ -140,7 +140,7 @@ main() {
             HAS_NEW_DATA=true
         fi
     else
-        log_warn "⚠️  分类评分失败（可能没有新数据）"
+        log_warn "⚠️  分类评分失败或没有新数据（需要先运行数据收集和分类）"
     fi
 
     # 阶段 4/8: 质量筛选层
@@ -154,7 +154,7 @@ main() {
             HAS_NEW_DATA=true
         fi
     else
-        log_warn "⚠️  质量筛选失败（可能没有新数据）"
+        log_warn "⚠️  质量筛选失败或没有新数据（需要先运行数据收集、分类和评分）"
     fi
 
     # 阶段 5/8: 内容补充层
@@ -168,7 +168,7 @@ main() {
             HAS_NEW_DATA=true
         fi
     else
-        log_warn "⚠️  内容补充失败（可能没有新数据）"
+        log_warn "⚠️  内容补充失败或没有新数据（需要先运行数据收集、分类、评分和筛选）"
     fi
 
     # 阶段 6/8: 转换成 Skills
