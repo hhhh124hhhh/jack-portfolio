@@ -1,0 +1,502 @@
+{
+  "timestamp": "20260205-145616",
+  "total_results": 55,
+  "queries_used": 18,
+  "results": [
+    {
+      "query": "site:github.com \"awesome-chatgpt-prompts\"",
+      "url": "https://github.com/awesome-chatgpt-prompts",
+      "title": "Awesome ChatGPT Prompts · GitHub",
+      "snippet": "Awesome ChatGPT Prompts is a collection of effective and engaging prompts that are used to interact with ChatGPT. - Awesome ChatGPT Prompts",
+      "has_prompts": true,
+      "content_length": 240337,
+      "timestamp": "2026-02-05T14:54:47.366226"
+    },
+    {
+      "query": "site:github.com \"awesome-chatgpt-prompts\"",
+      "url": "https://github.com/f/awesome-chatgpt-prompts/blob/main/SELF-HOSTING.md",
+      "title": "awesome-chatgpt-prompts/SELF-HOSTING.md at main · f/awesome-chatgpt-prompts",
+      "snippet": "Curated Prompt Library — Access 100+ high-quality, community-tested prompts for ChatGPT, Claude, Gemini, Llama, Mistral, and other AI models",
+      "has_prompts": true,
+      "content_length": 233244,
+      "timestamp": "2026-02-05T14:54:48.166947"
+    },
+    {
+      "query": "site:github.com \"awesome-chatgpt-prompts\"",
+      "url": "https://github.com/f/awesome-chatgpt-prompts/tree/main/packages/prompts.chat",
+      "title": "awesome-chatgpt-prompts/packages/prompts.chat at main · f/awesome-chatgpt-prompts",
+      "snippet": "A comprehensive developer toolkit for building, validating, and parsing AI prompts.",
+      "has_prompts": true,
+      "content_length": 949259,
+      "timestamp": "2026-02-05T14:54:49.336438"
+    },
+    {
+      "query": "site:github.com \"awesome-chatgpt-prompts\"",
+      "url": "https://github.com/f/awesome-chatgpt-prompts?search=1",
+      "title": "awesome-chatgpt-prompts/ at main · f/awesome-chatgpt-prompts",
+      "snippet": "In this repository, you will find a variety of prompts that can be used with ChatGPT and other AI chat models. We encourage you to add your own prompts to the list, and to use AI to help generate new prompts as well.",
+      "has_prompts": true,
+      "content_length": 229394,
+      "timestamp": "2026-02-05T14:54:50.021688"
+    },
+    {
+      "query": "site:github.com \"awesome-chatgpt-prompts\"",
+      "url": "https://github.com/f/awesome-chatgpt-prompts/blob/main/README.md",
+      "title": "awesome-chatgpt-prompts/README.md at main · f/awesome-chatgpt-prompts",
+      "snippet": "In this repository, you will find a variety of prompts that can be used with ChatGPT and other AI chat models. We encourage you to add your own prompts to the list, and to use AI to help generate new prompts as well.",
+      "has_prompts": true,
+      "content_length": 231464,
+      "timestamp": "2026-02-05T14:54:50.833613"
+    },
+    {
+      "query": "site:github.com \"awesome-chatgpt-prompts\"",
+      "url": "https://github.com/topics/chatgpt-prompts",
+      "title": "chatgpt-prompts · GitHub Topics · GitHub",
+      "snippet": "Awesome ChatGPT Prompts: A list of Awesome ChatGPT prompts to make ChatGPT better. The Awesome ChatGPT Prompts Github repository contains over 157+ Prompts that will increase your productivity.",
+      "has_prompts": true,
+      "content_length": 492377,
+      "timestamp": "2026-02-05T14:54:51.955198"
+    },
+    {
+      "query": "site:github.com \"awesome-chatgpt-prompts\"",
+      "url": "https://github.com/awesome-chatgpt-prompts/awesome-chatgpt-prompts-github",
+      "title": "GitHub - awesome-chatgpt-prompts/awesome-chatgpt-prompts-github: Awesome ChatGPT Prompts: A list of Awesome ChatGPT prompts to make ChatGPT better. The Awesome ChatGPT Prompts Github repository contains over 157+ Prompts that will increase your productivity. For more ChatGPT Prompts visit: https://www.chatgpt-prompts.net/",
+      "snippet": "Awesome ChatGPT Prompts: A list of Awesome ChatGPT prompts to make ChatGPT better. The Awesome ChatGPT Prompts Github repository contains over 157+ Prompts that will increase your productivity.",
+      "has_prompts": true,
+      "content_length": 870697,
+      "timestamp": "2026-02-05T14:54:52.911848"
+    },
+    {
+      "query": "site:github.com \"awesome-chatgpt-prompts\"",
+      "url": "https://github.com/awesome-chatgpt-prompts/awesome_chatgpt",
+      "title": "GitHub - awesome-chatgpt-prompts/awesome_chatgpt: ⚡ Everything about ChatGPT",
+      "snippet": "Best practices for prompt engineering with OpenAI API：OpenAI’s staff tell you how to give clear and effective instructions to GPT. Awesome ChatGPT Prompts - This is a collection of prompt examples to be used with the ChatGPT model.",
+      "has_prompts": true,
+      "content_length": 436093,
+      "timestamp": "2026-02-05T14:54:53.611925"
+    },
+    {
+      "query": "site:github.com \"awesome-chatgpt-prompts\"",
+      "url": "https://github.com/Promact/awesome-chatgpt-prompts",
+      "title": "GitHub - Promact/awesome-chatgpt-prompts",
+      "snippet": "This is a collection of prompt examples to be used with the ChatGPT model.",
+      "has_prompts": true,
+      "content_length": 255449,
+      "timestamp": "2026-02-05T14:54:54.395634"
+    },
+    {
+      "query": "site:github.com \"awesome-chatgpt-prompts\"",
+      "url": "https://github.com/abledock/awesome-chatgpt-prompts",
+      "title": "GitHub - abledock/awesome-chatgpt-prompts: Collection of prompt examples to be used with the ChatGPT model",
+      "snippet": "This is a comprehensive collection of prompts or messages that you can use with ChatGPT from OpenAI with plenty of practical tips, examples, and best practices to help you get started.",
+      "has_prompts": false,
+      "content_length": 0,
+      "timestamp": "2026-02-05T14:54:54.793079"
+    },
+    {
+      "query": "site:github.com \"awesome-chatgpt-prompts\"",
+      "url": "https://github.com/sankyn1/awesome-chatgpt-prompts",
+      "title": "GitHub - sankyn1/awesome-chatgpt-prompts: Expertly curated collection of high-quality, trending ChatGPT prompts—updated daily for SEO, business, coding, writing, marketing",
+      "snippet": "Discover, clone, and use the most in-demand, SEO-optimized prompts for ChatGPT, Gemini, Claude, and more. This repo is updated DAILY with unique prompts for SEO, business, developing, writing, education, and marketing.",
+      "has_prompts": true,
+      "content_length": 247907,
+      "timestamp": "2026-02-05T14:54:55.564697"
+    },
+    {
+      "query": "site:github.com \"awesome-chatgpt-prompts\"",
+      "url": "https://github.com/awesome-chatgpt-prompts/awesome-chatgpt-prompts",
+      "title": "GitHub - awesome-chatgpt-prompts/awesome-chatgpt-prompts: Awesome ChatGPT Prompts: A list of Awesome ChatGPT prompts to make ChatGPT better. The Awesome ChatGPT Prompts Github repository contains over 157+ Prompts that will increase your productivity. For more ChatGPT Prompts visit: https://www.chatgpt-prompts.net/",
+      "snippet": "Awesome ChatGPT Prompts: A list of Awesome ChatGPT prompts to make ChatGPT better. The Awesome ChatGPT Prompts Github repository contains over 157+ Prompts that will increase your productivity.",
+      "has_prompts": true,
+      "content_length": 233392,
+      "timestamp": "2026-02-05T14:54:56.256494"
+    },
+    {
+      "query": "site:github.com \"awesome-chatgpt-prompts\"",
+      "url": "https://github.com/f/awesome-chatgpt-prompts/blob/main/prompts.csv",
+      "title": "awesome-chatgpt-prompts/prompts.csv at main · f/awesome-chatgpt-prompts",
+      "snippet": "Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy. - awesome-chatgpt-prompts/prompts.csv at main · f/awesome-chatgpt-prompts",
+      "has_prompts": true,
+      "content_length": 192718,
+      "timestamp": "2026-02-05T14:54:57.016412"
+    },
+    {
+      "query": "site:github.com \"awesome-chatgpt-prompts\"",
+      "url": "https://github.com/topics/awesome-chatgpt-prompts",
+      "title": "awesome-chatgpt-prompts · GitHub Topics · GitHub",
+      "snippet": "Awesome ChatGPT Prompts: A list of Awesome ChatGPT prompts to make ChatGPT better. The Awesome ChatGPT Prompts Github repository contains over 157+ Prompts that will increase your productivity.",
+      "has_prompts": true,
+      "content_length": 257956,
+      "timestamp": "2026-02-05T14:54:57.616256"
+    },
+    {
+      "query": "site:github.com \"awesome-chatgpt-prompts\"",
+      "url": "https://github.com/f/awesome-chatgpt-prompts/blob/main/scripts/find-prompt",
+      "title": "awesome-chatgpt-prompts/scripts/find-prompt at main · f/awesome-chatgpt-prompts",
+      "snippet": "This repo includes ChatGPT prompt curation to use ChatGPT and other LLM tools better. - awesome-chatgpt-prompts/scripts/find-prompt at main · f/awesome-chatgpt-prompts",
+      "has_prompts": false,
+      "content_length": 0,
+      "timestamp": "2026-02-05T14:54:58.386897"
+    },
+    {
+      "query": "site:github.com \"awesome-prompts\"",
+      "url": "https://github.com/ai-boost/awesome-prompts",
+      "title": "GitHub - ai-boost/awesome-prompts: Curated list of chatgpt prompts from the top-rated GPTs in the GPTs Store. Prompt Engineering, prompt attack & prompt protect. Advanced Prompt Engineering papers.",
+      "snippet": "This repository contains a curated list of awesome prompts on OpenAI GPT store.",
+      "has_prompts": true,
+      "content_length": 387003,
+      "timestamp": "2026-02-05T14:55:02.190639"
+    },
+    {
+      "query": "site:github.com \"awesome-prompts\"",
+      "url": "https://github.com/topics/awesome-chatgpt-prompts",
+      "title": "awesome-chatgpt-prompts · GitHub Topics · GitHub",
+      "snippet": "Awesome ChatGPT Prompts: A list of Awesome ChatGPT prompts to make ChatGPT better. The Awesome ChatGPT Prompts Github repository contains over 157+ Prompts that will increase your productivity.",
+      "has_prompts": true,
+      "content_length": 257951,
+      "timestamp": "2026-02-05T14:55:02.296987"
+    },
+    {
+      "query": "site:github.com \"awesome-prompts\"",
+      "url": "https://github.com/dukeluo/awesome-awesome-prompts",
+      "title": "GitHub - dukeluo/awesome-awesome-prompts: An awesome list for collecting awesome lists related to prompt engineering.",
+      "snippet": "An awesome list for collecting awesome lists related to prompt engineering. - dukeluo/awesome-awesome-prompts",
+      "has_prompts": true,
+      "content_length": 240133,
+      "timestamp": "2026-02-05T14:55:02.967665"
+    },
+    {
+      "query": "site:github.com \"awesome-prompts\"",
+      "url": "https://github.com/browser-use/awesome-prompts",
+      "title": "GitHub - browser-use/awesome-prompts: Table of awesome Browser Use prompts",
+      "snippet": "A curated collection of effective prompts for Browser-Use. This repository aims to provide examples, templates, and best practices for crafting prompts that maximize the capabilities of Browser-Use agents.",
+      "has_prompts": true,
+      "content_length": 517151,
+      "timestamp": "2026-02-05T14:55:03.749974"
+    },
+    {
+      "query": "site:github.com \"awesome-prompts\"",
+      "url": "https://github.com/topics/awesome-prompts",
+      "title": "awesome-prompts · GitHub Topics · GitHub",
+      "snippet": "A curated collection of 160+ high-quality AI image generation prompts for 3D art, portraits, thumbnails, and more. Open-source and community-driven · thumbnails image-generation awesome-list portraits ai-art prompt-engineering ai-prompts ...",
+      "has_prompts": true,
+      "content_length": 250000,
+      "timestamp": "2026-02-05T14:55:04.333951"
+    },
+    {
+      "query": "site:github.com \"awesome-prompts\"",
+      "url": "https://github.com/ai-boost/awesome-prompts/blob/main/prompts/%F0%9F%92%BBProfessional%20Coder.md",
+      "title": "awesome-prompts/prompts/💻Professional Coder.md at main · ai-boost/awesome-prompts",
+      "snippet": "Curated list of chatgpt prompts from the top-rated GPTs in the GPTs Store. Prompt Engineering, prompt attack & prompt protect. Advanced Prompt Engineering papers. - ai-boost/awesome-prompts",
+      "has_prompts": true,
+      "content_length": 205182,
+      "timestamp": "2026-02-05T14:55:05.014025"
+    },
+    {
+      "query": "site:github.com \"awesome-prompts\"",
+      "url": "https://github.com/songtianlun/awesome-prompts",
+      "title": "GitHub - songtianlun/awesome-prompts: Awesome Prompts, Nano Banana, Nano Banana Pro, Sora2, GPT-4o, gpt-image-1",
+      "snippet": "Awesome Prompts is a curated collection of prompts for large language and multi‑modal models.",
+      "has_prompts": true,
+      "content_length": 243954,
+      "timestamp": "2026-02-05T14:55:05.643071"
+    },
+    {
+      "query": "site:github.com \"awesome-prompts\"",
+      "url": "https://github.com/awesome-prompts/awesome-prompts",
+      "title": "GitHub - awesome-prompts/awesome-prompts: 📚 A curated collection of AI prompts organized as learning paths. Each \"recipe\" builds on the previous, helping you master new skills through hands-on practice with Claude, Cursor, and other AI coding assistants.",
+      "snippet": "📚 A curated collection of AI prompts organized as learning paths. Each \"recipe\" builds on the previous, helping you master new skills through hands-on practice with Claude, Cursor, and other AI coding assistants. - awesome-prompts/awesome-prompts",
+      "has_prompts": true,
+      "content_length": 225964,
+      "timestamp": "2026-02-05T14:55:06.541975"
+    },
+    {
+      "query": "site:github.com \"awesome-prompts\"",
+      "url": "https://github.com/MikeGSA/Awesome-Prompts",
+      "title": "GitHub - MikeGSA/Awesome-Prompts",
+      "snippet": "A curated collection of powerful AI prompts for various use cases · Welcome to Awesome Prompts!",
+      "has_prompts": true,
+      "content_length": 422747,
+      "timestamp": "2026-02-05T14:55:07.397111"
+    },
+    {
+      "query": "site:github.com \"awesome-prompts\"",
+      "url": "https://github.com/onlyoneaman/awesome-prompts",
+      "title": "GitHub - onlyoneaman/awesome-prompts",
+      "snippet": "Awesome Prompts is an open-source library of carefully curated AI prompts designed to help you get better results from AI tools like ChatGPT, Claude, Gemini, and other language models.",
+      "has_prompts": false,
+      "content_length": 0,
+      "timestamp": "2026-02-05T14:55:07.812106"
+    },
+    {
+      "query": "site:github.com \"awesome-prompts\"",
+      "url": "https://github.com/awesome-prompts",
+      "title": "awesome-prompts · GitHub",
+      "snippet": "📚 A curated collection of AI prompts organized as learning paths. Each \"recipe\" builds on the previous, helping you master new skills through hands-on practice with Claude, Cursor, and other AI coding assistants.",
+      "has_prompts": true,
+      "content_length": 190214,
+      "timestamp": "2026-02-05T14:55:08.397989"
+    },
+    {
+      "query": "site:github.com \"awesome-prompts\"",
+      "url": "https://github.com/ai-boost/awesome-prompts/blob/main/prompts/AutoGPT.md",
+      "title": "awesome-prompts/prompts/AutoGPT.md at main · ai-boost/awesome-prompts",
+      "snippet": "Curated list of chatgpt prompts from the top-rated GPTs in the GPTs Store. Prompt Engineering, prompt attack & prompt protect. Advanced Prompt Engineering papers. - ai-boost/awesome-prompts",
+      "has_prompts": true,
+      "content_length": 207401,
+      "timestamp": "2026-02-05T14:55:08.954130"
+    },
+    {
+      "query": "site:github.com \"awesome-prompts\"",
+      "url": "https://github.com/ai-boost/awesome-prompts/blob/main/prompts/%E2%9C%8F%EF%B8%8FAll-around%20Writer%20(Professional%20Version).md",
+      "title": "awesome-prompts/prompts/✏️All-around Writer (Professional Version).md at main · ai-boost/awesome-prompts",
+      "snippet": "Curated list of chatgpt prompts from the top-rated GPTs in the GPTs Store. Prompt Engineering, prompt attack & prompt protect. Advanced Prompt Engineering papers. - awesome-prompts/prompts/✏️All-around Writer (Professional Version).md at main · ai-boost/awesome-prompts",
+      "has_prompts": true,
+      "content_length": 198791,
+      "timestamp": "2026-02-05T14:55:09.502394"
+    },
+    {
+      "query": "site:github.com \"awesome-prompts\"",
+      "url": "https://github.com/mshojaei77/Awesome-Prompts",
+      "title": "GitHub - mshojaei77/Awesome-Prompts: A collection of ready-to-use prompts designed to enhance productivity and creativity in various fields. These prompts are crafted to provide a starting point for brainstorming, planning, and generating ideas across different domains.",
+      "snippet": "A collection of ready-to-use prompts designed to enhance productivity and creativity in various fields. These prompts are crafted to provide a starting point for brainstorming, planning, and generating ideas across different domains.",
+      "has_prompts": true,
+      "content_length": 783787,
+      "timestamp": "2026-02-05T14:55:10.562861"
+    },
+    {
+      "query": "site:github.com \"awesome-prompts\"",
+      "url": "https://github.com/ai-boost/awesome-prompts/blob/main/prompts/SuperPrompt.md",
+      "title": "awesome-prompts/prompts/SuperPrompt.md at main · ai-boost/awesome-prompts",
+      "snippet": "Curated list of chatgpt prompts from the top-rated GPTs in the GPTs Store. Prompt Engineering, prompt attack & prompt protect. Advanced Prompt Engineering papers. - ai-boost/awesome-prompts",
+      "has_prompts": true,
+      "content_length": 197830,
+      "timestamp": "2026-02-05T14:55:11.149369"
+    },
+    {
+      "query": "site:github.com \"prompt-library\"",
+      "url": "https://github.com/xixu-me/prompt-library",
+      "title": "GitHub - xixu-me/prompt-library: Comprehensive collection of professional AI prompts across various categories",
+      "snippet": "A comprehensive collection of professional AI prompts across various categories, designed to enhance productivity, creativity, and technical workflows. This library provides battle-tested prompts with clear examples, usage instructions, and ...",
+      "has_prompts": true,
+      "content_length": 356371,
+      "timestamp": "2026-02-05T14:55:14.655503"
+    },
+    {
+      "query": "site:github.com \"prompt-library\"",
+      "url": "https://github.com/MrXie23/PromptLibrary",
+      "title": "GitHub - MrXie23/PromptLibrary: Prompt Library is an open-source, high-quality AI prompt repository that supports multiple languages and categorized search, helping you efficiently explore the unlimited potential of AI.",
+      "snippet": "Prompt Library is an open-source platform focused on collecting, categorizing, and sharing high-quality AI prompts.",
+      "has_prompts": true,
+      "content_length": 296640,
+      "timestamp": "2026-02-05T14:55:15.343976"
+    },
+    {
+      "query": "site:github.com \"prompt-library\"",
+      "url": "https://github.com/thibaultyou/prompt-library",
+      "title": "GitHub - thibaultyou/prompt-library: AI Prompt Library: Curated prompts with metadata automation, documentation, and dynamic CLI. Execute AI prompts in CI pipelines or local workflows. Customizable toolkit for building AI-powered processes and personal assistants.",
+      "snippet": "AI Prompt Library: Curated prompts with metadata automation, documentation, and dynamic CLI. Execute AI prompts in CI pipelines or local workflows. Customizable toolkit for building AI-powered processes and personal assistants. - thibaultyou/prompt-library",
+      "has_prompts": true,
+      "content_length": 412770,
+      "timestamp": "2026-02-05T14:55:16.036538"
+    },
+    {
+      "query": "site:github.com \"prompt-library\"",
+      "url": "https://github.com/abilzerian/LLM-Prompt-Library",
+      "title": "GitHub - abilzerian/LLM-Prompt-Library: A playground of highly experimental prompts, Jinja2 templates & scripts for machine intelligence models from OpenAI, Anthropic, DeepSeek, Meta, Mistral, Google, xAI & others. Alex Bilzerian (2022-2025).",
+      "snippet": "Experimental prompt templates for every major LLM. A constantly evolving library of prompts & templates I've been tinkering with since Dec.",
+      "has_prompts": true,
+      "content_length": 277484,
+      "timestamp": "2026-02-05T14:55:16.691579"
+    },
+    {
+      "query": "site:github.com \"prompt-library\"",
+      "url": "https://github.com/danielrosehill/Prompt-Library",
+      "title": "GitHub - danielrosehill/Prompt-Library: A repository of prompts I've used when working with LLMs as well as some example outputs and notes",
+      "snippet": "A repository of prompts I've used when working with LLMs as well as some example outputs and notes - danielrosehill/Prompt-Library",
+      "has_prompts": true,
+      "content_length": 304173,
+      "timestamp": "2026-02-05T14:55:17.411048"
+    },
+    {
+      "query": "site:github.com \"prompt-library\"",
+      "url": "https://github.com/topics/prompt-library",
+      "title": "prompt-library · GitHub Topics · GitHub",
+      "snippet": "A prompt library for AI agents and assistants.",
+      "has_prompts": true,
+      "content_length": 488568,
+      "timestamp": "2026-02-05T14:55:18.704911"
+    },
+    {
+      "query": "site:github.com \"prompt-library\"",
+      "url": "https://github.com/ncwilson78/System-Prompt-Library",
+      "title": "GitHub - ncwilson78/System-Prompt-Library: A library of shared system prompts for creating customized educational GPT agents.",
+      "snippet": "A library of shared system prompts for creating customized educational GPT agents. - ncwilson78/System-Prompt-Library",
+      "has_prompts": true,
+      "content_length": 260712,
+      "timestamp": "2026-02-05T14:55:19.426304"
+    },
+    {
+      "query": "site:github.com \"prompt-library\"",
+      "url": "https://github.com/harish-garg/gemini-cli-prompt-library",
+      "title": "GitHub - harish-garg/gemini-cli-prompt-library: A curated library of high-quality, professionally crafted prompts for common development tasks. Save time and improve your AI interactions with battle-tested prompt templates. You can install it as an Gemini CLI Extension.",
+      "snippet": "A curated library of high-quality, professionally crafted prompts for common development tasks. Save time and improve your AI interactions with battle-tested prompt templates. You can install it as an Gemini CLI Extension.",
+      "has_prompts": true,
+      "content_length": 348439,
+      "timestamp": "2026-02-05T14:55:20.027783"
+    },
+    {
+      "query": "site:github.com \"prompt-library\"",
+      "url": "https://github.com/itstanishqua/prompt-library",
+      "title": "GitHub - itstanishqua/prompt-library: A collection of prompts for various uses. From daily use prompts, to Veo 3, and music prompts. [Free to use for Personal Use]",
+      "snippet": "A curated collection of high-quality prompts for various AI models and use cases.",
+      "has_prompts": true,
+      "content_length": 282627,
+      "timestamp": "2026-02-05T14:55:20.783395"
+    },
+    {
+      "query": "site:github.com \"prompt-library\"",
+      "url": "https://github.com/goossaert/prompt-library",
+      "title": "GitHub - goossaert/prompt-library: Prompt Library is a single file prompt library and composer web application with local data storage. It was implemented with OpenAI's o3-mini-high model.",
+      "snippet": "Prompt Library is a single file prompt library and composer web application with local data storage. It was implemented with OpenAI's o3-mini-high model. - goossaert/prompt-library",
+      "has_prompts": true,
+      "content_length": 248492,
+      "timestamp": "2026-02-05T14:55:21.569324"
+    },
+    {
+      "query": "site:github.com \"prompt-library\"",
+      "url": "https://github.com/disler/marimo-prompt-library",
+      "title": "GitHub - disler/marimo-prompt-library: Engineer your reusable, customizable, prompt library in Marimo reactive notebooks",
+      "snippet": "Engineer your reusable, customizable, prompt library in Marimo reactive notebooks - disler/marimo-prompt-library",
+      "has_prompts": true,
+      "content_length": 303150,
+      "timestamp": "2026-02-05T14:55:22.302104"
+    },
+    {
+      "query": "site:github.com \"prompt-library\"",
+      "url": "https://github.com/carlosguadian/universal-prompt-library",
+      "title": "GitHub - carlosguadian/universal-prompt-library: A powerful Chrome Extension to manage, organize, and inject prompts into any AI chatbot (ChatGPT, Claude, Gemini). Features folders, drag & drop, and variable placeholders",
+      "snippet": "A powerful Chrome Extension to manage, organize, and inject prompts into any AI chatbot (ChatGPT, Claude, Gemini). Features folders, drag & drop, and variable placeholders - carlosguadian/universal-prompt-library",
+      "has_prompts": true,
+      "content_length": 305249,
+      "timestamp": "2026-02-05T14:55:23.101256"
+    },
+    {
+      "query": "site:github.com \"prompt-library\"",
+      "url": "https://github.com/Comfy-Org/comfy-claude-prompt-library",
+      "title": "GitHub - Comfy-Org/comfy-claude-prompt-library: Collection of Claude Code commands and memories for agentic coding.",
+      "snippet": "Collection of Claude Code commands and memories for agentic coding. - Comfy-Org/comfy-claude-prompt-library",
+      "has_prompts": true,
+      "content_length": 346709,
+      "timestamp": "2026-02-05T14:55:23.846535"
+    },
+    {
+      "query": "site:github.com \"prompt-library\"",
+      "url": "https://github.com/kevin-hammond/prompt-library",
+      "title": "GitHub - kevin-hammond/prompt-library: A curated set of prompts crafted to steer AI in aiding diverse development tasks.",
+      "snippet": "A curated set of prompts crafted to steer AI in aiding diverse development tasks. - kevin-hammond/prompt-library",
+      "has_prompts": true,
+      "content_length": 229781,
+      "timestamp": "2026-02-05T14:55:24.538122"
+    },
+    {
+      "query": "site:github.com \"prompt-library\"",
+      "url": "https://github.com/wojciecholszewski/Prompt-Library-Manager",
+      "title": "GitHub - wojciecholszewski/Prompt-Library-Manager: A simple Google Chrome extension to manage a library of text prompts",
+      "snippet": "The Prompt Library Manager is a \"powerful\" and user-friendly extension for Google Chrome that simplifies the management of text prompts.",
+      "has_prompts": true,
+      "content_length": 252394,
+      "timestamp": "2026-02-05T14:55:25.250287"
+    },
+    {
+      "query": "site:github.com \"prompt-collection\"",
+      "url": "https://github.com/Sagarbudhwani/prompt-collection",
+      "title": "GitHub - Sagarbudhwani/prompt-collection: A curated collection of AI image generation prompts for Gemini and ChatGPT",
+      "snippet": "A curated collection of AI image generation prompts for Gemini and ChatGPT - Sagarbudhwani/prompt-collection",
+      "has_prompts": true,
+      "content_length": 316715,
+      "timestamp": "2026-02-05T14:55:28.916257"
+    },
+    {
+      "query": "site:github.com \"prompt-collection\"",
+      "url": "https://github.com/B3o/GPTS-Prompt-Collection",
+      "title": "GitHub - B3o/GPTS-Prompt-Collection: 收集GPTS的prompt / Collect the prompt of GPTS",
+      "snippet": "收集GPTS的prompt / Collect the prompt of GPTS. Contribute to B3o/GPTS-Prompt-Collection development by creating an account on GitHub.",
+      "has_prompts": true,
+      "content_length": 967978,
+      "timestamp": "2026-02-05T14:55:29.658661"
+    },
+    {
+      "query": "site:github.com \"prompt-collection\"",
+      "url": "https://github.com/the-prompt-collection/the-prompt-collection.github.io",
+      "title": "GitHub - the-prompt-collection/the-prompt-collection.github.io: This repository contains a variety of prompts for different purposes, such as writing, interviews, brainstorming, and more.",
+      "snippet": "The Prompt Collection is a curated repository of diverse prompts designed for various purposes, such as writing, interviews, and more.",
+      "has_prompts": true,
+      "content_length": 276112,
+      "timestamp": "2026-02-05T14:55:30.349197"
+    },
+    {
+      "query": "site:github.com \"prompt-collection\"",
+      "url": "https://github.com/imkasen/my-prompt-collection",
+      "title": "GitHub - imkasen/my-prompt-collection: Some prompts I've collected.",
+      "snippet": "GPTs Prompt Collection: Collect the prompt of GPTS.",
+      "has_prompts": true,
+      "content_length": 241649,
+      "timestamp": "2026-02-05T14:55:31.057566"
+    },
+    {
+      "query": "site:github.com \"prompt-collection\"",
+      "url": "https://github.com/topics/prompt-collection",
+      "title": "prompt-collection · GitHub Topics · GitHub",
+      "snippet": "A meticulously crafted Repository with awesome prompts to fasten up your interaction with LLMs.",
+      "has_prompts": true,
+      "content_length": 194216,
+      "timestamp": "2026-02-05T14:55:31.580640"
+    },
+    {
+      "query": "site:github.com \"prompt-collection\"",
+      "url": "https://github.com/VisualBoy/AI-Bots-Prompt-Collection",
+      "title": "GitHub - VisualBoy/AI-Bots-Prompt-Collection: A collection of prompts and resources for various bots (bolt, cline, cursor). The repository is structured to clearly separate prompts, documentation, and resources for each bot.",
+      "snippet": "A collection of prompts and resources for various bots (bolt, cline, cursor). The repository is structured to clearly separate prompts, documentation, and resources for each bot. - VisualBoy/AI-Bots-Prompt-Collection",
+      "has_prompts": true,
+      "content_length": 286107,
+      "timestamp": "2026-02-05T14:55:32.531969"
+    },
+    {
+      "query": "site:github.com \"prompt-collection\"",
+      "url": "https://github.com/LorenzoCorbella74/my-prompt-collection",
+      "title": "GitHub - LorenzoCorbella74/my-prompt-collection: A web app to manage prompts for AI",
+      "snippet": "My Prompt Library is a web application designed to help users manage and organize their collection of prompts.",
+      "has_prompts": true,
+      "content_length": 258907,
+      "timestamp": "2026-02-05T14:55:33.261354"
+    },
+    {
+      "query": "site:github.com \"prompt-collection\"",
+      "url": "https://github.com/0xHammock/prompt-collection",
+      "title": "GitHub - 0xHammock/prompt-collection: FULL v0, Cursor, Manus, Same.dev, Lovable & Devin AI System Prompts & AI Models.",
+      "snippet": "FULL v0, Cursor, Manus, Same.dev, Lovable & Devin AI System Prompts & AI Models. - 0xHammock/prompt-collection",
+      "has_prompts": true,
+      "content_length": 252125,
+      "timestamp": "2026-02-05T14:55:33.959911"
+    },
+    {
+      "query": "site:github.com \"prompt-collection\"",
+      "url": "https://github.com/PRITHIVSAKTHIUR/Top-Prompt-Collection",
+      "title": "GitHub - PRITHIVSAKTHIUR/Top-Prompt-Collection: A prompt library is a collection of image prompts that can be used to generate new and interesting image.",
+      "snippet": "A prompt library is a collection of image prompts that can be used to generate new and interesting image. - PRITHIVSAKTHIUR/Top-Prompt-Collection",
+      "has_prompts": true,
+      "content_length": 245364,
+      "timestamp": "2026-02-05T14:55:34.714326"
+    },
+    {
+      "query": "site:github.com \"prompt-collection\"",
+      "url": "https://github.com/the-prompt-collection/the-prompt-collection",
+      "title": "GitHub - the-prompt-collection/the-prompt-collection: Config files for my GitHub profile.",
+      "snippet": "Config files for my GitHub profile. Contribute to the-prompt-collection/the-prompt-collection development by creating an account on GitHub.",
+      "has_prompts": true,
+      "content_length": 218121,
+      "timestamp": "2026-02-05T14:55:35.366021"
+    }
+  ]
+}
