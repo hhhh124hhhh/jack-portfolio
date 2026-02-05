@@ -1,0 +1,19 @@
+{
+  "timestamp": "20260205-131332",
+  "total_items": 150,
+  "scored_count": 150,
+  "output_file": "/root/clawd/data/prompts/scored/scored-20260205-131332.jsonl",
+  "saved_count": 150,
+  "quality_distribution": {
+    "high": 0,
+    "medium": 0,
+    "low": 150
+  },
+  "type_distribution": {
+    "Prompt": 0,
+    "Workflow": 0,
+    "Industry Knowledge": 0,
+    "Guide": 150
+  },
+  "average_score": 2.966666666666667
+}
