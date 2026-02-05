@@ -78,7 +78,7 @@ def infer_type(content):
     # 默认为文本 prompt
     return "Text Prompt"
 
-def create_skill_from_prompt(prompt_data, inferred_type, processed_hashes, log_file):
+def create_skill_from_prompt(prompt_data, inferred_type, processed_hashes, processed_skill_names, log_file):
     """从 prompt 创建 skill（增强版）"""
     content = prompt_data.get('content', '').strip()
     title = prompt_data.get('title', 'AI Skill')
@@ -100,9 +100,34 @@ def create_skill_from_prompt(prompt_data, inferred_type, processed_hashes, log_f
             "quality_score": quality_score
         }
         log_file.write(json.dumps(log_entry, ensure_ascii=False) + "\n")
+        log_file.flush()  # 立即 flush，确保数据写入
         return None
     
-    # 2. 去重检查
+    # 2. 生成 skill name（先用于去重检查）
+    skill_name_clean = title.lower()
+    skill_name_clean = re.sub(r'[^a-z0-9\s-]', '-', skill_name_clean)
+    skill_name_clean = re.sub(r'\s+', '-', skill_name_clean)
+    skill_name_clean = re.sub(r'-+', '-', skill_name_clean)
+    skill_name_clean = skill_name_clean.strip('-')
+    skill_name_clean = skill_name_clean[:50]
+    
+    # 3. 基于 skill name 去重（更稳健）
+    if skill_name_clean in processed_skill_names:
+        # 记录重复
+        log_entry = {
+            "timestamp": datetime.now().isoformat(),
+            "title": title[:100],
+            "status": "duplicate",
+            "skill_name": skill_name_clean,
+            "content_length": len(content)
+        }
+        log_file.write(json.dumps(log_entry, ensure_ascii=False) + "\n")
+        log_file.flush()  # 立即 flush，确保数据写入
+        return None
+    
+    processed_skill_names.add(skill_name_clean)
+    
+    # 4. 计算 content hash（保留用于日志）
     content_hash = hashlib.md5(content.encode()).hexdigest()
     
     if content_hash in processed_hashes:
@@ -119,21 +144,14 @@ def create_skill_from_prompt(prompt_data, inferred_type, processed_hashes, log_f
     
     processed_hashes.add(content_hash)
     
-    # 3. 类型推断（已经在上层完成，但这里用于记录）
+    # 5. 类型推断（已经在上层完成，但这里用于记录）
     actual_type = inferred_type
     
-    # 4. 生成 skill
-    # 生成完整的 description（不被截断）
+    # 生成 description（不被截断）
     description = content[:500] + "..." if len(content) > 500 else content
-    prompt_display = content[:1000] + "..." if len(content) > 1000 else content
     
+    # 6. 生成 skill
     # 生成唯一的 skill name（清理特殊字符）
-    skill_name_clean = title.lower()
-    skill_name_clean = re.sub(r'[^a-z0-9\s-]', '-', skill_name_clean)
-    skill_name_clean = re.sub(r'\s+', '-', skill_name_clean)
-    skill_name_clean = re.sub(r'-+', '-', skill_name_clean)
-    skill_name_clean = skill_name_clean.strip('-')
-    skill_name_clean = skill_name_clean[:50]
     skill_name_final = f"{skill_name_clean}-{content_hash[:8]}"
     
     # 生成 SKILL.md with proper YAML frontmatter
@@ -264,6 +282,7 @@ def main():
     
     all_skills = []
     processed_hashes = set()
+    processed_skill_names = set()  # 新增：基于 skill name 的去重
     
     # 用于统计
     stats = {
@@ -353,7 +372,7 @@ def main():
                             stats["type_video"] += 1
                         
                         # 创建 skill
-                        skill = create_skill_from_prompt(prompt_data, inferred_type, processed_hashes, log_file)
+                        skill = create_skill_from_prompt(prompt_data, inferred_type, processed_hashes, processed_skill_names, log_file)
                         
                         if skill:
                             all_skills.append(skill)
@@ -361,11 +380,18 @@ def main():
                             if line_num % 10 == 0:
                                 print(f"  已处理 {line_num} 条，成功转换 {stats['converted']} 个")
                         else:
-                            # 检查是无效还是重复
-                            last_log = log_file_path
-                            # 简单判断：如果最近一条日志是 duplicate，则统计为重复
-                            # 否则统计为无效
-                            stats["skipped_invalid"] += 1
+                            # 读取最后一条日志来判断是无效还是重复
+                            try:
+                                with open(log_file_path, 'r', encoding='utf-8') as log_f:
+                                    lines = log_f.readlines()
+                                    if lines:
+                                        last_log = json.loads(lines[-1].strip())
+                                        if last_log.get('status') == 'duplicate':
+                                            stats["skipped_duplicate"] += 1
+                                        else:
+                                            stats["skipped_invalid"] += 1
+                            except:
+                                stats["skipped_invalid"] += 1
                             
                     except Exception as e:
                         # 记录错误
