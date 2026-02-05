@@ -1,0 +1,7 @@
+#!/bin/bash
+# Achievement System CLI Wrapper
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
+
+python3 -c "import sys; sys.path.insert(0, 'src'); from cli import cli; cli()" "$@"
