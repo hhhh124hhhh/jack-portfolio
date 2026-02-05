@@ -6,6 +6,7 @@
 import json
 import os
 import time
+import requests
 from datetime import datetime
 from typing import List, Dict, Any
 
@@ -58,6 +59,50 @@ SEARCH_QUERIES = [
     "AI art prompts midjourney",
     "prompt templates for business",
 ]
+
+def scrape_with_jina_ai(url: str) -> Dict[str, Any]:
+    """使用 Jina AI Reader 作为备用方案"""
+    try:
+        print(f"  🌐 尝试 Jina AI Reader: {url}")
+
+        # Jina AI Reader API
+        jina_url = f"https://r.jina.ai/http://{url.replace('https://', '').replace('http://', '')}"
+        
+        response = requests.get(jina_url, timeout=30)
+        response.raise_for_status()
+        
+        content = response.text
+        
+        if not content or len(content.strip()) < 50:
+            return {
+                "url": url,
+                "title": "",
+                "content": "",
+                "word_count": 0,
+                "success": False,
+                "error": "Jina AI content too short",
+                "method": "jina-ai"
+            }
+        
+        # 尝试提取标题
+        title = ""
+        lines = content.split('\n')
+        if lines:
+            # 第一行通常是标题
+            title = lines[0].strip('#').strip()
+        
+        return {
+            "url": url,
+            "title": title,
+            "content": content[:15000],  # 限制字符数
+            "word_count": len(content.split()),
+            "success": True,
+            "method": "jina-ai"
+        }
+        
+    except Exception as e:
+        print(f"  ❌ Jina AI Reader 失败: {e}")
+        return {"url": url, "success": False, "error": f"Jina AI: {str(e)}"}
 
 def scrape_url(url: str, app: Firecrawl) -> Dict[str, Any]:
     """抓取单个 URL"""
@@ -140,12 +185,18 @@ def scrape_url(url: str, app: Firecrawl) -> Dict[str, Any]:
                         "content": result.markdown,
                         "word_count": len(result.markdown.split()),
                         "success": True,
-                        "stealth_used": True
+                        "stealth_used": True,
+                        "method": "firecrawl-stealth"
                     }
             except Exception as e2:
                 print(f"  ❌ Stealth 模式也失败: {e2}")
-                return {"url": url, "success": False, "error": str(e2)}
-
+        
+        # 最后的回退：Jina AI Reader
+        print(f"  🔄 尝试 Jina AI Reader 作为最后回退...")
+        jina_result = scrape_with_jina_ai(url)
+        if jina_result.get("success"):
+            return jina_result
+        
         return {"url": url, "success": False, "error": str(e)}
 
 def search_firecrawl(query: str, app: Firecrawl, limit: int = 5) -> List[Dict[str, Any]]:

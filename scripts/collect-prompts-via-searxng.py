@@ -173,7 +173,7 @@ def is_high_quality_url(url: str) -> bool:
 
 def fetch_page_content(url: str, max_chars: int = 15000) -> Optional[str]:
     """
-    获取页面内容
+    获取页面内容（使用 readability-lxml 提取主要内容）
 
     Args:
         url: 目标 URL
@@ -190,19 +190,30 @@ def fetch_page_content(url: str, max_chars: int = 15000) -> Optional[str]:
         response = requests.get(url, headers=headers, timeout=30)
         response.raise_for_status()
 
-        text = response.text
+        html_content = response.text
 
-        # 移除 HTML 标签
-        import html
-        text = re.sub(r'<script[^>]*>.*?</script>', ' ', text, flags=re.DOTALL)
-        text = re.sub(r'<style[^>]*>.*?</style>', ' ', text, flags=re.DOTALL)
-        text = re.sub(r'<[^>]+>', ' ', text)
-        text = html.unescape(text)
+        # 使用 readability-lxml 提取主要内容
+        try:
+            from readability import Document
+            doc = Document(html_content)
+            text = doc.summary()
 
-        # 清理空白
-        text = re.sub(r'\s+', ' ', text).strip()
+            # 如果 readability 提取失败，尝试 trafilatura
+            if not text or len(text) < 100:
+                import trafilatura
+                text = trafilatura.extract(html_content, include_comments=False, include_tables=False)
 
-        return text[:max_chars]
+        except Exception as e:
+            logger.debug(f"Readability/trafilatura 失败，使用简单方法: {e}")
+            # 回退到简单方法
+            import html
+            text = re.sub(r'<script[^>]*>.*?</script>', ' ', html_content, flags=re.DOTALL)
+            text = re.sub(r'<style[^>]*>.*?</style>', ' ', text, flags=re.DOTALL)
+            text = re.sub(r'<[^>]+>', ' ', text)
+            text = html.unescape(text)
+            text = re.sub(r'\s+', ' ', text).strip()
+
+        return text[:max_chars] if text else None
 
     except Exception as e:
         logger.warning(f"获取页面失败 {url}: {e}")

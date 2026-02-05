@@ -261,6 +261,117 @@ def clean_special_format(items: List[Dict[str, Any]]) -> tuple[List[Dict[str, An
     
     return cleaned, stats
 
+def clean_low_quality_content(items: List[Dict[str, Any]]) -> tuple[List[Dict[str, Any]], Dict[str, int]]:
+    """
+    过滤低质量内容
+    
+    只保留：
+    - 教程、指南、提示词等实质性内容
+    - 有结构的文章
+    - 提供示例或代码的内容
+    
+    过滤掉：
+    - 短讨论、评论
+    - 网站导航、页脚
+    - 文章列表
+    - 无结构的短文本
+    """
+    cleaned = []
+    removed_count = 0
+    
+    for item in items:
+        content = item.get("content", "") or item.get("prompt", "")
+        title = item.get("title", "")
+        
+        # 1. 检查内容长度（至少 200 字符）
+        if len(content) < 200:
+            removed_count += 1
+            logger.debug(f"Removed (too short): {title[:50]} - {len(content)} chars")
+            continue
+        
+        # 2. 检查是否有结构性内容
+        has_structure = False
+        
+        # 有代码块
+        if re.search(r'```[\s\S]*?```', content):
+            has_structure = True
+        # 有编号列表
+        elif re.search(r'\d+\.\s+[A-Z]', content):
+            has_structure = True
+        # 有 Markdown 标题
+        elif re.search(r'^#+\s+[A-Z]', content, re.MULTILINE):
+            has_structure = True
+        # 有引用
+        elif re.search(r'>\s+[A-Z]', content):
+            has_structure = True
+        # 有明显的段落结构（多个段落）
+        elif len([p for p in content.split('\n\n') if len(p.strip()) > 50]) >= 2:
+            has_structure = True
+        
+        # 3. 检查是否包含提示词相关内容
+        is_prompt_related = False
+        prompt_keywords = [
+            'prompt', '提示词', '提示语',
+            'example', '示例',
+            'template', '模板',
+            'pattern', '模式',
+            'guide', '指南', '教程',
+            'tutorial', 'how to',
+            'step', '步骤',
+            'instruction', '指令',
+            'best practice', '最佳实践',
+            'technique', '技巧',
+        ]
+        content_lower = content.lower()
+        for keyword in prompt_keywords:
+            if keyword in content_lower or keyword.lower() in content_lower:
+                is_prompt_related = True
+                break
+        
+        # 4. 检查是否主要是导航或列表
+        lines = [line.strip() for line in content.split('\n') if line.strip()]
+        if len(lines) > 0:
+            # 如果大部分是短行（<50 字符），可能是导航
+            short_lines = sum(1 for line in lines if len(line) < 50)
+            if short_lines / len(lines) > 0.8:
+                removed_count += 1
+                logger.debug(f"Removed (navigation-like): {title[:50]}")
+                continue
+            
+            # 如果大部分是链接列表
+            link_lines = sum(1 for line in lines if line.startswith(('http', 'https', 'www.')))
+            if link_lines / len(lines) > 0.5:
+                removed_count += 1
+                logger.debug(f"Removed (link list): {title[:50]}")
+                continue
+        
+        # 5. 综合判断
+        if has_structure and is_prompt_related:
+            # 保留有结构且相关的
+            cleaned.append(item)
+        elif has_structure and len(content) > 500:
+            # 有结构但可能不相关，但内容较长，保留
+            cleaned.append(item)
+        elif not has_structure:
+            # 无结构，过滤
+            removed_count += 1
+            logger.debug(f"Removed (no structure): {title[:50]}")
+        else:
+            # 其他情况，过滤
+            removed_count += 1
+            logger.debug(f"Removed (other): {title[:50]}")
+    
+    stats = {
+        "total": len(items),
+        "removed": removed_count,
+        "kept": len(cleaned),
+        "removal_rate": f"{removed_count / len(items) * 100:.1f}%" if len(items) > 0 else "0%"
+    }
+    
+    logger.info(f"Low-quality content removed: {removed_count}/{len(items)} ({stats['removal_rate']})")
+    
+    return cleaned, stats
+
 # ==================== 数据存储 ====================
 
 def save_cleaned(items: List[Dict[str, Any]], filepath: Path) -> int:
@@ -324,6 +435,10 @@ def main():
     # 2.5 去除特殊格式
     cleaned_items, stats = clean_special_format(cleaned_items)
     all_stats["special_format"] = stats
+    
+    # 2.6 过滤低质量内容（新增）
+    cleaned_items, stats = clean_low_quality_content(cleaned_items)
+    all_stats["low_quality"] = stats
     
     # 3. 保存结果
     timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
