@@ -1,0 +1,30 @@
+{
+  "test": {
+    "name": "测试工作流",
+    "start_time": "2026-02-01T11:45:39.628347",
+    "completion_count": 0,
+    "cron_runs": 0,
+    "last_run": null
+  },
+  "null": {
+    "name": null,
+    "start_time": null,
+    "completion_count": 1,
+    "cron_runs": 0,
+    "last_run": "2026-02-01T11:45:39.628768"
+  },
+  "non_existent": {
+    "name": "non_existent",
+    "start_time": null,
+    "completion_count": 1,
+    "cron_runs": 0,
+    "last_run": "2026-02-01T11:45:39.851556"
+  },
+  "prompt-conversion": {
+    "name": "prompt-conversion",
+    "start_time": null,
+    "completion_count": 1,
+    "cron_runs": 0,
+    "last_run": "2026-02-05T20:23:55.429913"
+  }
+}
