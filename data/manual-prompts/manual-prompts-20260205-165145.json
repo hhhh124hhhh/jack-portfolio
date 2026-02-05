@@ -1,0 +1,231 @@
+{
+  "metadata": {
+    "created_at": "2026-02-05T16:51:45.971858",
+    "created_by": "Momo (manual curation)",
+    "total_prompts": 20,
+    "description": "High-quality, manually crafted prompts for e-commerce video/image generation",
+    "note": "Each prompt has been designed for real-world use cases and tested scenarios"
+  },
+  "prompts": [
+    {
+      "category": "E-commerce Video",
+      "title": "Product Showcase Video",
+      "prompt": "Create a 15-second product showcase video for {product_name}.\n\nRequirements:\n- Duration: 15 seconds\n- Show product from multiple angles (front, side, top, close-up)\n- Use soft, professional studio lighting\n- Include subtle, smooth camera movement (slow rotation, gentle zoom)\n- Maintain a clean, modern aesthetic\n- Add elegant text overlays for 3 key features\n- Background: {background_style} (minimal, gradient, or relevant scene)\n- Resolution: 1080x1920 (9:16 vertical for mobile)\n- Frame rate: 30fps\n- Music: Upbeat but not overpowering\n\nThe video should feel premium and trustworthy, suitable for e-commerce platforms like Shopify, Amazon, and Instagram.",
+      "tags": [
+        "ecommerce",
+        "video",
+        "product-showcase",
+        "marketing"
+      ]
+    },
+    {
+      "category": "E-commerce Video",
+      "title": "Marketing Promo Video",
+      "prompt": "Generate a 30-second promotional video for {product_name} campaign.\n\nStructure:\n- 0-3s: Hook (product reveal with dynamic effect)\n- 3-10s: Problem statement (relatable pain point)\n- 10-20s: Solution (product features and benefits)\n- 20-27s: Social proof (customer testimonials or ratings)\n- 27-30s: CTA (discount code, buy now button)\n\nStyle:\n- Brand colors: {brand_colors}\n- Tone: Energetic, trustworthy, conversion-focused\n- Transitions: Smooth, professional\n- Text overlays: Clear, readable, action-oriented\n- Call-to-action: {cta_text}\n\nTarget audience: {target_audience}\nPlatform: Instagram Reels, TikTok, YouTube Shorts",
+      "tags": [
+        "ecommerce",
+        "video",
+        "marketing",
+        "promo"
+      ]
+    },
+    {
+      "category": "E-commerce Video",
+      "title": "Social Media Story Video",
+      "prompt": "Create a vertical 9:16 story video (15 seconds) for {product_name}.\n\nContent flow:\n- First 3 seconds: Eye-catching hook with product\n- Next 9 seconds: Quick demo of 2-3 key features\n- Last 3 seconds: Swipe-up/CTA overlay\n\nVisual style:\n- Fast-paced but not chaotic\n- Bright, engaging colors\n- Clear, bold text overlays\n- Trendy transitions\n- Music: Current popular track\n\nRequirements:\n- Resolution: 1080x1920\n- Aspect ratio: 9:16\n- Platform: Instagram Stories, TikTok, Snapchat\n- Optimize for sound-on viewing (text captions included)",
+      "tags": [
+        "ecommerce",
+        "video",
+        "social-media",
+        "stories"
+      ]
+    },
+    {
+      "category": "E-commerce Video",
+      "title": "Unboxing Experience Video",
+      "prompt": "Generate a 20-second unboxing video for {product_name}.\n\nVisual elements:\n- Shot from first-person perspective\n- Show the packaging being opened (slow motion, dramatic)\n- Reveal the product with careful handling\n- Close-up shots of product details\n- Hands visible (adds authenticity)\n\nAudio:\n- ASMR-style sounds (unpacking, product handling)\n- Calm, satisfying audio\n- Optional: Light background music\n\nLighting and setup:\n- Clean, bright background\n- Professional lighting\n- Sharp focus on product\n- Natural, authentic feel\n\nPurpose: Build trust and excitement for potential buyers",
+      "tags": [
+        "ecommerce",
+        "video",
+        "unboxing",
+        "authentic"
+      ]
+    },
+    {
+      "category": "E-commerce Video",
+      "title": "Before/After Transformation Video",
+      "prompt": "Create a 15-second before/after video for {product_name}.\n\nStructure:\n- Split screen (left: before, right: after) or sequential\n- Duration: 7.5 seconds for each phase\n- Smooth transition between before and after\n\nVisual requirements:\n- Clear visual contrast between states\n- Natural lighting (for authenticity)\n- Realistic representation of results\n- Text overlay: \"Before\" / \"After\"\n\nApplications:\n- Beauty products: Skin/hair transformation\n- Home goods: Space transformation\n- Fashion: Style transformation\n- Tech: Performance comparison\n\nAdd credibility elements:\n- Time indicator (e.g., \"30 days later\")\n- Disclaimer text (for legal compliance)",
+      "tags": [
+        "ecommerce",
+        "video",
+        "before-after",
+        "transformation"
+      ]
+    },
+    {
+      "category": "Sora2 Video",
+      "title": "Cinematic Product Film",
+      "prompt": "Generate a cinematic 30-second video of {product_name} using Sora2.\n\nCinematic elements:\n- Use cinematic camera movements (dolly, crane, tracking shots)\n- Apply film-like color grading (warm tones, high contrast)\n- Include professional depth of field\n- Slow-motion for key moments\n- Dramatic lighting (rim light, fill light)\n\nStory:\n- Opening: Wide establishing shot\n- Middle: Product in action (dynamic angles)\n- Close: Hero shot with dramatic lighting\n\nTechnical specs:\n- Resolution: 4K (3840x2160)\n- Frame rate: 24fps (cinematic standard)\n- Aspect ratio: 2.39:1 (anamorphic widescreen)\n- Color space: SRGB\n\nUse Sora2's advanced video generation capabilities for realistic motion and high-quality rendering.",
+      "tags": [
+        "sora2",
+        "video",
+        "cinematic",
+        "high-end"
+      ]
+    },
+    {
+      "category": "Sora2 Video",
+      "title": "Animated Product Explainer",
+      "prompt": "Create a 20-second animated explainer video using Sora2 for {product_name}.\n\nAnimation style:\n- Clean, modern motion graphics\n- Smooth, flowing animations\n- Professional color palette ({brand_colors})\n- Clear visual hierarchy\n\nContent:\n- 0-5s: Problem statement (animated icons/graphics)\n- 5-15s: Solution (product features with animated demos)\n- 15-20s: CTA (animated button, call to action)\n\nVisual elements:\n- Use isometric 3D product models\n- Animated data visualizations (if applicable)\n- Clear, readable text overlays\n- Consistent design language\n\nAudio:\n- Professional voiceover (optional)\n- Upbeat background music\n- Sound effects for key transitions\n\nOptimize for: Website homepage, product landing page",
+      "tags": [
+        "sora2",
+        "video",
+        "animation",
+        "explainer"
+      ]
+    },
+    {
+      "category": "Sora2 Video",
+      "title": "Lifestyle Scene Video",
+      "prompt": "Generate a 25-second lifestyle video using Sora2 for {product_name}.\n\nScene setup:\n- Natural environment (home, office, outdoor)\n- Realistic lighting and shadows\n- Authentic setting (not overly staged)\n- Diverse, relatable models\n\nProduct integration:\n- Product naturally in use\n- Show real-world applications\n- Multiple usage scenarios\n- Demonstrate benefits naturally\n\nCamera work:\n- Mix of close-ups (product details) and wide shots (context)\n- Natural camera movements\n- Handheld feel (adds authenticity)\n- Dynamic angles\n\nColor grading:\n- Warm, inviting tones\n- Natural colors (not oversaturated)\n- Consistent throughout\n\nPurpose: Show how {product_name} fits into everyday life",
+      "tags": [
+        "sora2",
+        "video",
+        "lifestyle",
+        "authentic"
+      ]
+    },
+    {
+      "category": "Sora2 Video",
+      "title": "Brand Story Video",
+      "prompt": "Create a 60-second brand story video using Sora2 for {brand_name} and {product_name}.\n\nNarrative arc:\n- 0-10s: Introduction (brand values, mission)\n- 10-25s: The problem (customer pain point)\n- 25-40s: The solution (how product helps)\n- 40-50s: The transformation (real-world impact)\n- 50-60s: The vision (future outlook)\n\nVisual style:\n- Consistent brand identity throughout\n- Cinematic quality\n- Emotional connection\n- Story-driven, not product-driven\n\nTechnical:\n- Resolution: 4K\n- Frame rate: 24fps or 30fps\n- Sound design: Professional, emotionally resonant\n\nUse Sora2's advanced storytelling capabilities to create an emotionally compelling narrative.",
+      "tags": [
+        "sora2",
+        "video",
+        "brand-story",
+        "narrative"
+      ]
+    },
+    {
+      "category": "Sora2 Video",
+      "title": "Product Tutorial Video",
+      "prompt": "Generate a 45-second tutorial video using Sora2 for {product_name}.\n\nTutorial structure:\n- 0-5s: Title card and introduction\n- 5-10s: What you'll learn (benefit overview)\n- 10-35s: Step-by-step demonstration (3-5 steps)\n- 35-40s: Key tips and best practices\n- 40-45s: Recap and call to action\n\nVisual elements:\n- Clear, numbered steps\n- Close-up shots for detailed actions\n- On-screen text for key points\n- Progress indicators (step 1/5, etc.)\n\nProduction quality:\n- Clean, professional background\n- Soft lighting\n- Clear audio (if voiceover)\n- Slow-motion for complex steps\n\nLearning outcome: Viewer should be able to use {product_name} after watching",
+      "tags": [
+        "sora2",
+        "video",
+        "tutorial",
+        "educational"
+      ]
+    },
+    {
+      "category": "Google Veo",
+      "title": "Quick Demo Video",
+      "prompt": "Create a 10-second quick demo video using Google Veo for {product_name}.\n\nQuick demo formula:\n- 0-2s: Product reveal (fast, punchy)\n- 2-7s: 3 rapid-fire feature demonstrations\n- 7-10s: CTA overlay\n\nStyle:\n- Fast-paced editing\n- Bold, eye-catching visuals\n- Clear text overlays (large font)\n- Upbeat music\n\nGoogle Veo optimization:\n- Use Veo's text-to-video capabilities\n- High motion quality\n- Smooth transitions\n- Realistic rendering\n\nPlatform: Instagram Reels, TikTok, YouTube Shorts\nGoal: Grab attention in the first 2 seconds",
+      "tags": [
+        "google-veo",
+        "video",
+        "quick-demo",
+        "short-form"
+      ]
+    },
+    {
+      "category": "Google Veo",
+      "title": "Seasonal Campaign Video",
+      "prompt": "Generate a 20-second seasonal campaign video using Google Veo for {product_name}.\n\nSeasonal elements:\n- {season} themed background and decorations\n- Holiday color palette ({holiday_colors})\n- Seasonal imagery (snow, flowers, autumn leaves, etc.)\n- Festive, celebratory mood\n\nProduct presentation:\n- Product fits naturally into seasonal theme\n- Shows gift-giving potential (if applicable)\n- Holiday-specific use cases\n- Limited-time offer message\n\nGoogle Veo capabilities:\n- Use seasonal visual elements\n- Maintain brand consistency\n- High-quality video generation\n- Smooth, professional motion\n\nCall to action: \"Shop now before {holiday} ends!\" or similar",
+      "tags": [
+        "google-veo",
+        "video",
+        "seasonal",
+        "campaign"
+      ]
+    },
+    {
+      "category": "Google Veo",
+      "title": "A/B Test Variations",
+      "prompt": "Generate two 15-second video variations using Google Veo for A/B testing {product_name}.\n\nVariation A - Focus: Product features\n- 15 seconds\n- Close-up shots of product details\n- Feature callouts with text overlays\n- Technical focus\n- Color scheme: Cool tones (blue, gray, white)\n\nVariation B - Focus: Lifestyle benefits\n- 15 seconds\n- Wide shots showing product in use\n- Emotional connection, aspirational\n- User benefits focus\n- Color scheme: Warm tones (orange, yellow, cream)\n\nTest metrics to track:\n- Click-through rate (CTR)\n- Conversion rate\n- Watch time / completion rate\n- Engagement (likes, shares, comments)\n\nUse Google Veo to create both variations, ensuring consistency in quality.",
+      "tags": [
+        "google-veo",
+        "video",
+        "ab-testing",
+        "optimization"
+      ]
+    },
+    {
+      "category": "Google Veo",
+      "title": "Testimonial Montage",
+      "prompt": "Create a 30-second testimonial montage video using Google Veo for {product_name}.\n\nMontage structure:\n- 0-5s: Customer 1 testimonial (with product)\n- 5-10s: Customer 2 testimonial (different use case)\n- 10-15s: Customer 3 testimonial (specific benefit)\n- 15-20s: Customer 4 testimonial (visual results)\n- 20-25s: Customer 5 testimonial (problem solved)\n- 25-30s: Final CTA and social proof\n\nVisual elements:\n- Authentic, diverse settings\n- Realistic customer representations\n- Product visible in each testimonial\n- Star ratings or satisfaction indicators\n\nText overlays:\n- Customer quotes (subtitles)\n- 4.8/5 star rating (or actual)\n- \"Trusted by X+ customers\"\n\nAudio:\n- Genuine-sounding testimonials\n- Calm, trustworthy background music\n- Clear audio quality",
+      "tags": [
+        "google-veo",
+        "video",
+        "testimonial",
+        "social-proof"
+      ]
+    },
+    {
+      "category": "Google Veo",
+      "title": "Product Comparison Video",
+      "prompt": "Generate a 25-second comparison video using Google Veo comparing {product_name} with {competitor_product}.\n\nComparison framework:\n- Split screen or sequential shots\n- 3 key comparison points\n- Fair, balanced presentation\n\nVisual approach:\n- Side-by-side layout (if split screen)\n- Same lighting/conditions for both\n- Clear labels (Your Product vs Competitor)\n- Visual indicators for advantages (checkmarks, highlights)\n\nComparison points:\n1. Feature advantage (e.g., \"3x faster\")\n2. Quality difference (e.g., \"Higher resolution\")\n3. Value proposition (e.g., \"50% more affordable\")\n\nTone:\n- Professional, not aggressive\n- Fact-based\n- Trustworthy\n- Respectful of competition\n\nGoogle Veo capabilities:\n- Realistic product representations\n- Smooth transitions\n- High-quality rendering\n- Accurate feature visualization",
+      "tags": [
+        "google-veo",
+        "video",
+        "comparison",
+        "competitive"
+      ]
+    },
+    {
+      "category": "E-commerce Image",
+      "title": "Product Studio Shot",
+      "prompt": "Create a professional studio product photograph of {product_name}.\n\nPhotography specifications:\n- Background: Pure white (#FFFFFF) or light gray (#F5F5F5)\n- Lighting: Soft, diffused studio lighting (3-point setup)\n- Angle: 3/4 view (shows front and side)\n- Depth of field: Shallow (blurred background)\n- Reflections: Subtle, controlled reflections (glossy surfaces)\n\nComposition:\n- Product centered, occupying 60-70% of frame\n- Clean, uncluttered composition\n- Negative space for text overlays or logos\n- Professional cropping (rule of thirds)\n\nImage quality:\n- Resolution: 2000x2000 (1:1 square)\n- Format: PNG or high-quality JPEG\n- Color accuracy: True to actual product colors\n- Sharp focus: Entire product in focus\n\nUse for: Product pages, marketplace listings, social media",
+      "tags": [
+        "ecommerce",
+        "image",
+        "product-photo",
+        "studio"
+      ]
+    },
+    {
+      "category": "E-commerce Image",
+      "title": "Lifestyle Product Shot",
+      "prompt": "Generate a lifestyle product photograph of {product_name} in {setting}.\n\nLifestyle elements:\n- Natural setting (home, office, outdoor, café)\n- Authentic context (product in real use)\n- Warm, inviting atmosphere\n- Realistic lighting (natural or soft artificial)\n- Depth and dimension (background details)\n\nModel/props (optional):\n- If including people: Diverse, relatable, natural poses\n- Props that complement, not distract from product\n- Hands visible (adds authenticity, interaction)\n\nComposition:\n- Product naturally integrated, not staged\n- Eye-level or slightly low angle\n- Dynamic but not cluttered\n- Emotional connection (happy, relaxed, productive)\n\nImage specs:\n- Resolution: 1080x1080 (1:1) or 1080x1350 (4:5)\n- High quality (4K upscaling recommended)\n- Color palette: Warm, inviting tones\n\nUse for: Social media, ads, lifestyle blogs",
+      "tags": [
+        "ecommerce",
+        "image",
+        "lifestyle",
+        "authentic"
+      ]
+    },
+    {
+      "category": "E-commerce Image",
+      "title": "Product Detail Shot",
+      "prompt": "Create an extreme close-up detail shot of {product_name} highlighting {feature}.\n\nDetail shot specifications:\n- Ultra-close-up (macro-like detail)\n- Focus on specific feature ({feature})\n- Dramatic, edge-lit lighting\n- Shallow depth of field (feature sharp, background blurred)\n- Show textures, materials, craftsmanship\n\nComposition:\n- Feature occupies 80-90% of frame\n- Minimal background\n- Edge-to-edge sharpness on feature\n- Show quality indicators (stitching, materials, finish)\n\nLighting:\n- Side or rim lighting to highlight texture\n- Soft fill to avoid harsh shadows\n- Controlled reflections (especially on glossy surfaces)\n- Professional product photography style\n\nUse for: Product details section, zoom functionality, quality assurance",
+      "tags": [
+        "ecommerce",
+        "image",
+        "detail",
+        "close-up"
+      ]
+    },
+    {
+      "category": "E-commerce Image",
+      "title": "Seasonal Product Image",
+      "prompt": "Generate a {season}themed product photograph of {product_name}.\n\nSeasonal elements:\n- {season} decorations (snowflakes, flowers, autumn leaves, etc.)\n- Holiday color palette ({holiday_colors})\n- Festive props and background\n- Warm, celebratory mood\n\nProduct presentation:\n- Product naturally integrated into theme\n- Gift-giving potential highlighted (if applicable)\n- Seasonal use cases shown\n- Limited-time offer messaging (text overlay optional)\n\nLighting and mood:\n- Warm, inviting lighting (golden hour effect)\n- Magical, festive atmosphere\n- Sparkle or subtle lighting effects (tastefully applied)\n- Joyful, celebratory mood\n\nImage specifications:\n- Resolution: 1080x1350 (4:5) or 1200x1200 (1:1)\n- High quality (suitable for large displays)\n- Print-ready (300 DPI minimum)\n\nUse for: Holiday campaigns, seasonal promotions, social media",
+      "tags": [
+        "ecommerce",
+        "image",
+        "seasonal",
+        "holiday"
+      ]
+    },
+    {
+      "category": "E-commerce Image",
+      "title": "Social Media Carousel",
+      "prompt": "Create 5 cohesive carousel images of {product_name} for Instagram/social media.\n\nCarousel structure:\n1. Image 1: Hero shot (wide angle, eye-catching)\n2. Image 2: Feature highlight #1 (close-up)\n3. Image 3: Feature highlight #2 (detail shot)\n4. Image 4: Lifestyle scene (product in use)\n5. Image 5: CTA/offer (with discount code or call to action)\n\nConsistency across images:\n- Same color palette ({brand_colors})\n- Consistent lighting style\n- Same aspect ratio (1:1 square recommended)\n- Cohesive composition\n- Branded style\n\nContent per image:\n- Minimal text (carousel handles narrative)\n- Focus on visual storytelling\n- Progression from awareness → interest → desire → action\n\nImage specs:\n- Resolution: 1080x1080 (1:1 square)\n- Format: JPEG or PNG\n- File size: Under 200KB per image (for Instagram)\n- High visual quality\n\nUse for: Instagram carousel, Pinterest, Facebook posts",
+      "tags": [
+        "ecommerce",
+        "image",
+        "social-media",
+        "carousel"
+      ]
+    }
+  ]
+}
