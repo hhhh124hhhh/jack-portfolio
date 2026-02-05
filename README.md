@@ -264,10 +264,6 @@ twitter_search "query" --limit 100
 - [x] 决策停止自动化转换
 - [x] 转向手动创建高质量提示词
 
-## GitHub Repository
-
-https://github.com/hhhh124hhhh/Clawdbot-Skills-Converter
-
 ## 许可证
 
 MIT License - 开源核心，商业变现
