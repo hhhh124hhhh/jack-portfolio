@@ -95,7 +95,8 @@ def filter_by_threshold(items: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any
             filtered_items.append(item)
         else:
             low_quality_count += 1
-            logger.debug(f"Threshold filter: {item['id']} (score={total_score}, level={quality_level})")
+            item_id = item.get('id', item.get('url', 'unknown'))
+            logger.debug(f"Threshold filter: {item_id} (score={total_score}, level={quality_level})")
     
     logger.info(f"Threshold filter: {len(filtered_items)} passed, {low_quality_count} filtered out")
     
@@ -103,7 +104,7 @@ def filter_by_threshold(items: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any
         "total_items": len(items),
         "passed_items": len(filtered_items),
         "filtered_out": low_quality_count,
-        "filter_rate": f"{low_quality_count / len(items) * 100:.1f}%"
+        "filter_rate": f"{low_quality_count / len(items) * 100:.1f}%" if len(items) > 0 else "N/A"
     }
     
     return filtered_items, stats
@@ -302,7 +303,8 @@ def send_to_slack_for_review(items: List[Dict[str, Any]]) -> int:
     # 实际实现中应该调用 Slack API
     
     for item in items[:5]:  # 只发送前 5 个用于演示
-        logger.info(f"Review item: {item['id']} - {item['review_reason']}")
+        item_id = item.get('id', item.get('url', 'unknown'))
+        logger.info(f"Review item: {item_id} - {item['review_reason']}")
     
     logger.info(f"Sent {min(5, len(items))} items to Slack for review (demo)")
     
