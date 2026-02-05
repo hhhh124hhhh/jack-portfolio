@@ -1,6 +1,40 @@
-# HEARTBEAT.md - 深夜模式配置
+# HEARTBEAT.md - 心跳检查配置
 
-## 深夜模式设置
+## 上下文清理策略（优先级最高）
+- **定时清理**: 每天 2 次（2:00, 14:00） - 通过 cron 自动执行
+- **阈值清理**: 超过 50% 时自动触发 - 在 heartbeat 中执行
+- **清理脚本**: `/root/clawd/scripts/backup-and-flush-memory.sh`
+- **检查脚本**: `/root/clawd/scripts/check-context-usage.sh`
+- **状态跟踪**: `/root/clawd/memory/heartbeat-state.json`
+
+### 清理触发时机
+1. **定时清理**（自动）：
+   - 每天 2:00 和 14:00
+   - 无条件执行
+
+2. **阈值清理**（智能）：
+   - 每次 heartbeat 时检查
+   - 估算使用率超过 50% 时触发
+   - 避免一天内清理太频繁
+
+3. **手动清理**（可选）：
+   - 随时可以手动运行清理脚本
+   - `bash /root/clawd/scripts/backup-and-flush-memory.sh`
+
+## 心跳检查流程
+
+### 第 1 步：上下文使用率检查（优先）
+```bash
+# 检查当前上下文使用率
+bash /root/clawd/scripts/check-context-usage.sh
+
+# 这个脚本会：
+# 1. 估算上下文使用率
+# 2. 如果超过 50%，自动触发清理
+# 3. 记录到日志
+```
+
+### 第 2 步：深夜模式检查
 - **安静时段**: 23:00 - 07:00 (Asia/Shanghai)
 - **通知渠道**: 飞书和 Slack
 - **当前时间检查**: 在执行任何通知任务前，先检查当前时间
@@ -26,12 +60,14 @@ def should_notify():
 ## 深夜模式检查流程
 
 ### 心跳接收时的处理
-1. 先运行 `/root/clawd/scripts/night-mode-check.py check`
-2. 如果返回非零码（深夜模式），则：
+1. **先运行上下文使用率检查**（优先级最高）
+2. 如果超过 50%，触发清理
+3. 然后运行深夜模式检查
+4. 如果返回非零码（深夜模式），则：
    - 记录到日志："[时间] 深夜模式，跳过通知"
    - 回复：HEARTBEAT_OK
    - 不执行任何通知相关的检查
-3. 如果返回零码（白天），则：
+5. 如果返回零码（白天），则：
    - 继续执行以下检查
 
 ## 心跳检查任务（仅在白天执行）
@@ -41,8 +77,7 @@ def should_notify():
 - Weather 更新
 - ClawdHub Token 状态检查（每 24 小时一次）
 - 成就系统进度检查（每 4 小时一次）
-- 自动化流程监控（每 6 小时一次）
-- ClawdHub 技能统计跟踪（每天早上 9 点，通过 cron 自动执行）
+- AI 提示词自动化流程（每天早上 9 点，通过 cron 自动执行）
 
 ## 深夜监工任务（23:00-07:00）
 - **审查代理检查**: 使用 `/root/clawd/scripts/check-review-agent.sh` 检查 review-agent 和 achievement-system-dev 的状态
@@ -83,16 +118,17 @@ def should_notify():
 4. Token 有效则静默，无效则通知用户更新
 ```
 
-### 自动化流程监控（每 6 小时）
+### AI 提示词自动化流程（每天早上 9 点）
 ```bash
-# 检查脚本
-/root/clawd/scripts/check-automation-status.sh
+# 执行脚本
+/root/clawd/scripts/full-prompt-workflow.sh
 
-# 检查内容
-1. full-prompt-workflow.sh 最后运行时间
-2. 最近一次运行是否有错误
-3. 收集/转换/发布数量统计
-4. ClawdHub 认证状态
+# 流程内容
+1. 数据收集（Reddit, GitHub, Hacker News, SearXNG）
+2. 转换成 Skills
+3. 发布到 ClawdHub
+4. 生成报告
+5. 只在有新数据时发送通知到 Slack/Feishu
 ```
 
 ### 工具和技能使用记录（持续）
