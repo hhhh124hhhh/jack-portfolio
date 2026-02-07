@@ -22,7 +22,7 @@
             --bg-card: #16161f;
             --bg-card-hover: #1a1a24;
             --text-primary: #ffffff;
-            --text-secondary: rgba(255, 255, 255, 0.75);
+            --text-secondary: rgba(255,255, 255, 0.75);
             --text-muted: rgba(255, 255, 255, 0.45);
             --accent-gold: #d4af37;
             --accent-gold-light: rgba(212, 175, 55, 0.15);
@@ -30,7 +30,9 @@
             --accent-purple-light: rgba(155, 89, 182, 0.15);
             --accent-blue: #3498db;
             --accent-blue-light: rgba(52, 152, 219, 0.15);
-            --border: rgba(255, 255, 255, 0.08);
+            --accent-green: #27ae60;
+            --accent-green-light: rgba(39, 174, 96, 0.15);
+            --border: rgba(255,255, 255, 0.08);
             --border-hover: rgba(212, 175, 55, 0.3);
             --shadow-glow: 0 8px 32px rgba(212, 175, 55, 0.1);
             --shadow-glow-hover: 0 12px 48px rgba(212, 175, 55, 0.15);
@@ -98,7 +100,7 @@
 
         /* Container */
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 var(--spacing-md);
             position: relative;
@@ -519,6 +521,12 @@
             border: 1px solid rgba(212, 175, 55, 0.3);
         }
 
+        .project-status.planned {
+            background: var(--accent-green-light);
+            color: var(--accent-green);
+            border: 1px solid rgba(39, 174, 96, 0.3);
+        }
+
         .project-content {
             padding: 0 var(--spacing-md) var(--spacing-md);
         }
@@ -758,16 +766,16 @@
                 </p>
                 <div class="hero-stats">
                     <div class="stat">
+                        <div class="stat-value">25+</div>
+                        <div class="stat-label">开源项目</div>
+                    </div>
+                    <div class="stat">
                         <div class="stat-value">70+</div>
                         <div class="stat-label">AI 技能</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-value">50+</div>
-                        <div class="stat-label">自动化流程</div>
-                    </div>
-                    <div class="stat">
                         <div class="stat-value">30K+</div>
-                        <div class="stat-label">Moltbot 社区</div>
+                        <div class="stat-label">社区用户</div>
                     </div>
                 </div>
             </div>
@@ -832,7 +840,7 @@
                     <div class="skill-icon">🚀</div>
                     <div class="skill-name">自动化工程</div>
                     <p class="skill-description">
-                        专注于构建智能自动化系统，从 CI/CD 流水线到 AI 驱动的自动化工作流，提升生产力。
+                        专注于构建智能自动化系统，从 CI/CD 流水线到 AI 驱动的自动化工作流，大幅提升生产力。
                     </p>
                     <div class="skill-rating">
                         <span>⭐</span>
@@ -853,7 +861,7 @@
                 <div class="section-label">精选项目</div>
                 <h2 class="section-title">项目矩阵</h2>
                 <p class="section-description">
-                    持续开发开源项目，涵盖 AI 技能、自动化工具、研究系统等多个领域。
+                    持续开发开源项目，涵盖 AI 技能、自动化工具、研究系统等多个领域，总计 25+ 个项目。
                 </p>
             </div>
             <div class="projects-grid">
@@ -966,6 +974,97 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">⚡</div>
+                        <div class="project-status development">开发中</div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Automation Workflows</h3>
+                        <p class="project-description">
+                            智能自动化工作流系统，支持自定义触发器、任务调度、错误处理、日志记录等功能，提升日常工作效率。
+                        </p>
+                        <div class="project-features">
+                            <span class="project-feature">任务调度</span>
+                            <span class="project-feature">触发器</span>
+                            <span class="project-feature">错误处理</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">🌉</div>
+                        <div class="project-status completed">已完成</div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Twitter API Bridge</h3>
+                        <p class="project-description">
+                            Twitter API 桥接服务，提供稳定的 API 接口，支持推文搜索、用户信息获取、趋势分析等功能。
+                        </p>
+                        <div class="project-features">
+                            <span class="project-feature">API 桥接</span>
+                            <span class="project-feature">推文搜索</span>
+                            <span class="project-feature">趋势分析</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SKILLS -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">📋</div>
+                        <div class="project-status planned">计划中</div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Career Planner Skill</h3>
+                        <p class="project-description">
+                            智能职业规划技能，基于用户背景和目标，提供个性化的职业发展路径建议和技能提升计划。
+                        </p>
+                        <div class="project-features">
+                            <span class="project-feature">职业规划</span>
+                            <span class="project-feature">路径建议</span>
+                            <span class="project-feature">技能评估</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">📄</div>
+                        <div class="project-status development">开发中</div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Resume Builder Skill</h3>
+                        <p class="project-description">
+                            智能简历生成器，根据用户输入自动生成专业简历，支持多种模板、导出格式、自定义样式等功能。
+                        </p>
+                        <div class="project-features">
+                            <span class="project-feature">简历生成</span>
+                            <span class="project-feature">多种模板</span>
+                            <span class="project-feature">导出功能</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">💼</div>
+                        <div class="project-status planned">计划中</div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Job Interviewer Skill</h3>
+                        <p class="project-description">
+                            智能面试官技能，模拟真实面试场景，提供针对性的提问、实时反馈、表现评估等功能。
+                        </p>
+                        <div class="project-features">
+                            <span class="project-feature">模拟面试</span>
+                            <span class="project-feature">实时反馈</span>
+                            <span class="project-feature">表现评估</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -993,7 +1092,7 @@
         <div class="container">
             <div class="footer-content">
                 <p class="footer-text">
-                    © 2026 Jack. 用心构建每一个项目，探索 AI 自动化的无限可能。
+                    © 2026 Jack. 用心构建每一个项目，探索 AI 自动化的无限可能。总计 25+ 开源项目，持续创新中。
                 </p>
                 <ul class="footer-links">
                     <li><a href="https://github.com/hhhh124hhhh" target="_blank" rel="noopener">GitHub</a></li>
