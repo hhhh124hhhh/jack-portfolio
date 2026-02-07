@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- Meta SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jack - AI 技能开发者 | 自动化工程师</title>
+    <meta name="description" content="jack - AI 技能开发者和自动化工程师的官方网站，展示成就系统、AI 提示词转换、SearXNG 自建等项目。">
+    <meta name="keywords" content="AI, 技能开发, 自动化, Clawdbot, OpenClaw, 成就系统, SearXNG, GitHub Pages">
+    <meta name="author" content="jack">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="jack - AI 技能开发者 | 自动化工程师">
+    <meta property="og:description" content="jack - AI 技能开发者和自动化工程师的官方网站，展示成就系统、AI 提示词转换、SearXNG 自建等项目。">
+    <meta property="og:image" content="https://hhhh124hhhh.github.io/og-image.png">
+    <meta property="og:url" content="https://hhhh124hhhh.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="jack - AI 技能开发者">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="jack - AI 技能开发者 | 自动化工程师">
+    <meta name="twitter:description" content="jack - AI 技能开发者和自动化工程师的官方网站。">
+    <meta name="twitter:image" content="https://hhhh124hhhh.github.io/og-image.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hhhh124hhhh.github.io/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+
+    <!-- Font Preload -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">跳到主要内容</a>
+
+    <!-- Cursor Glow Effect -->
+    <div id="cursor-glow"></div>
+
+    <!-- Particle Background -->
+    <canvas id="particles" aria-hidden="true"></canvas>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+
+    <div class="bg-grid"></div>
+
+    <!-- Navigation with ARIA -->
+    <nav role="navigation" aria-label="主导航">
+        <div class="logo">jack</div>
+        <ul class="nav-links" role="menubar">
+            <li role="none"><a href="#about" role="menuitem">关于</a></li>
+            <li role="none"><a href="#projects" role="menuitem">项目</a></li>
+            <li role="none"><a href="#interests" role="menuitem">兴趣</a></li>
+            <li role="none"><a href="#contact" role="menuitem">联系</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <section class="hero" aria-label="Hero 区域">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span>AI 技能开发者</span>
+            </div>
+            <h1 class="typewriter">jack</h1>
+            <p>探索 AI 自动化边界 · 构建智能技能生态 · 重新定义人机协作</p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary" aria-label="查看项目作品">
+                    <span>查看项目</span>
+                    <span class="mono">→</span>
+                </a>
+                <a href="#contact" class="btn btn-secondary" aria-label="联系我">
+                    <span>联系我</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="stats" aria-label="统计数据">
+            <div class="stat-card reveal">
+                <div class="stat-value mono count-up">100+</div>
+                <div class="stat-label">AI 技能开发</div>
+            </div>
+            <div class="stat-card reveal">
+                <div class="stat-value mono count-up">50+</div>
+                <div class="stat-label">自动化流程</div>
+            </div>
+            <div class="stat-card reveal">
+                <div class="stat-value mono count-up">30K+</div>
+                <div class="stat-label">Moltbot 社区</div>
+            </div>
+            <div class="stat-card reveal">
+                <div class="stat-value mono">∞</div>
+                <div class="stat-label">技术好奇心</div>
+            </div>
+        </section>
+
+        <section class="about" id="about" aria-label="关于我">
+            <h2 class="section-title reveal">关于我</h2>
+            <div class="about-content">
+                <div class="about-text reveal">
+                    <p>我是一个热爱技术探索的 AI 技能开发者，专注于将 AI 能力转化为可复用的自动化工具。我相信真正的 AI 价值在于它如何与人类协作，而不仅仅是自动执行任务。</p>
+                    <p>我对自托管、开源和隐私保护有着坚定的信念。我的技术哲学是：简单、高效、可控。每一个项目都是对这一理念的实践。</p>
+                    <p>从成就系统到 AI 提示词商业化，我一直在探索 AI 技能的边界和可能性。我相信未来是属于那些能够将 AI 深度集成到工作流中的人。</p>
+                </div>
+                <div class="about-traits reveal">
+                    <div class="trait">
+                        <div class="trait-icon">🔧</div>
+                        <div class="trait-text">
+                            <div class="trait-title">务实主义者</div>
+                            <div class="trait-desc">注重实际效果，喜欢能解决问题的工具</div>
+                        </div>
+                    </div>
+                    <div class="trait">
+                        <div class="trait-icon">🚀</div>
+                        <div class="trait-text">
+                            <div class="trait-title">自动化爱好者</div>
+                            <div class="trait-desc">相信自动化是提高效率的关键</div>
+                        </div>
+                    </div>
+                    <div class="trait">
+                        <div class="trait-icon">🔒</div>
+                        <div class="trait-text">
+                            <div class="trait-title">隐私捍卫者</div>
+                            <div class="trait-desc">数据应该由用户自己掌控</div>
+                        </div>
+                    </div>
+                    <div class="trait">
+                        <div class="trait-icon">💡</div>
+                        <div class="trait-text">
+                            <div class="trait-title">商业思维者</div>
+                            <div class="trait-desc">技术需要找到商业价值</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skill Radar Chart -->
+            <div class="reveal" style="text-align: center; margin-top: 3rem;" aria-label="技能分布图">
+                <h3 style="font-weight: 600; margin-bottom: 1.5rem;">技能分布</h3>
+                <div style="display: flex; justify-content: center; align-items: center; gap: 3rem; flex-wrap: wrap;">
+                    <div class="radar-chart">
+                        <div class="radar-point" style="top: 15%; left: 50%;" aria-hidden="true"></div>
+                        <div class="radar-point" style="top: 30%; left: 85%;" aria-hidden="true"></div>
+                        <div class="radar-point" style="top: 55%; left: 80%;" aria-hidden="true"></div>
+                        <div class="radar-point" style="top: 70%; left: 50%;" aria-hidden="true"></div>
+                        <div class="radar-point" style="top: 55%; left: 20%;" aria-hidden="true"></div>
+                        <div class="radar-point" style="top: 30%; left: 15%;" aria-hidden="true"></div>
+                    </div>
+                    <div class="skill-bars" style="flex: 1; min-width: 300px;">
+                        <div class="skill-bar-container">
+                            <div class="skill-bar-label">Python</div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="--target-width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar-label">AI/ML</div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="--target-width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar-label">Automation</div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="--target-width: 88%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar-label">Frontend</div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="--target-width: 75%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar-label">Backend</div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="--target-width: 80%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GitHub Contribution Grid -->
+            <div class="reveal" style="margin-top: 3rem;" aria-label="GitHub 活动概览">
+                <h3 style="font-weight: 600; margin-bottom: 1rem;">活动概览</h3>
+                <div class="contribution-grid" id="contribution-grid"></div>
+            </div>
+        </section>
+
+        <section class="projects" id="projects" aria-label="项目作品">
+            <h2 class="section-title reveal">项目作品</h2>
+            <div class="projects-grid">
+                <div class="project-card reveal">
+                    <div class="project-header">
+                        <div class="project-title">成就系统</div>
+                        <span class="project-status status-active">开发中</span>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">终端工具驱动的成就追踪系统，将游戏化机制引入工作流程。支持自定义成就、实时统计和可视化仪表板。</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">CLI</span>
+                            <span class="project-tag">Gameification</span>
+                        </div>
+                        <a href="./achievement-system/" class="project-link" aria-label="查看成就系统详情">
+                            <span>查看详情</span>
+                            <span class="mono">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-header">
+                        <div class="project-title">AI 提示词转 Skill</div>
+                        <span class="project-status status-active">运行中</span>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">自动化抓取、评估和转换 AI 提示词为 Clawdbot Skills 的完整工作流。包含语义去重、质量评估和自动发布功能。</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Automation</span>
+                            <span class="project-tag">AI</span>
+                        </div>
+                        <a href="./ai-prompt-to-skill/" class="project-link" aria-label="查看 AI 提示词转 Skill 详情">
+                            <span>查看详情</span>
+                            <span class="mono">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-header">
+                        <div class="project-title">Moltbot 研究</div>
+                        <span class="project-status status-active">持续中</span>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">深入分析 Moltbot（原 Clawdbot）的生态、用例和最佳实践。整理了 30,000+ Stars 社区的真实使用案例。</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Research</span>
+                            <span class="project-tag">AI</span>
+                            <span class="project-tag">Community</span>
+                        </div>
+                        <a href="./moltbot-research/" class="project-link" aria-label="查看 Moltbot 研究详情">
+                            <span>查看详情</span>
+                            <span class="mono">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-header">
+                        <div class="project-title">SearXNG 自建</div>
+                        <span class="project-status status-active">已部署</span>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">自建的隐私保护搜索引擎服务，支持多源聚合、自定义过滤和 JSON API。完全控制数据，零外部依赖。</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Docker</span>
+                            <span class="project-tag">Privacy</span>
+                            <span class="project-tag">Search</span>
+                        </div>
+                        <a href="./searxng-self-hosted/" class="project-link" aria-label="查看 SearXNG 自建详情">
+                            <span>查看详情</span>
+                            <span class="mono">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-header">
+                        <div class="project-title">技能市场探索</div>
+                        <span class="project-status status-planning">规划中</span>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">探索 AI 技能商业化的可行路径，包括订阅模式、单次购买、企业授权等。研究类似平台（PromptBase）的定价策略。</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Business</span>
+                            <span class="project-tag">AI</span>
+                            <span class="project-tag">Market</span>
+                        </div>
+                        <a href="./skill-market-exploration/" class="project-link" aria-label="查看技能市场探索详情">
+                            <span>查看详情</span>
+                            <span class="mono">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-header">
+                        <div class="project-title">自动化工作流</div>
+                        <span class="project-status status-active">持续优化</span>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">构建完整的 AI 驱动自动化工作流，包括数据收集、处理、分析和报告。从 Twitter 抓取到 GitHub 监控，全流程自动化。</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Automation</span>
+                            <span class="project-tag">API</span>
+                            <span class="project-tag">Cron</span>
+                        </div>
+                        <a href="./automation-workflows/" class="project-link" aria-label="查看自动化工作流详情">
+                            <span>查看详情</span>
+                            <span class="mono">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="interests" id="interests" aria-label="兴趣爱好">
+            <h2 class="section-title reveal">兴趣爱好</h2>
+            <div class="interests-grid">
+                <div class="interest-card reveal">
+                    <div class="interest-icon">🤖</div>
+                    <h3 class="interest-title">AI 技能开发</h3>
+                    <p class="interest-desc">构建能解决实际问题的 AI 技能，探索 LLM 的能力边界</p>
+                </div>
+                <div class="interest-card reveal">
+                    <div class="interest-icon">📝</div>
+                    <h3 class="interest-title">提示词工程</h3>
+                    <p class="interest-desc">研究如何设计更好的提示词，提取 AI 的最大潜力</p>
+                </div>
+                <div class="interest-card reveal">
+                    <div class="interest-icon">⚡</div>
+                    <h3 class="interest-title">自动化工作流</h3>
+                    <p class="interest-desc">让机器处理重复性任务，释放人类创造力</p>
+                </div>
+                <div class="interest-card reveal">
+                    <div class="interest-icon">🔬</div>
+                    <h3 class="interest-title">技术研究</h3>
+                    <p class="interest-desc">深入探索新技术，理解底层原理和应用场景</p>
+                </div>
+                <div class="interest-card reveal">
+                    <div class="interest-icon">🎮</div>
+                    <h3 class="interest-title">游戏化设计</h3>
+                    <p class="interest-desc">用游戏机制激励学习和工作，提升参与度和成就感</p>
+                </div>
+                <div class="interest-card reveal">
+                    <div class="interest-icon">🛡️</div>
+                    <h3 class="interest-title">数据隐私</h3>
+                    <p class="interest-desc">倡导自托管和数据主权，保护个人数字生活</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact" aria-label="联系我">
+            <h2 class="section-title reveal">联系我</h2>
+            <p class="reveal">如果你对 AI 技能开发、自动化工作流或任何有趣的项目感兴趣，欢迎随时联系我！</p>
+            <div class="contact-links reveal">
+                <a href="mailto:hhhh124hhhh@qq.com" class="contact-link" aria-label="发送邮件给 jack">
+                    <span>📧</span>
+                    <span class="mono">hhhh124hhhh@qq.com</span>
+                </a>
+                <a href="https://github.com/hhhh124hhhh" class="contact-link" aria-label="访问 jack 的 GitHub">
+                    <span>💻</span>
+                    <span class="mono">github.com/hhhh124hhhh</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 jack · Built with <span class="mono">♥</span> and AI</p>
+    </footer>
+
+    <!-- Google Analytics - Moved to body bottom for performance -->
+    <script>
+        window.addEventListener('load', function() {
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-E25S3PK9M6';
+            document.body.appendChild(script);
+        });
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-E25S3PK9M6');
+    </script>
+
+    <!-- JavaScript File -->
+    <script src="./js/main.js"></script>
+</body>
+</html>
