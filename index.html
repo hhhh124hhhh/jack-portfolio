@@ -23,7 +23,7 @@
             --bg-card-hover: #1a1a24;
             --text-primary: #ffffff;
             --text-secondary: rgba(255,255, 255, 0.75);
-            --text-muted: rgba(255, 255, 255, 0.45);
+            --text-muted: rgba(255,255, 255, 0.45);
             --accent-gold: #d4af37;
             --accent-gold-light: rgba(212, 175, 55, 0.15);
             --accent-purple: #9b59b6;
@@ -32,6 +32,8 @@
             --accent-blue-light: rgba(52, 152, 219, 0.15);
             --accent-green: #27ae60;
             --accent-green-light: rgba(39, 174, 96, 0.15);
+            --accent-pink: #e91e63;
+            --accent-pink-light: rgba(233, 30, 99, 0.15);
             --border: rgba(255,255, 255, 0.08);
             --border-hover: rgba(212, 175, 55, 0.3);
             --shadow-glow: 0 8px 32px rgba(212, 175, 55, 0.1);
@@ -240,7 +242,7 @@
             font-weight: 600;
             line-height: 1.08;
             margin-bottom: var(--spacing-sm);
-            background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.85) 100%);
+            background: linear-gradient(135deg, #ffffff 0%, rgba(255,255, 255, 0.85) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -527,6 +529,22 @@
             border: 1px solid rgba(39, 174, 96, 0.3);
         }
 
+        .project-status.featured {
+            background: var(--accent-pink-light);
+            color: var(--accent-pink);
+            border: 1px solid rgba(233, 30, 99, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(233, 30, 99, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 8px rgba(233, 30, 99, 0);
+            }
+        }
+
         .project-content {
             padding: 0 var(--spacing-md) var(--spacing-md);
         }
@@ -556,7 +574,7 @@
         .project-feature {
             font-size: 0.8rem;
             padding: 0.4rem 0.9rem;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255,255, 255, 0.05);
             border-radius: 20px;
             color: var(--text-secondary);
             font-weight: 500;
@@ -762,7 +780,7 @@
                 <div class="hero-label">欢迎</div>
                 <h1>AI 技能开发者<br>& 自动化工程师</h1>
                 <p class="hero-description">
-                    专注于探索 AI 自动化的边界，构建智能化的技能生态系统。致力于重新定义人机协作的可能性，每一个项目都是对简单、高效、可控理念的极致实践。从自动化工作流到商业化 AI 技能，持续推动技术边界。
+                    专注于探索 AI 自动化的边界，构建智能化的技能生态系统。致力于重新定义人机协作的可能性，每一个项目都是对简单、高效、可控理念的极致实践。从自动化工作流到智能化记忆系统，持续推动技术边界。
                 </p>
                 <div class="hero-stats">
                     <div class="stat">
@@ -789,7 +807,7 @@
                 <div class="section-label">专业能力</div>
                 <h2 class="section-title">技能矩阵</h2>
                 <p class="section-description">
-                    融合多种技术栈，专注于 AI 驱动的自动化解决方案和技能生态系统构建。
+                    融合多种技术栈，专注于 AI 驱动的自动化解决方案和技能生态系统构建，打造独一无二的智能工作流。
                 </p>
             </div>
             <div class="skills-grid">
@@ -800,54 +818,37 @@
                         精通全栈开发流程，从前端设计到后端架构，构建可扩展、可维护的自动化工作流系统。
                     </p>
                     <div class="skill-rating">
-                        <span>⭐</span>
-                        <span>⭐</span>
-                        <span>⭐</span>
-                        <span>⭐</span>
-                        <span>⭐</span>
+                        <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
                     </div>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon">🛠️</div>
                     <div class="skill-name">技术栈</div>
                     <p class="skill-description">
-                        熟练掌握 Python、JavaScript、TypeScript 等现代编程语言，以及 Node.js、React 等主流框架。
+                        熟练掌握 Python、JavaScript、TypeScript 等现代编程语言，以及 Node.js、React 等主流框架，打造高性能应用。
                     </p>
                     <div class="skill-rating">
-                        <span>⭐</span>
-                        <span>⭐</span>
-                        <span>⭐</span>
-                        <span>⭐</span>
-                        <span>⭐</span>
+                        <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
                     </div>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon">🤖</div>
                     <div class="skill-name">人工智能</div>
                     <p class="skill-description">
-                        深入研究 Claude、GPT、Gemini 等 AI 模型，熟练运用提示词工程、函数调用、多模态处理等技术。
+                        深入研究 Claude、GPT、Gemini 等 AI 模型，熟练运用提示词工程、函数调用、多模态处理等前沿技术。
                     </p>
                     <div class="skill-rating">
-                        <span>⭐</span>
-                        <span>⭐</span>
-                        <span>⭐</span>
-                        <span>⭐</span>
-                        <span>⭐</span>
-                        <span>⭐</span>
+                        <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
                     </div>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon">🚀</div>
                     <div class="skill-name">自动化工程</div>
                     <p class="skill-description">
-                        专注于构建智能自动化系统，从 CI/CD 流水线到 AI 驱动的自动化工作流，大幅提升生产力。
+                        专注于构建智能自动化系统，从 CI/CD 流水线到 AI 驱动的自动化工作流，大幅提升生产力，释放人类创造力。
                     </p>
                     <div class="skill-rating">
-                        <span>⭐</span>
-                        <span>⭐</span>
-                        <span>⭐</span>
-                        <span>⭐</span>
-                        <span>⭐</span>
+                        <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
                     </div>
                 </div>
             </div>
@@ -861,7 +862,7 @@
                 <div class="section-label">精选项目</div>
                 <h2 class="section-title">项目矩阵</h2>
                 <p class="section-description">
-                    持续开发开源项目，涵盖 AI 技能、自动化工具、研究系统等多个领域，总计 25+ 个项目。
+                    持续开发开源项目，涵盖 AI 技能、自动化工具、研究系统等多个领域，总计 25+ 个项目，每个都有独特的创新点。
                 </p>
             </div>
             <div class="projects-grid">
@@ -869,15 +870,15 @@
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-icon">🚀</div>
-                        <div class="project-status running">运行中</div>
+                        <div class="project-status featured">特色项目</div>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Ultimate AI Workspace</h3>
                         <p class="project-description">
-                            70+ AI 技能的完整工作空间，包括交互式演示、内容追踪系统、媒体追踪工具等，提供全方位的 AI 技能开发和测试环境。
+                            70+ AI 技能的完整工作空间，包括交互式演示、内容追踪系统、媒体追踪工具等，提供全方位的 AI 技能开发和测试环境，重新定义 AI 工作流。
                         </p>
                         <div class="project-features">
-                            <span class="project-feature">AI 技能</span>
+                            <span class="project-feature">70+ 技能</span>
                             <span class="project-feature">内容追踪</span>
                             <span class="project-feature">交互演示</span>
                         </div>
@@ -893,7 +894,7 @@
                     <div class="project-content">
                         <h3 class="project-title">Achievement System</h3>
                         <p class="project-description">
-                            终端驱动的成就追踪系统，采用 CLI 工具和 JSON 存储架构，支持成就定义、进度追踪、统计分析等功能。
+                            终端驱动的成就追踪系统，采用 CLI 工具和 JSON 存储架构，支持成就定义、进度追踪、统计分析等功能，让成就系统游戏化，激励持续进步。
                         </p>
                         <div class="project-features">
                             <span class="project-feature">CLI 工具</span>
@@ -911,7 +912,7 @@
                     <div class="project-content">
                         <h3 class="project-title">AI Prompt Marketplace</h3>
                         <p class="project-description">
-                            AI 提示词市场平台，前后端全栈开发，提供提示词发布、搜索、评价、交易等完整功能。
+                            AI 提示词市场平台，前后端全栈开发，提供提示词发布、搜索、评价、交易等完整功能，打造 AI 创作者生态系统，连接创作者和用户。
                         </p>
                         <div class="project-features">
                             <span class="project-feature">市场平台</span>
@@ -929,10 +930,10 @@
                     <div class="project-content">
                         <h3 class="project-title">AI Prompt to Skill</h3>
                         <p class="project-description">
-                            自动转换 AI 提示词为 Clawdbot Skills 的自动化工具，支持从多平台采集提示词、质量评估、格式转换、自动打包发布。
+                            自动转换 AI 提示词为 Clawdbot Skills 的自动化工具，支持从多平台采集提示词、质量评估、格式转换、自动打包发布，让创意变现自动化。
                         </p>
                         <div class="project-features">
-                            <span class="project-feature">自动化</span>
+                            <span class="project-feature">自动化转换</span>
                             <span class="project-feature">质量评估</span>
                             <span class="project-feature">多平台采集</span>
                         </div>
@@ -947,7 +948,7 @@
                     <div class="project-content">
                         <h3 class="project-title">Moltbot Research</h3>
                         <p class="project-description">
-                            AI 研究和趋势分析系统，自动化收集和分析 AI 相关信息，包括新闻动态、技术趋势、学术论文等内容。
+                            AI 研究和趋势分析系统，自动化收集和分析 AI 相关信息，包括新闻动态、技术趋势、学术论文等内容，构建 AI 知识图谱，洞察未来方向。
                         </p>
                         <div class="project-features">
                             <span class="project-feature">研究分析</span>
@@ -965,7 +966,7 @@
                     <div class="project-content">
                         <h3 class="project-title">SearXNG Self-Hosted</h3>
                         <p class="project-description">
-                            自托管隐私搜索引擎，采用 SearXNG 元搜索引擎架构，支持多引擎聚合、隐私保护、结果过滤等功能。
+                            自托管隐私搜索引擎，采用 SearXNG 元搜索引擎架构，支持多引擎聚合、隐私保护、结果过滤等功能，掌控自己的搜索体验，拒绝数据追踪。
                         </p>
                         <div class="project-features">
                             <span class="project-feature">隐私搜索</span>
@@ -983,7 +984,7 @@
                     <div class="project-content">
                         <h3 class="project-title">Automation Workflows</h3>
                         <p class="project-description">
-                            智能自动化工作流系统，支持自定义触发器、任务调度、错误处理、日志记录等功能，提升日常工作效率。
+                            智能自动化工作流系统，支持自定义触发器、任务调度、错误处理、日志记录等功能，让重复工作自动化，解放双手，专注创造。
                         </p>
                         <div class="project-features">
                             <span class="project-feature">任务调度</span>
@@ -1001,7 +1002,7 @@
                     <div class="project-content">
                         <h3 class="project-title">Twitter API Bridge</h3>
                         <p class="project-description">
-                            Twitter API 桥接服务，提供稳定的 API 接口，支持推文搜索、用户信息获取、趋势分析等功能。
+                            Twitter API 桥接服务，提供稳定的 API 接口，支持推文搜索、用户信息获取、趋势分析等功能，突破 Twitter API 限制，无缝集成社交媒体数据。
                         </p>
                         <div class="project-features">
                             <span class="project-feature">API 桥接</span>
@@ -1020,7 +1021,7 @@
                     <div class="project-content">
                         <h3 class="project-title">Career Planner Skill</h3>
                         <p class="project-description">
-                            智能职业规划技能，基于用户背景和目标，提供个性化的职业发展路径建议和技能提升计划。
+                            智能职业规划技能，基于用户背景和目标，提供个性化的职业发展路径建议和技能提升计划，让职业规划不再迷茫，AI 成为你的职业导师。
                         </p>
                         <div class="project-features">
                             <span class="project-feature">职业规划</span>
@@ -1038,7 +1039,7 @@
                     <div class="project-content">
                         <h3 class="project-title">Resume Builder Skill</h3>
                         <p class="project-description">
-                            智能简历生成器，根据用户输入自动生成专业简历，支持多种模板、导出格式、自定义样式等功能。
+                            智能简历生成器，根据用户输入自动生成专业简历，支持多种模板、导出格式、自定义样式等功能，让简历制作自动化，求职更轻松。
                         </p>
                         <div class="project-features">
                             <span class="project-feature">简历生成</span>
@@ -1056,12 +1057,49 @@
                     <div class="project-content">
                         <h3 class="project-title">Job Interviewer Skill</h3>
                         <p class="project-description">
-                            智能面试官技能，模拟真实面试场景，提供针对性的提问、实时反馈、表现评估等功能。
+                            智能面试官技能，模拟真实面试场景，提供针对性的提问、实时反馈、表现评估等功能，让面试准备不再焦虑，AI 成为你的面试教练。
                         </p>
                         <div class="project-features">
                             <span class="project-feature">模拟面试</span>
                             <span class="project-feature">实时反馈</span>
                             <span class="project-feature">表现评估</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW PROJECTS -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">🤖</div>
+                        <div class="project-status running">运行中</div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">AI Auto Research Hub</h3>
+                        <p class="project-description">
+                            智能自动化信息收集中心，整合 Tavily、SearXNG、Twitter API 等多数据源，自动化收集 AI 相关信息、趋势分析、论文追踪，构建 AI 知识库，节省研究时间，聚焦创新。
+                        </p>
+                        <div class="project-features">
+                            <span class="project-feature">多数据源</span>
+                            <span class="project-feature">自动化收集</span>
+                            <span class="project-feature">知识图谱</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">🧠</div>
+                        <div class="project-status development">开发中</div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Smart Memory System</h3>
+                        <p class="project-description">
+                            智能记忆系统，基于 OpenClaw 的记忆架构，实现长期记忆、短期记忆、知识图谱管理，支持自动记忆、关联查询、上下文理解，让 AI 拥有真正的记忆能力。
+                        </p>
+                        <div class="project-features">
+                            <span class="project-feature">长期记忆</span>
+                            <span class="project-feature">知识图谱</span>
+                            <span class="project-feature">上下文理解</span>
                         </div>
                     </div>
                 </div>
