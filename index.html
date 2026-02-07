@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jack · AI 技能开发者 & 自动化工程师</title>
-    <meta name="description" content="专注 AI 技能开发和自动化工程，构建智能技能生态系统">
+    <meta name="description" content="专注 AI 技能开发和自动化工程，构建智能技能生态系统，重新定义人机协作">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -20,14 +20,20 @@
             --bg-primary: #0a0a0f;
             --bg-secondary: #12121a;
             --bg-card: #16161f;
+            --bg-card-hover: #1a1a24;
             --text-primary: #ffffff;
-            --text-secondary: rgba(255, 255, 255, 0.7);
-            --text-muted: rgba(255, 255, 255, 0.4);
+            --text-secondary: rgba(255, 255, 255, 0.75);
+            --text-muted: rgba(255, 255, 255, 0.45);
             --accent-gold: #d4af37;
+            --accent-gold-light: rgba(212, 175, 55, 0.15);
             --accent-purple: #9b59b6;
+            --accent-purple-light: rgba(155, 89, 182, 0.15);
             --accent-blue: #3498db;
-            --border: rgba(255, 255, 255, 0.06);
-            --shadow-glow: 0 8px 32px rgba(212, 175, 55, 0.08);
+            --accent-blue-light: rgba(52, 152, 219, 0.15);
+            --border: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(212, 175, 55, 0.3);
+            --shadow-glow: 0 8px 32px rgba(212, 175, 55, 0.1);
+            --shadow-glow-hover: 0 12px 48px rgba(212, 175, 55, 0.15);
 
             /* Typography */
             --font-display: 'Playfair Display', Georgia, serif;
@@ -48,13 +54,13 @@
             font-family: var(--font-body);
             background: var(--bg-primary);
             color: var(--text-primary);
-            line-height: 1.7;
+            line-height: 1.75;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Ambient Background */
+        /* Ambient Background with Particles */
         .ambient-background {
             position: fixed;
             top: 0;
@@ -64,9 +70,30 @@
             pointer-events: none;
             z-index: 0;
             background:
-                radial-gradient(ellipse at 20% 20%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 80%, rgba(155, 89, 182, 0.03) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 50%, rgba(52, 152, 219, 0.02) 0%, transparent 70%);
+                radial-gradient(ellipse at 20% 20%, rgba(212, 175, 55, 0.04) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(155, 89, 182, 0.04) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(52, 152, 219, 0.025) 0%, transparent 70%);
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float 15s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+                opacity: 0.3;
+            }
+            50% {
+                transform: translateY(-100px) translateX(50px);
+                opacity: 0.6;
+            }
         }
 
         /* Container */
@@ -85,16 +112,18 @@
             left: 0;
             right: 0;
             z-index: 100;
-            background: rgba(10, 10, 15, 0.8);
-            backdrop-filter: blur(20px);
+            background: rgba(10, 10, 15, 0.85);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
             border-bottom: 1px solid var(--border);
             padding: var(--spacing-sm) 0;
             transition: all 0.3s var(--transition-smooth);
         }
 
         nav.scrolled {
-            background: rgba(10, 10, 15, 0.95);
-            padding: 0.75rem 0;
+            background: rgba(10, 10, 15, 0.98);
+            padding: 0.6rem 0;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
         }
 
         .nav-content {
@@ -109,7 +138,29 @@
             font-weight: 600;
             color: var(--text-primary);
             text-decoration: none;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.03em;
+            position: relative;
+            transition: color 0.3s var(--transition-smooth);
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent-gold);
+            transform: scaleX(0);
+            transition: transform 0.3s var(--transition-smooth);
+        }
+
+        .logo:hover {
+            color: var(--accent-gold);
+        }
+
+        .logo:hover::after {
+            transform: scaleX(1);
         }
 
         .nav-links {
@@ -125,16 +176,17 @@
             font-weight: 500;
             transition: color 0.3s var(--transition-smooth);
             position: relative;
+            padding: 0.5rem 0;
         }
 
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -4px;
+            bottom: 0;
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--accent-gold);
+            background: linear-gradient(90deg, var(--accent-gold), var(--accent-purple));
             transition: width 0.3s var(--transition-smooth);
         }
 
@@ -151,12 +203,12 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: var(--spacing-xl) 0;
+            padding: var(--spacing-xl) 0 var(--spacing-lg);
             position: relative;
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 850px;
             animation: fadeInUp 1s var(--transition-smooth);
         }
 
@@ -164,57 +216,81 @@
             color: var(--accent-gold);
             font-size: 0.85rem;
             font-weight: 600;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
             margin-bottom: var(--spacing-sm);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
             animation: fadeIn 1s var(--transition-smooth);
+        }
+
+        .hero-label::before {
+            content: '';
+            width: 40px;
+            height: 1px;
+            background: var(--accent-gold);
         }
 
         .hero h1 {
             font-family: var(--font-display);
-            font-size: clamp(3rem, 8vw, 5rem);
+            font-size: clamp(3rem, 9vw, 5.5rem);
             font-weight: 600;
-            line-height: 1.1;
+            line-height: 1.08;
             margin-bottom: var(--spacing-sm);
-            background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.8) 100%);
+            background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.85) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: fadeInUp 1s var(--transition-smooth) 0.2s both;
+            animation: fadeInUp 1s var(--transition-smooth) 0.15s both;
         }
 
         .hero-description {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             color: var(--text-secondary);
-            line-height: 1.8;
-            margin-bottom: var(--spacing-md);
-            max-width: 600px;
-            animation: fadeInUp 1s var(--transition-smooth) 0.4s both;
+            line-height: 1.9;
+            margin-bottom: var(--spacing-lg);
+            max-width: 650px;
+            animation: fadeInUp 1s var(--transition-smooth) 0.3s both;
         }
 
         .hero-stats {
             display: flex;
             gap: var(--spacing-lg);
             margin-top: var(--spacing-lg);
-            animation: fadeInUp 1s var(--transition-smooth) 0.6s both;
+            animation: fadeInUp 1s var(--transition-smooth) 0.45s both;
         }
 
         .stat {
             text-align: left;
+            position: relative;
+        }
+
+        .stat::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 1px;
+            background: var(--accent-gold);
         }
 
         .stat-value {
             font-family: var(--font-display);
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 600;
             color: var(--accent-gold);
             line-height: 1;
+            margin-bottom: 0.25rem;
         }
 
         .stat-label {
             font-size: 0.9rem;
             color: var(--text-muted);
-            margin-top: var(--spacing-xs);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
         }
 
         /* Section Styles */
@@ -223,36 +299,58 @@
             position: relative;
         }
 
+        .section-header {
+            margin-bottom: var(--spacing-lg);
+            position: relative;
+        }
+
         .section-label {
             color: var(--accent-gold);
             font-size: 0.85rem;
             font-weight: 600;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
             margin-bottom: var(--spacing-sm);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 40px;
+            height: 1px;
+            background: var(--accent-gold);
         }
 
         .section-title {
             font-family: var(--font-display);
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
             font-weight: 600;
-            margin-bottom: var(--spacing-lg);
-            line-height: 1.2;
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.15;
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            line-height: 1.8;
         }
 
         /* Skills Section */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: var(--spacing-md);
         }
 
         .skill-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 12px;
+            border-radius: 16px;
             padding: var(--spacing-md);
-            transition: all 0.4s var(--transition-smooth);
+            transition: all 0.5s var(--transition-smooth);
             position: relative;
             overflow: hidden;
         }
@@ -263,167 +361,265 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 2px;
+            height: 3px;
             background: linear-gradient(90deg, var(--accent-gold), var(--accent-purple));
             transform: scaleX(0);
-            transition: transform 0.4s var(--transition-smooth);
+            transform-origin: left;
+            transition: transform 0.5s var(--transition-smooth);
         }
 
         .skill-card:hover {
-            border-color: rgba(212, 175, 55, 0.2);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-glow);
+            background: var(--bg-card-hover);
+            border-color: var(--border-hover);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-glow-hover);
         }
 
         .skill-card:hover::before {
             transform: scaleX(1);
         }
 
+        .skill-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--accent-gold-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-sm);
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .skill-card:hover .skill-icon {
+            background: var(--accent-gold);
+            transform: scale(1.1) rotate(5deg);
+        }
+
         .skill-name {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 600;
             margin-bottom: var(--spacing-sm);
             color: var(--text-primary);
+            font-family: var(--font-display);
+        }
+
+        .skill-description {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: var(--spacing-sm);
         }
 
         .skill-rating {
             color: var(--accent-gold);
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             letter-spacing: 0.05em;
+            display: inline-flex;
+            gap: 0.25rem;
+        }
+
+        .skill-rating span {
+            transition: transform 0.2s var(--transition-smooth);
+        }
+
+        .skill-card:hover .skill-rating span {
+            transform: scale(1.1);
         }
 
         /* Projects Section */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
             gap: var(--spacing-md);
         }
 
         .project-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 12px;
+            border-radius: 16px;
             overflow: hidden;
-            transition: all 0.4s var(--transition-smooth);
+            transition: all 0.5s var(--transition-smooth);
             position: relative;
         }
 
+        .project-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            background: linear-gradient(135deg, var(--accent-gold-light) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.5s var(--transition-smooth);
+            pointer-events: none;
+        }
+
         .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-glow);
+            background: var(--bg-card-hover);
+            border-color: var(--border-hover);
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-glow-hover);
+        }
+
+        .project-card:hover::after {
+            opacity: 1;
+        }
+
+        .project-header {
+            padding: var(--spacing-md);
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: var(--spacing-sm);
         }
 
         .project-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
-            margin: var(--spacing-md) var(--spacing-md) 0;
+            font-size: 1.9rem;
             background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
-            transition: transform 0.4s var(--transition-smooth);
+            transition: all 0.4s var(--transition-smooth);
+            box-shadow: 0 4px 16px rgba(212, 175, 55, 0.2);
         }
 
         .project-card:hover .project-icon {
-            transform: scale(1.1);
+            transform: scale(1.15) rotate(-3deg);
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);
+        }
+
+        .project-status {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .project-status.running {
+            background: var(--accent-blue-light);
+            color: var(--accent-blue);
+            border: 1px solid rgba(52, 152, 219, 0.3);
+        }
+
+        .project-status.completed {
+            background: var(--accent-purple-light);
+            color: var(--accent-purple);
+            border: 1px solid rgba(155, 89, 182, 0.3);
+        }
+
+        .project-status.development {
+            background: var(--accent-gold-light);
+            color: var(--accent-gold);
+            border: 1px solid rgba(212, 175, 55, 0.3);
         }
 
         .project-content {
-            padding: var(--spacing-md);
+            padding: 0 var(--spacing-md) var(--spacing-md);
         }
 
         .project-title {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 600;
-            margin-bottom: var(--spacing-sm);
+            margin-bottom: var(--spacing-xs);
             color: var(--text-primary);
+            font-family: var(--font-display);
         }
 
         .project-description {
             color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.6;
+            font-size: 1rem;
+            line-height: 1.8;
             margin-bottom: var(--spacing-sm);
         }
 
-        .project-tags {
+        .project-features {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
             margin-top: var(--spacing-sm);
         }
 
-        .project-tag {
+        .project-feature {
             font-size: 0.8rem;
-            padding: 0.35rem 0.85rem;
-            background: rgba(212, 175, 55, 0.1);
-            border-radius: 20px;
-            color: var(--accent-gold);
-            font-weight: 500;
-        }
-
-        .project-status {
-            position: absolute;
-            top: var(--spacing-md);
-            right: var(--spacing-md);
             padding: 0.4rem 0.9rem;
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
+            color: var(--text-secondary);
+            font-weight: 500;
+            border: 1px solid var(--border);
+            transition: all 0.3s var(--transition-smooth);
         }
 
-        .project-status.running {
-            background: rgba(52, 152, 219, 0.15);
-            color: var(--accent-blue);
-        }
-
-        .project-status.completed {
-            background: rgba(155, 89, 182, 0.15);
-            color: var(--accent-purple);
+        .project-card:hover .project-feature {
+            border-color: var(--accent-gold);
+            color: var(--text-primary);
+            background: var(--accent-gold-light);
         }
 
         /* Contact Section */
         .contact-content {
-            max-width: 600px;
+            max-width: 650px;
+            text-align: center;
         }
 
         .contact-description {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: var(--text-secondary);
-            line-height: 1.8;
+            line-height: 1.9;
             margin-bottom: var(--spacing-md);
         }
 
-        .contact-email {
-            display: inline-block;
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
             font-family: var(--font-display);
             font-size: 1.5rem;
-            color: var(--accent-gold);
+            color: var(--text-primary);
             text-decoration: none;
+            padding: 1rem 2rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: all 0.4s var(--transition-smooth);
             position: relative;
-            transition: color 0.3s var(--transition-smooth);
+            overflow: hidden;
         }
 
-        .contact-email::after {
+        .contact-link::before {
             content: '';
             position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 100%;
-            height: 2px;
+            inset: 0;
             background: var(--accent-gold);
             transform: scaleX(0);
-            transition: transform 0.3s var(--transition-smooth);
+            transform-origin: right;
+            transition: transform 0.4s var(--transition-smooth);
+            z-index: -1;
         }
 
-        .contact-email:hover {
-            color: var(--text-primary);
+        .contact-link:hover {
+            color: var(--bg-primary);
+            border-color: var(--accent-gold);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-glow-hover);
         }
 
-        .contact-email:hover::after {
+        .contact-link:hover::before {
             transform: scaleX(1);
+            transform-origin: left;
         }
 
         /* Footer */
@@ -432,11 +628,37 @@
             text-align: center;
             border-top: 1px solid var(--border);
             margin-top: var(--spacing-xl);
+            position: relative;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-sm);
         }
 
         .footer-text {
             color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: var(--spacing-md);
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
             font-size: 0.9rem;
+            transition: color 0.3s var(--transition-smooth);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-gold);
         }
 
         /* Animations */
@@ -452,7 +674,7 @@
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(40px);
             }
             to {
                 opacity: 1;
@@ -463,8 +685,8 @@
         /* Scroll Animation */
         .fade-in-section {
             opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s var(--transition-smooth), transform 0.8s var(--transition-smooth);
+            transform: translateY(50px);
+            transition: opacity 1s var(--transition-smooth), transform 1s var(--transition-smooth);
         }
 
         .fade-in-section.visible {
@@ -483,15 +705,34 @@
                 grid-template-columns: 1fr;
             }
 
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
             .nav-links {
                 display: none;
+            }
+
+            .hero-description {
+                font-size: 1.15rem;
+            }
+
+            .contact-link {
+                width: 100%;
+                justify-content: center;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Ambient Background -->
-    <div class="ambient-background"></div>
+    <!-- Ambient Background with Particles -->
+    <div class="ambient-background">
+        <div class="particle" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+        <div class="particle" style="top: 60%; left: 80%; animation-delay: 2s;"></div>
+        <div class="particle" style="top: 80%; left: 30%; animation-delay: 4s;"></div>
+        <div class="particle" style="top: 30%; left: 70%; animation-delay: 6s;"></div>
+        <div class="particle" style="top: 70%; left: 50%; animation-delay: 8s;"></div>
+    </div>
 
     <!-- Navigation -->
     <nav id="navbar">
@@ -507,13 +748,13 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="about">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-label">欢迎</div>
                 <h1>AI 技能开发者<br>& 自动化工程师</h1>
                 <p class="hero-description">
-                    探索 AI 自动化边界，构建智能技能生态系统，重新定义人机协作。每一个项目都是对简单、高效、可控理念的实践。
+                    专注于探索 AI 自动化的边界，构建智能化的技能生态系统。致力于重新定义人机协作的可能性，每一个项目都是对简单、高效、可控理念的极致实践。从自动化工作流到商业化 AI 技能，持续推动技术边界。
                 </p>
                 <div class="hero-stats">
                     <div class="stat">
@@ -536,24 +777,70 @@
     <!-- Skills Section -->
     <section id="skills" class="fade-in-section">
         <div class="container">
-            <div class="section-label">专业能力</div>
-            <h2 class="section-title">技能矩阵</h2>
+            <div class="section-header">
+                <div class="section-label">专业能力</div>
+                <h2 class="section-title">技能矩阵</h2>
+                <p class="section-description">
+                    融合多种技术栈，专注于 AI 驱动的自动化解决方案和技能生态系统构建。
+                </p>
+            </div>
             <div class="skills-grid">
                 <div class="skill-card">
+                    <div class="skill-icon">⚙️</div>
                     <div class="skill-name">开发工作流</div>
-                    <div class="skill-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="skill-description">
+                        精通全栈开发流程，从前端设计到后端架构，构建可扩展、可维护的自动化工作流系统。
+                    </p>
+                    <div class="skill-rating">
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                    </div>
                 </div>
                 <div class="skill-card">
+                    <div class="skill-icon">🛠️</div>
                     <div class="skill-name">技术栈</div>
-                    <div class="skill-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="skill-description">
+                        熟练掌握 Python、JavaScript、TypeScript 等现代编程语言，以及 Node.js、React 等主流框架。
+                    </p>
+                    <div class="skill-rating">
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                    </div>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-name">AI/ML</div>
-                    <div class="skill-rating">⭐⭐⭐⭐⭐⭐</div>
+                    <div class="skill-icon">🤖</div>
+                    <div class="skill-name">人工智能</div>
+                    <p class="skill-description">
+                        深入研究 Claude、GPT、Gemini 等 AI 模型，熟练运用提示词工程、函数调用、多模态处理等技术。
+                    </p>
+                    <div class="skill-rating">
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                    </div>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-name">自动化</div>
-                    <div class="skill-rating">⭐⭐⭐⭐⭐</div>
+                    <div class="skill-icon">🚀</div>
+                    <div class="skill-name">自动化工程</div>
+                    <p class="skill-description">
+                        专注于构建智能自动化系统，从 CI/CD 流水线到 AI 驱动的自动化工作流，提升生产力。
+                    </p>
+                    <div class="skill-rating">
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -562,78 +849,120 @@
     <!-- Projects Section -->
     <section id="projects" class="fade-in-section">
         <div class="container">
-            <div class="section-label">精选项目</div>
-            <h2 class="section-title">项目矩阵</h2>
+            <div class="section-header">
+                <div class="section-label">精选项目</div>
+                <h2 class="section-title">项目矩阵</h2>
+                <p class="section-description">
+                    持续开发开源项目，涵盖 AI 技能、自动化工具、研究系统等多个领域。
+                </p>
+            </div>
             <div class="projects-grid">
                 <!-- FLAGSHIP -->
                 <div class="project-card">
-                    <div class="project-status running">运行中</div>
-                    <div class="project-icon">🚀</div>
+                    <div class="project-header">
+                        <div class="project-icon">🚀</div>
+                        <div class="project-status running">运行中</div>
+                    </div>
                     <div class="project-content">
                         <h3 class="project-title">Ultimate AI Workspace</h3>
-                        <p class="project-description">Ultimate Skills Bundle (70+ 技能）、Interactive Demo、AI Content Tracker、AI Media Tracker</p>
-                        <div class="project-tags">
-                            <span class="project-tag">AI</span>
-                            <span class="project-tag">Skills</span>
-                            <span class="project-tag">Tracker</span>
+                        <p class="project-description">
+                            70+ AI 技能的完整工作空间，包括交互式演示、内容追踪系统、媒体追踪工具等，提供全方位的 AI 技能开发和测试环境。
+                        </p>
+                        <div class="project-features">
+                            <span class="project-feature">AI 技能</span>
+                            <span class="project-feature">内容追踪</span>
+                            <span class="project-feature">交互演示</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- TOOLS -->
                 <div class="project-card">
-                    <div class="project-status completed">已完成</div>
-                    <div class="project-icon">🏆</div>
+                    <div class="project-header">
+                        <div class="project-icon">🏆</div>
+                        <div class="project-status completed">已完成</div>
+                    </div>
                     <div class="project-content">
                         <h3 class="project-title">Achievement System</h3>
-                        <p class="project-description">终端驱动的成就追踪系统，CLI 工具 + JSON 存储</p>
-                        <div class="project-tags">
-                            <span class="project-tag">CLI</span>
-                            <span class="project-tag">Python</span>
+                        <p class="project-description">
+                            终端驱动的成就追踪系统，采用 CLI 工具和 JSON 存储架构，支持成就定义、进度追踪、统计分析等功能。
+                        </p>
+                        <div class="project-features">
+                            <span class="project-feature">CLI 工具</span>
+                            <span class="project-feature">Python</span>
+                            <span class="project-feature">JSON 存储</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <div class="project-icon">🏪</div>
+                    <div class="project-header">
+                        <div class="project-icon">🏪</div>
+                        <div class="project-status development">开发中</div>
+                    </div>
                     <div class="project-content">
                         <h3 class="project-title">AI Prompt Marketplace</h3>
-                        <p class="project-description">AI 提示词市场，前后端开发中</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Marketplace</span>
+                        <p class="project-description">
+                            AI 提示词市场平台，前后端全栈开发，提供提示词发布、搜索、评价、交易等完整功能。
+                        </p>
+                        <div class="project-features">
+                            <span class="project-feature">市场平台</span>
+                            <span class="project-feature">交易系统</span>
+                            <span class="project-feature">评价体系</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <div class="project-icon">🔄</div>
+                    <div class="project-header">
+                        <div class="project-icon">🔄</div>
+                        <div class="project-status completed">已完成</div>
+                    </div>
                     <div class="project-content">
                         <h3 class="project-title">AI Prompt to Skill</h3>
-                        <p class="project-description">自动转换 AI 提示词为 Clawdbot Skills</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Automation</span>
+                        <p class="project-description">
+                            自动转换 AI 提示词为 Clawdbot Skills 的自动化工具，支持从多平台采集提示词、质量评估、格式转换、自动打包发布。
+                        </p>
+                        <div class="project-features">
+                            <span class="project-feature">自动化</span>
+                            <span class="project-feature">质量评估</span>
+                            <span class="project-feature">多平台采集</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <div class="project-icon">🔍</div>
+                    <div class="project-header">
+                        <div class="project-icon">🔍</div>
+                        <div class="project-status running">运行中</div>
+                    </div>
                     <div class="project-content">
                         <h3 class="project-title">Moltbot Research</h3>
-                        <p class="project-description">AI 研究、趋势分析、内容收集</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Research</span>
+                        <p class="project-description">
+                            AI 研究和趋势分析系统，自动化收集和分析 AI 相关信息，包括新闻动态、技术趋势、学术论文等内容。
+                        </p>
+                        <div class="project-features">
+                            <span class="project-feature">研究分析</span>
+                            <span class="project-feature">趋势追踪</span>
+                            <span class="project-feature">自动收集</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <div class="project-icon">🌐</div>
+                    <div class="project-header">
+                        <div class="project-icon">🌐</div>
+                        <div class="project-status completed">已完成</div>
+                    </div>
                     <div class="project-content">
                         <h3 class="project-title">SearXNG Self-Hosted</h3>
-                        <p class="project-description">自托管隐私搜索引擎</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Privacy</span>
+                        <p class="project-description">
+                            自托管隐私搜索引擎，采用 SearXNG 元搜索引擎架构，支持多引擎聚合、隐私保护、结果过滤等功能。
+                        </p>
+                        <div class="project-features">
+                            <span class="project-feature">隐私搜索</span>
+                            <span class="project-feature">自托管</span>
+                            <span class="project-feature">结果过滤</span>
                         </div>
                     </div>
                 </div>
@@ -648,11 +977,13 @@
                 <div class="section-label">联系我</div>
                 <h2 class="section-title">开始合作</h2>
                 <p class="contact-description">
-                    如果你有有趣的项目想法，或者想聊聊 AI 自动化和技能开发，随时联系我。
+                    如果你有有趣的项目想法，或者想聊聊 AI 自动化、技能开发、开源合作等话题，随时联系我。
                 </p>
-                <a href="mailto:jackhappy123rt@gmail.com" class="contact-email">
-                    jackhappy123rt@gmail.com
-                </a>
+                <div class="contact-links">
+                    <a href="mailto:jackhappy123rt@gmail.com" class="contact-link">
+                        📧 jackhappy123rt@gmail.com
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -660,7 +991,15 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p class="footer-text">© 2026 Jack. 用心构建每一个项目。</p>
+            <div class="footer-content">
+                <p class="footer-text">
+                    © 2026 Jack. 用心构建每一个项目，探索 AI 自动化的无限可能。
+                </p>
+                <ul class="footer-links">
+                    <li><a href="https://github.com/hhhh124hhhh" target="_blank" rel="noopener">GitHub</a></li>
+                    <li><a href="mailto:jackhappy123rt@gmail.com">Email</a></li>
+                </ul>
+            </div>
         </div>
     </footer>
 
@@ -681,7 +1020,7 @@
         // Scroll Reveal Animation
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            rootMargin: '0px 0px -100px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -708,6 +1047,12 @@
                     });
                 }
             });
+        });
+
+        // Staggered Animation for Stats
+        const statValues = document.querySelectorAll('.stat-value');
+        statValues.forEach((stat, index) => {
+            stat.style.animationDelay = `${index * 0.1}s`;
         });
     </script>
 </body>
