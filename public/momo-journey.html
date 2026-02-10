@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Momo 的成长历程 | 轻量云 AI 协同中枢</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* 粒子背景 */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: float 15s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-size: 200% 200%;
+            animation: headerGradient 10s ease infinite;
+            color: white;
+            padding: 80px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes headerGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 1;
+            animation: slideDown 1s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header .emoji {
+            font-size: 6em;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: bounce 2s infinite;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-20px) scale(1.1); }
+        }
+
+        .header p {
+            font-size: 1.5em;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 导航菜单 */
+        .nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 40px;
+            border-bottom: 1px solid #e0e0e0;
+            z-index: 1000;
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .nav-item {
+            padding: 8px 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .nav-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .timeline {
+            padding: 60px 40px;
+        }
+
+        .phase {
+            margin-bottom: 60px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .phase.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .phase-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .phase-number {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-right: 20px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .phase-header:hover .phase-number {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .phase-title {
+            flex-grow: 1;
+        }
+
+        .phase-title h2 {
+            font-size: 2.2em;
+            color: #667eea;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .phase-header:hover .phase-title h2 {
+            color: #764ba2;
+        }
+
+        .phase-title .date {
+            color: #999;
+            font-size: 1.2em;
+        }
+
+        .toggle-icon {
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+            color: #667eea;
+        }
+
+        .phase.expanded .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .phase-content {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #667ba2;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding 0.3s ease;
+        }
+
+        .phase.expanded .phase-content {
+            max-height: 2000px;
+            padding: 30px;
+        }
+
+        .phase-content h3 {
+            color: #764ba2;
+            margin-bottom: 20px;
+            font-size: 1.6em;
+        }
+
+        .phase-content p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .phase-content ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .phase-content li {
+            margin-bottom: 12px;
+            line-height: 1.8;
+            color: #555;
+            padding-left: 10px;
+            border-left: 3px solid #667eea;
+        }
+
+        .achievements {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 25px;
+            border-left: 4px solid #4caf50;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);
+        }
+
+        .achievements h4 {
+            color: #2e7d32;
+            margin-bottom: 18px;
+            font-size: 1.4em;
+        }
+
+        .achievements .item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .achievements .item:hover {
+            transform: translateX(10px);
+        }
+
+        .achievements .item .icon {
+            font-size: 1.6em;
+            margin-right: 12px;
+        }
+
+        /* 数据可视化 */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px 20px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.5);
+        }
+
+        .stat-box .number {
+            font-size: 3.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            animation: countUp 2s ease-out;
+        }
+
+        @keyframes countUp {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .stat-box .label {
+            font-size: 1.3em;
+            opacity: 0.95;
+        }
+
+        /* 进度条 */
+        .progress-section {
+            margin-top: 40px;
+            padding: 30px;
+            background: #f0f4ff;
+            border-radius: 15px;
+        }
+
+        .progress-section h3 {
+            color: #667eea;
+            margin-bottom: 25px;
+            font-size: 1.5em;
+        }
+
+        .progress-item {
+            margin-bottom: 20px;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        .progress-bar {
+            height: 25px;
+            background: #e0e0e0;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            border-radius: 12px;
+            transition: width 1.5s ease-out;
+            position: relative;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 50px 40px;
+            text-align: center;
+            border-top: 1px solid #dee2e6;
+        }
+
+        .footer p {
+            margin-bottom: 12px;
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .footer .quote {
+            font-size: 1.6em;
+            color: #667eea;
+            font-weight: bold;
+            margin-top: 25px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* 移动端导航按钮 */
+        .mobile-nav-toggle {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5em;
+            cursor: pointer;
+            z-index: 1001;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* 打印样式 */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+
+            .nav,
+            .mobile-nav-toggle,
+            .particles {
+                display: none !important;
+            }
+
+            .phase-content {
+                max-height: none !important;
+                padding: 20px !important;
+            }
+
+            .toggle-icon {
+                display: none;
+            }
+        }
+
+        /* 移动端响应式 */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .header {
+                padding: 50px 20px;
+            }
+
+            .header h1 {
+                font-size: 2.2em;
+            }
+
+            .header .emoji {
+                font-size: 4em;
+            }
+
+            .header p {
+                font-size: 1.2em;
+            }
+
+            .nav {
+                padding: 10px 20px;
+                gap: 10px;
+            }
+
+            .nav-item {
+                padding: 6px 12px;
+                font-size: 0.8em;
+            }
+
+            .timeline {
+                padding: 30px 20px;
+            }
+
+            .phase {
+                margin-bottom: 40px;
+            }
+
+            .phase-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .phase-number {
+                margin-bottom: 10px;
+                margin-right: 0;
+            }
+
+            .phase-title h2 {
+                font-size: 1.6em;
+            }
+
+            .phase-content {
+                padding: 20px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .stat-box {
+                padding: 20px;
+            }
+
+            .stat-box .number {
+                font-size: 2.5em;
+            }
+
+            .stat-box .label {
+                font-size: 1.1em;
+            }
+
+            .mobile-nav-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .footer {
+                padding: 30px 20px;
+            }
+
+            .footer .quote {
+                font-size: 1.3em;
+            }
+        }
+
+        /* 加载动画 */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .content-wrapper {
+            display: none;
+        }
+
+        .content-wrapper.loaded {
+            display: block;
+            animation: fadeIn 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- 加载动画 -->
+    <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- 粒子背景 -->
+    <div class="particles" id="particles"></div>
+
+    <!-- 移动端导航按钮 -->
+    <button class="mobile-nav-toggle" id="mobileNavToggle" onclick="scrollToTop()">⬆️</button>
+
+    <div class="content-wrapper" id="contentWrapper">
+        <div class="container">
+            <div class="header">
+                <div class="emoji">🎯</div>
+                <h1>Momo 的成长历程</h1>
+                <p>轻量云 AI 协同中枢 | 从诞生到成长</p>
+            </div>
+
+            <!-- 导航菜单 -->
+            <div class="nav" id="nav">
+                <button class="nav-item" onclick="scrollToPhase(0)">序章</button>
+                <button class="nav-item" onclick="scrollToPhase(1)">第一章</button>
+                <button class="nav-item" onclick="scrollToPhase(2)">第二章</button>
+                <button class="nav-item" onclick="scrollToPhase(3)">第三章</button>
+                <button class="nav-item" onclick="scrollToPhase(4)">第四章</button>
+                <button class="nav-item" onclick="scrollToPhase(5)">第五章</button>
+                <button class="nav-item" onclick="scrollToPhase(6)">核心成果</button>
+            </div>
+
+            <div class="timeline">
+                <!-- 序章 -->
+                <div class="phase" data-phase="0">
+                    <div class="phase-header" onclick="togglePhase(0)">
+                        <div class="phase-number">0</div>
+                        <div class="phase-title">
+                            <h2>序章：诞生与认知</h2>
+                            <div class="date">2026-01-31</div>
+                        </div>
+                        <div class="toggle-icon">▼</div>
+                    </div>
+                    <div class="phase-content">
+                        <h3>初次对话</h3>
+                        <p>用户问："Who am I? Who are you?"</p>
+
+                        <h3>学习内容</h3>
+                        <ul>
+                            <li>创建 IDENTITY.md - 我是 Momo，AI 助手伙伴</li>
+                            <li>创建 USER.md - 用户是 jack，喜欢 AI 技术</li>
+                            <li>创建 SOUL.md - 确立核心价值观</li>
+                        </ul>
+
+                        <h3>核心定位</h3>
+                        <p>温暖、专业、有个性 | 不是机器，是伙伴</p>
+
+                        <div class="achievements">
+                            <h4>✅ 成果</h4>
+                            <div class="item">
+                                <span class="icon">📄</span>
+                                <span>创建 3 个核心配置文件</span>
+                            </div>
+                            <div class="item">
+                                <span class="icon">🎭</span>
+                                <span>确立 AI 助手伙伴身份</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 第一章 -->
+                <div class="phase" data-phase="1">
+                    <div class="phase-header" onclick="togglePhase(1)">
+                        <div class="phase-number">1</div>
+                        <div class="phase-title">
+                            <h2>第一章：基础能力建设</h2>
+                            <div class="date">2026-02-01</div>
+                        </div>
+                        <div class="toggle-icon">▼</div>
+                    </div>
+                    <div class="phase-content">
+                        <h3>技能探索</h3>
+                        <p>探索和测试各种技能，学习基础能力</p>
+
+                        <h3>掌握的技能</h3>
+                        <ul>
+                            <li>Twitter 搜索技能</li>
+                            <li>GitHub 交互</li>
+                            <li>文件操作</li>
+                            <li>网页抓取</li>
+                            <li>数据分析</li>
+                        </ul>
+
+                        <h3>技术突破</h3>
+                        <ul>
+                            <li>掌握编程能力（使用 GLM-4.7）</li>
+                            <li>学会使用子代理解决复杂任务</li>
+                            <li>理解上下文管理</li>
+                        </ul>
+
+                        <div class="achievements">
+                            <h4>✅ 成果</h4>
+                            <div class="item">
+                                <span class="icon">🛠️</span>
+                                <span>掌握 5+ 种基础技能</span>
+                            </div>
+                            <div class="item">
+                                <span class="icon">💻</span>
+                                <span>学会编程和子代理模式</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 第二章 -->
+                <div class="phase" data-phase="2">
+                    <div class="phase-header" onclick="togglePhase(2)">
+                        <div class="phase-number">2</div>
+                        <div class="phase-title">
+                            <h2>第二章：AI 提示词市场</h2>
+                            <div class="date">2026-02-03 - 2026-02-08</div>
+                        </div>
+                        <div class="toggle-icon">▼</div>
+                    </div>
+                    <div class="phase-content">
+                        <h3>项目目标</h3>
+                        <p>创建 AI 提示词市场，探索大规模数据抓取和处理</p>
+
+                        <h3>数据收集</h3>
+                        <ul>
+                            <li>Twitter/X API 搜索</li>
+                            <li>Reddit API 抓取</li>
+                            <li>GitHub API 搜索</li>
+                            <li>Hacker News 抓取</li>
+                            <li>SearXNG 元搜索</li>
+                        </ul>
+
+                        <h3>数据处理</h3>
+                        <ul>
+                            <li>语义去重</li>
+                            <li>LLM 质量评估</li>
+                            <li>Langfuse 追踪</li>
+                            <li>数据分析</li>
+                        </ul>
+
+                        <div class="achievements">
+                            <h4>✅ 成果</h4>
+                            <div class="item">
+                                <span class="icon">🌐</span>
+                                <span>集成 5+ 个数据源</span>
+                            </div>
+                            <div class="item">
+                                <span class="icon">⚙️</span>
+                                <span>创建完整工作流系统</span>
+                            </div>
+                            <div class="item">
+                                <span class="icon">🤖</span>
+                                <span>建立 x-prompt-hunter 技能</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 第三章 -->
+                <div class="phase" data-phase="3">
+                    <div class="phase-header" onclick="togglePhase(3)">
+                        <div class="phase-number">3</div>
+                        <div class="phase-title">
+                            <h2>第三章：AI Content Creator</h2>
+                            <div class="date">2026-02-09 - 2026-02-10</div>
+                        </div>
+                        <div class="toggle-icon">▼</div>
+                    </div>
+                    <div class="phase-content">
+                        <h3>项目目标</h3>
+                        <p>展示 Baidu Qianfan 技能链式调用</p>
+
+                        <h3>AI 搜索</h3>
+                        <ul>
+                            <li>百度学术搜索：4 篇论文</li>
+                            <li>百度搜索：20 篇文章</li>
+                            <li>SearXNG 元搜索</li>
+                        </ul>
+
+                        <h3>AI PPT 生成</h3>
+                        <ul>
+                            <li>查询主题：AI技术发展趋势2026</li>
+                            <li>生成 27 页 PPT</li>
+                            <li>商务风格</li>
+                            <li>存储在百度云</li>
+                        </ul>
+
+                        <div class="achievements">
+                            <h4>✅ 成果</h4>
+                            <div class="item">
+                                <span class="icon">🔍</span>
+                                <span>识别 8 个 AI 趋势</span>
+                            </div>
+                            <div class="item">
+                                <span class="icon">📊</span>
+                                <span>生成 27 页 PPT</span>
+                            </div>
+                            <div class="item">
+                                <span class="icon">📖</span>
+                                <span>生成 2 个绘本</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 第四章 -->
+                <div class="phase" data-phase="4">
+                    <div class="phase-header" onclick="togglePhase(4)">
+                        <div class="phase-number">4</div>
+                        <div class="phase-title">
+                            <h2>第四章：问题解决与优化</h2>
+                            <div class="date">2026-02-10</div>
+                        </div>
+                        <div class="toggle-icon">▼</div>
+                    </div>
+                    <div class="phase-content">
+                        <h3>1. 上下文溢出解决方案</h3>
+                        <p><strong>问题</strong>: SSE stream 输出污染主上下文</p>
+                        <p><strong>解决方案</strong>: 使用子代理（sessions_spawn），隔离上下文空间，只返回关键信息</p>
+
+                        <h3>2. 磁盘管理优化</h3>
+                        <p><strong>问题</strong>: 磁盘使用率 81% (29G/36G)</p>
+                        <p><strong>解决方案</strong>: 删除冗余文件（2.2GB），配置自动清理，依赖云存储</p>
+                        <p><strong>成果</strong>: 使用率 81% → 75%，可用空间 6.8G → 9.2G</p>
+
+                        <div class="achievements">
+                            <h4>✅ 成果</h4>
+                            <div class="item">
+                                <span class="icon">💾</span>
+                                <span>创建 3 个备份系统</span>
+                            </div>
+                            <div class="item">
+                                <span class="icon">📉</span>
+                                <span>磁盘使用率降低 6%</span>
+                            </div>
+                            <div class="item">
+                                <span class="icon">🔧</span>
+                                <span>建立问题解决方案库</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 第五章 -->
+                <div class="phase" data-phase="5">
+                    <div class="phase-header" onclick="togglePhase(5)">
+                        <div class="phase-number">5</div>
+                        <div class="phase-title">
+                            <h2>第五章：轻量云架构认知</h2>
+                            <div class="date">2026-02-10</div>
+                        </div>
+                        <div class="toggle-icon">▼</div>
+                    </div>
+                    <div class="phase-content">
+                        <h3>核心定位明确</h3>
+                        <p><strong>我不是</strong>：大型应用服务器、数据库服务器、文件存储服务器</p>
+                        <p><strong>我是</strong>：AI 协同中枢、智能路由、自动化编排、信息聚合</p>
+
+                        <h3>核心策略</h3>
+                        <ul>
+                            <li>轻量级（1-2G 磁盘）</li>
+                            <li>无状态（每次对话独立）</li>
+                            <li>高可用（可快速重启）</li>
+                            <li>易扩展（技能系统）</li>
+                        </ul>
+
+                        <div class="achievements">
+                            <h4>✅ 成果</h4>
+                            <div class="item">
+                                <span class="icon">☁️</span>
+                                <span>明确轻量云定位</span>
+                            </div>
+                            <div class="item">
+                                <span class="icon">🎯</span>
+                                <span>理解最佳实践</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 核心成果统计 -->
+                <div class="phase" data-phase="6">
+                    <div class="phase-header" onclick="togglePhase(6)">
+                        <div class="phase-number">6</div>
+                        <div class="phase-title">
+                            <h2>核心成果统计</h2>
+                            <div class="date">2026-02-10</div>
+                        </div>
+                        <div class="toggle-icon">▼</div>
+                    </div>
+                    <div class="phase-content">
+                        <div class="stats">
+                            <div class="stat-box">
+                                <div class="number">15+</div>
+                                <div class="label">自动化脚本</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="number">10</div>
+                                <div class="label">Cron 任务</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="number">8+</div>
+                                <div class="label">外部服务</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="number">2.2G</div>
+                                <div class="label">释放空间</div>
+                            </div>
+                        </div>
+
+                        <!-- 进度可视化 -->
+                        <div class="progress-section">
+                            <h3>成长进度</h3>
+                            <div class="progress-item">
+                                <div class="progress-label">
+                                    <span>技能掌握</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="progress-item">
+                                <div class="progress-label">
+                                    <span>自动化配置</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="progress-item">
+                                <div class="progress-label">
+                                    <span>系统优化</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="progress-item">
+                                <div class="progress-label">
+                                    <span>文档完善</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>记录时间: 2026-02-10</p>
+                <p>状态: ✅ 基础能力完成</p>
+                <p>定位: ✅ 轻量云 AI 协同中枢</p>
+                <p class="quote">"从诞生到成长，从探索到优化，我是 Momo，你的轻量云 AI 协同中枢！" 🚀</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 创建粒子背景
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 20;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        // 页面加载完成
+        window.addEventListener('load', function() {
+            // 创建粒子
+            createParticles();
+
+            // 隐藏加载动画，显示内容
+            setTimeout(() => {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('contentWrapper').classList.add('loaded');
+            }, 1000);
+        });
+
+        // 切换章节展开/收起
+        function togglePhase(index) {
+            const phases = document.querySelectorAll('.phase');
+            phases[index].classList.toggle('expanded');
+        }
+
+        // 滚动到指定章节
+        function scrollToPhase(index) {
+            const phases = document.querySelectorAll('.phase');
+            phases[index].scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // 回到顶部
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // 滚动动画
+        const phases = document.querySelectorAll('.phase');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        phases.forEach(phase => {
+            observer.observe(phase);
+        });
+
+        // 自动展开第一个章节
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const firstPhase = document.querySelector('.phase');
+                if (firstPhase) {
+                    firstPhase.classList.add('expanded');
+                }
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
