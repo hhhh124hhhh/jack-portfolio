@@ -3,67 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jack · AI 技能开发者 & 自动化工程师</title>
-    <meta name="description" content="专注 AI 技能开发和自动化工程，构建智能技能生态系统，重新定义人机协作">
+    
+    <!-- SEO Meta Tags -->
+    <title>Jack · AI 技能开发者 & 自动化工程师 | 开源项目 & AI 技能生态</title>
+    <meta name="description" content="专注 AI 技能开发和自动化工程，构建智能技能生态系统，重新定义人机协作。25+ 开源项目，70+ AI 技能，30K+ 社区用户。">
+    <meta name="keywords" content="AI 技能开发, 自动化工程, AI 自动化, 开源项目, 技能生态系统, Claude, GPT, 人工智能, 工作流自动化">
+    <meta name="author" content="Jack">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://jack-portfolio.vercel.app/">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Jack · AI 技能开发者 & 自动化工程师">
+    <meta property="og:description" content="专注 AI 技能开发和自动化工程，构建智能技能生态系统，重新定义人机协作。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jack-portfolio.vercel.app/">
+    <meta property="og:image" content="https://jack-portfolio.vercel.app/og-image.png">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="Jack Portfolio">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jack · AI 技能开发者 & 自动化工程师">
+    <meta name="twitter:description" content="专注 AI 技能开发和自动化工程，构建智能技能生态系统，重新定义人机协作。">
+    <meta name="twitter:image" content="https://jack-portfolio.vercel.app/twitter-card.png">
+
+    <!-- Structured Data - Person -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jack",
+        "jobTitle": "AI 技能开发者 & 自动化工程师",
+        "description": "专注 AI 技能开发和自动化工程，构建智能技能生态系统",
+        "email": "jackhappy123rt@gmail.com",
+        "url": "https://jack-portfolio.vercel.app/",
+        "sameAs": [
+            "https://github.com/hhhh124hhhh"
+        ],
+        "knowsAbout": [
+            "AI 技能开发",
+            "自动化工程",
+            "Python",
+            "JavaScript",
+            "TypeScript",
+            "Claude",
+            "GPT",
+            "工作流自动化"
+        ]
+    }
+    </script>
+
+    <!-- Structured Data - WebSite -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Jack Portfolio",
+        "url": "https://jack-portfolio.vercel.app/",
+        "description": "AI 技能开发者与自动化工程师的个人作品集",
+        "inLanguage": "zh-CN",
+        "author": {
+            "@type": "Person",
+            "name": "Jack"
+        }
+    }
+    </script>
+
+    <!-- Performance Optimized Fonts - 阶段 1 字体系统 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="css/common.css">
+
+    <!-- Brand System CSS - 阶段 1 新增 -->
+    <link rel="stylesheet" href="css/brand-system.css">
+
+    <!-- Inline Critical CSS for Performance -->
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            /* Luxury Color Palette */
-            --bg-primary: #0a0a0f;
-            --bg-secondary: #12121a;
-            --bg-card: #16161f;
-            --bg-card-hover: #1a1a24;
-            --text-primary: #ffffff;
-            --text-secondary: rgba(255,255, 255, 0.75);
-            --text-muted: rgba(255,255, 255, 0.45);
-            --accent-gold: #d4af37;
-            --accent-gold-light: rgba(212, 175, 55, 0.15);
-            --accent-purple: #9b59b6;
-            --accent-purple-light: rgba(155, 89, 182, 0.15);
-            --accent-blue: #3498db;
-            --accent-blue-light: rgba(52, 152, 219, 0.15);
-            --accent-green: #27ae60;
-            --accent-green-light: rgba(39, 174, 96, 0.15);
-            --accent-pink: #e91e63;
-            --accent-pink-light: rgba(233, 30, 99, 0.15);
-            --border: rgba(255,255, 255, 0.08);
-            --border-hover: rgba(212, 175, 55, 0.3);
-            --shadow-glow: 0 8px 32px rgba(212, 175, 55, 0.1);
-            --shadow-glow-hover: 0 12px 48px rgba(212, 175, 55, 0.15);
-
-            /* Typography */
-            --font-display: 'Playfair Display', Georgia, serif;
-            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-
-            /* Spacing */
-            --spacing-xs: 0.5rem;
-            --spacing-sm: 1rem;
-            --spacing-md: 2rem;
-            --spacing-lg: 4rem;
-            --spacing-xl: 8rem;
-
-            /* Animation */
-            --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        body {
-            font-family: var(--font-body);
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.75;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
         /* Ambient Background with Particles */
         .ambient-background {
             position: fixed;
@@ -83,7 +101,7 @@
             position: absolute;
             width: 2px;
             height: 2px;
-            background: var(--accent-gold);
+            background: var(--brand-gold);
             border-radius: 50%;
             opacity: 0.3;
             animation: float 15s infinite;
@@ -98,108 +116,6 @@
                 transform: translateY(-100px) translateX(50px);
                 opacity: 0.6;
             }
-        }
-
-        /* Container */
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 var(--spacing-md);
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            background: rgba(10, 10, 15, 0.85);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border-bottom: 1px solid var(--border);
-            padding: var(--spacing-sm) 0;
-            transition: all 0.3s var(--transition-smooth);
-        }
-
-        nav.scrolled {
-            background: rgba(10, 10, 15, 0.98);
-            padding: 0.6rem 0;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
-        }
-
-        .nav-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            text-decoration: none;
-            letter-spacing: 0.03em;
-            position: relative;
-            transition: color 0.3s var(--transition-smooth);
-        }
-
-        .logo::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--accent-gold);
-            transform: scaleX(0);
-            transition: transform 0.3s var(--transition-smooth);
-        }
-
-        .logo:hover {
-            color: var(--accent-gold);
-        }
-
-        .logo:hover::after {
-            transform: scaleX(1);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: var(--spacing-md);
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.3s var(--transition-smooth);
-            position: relative;
-            padding: 0.5rem 0;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent-gold), var(--accent-purple));
-            transition: width 0.3s var(--transition-smooth);
-        }
-
-        .nav-links a:hover {
-            color: var(--text-primary);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
         }
 
         /* Hero Section */
@@ -217,7 +133,7 @@
         }
 
         .hero-label {
-            color: var(--accent-gold);
+            color: var(--brand-gold);
             font-size: 0.85rem;
             font-weight: 600;
             letter-spacing: 0.2em;
@@ -233,7 +149,7 @@
             content: '';
             width: 40px;
             height: 1px;
-            background: var(--accent-gold);
+            background: var(--brand-gold);
         }
 
         .hero h1 {
@@ -242,7 +158,7 @@
             font-weight: 600;
             line-height: 1.08;
             margin-bottom: var(--spacing-sm);
-            background: linear-gradient(135deg, #ffffff 0%, rgba(255,255, 255, 0.85) 100%);
+            background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.85) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -250,7 +166,7 @@
         }
 
         .hero-description {
-            font-size: 1.3rem;
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
             color: var(--text-secondary);
             line-height: 1.9;
             margin-bottom: var(--spacing-lg);
@@ -263,6 +179,7 @@
             gap: var(--spacing-lg);
             margin-top: var(--spacing-lg);
             animation: fadeInUp 1s var(--transition-smooth) 0.45s both;
+            flex-wrap: wrap;
         }
 
         .stat {
@@ -277,14 +194,14 @@
             left: 0;
             width: 40px;
             height: 1px;
-            background: var(--accent-gold);
+            background: var(--brand-gold);
         }
 
         .stat-value {
             font-family: var(--font-display);
-            font-size: 2.8rem;
+            font-size: clamp(2rem, 4vw, 2.8rem);
             font-weight: 600;
-            color: var(--accent-gold);
+            color: var(--brand-gold);
             line-height: 1;
             margin-bottom: 0.25rem;
         }
@@ -297,56 +214,13 @@
             text-transform: uppercase;
         }
 
-        /* Section Styles */
-        section {
-            padding: var(--spacing-xl) 0;
-            position: relative;
-        }
-
-        .section-header {
-            margin-bottom: var(--spacing-lg);
-            position: relative;
-        }
-
-        .section-label {
-            color: var(--accent-gold);
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            margin-bottom: var(--spacing-sm);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .section-label::before {
-            content: '';
-            width: 40px;
-            height: 1px;
-            background: var(--accent-gold);
-        }
-
-        .section-title {
-            font-family: var(--font-display);
-            font-size: clamp(2.5rem, 5vw, 3.8rem);
-            font-weight: 600;
-            margin-bottom: var(--spacing-sm);
-            line-height: 1.15;
-        }
-
-        .section-description {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            max-width: 700px;
-            line-height: 1.8;
-        }
-
-        /* Skills Section */
+        /* Skills Grid */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: var(--spacing-md);
+            container-type: inline-size;
+            container-name: skills;
         }
 
         .skill-card {
@@ -366,7 +240,7 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, var(--accent-gold), var(--accent-purple));
+            background: linear-gradient(90deg, var(--brand-gold), var(--brand-purple));
             transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.5s var(--transition-smooth);
@@ -386,7 +260,7 @@
         .skill-icon {
             width: 48px;
             height: 48px;
-            background: var(--accent-gold-light);
+            background: var(--brand-gold-alpha-15);
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -397,7 +271,7 @@
         }
 
         .skill-card:hover .skill-icon {
-            background: var(--accent-gold);
+            background: var(--brand-gold);
             transform: scale(1.1) rotate(5deg);
         }
 
@@ -417,7 +291,7 @@
         }
 
         .skill-rating {
-            color: var(--accent-gold);
+            color: var(--brand-gold);
             font-size: 1.3rem;
             letter-spacing: 0.05em;
             display: inline-flex;
@@ -432,11 +306,13 @@
             transform: scale(1.1);
         }
 
-        /* Projects Section */
+        /* Projects Grid */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
             gap: var(--spacing-md);
+            container-type: inline-size;
+            container-name: projects;
         }
 
         .project-card {
@@ -453,7 +329,7 @@
             position: absolute;
             inset: 0;
             border-radius: 16px;
-            background: linear-gradient(135deg, var(--accent-gold-light) 0%, transparent 50%);
+            background: linear-gradient(135deg, var(--brand-gold-alpha-15) 0%, transparent 50%);
             opacity: 0;
             transition: opacity 0.5s var(--transition-smooth);
             pointer-events: none;
@@ -486,7 +362,7 @@
             align-items: center;
             justify-content: center;
             font-size: 1.9rem;
-            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            background: linear-gradient(135deg, var(--brand-gold), var(--brand-purple));
             transition: all 0.4s var(--transition-smooth);
             box-shadow: 0 4px 16px rgba(212, 175, 55, 0.2);
         }
@@ -506,20 +382,20 @@
         }
 
         .project-status.running {
-            background: var(--accent-blue-light);
-            color: var(--accent-blue);
+            background: var(--brand-blue-light);
+            color: var(--brand-blue);
             border: 1px solid rgba(52, 152, 219, 0.3);
         }
 
         .project-status.completed {
-            background: var(--accent-purple-light);
-            color: var(--accent-purple);
+            background: var(--brand-purple-light);
+            color: var(--brand-purple);
             border: 1px solid rgba(155, 89, 182, 0.3);
         }
 
         .project-status.development {
-            background: var(--accent-gold-light);
-            color: var(--accent-gold);
+            background: var(--brand-gold-alpha-15);
+            color: var(--brand-gold);
             border: 1px solid rgba(212, 175, 55, 0.3);
         }
 
@@ -574,7 +450,7 @@
         .project-feature {
             font-size: 0.8rem;
             padding: 0.4rem 0.9rem;
-            background: rgba(255,255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
             color: var(--text-secondary);
             font-weight: 500;
@@ -583,9 +459,9 @@
         }
 
         .project-card:hover .project-feature {
-            border-color: var(--accent-gold);
+            border-color: var(--brand-gold);
             color: var(--text-primary);
-            background: var(--accent-gold-light);
+            background: var(--brand-gold-alpha-15);
         }
 
         /* Contact Section */
@@ -623,13 +499,14 @@
             transition: all 0.4s var(--transition-smooth);
             position: relative;
             overflow: hidden;
+            min-height: var(--touch-target);
         }
 
         .contact-link::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: var(--accent-gold);
+            background: var(--brand-gold);
             transform: scaleX(0);
             transform-origin: right;
             transition: transform 0.4s var(--transition-smooth);
@@ -638,7 +515,7 @@
 
         .contact-link:hover {
             color: var(--bg-primary);
-            border-color: var(--accent-gold);
+            border-color: var(--brand-gold);
             transform: translateY(-4px);
             box-shadow: var(--shadow-glow-hover);
         }
@@ -648,79 +525,7 @@
             transform-origin: left;
         }
 
-        /* Footer */
-        footer {
-            padding: var(--spacing-lg) 0;
-            text-align: center;
-            border-top: 1px solid var(--border);
-            margin-top: var(--spacing-xl);
-            position: relative;
-        }
-
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: var(--spacing-sm);
-        }
-
-        .footer-text {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: var(--spacing-md);
-            list-style: none;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s var(--transition-smooth);
-        }
-
-        .footer-links a:hover {
-            color: var(--accent-gold);
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Scroll Animation */
-        .fade-in-section {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 1s var(--transition-smooth), transform 1s var(--transition-smooth);
-        }
-
-        .fade-in-section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive */
+        /* Responsive Tweaks */
         @media (max-width: 768px) {
             .hero-stats {
                 flex-direction: column;
@@ -735,10 +540,6 @@
                 grid-template-columns: 1fr;
             }
 
-            .nav-links {
-                display: none;
-            }
-
             .hero-description {
                 font-size: 1.15rem;
             }
@@ -751,8 +552,11 @@
     </style>
 </head>
 <body>
+    <!-- Skip to Content Link for Accessibility -->
+    <a href="#about" class="skip-to-content">跳过导航，直达内容</a>
+
     <!-- Ambient Background with Particles -->
-    <div class="ambient-background">
+    <div class="ambient-background" aria-hidden="true">
         <div class="particle" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
         <div class="particle" style="top: 60%; left: 80%; animation-delay: 2s;"></div>
         <div class="particle" style="top: 80%; left: 30%; animation-delay: 4s;"></div>
@@ -760,432 +564,563 @@
         <div class="particle" style="top: 70%; left: 50%; animation-delay: 8s;"></div>
     </div>
 
-    <!-- Navigation -->
-    <nav id="navbar">
+    <!-- Navigation - 阶段 1: 使用品牌 Logo -->
+    <nav id="navbar" role="navigation" aria-label="主导航">
         <div class="container nav-content">
-            <a href="#" class="logo">Jack</a>
-            <ul class="nav-links">
-                <li><a href="#about">关于</a></li>
-                <li><a href="#skills">技能</a></li>
-                <li><a href="#projects">项目</a></li>
-                <li><a href="#contact">联系</a></li>
+            <a href="#about" class="brand-logo" aria-label="Jack 首页">
+                <div class="brand-logo-icon">
+                    <!-- 品牌 Logo: 首字母 J + AI 电路元素 -->
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#d4af37"/>
+                                <stop offset="100%" style="stop-color:#f0d67a"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- 外圆 -->
+                        <circle cx="20" cy="20" r="18" fill="none" stroke="url(#logoGradient)" stroke-width="1.5" opacity="0.6"/>
+                        <!-- AI 电路元素 -->
+                        <path d="M20 6 L20 10 M6 20 L10 20 M34 20 L30 20 M20 34 L20 30" stroke="url(#logoGradient)" stroke-width="1.5" stroke-linecap="round"/>
+                        <circle cx="10" cy="10" r="1.5" fill="url(#logoGradient)"/>
+                        <circle cx="30" cy="10" r="1.5" fill="url(#logoGradient)"/>
+                        <circle cx="30" cy="30" r="1.5" fill="url(#logoGradient)"/>
+                        <!-- 字母 J -->
+                        <text x="20" y="27" 
+                              text-anchor="middle" 
+                              font-family="Cormorant Garamond, Georgia, serif" 
+                              font-size="20" 
+                              font-weight="600" 
+                              fill="url(#logoGradient)">J</text>
+                    </svg>
+                </div>
+                <span class="brand-logo-text">Jack</span>
+            </a>
+            
+            <!-- Mobile Menu Toggle -->
+            <button 
+                class="mobile-menu-toggle" 
+                aria-label="切换菜单"
+                aria-expanded="false"
+                aria-controls="nav-links"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-links" id="nav-links" role="menubar">
+                <li role="none"><a href="#about" role="menuitem">关于</a></li>
+                <li role="none"><a href="#skills" role="menuitem">技能</a></li>
+                <li role="none"><a href="#projects" role="menuitem">项目</a></li>
+                <li role="none"><a href="#contact" role="menuitem">联系</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="about">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-label">欢迎</div>
-                <h1>AI 技能开发者<br>& 自动化工程师</h1>
-                <p class="hero-description">
-                    专注于探索 AI 自动化的边界，构建智能化的技能生态系统。致力于重新定义人机协作的可能性，每一个项目都是对简单、高效、可控理念的极致实践。从自动化工作流到智能化记忆系统，持续推动技术边界。
-                </p>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <div class="stat-value">25+</div>
-                        <div class="stat-label">开源项目</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-value">70+</div>
-                        <div class="stat-label">AI 技能</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-value">30K+</div>
-                        <div class="stat-label">社区用户</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="fade-in-section">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-label">专业能力</div>
-                <h2 class="section-title">技能矩阵</h2>
-                <p class="section-description">
-                    融合多种技术栈，专注于 AI 驱动的自动化解决方案和技能生态系统构建，打造独一无二的智能工作流。
-                </p>
-            </div>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon">⚙️</div>
-                    <div class="skill-name">开发工作流</div>
-                    <p class="skill-description">
-                        精通全栈开发流程，从前端设计到后端架构，构建可扩展、可维护的自动化工作流系统。
+    <!-- Main Content -->
+    <main role="main">
+        <!-- Hero Section - 阶段 1: 添加品牌装饰元素 -->
+        <section class="hero" id="about" aria-labelledby="hero-title">
+            <!-- 品牌装饰线 -->
+            <div class="brand-decoration-line horizontal" aria-hidden="true"></div>
+            <div class="brand-decoration-line vertical" aria-hidden="true"></div>
+            
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-label">欢迎</div>
+                    <h1 id="hero-title">AI 技能开发者<br>& 自动化工程师</h1>
+                    <p class="hero-description">
+                        专注于探索 AI 自动化的边界，构建智能化的技能生态系统。致力于重新定义人机协作的可能性，每一个项目都是对简单、高效、可控理念的极致实践。从自动化工作流到智能化记忆系统，持续推动技术边界。
                     </p>
-                    <div class="skill-rating">
-                        <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+                    <div class="hero-stats" aria-label="项目统计数据">
+                        <div class="stat">
+                            <div class="stat-value" role="text" aria-label="25个开源项目">25+</div>
+                            <div class="stat-label">开源项目</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value" role="text" aria-label="70个AI技能">70+</div>
+                            <div class="stat-label">AI 技能</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value" role="text" aria-label="3万名社区用户">30K+</div>
+                            <div class="stat-label">社区用户</div>
+                        </div>
                     </div>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon">🛠️</div>
-                    <div class="skill-name">技术栈</div>
-                    <p class="skill-description">
-                        熟练掌握 Python、JavaScript、TypeScript 等现代编程语言，以及 Node.js、React 等主流框架，打造高性能应用。
+            </div>
+        </section>
+
+        <!-- Skills Section - 阶段 1: 添加品牌装饰角 -->
+        <section id="skills" class="fade-in-section" aria-labelledby="skills-title">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-label">专业能力</div>
+                    <h2 id="skills-title" class="section-title">技能矩阵</h2>
+                    <p class="section-description">
+                        融合多种技术栈，专注于 AI 驱动的自动化解决方案和技能生态系统构建，打造独一无二的智能工作流。
                     </p>
-                    <div class="skill-rating">
-                        <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
-                    </div>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon">🤖</div>
-                    <div class="skill-name">人工智能</div>
-                    <p class="skill-description">
-                        深入研究 Claude、GPT、Gemini 等 AI 模型，熟练运用提示词工程、函数调用、多模态处理等前沿技术。
+                <div class="skills-grid" role="list" aria-label="技能列表">
+                    <article class="skill-card" role="listitem">
+                        <!-- 品牌装饰角 -->
+                        <div class="brand-corner top-left" aria-hidden="true"></div>
+                        <div class="brand-corner bottom-right" aria-hidden="true"></div>
+                        
+                        <div class="skill-icon" aria-hidden="true">⚙️</div>
+                        <h3 class="skill-name">开发工作流</h3>
+                        <p class="skill-description">
+                            精通全栈开发流程，从前端设计到后端架构，构建可扩展、可维护的自动化工作流系统。
+                        </p>
+                        <div class="skill-rating" aria-label="评分: 5星">
+                            <span aria-hidden="true">⭐</span><span aria-hidden="true">⭐</span><span aria-hidden="true">⭐</span><span aria-hidden="true">⭐</span><span aria-hidden="true">⭐</span>
+                        </div>
+                    </article>
+                    <article class="skill-card" role="listitem">
+                        <div class="brand-corner top-left" aria-hidden="true"></div>
+                        <div class="brand-corner bottom-right" aria-hidden="true"></div>
+                        
+                        <div class="skill-icon" aria-hidden="true">🛠️</div>
+                        <h3 class="skill-name">技术栈</h3>
+                        <p class="skill-description">
+                            熟练掌握 Python、JavaScript、TypeScript 等现代编程语言，以及 Node.js、React 等主流框架，打造高性能应用。
+                        </p>
+                        <div class="skill-rating" aria-label="评分: 5星">
+                            <span aria-hidden="true">⭐</span><span aria-hidden="true">⭐</span><span aria-hidden="true">⭐</span><span aria-hidden="true">⭐</span><span aria-hidden="true">⭐</span>
+                        </div>
+                    </article>
+                    <article class="skill-card" role="listitem">
+                        <div class="brand-corner top-left" aria-hidden="true"></div>
+                        <div class="brand-corner bottom-right" aria-hidden="true"></div>
+                        
+                        <div class="skill-icon" aria-hidden="true">🤖</div>
+                        <h3 class="skill-name">人工智能</h3>
+                        <p class="skill-description">
+                            深入研究 Claude、GPT、Gemini 等 AI 模型，熟练运用提示词工程、函数调用、多模态处理等前沿技术。
+                        </p>
+                        <div class="skill-rating" aria-label="评分: 6星">
+                            <span aria-hidden="true">⭐</span><span aria-hidden="true">⭐</span><span aria-hidden="true">⭐</span><span aria-hidden="true">⭐</span><span aria-hidden="true">⭐</span><span aria-hidden="true">⭐</span>
+                        </div>
+                    </article>
+                    <article class="skill-card" role="listitem">
+                        <div class="brand-corner top-left" aria-hidden="true"></div>
+                        <div class="brand-corner bottom-right" aria-hidden="true"></div>
+                        
+                        <div class="skill-icon" aria-hidden="true">🚀</div>
+                        <h3 class="skill-name">自动化工程</h3>
+                        <p class="skill-description">
+                            专注于构建智能自动化系统，从 CI/CD 流水线到 AI 驱动的自动化工作流，大幅提升生产力，释放人类创造力。
+                        </p>
+                        <div class="skill-rating" aria-label="评分: 5星">
+                            <span aria-hidden="true">⭐</span><span aria-hidden="true">⭐</span><span aria-hidden="true">⭐</span><span aria-hidden="true">⭐</span><span aria-hidden="true">⭐</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section - 阶段 1: 添加品牌装饰元素 -->
+        <section id="projects" class="fade-in-section" aria-labelledby="projects-title">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-label">精选项目</div>
+                    <h2 id="projects-title" class="section-title">项目矩阵</h2>
+                    <p class="section-description">
+                        持续开发开源项目，涵盖 AI 技能、自动化工具、研究系统等多个领域，总计 26+ 个项目，每个都有独特的创新点。
                     </p>
-                    <div class="skill-rating">
-                        <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
-                    </div>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon">🚀</div>
-                    <div class="skill-name">自动化工程</div>
-                    <p class="skill-description">
-                        专注于构建智能自动化系统，从 CI/CD 流水线到 AI 驱动的自动化工作流，大幅提升生产力，释放人类创造力。
+                <div class="projects-grid" role="list" aria-label="项目列表">
+                    <!-- FLAGSHIP -->
+                    <article class="project-card" role="listitem">
+                        <div class="brand-gradient-border" aria-hidden="true"></div>
+                        <div class="project-header">
+                            <div class="project-icon" aria-hidden="true">🚀</div>
+                            <div class="project-status featured">特色项目</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">AI Skills Assistant</h3>
+                            <p class="project-description">
+                                AI 技能管理助手，通过对话管理 70+ AI 技能。可以直接询问技能列表、搜索新技能、安装更新技能、查看技能详情，简单的对话式操作，无需复杂的前后端界面。
+                            </p>
+                            <div class="project-features">
+                                <span class="project-feature">70+ 技能</span>
+                                <span class="project-feature">对话管理</span>
+                                <span class="project-feature">简单易用</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- TOOLS -->
+                    <article class="project-card" role="listitem">
+                        <div class="brand-gradient-border" aria-hidden="true"></div>
+                        <div class="project-header">
+                            <div class="project-icon" aria-hidden="true">🏆</div>
+                            <div class="project-status completed">已完成</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Achievement System</h3>
+                            <p class="project-description">
+                                终端驱动的成就追踪系统，采用 CLI 工具和 JSON 存储架构，支持成就定义、进度追踪、统计分析等功能，让成就系统游戏化，激励持续进步。
+                            </p>
+                            <div class="project-features">
+                                <span class="project-feature">CLI 工具</span>
+                                <span class="project-feature">Python</span>
+                                <span class="project-feature">JSON 存储</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" role="listitem">
+                        <div class="brand-gradient-border" aria-hidden="true"></div>
+                        <div class="project-header">
+                            <div class="project-icon" aria-hidden="true">🏪</div>
+                            <div class="project-status completed">已完成</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">AI Prompt Marketplace</h3>
+                            <p class="project-description">
+                                AI 提示词市场平台，前后端全栈开发，提供提示词发布、搜索、评价、交易等完整功能，打造 AI 创作者生态系统，连接创作者和用户。
+                            </p>
+                            <div class="project-features">
+                                <span class="project-feature">市场平台</span>
+                                <span class="project-feature">交易系统</span>
+                                <span class="project-feature">评价体系</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" role="listitem">
+                        <div class="brand-gradient-border" aria-hidden="true"></div>
+                        <div class="project-header">
+                            <div class="project-icon" aria-hidden="true">🔄</div>
+                            <div class="project-status completed">已完成</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">AI Prompt to Skill</h3>
+                            <p class="project-description">
+                                自动转换 AI 提示词为 Clawdbot Skills 的自动化工具，支持从多平台采集提示词、质量评估、格式转换、自动打包发布，让创意变现自动化。
+                            </p>
+                            <div class="project-features">
+                                <span class="project-feature">自动化转换</span>
+                                <span class="project-feature">质量评估</span>
+                                <span class="project-feature">多平台采集</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" role="listitem">
+                        <div class="brand-gradient-border" aria-hidden="true"></div>
+                        <div class="project-header">
+                            <div class="project-icon" aria-hidden="true">🔍</div>
+                            <div class="project-status running">运行中</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Moltbot Research</h3>
+                            <p class="project-description">
+                                AI 研究和趋势分析系统，整合百度搜索、百度学术检索、Tavily API、SearXNG 等多源数据收集，自动化收集和分析 AI 相关信息、学术论文、技术趋势，构建 AI 知识图谱，洞察未来方向。
+                            </p>
+                            <div class="project-features">
+                                <span class="project-feature">百度搜索</span>
+                                <span class="project-feature">学术检索</span>
+                                <span class="project-feature">多源聚合</span>
+                                <span class="project-feature">Tavily</span>
+                                <span class="project-feature">SearXNG</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" role="listitem">
+                        <div class="brand-gradient-border" aria-hidden="true"></div>
+                        <div class="project-header">
+                            <div class="project-icon" aria-hidden="true">🌐</div>
+                            <div class="project-status completed">已完成</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">SearXNG Self-Hosted</h3>
+                            <p class="project-description">
+                                自托管隐私搜索引擎，采用 SearXNG 元搜索引擎架构，支持多引擎聚合、隐私保护、结果过滤等功能，掌控自己的搜索体验，拒绝数据追踪。
+                            </p>
+                            <div class="project-features">
+                                <span class="project-feature">隐私搜索</span>
+                                <span class="project-feature">自托管</span>
+                                <span class="project-feature">结果过滤</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" role="listitem">
+                        <div class="brand-gradient-border" aria-hidden="true"></div>
+                        <div class="project-header">
+                            <div class="project-icon" aria-hidden="true">⚡</div>
+                            <div class="project-status running">运行中</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Automation Workflows</h3>
+                            <p class="project-description">
+                                智能自动化工作流系统，支持自定义触发器、任务调度、错误处理、日志记录等功能，让重复工作自动化，解放双手，专注创造。
+                            </p>
+                            <div class="project-features">
+                                <span class="project-feature">任务调度</span>
+                                <span class="project-feature">触发器</span>
+                                <span class="project-feature">错误处理</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" role="listitem">
+                        <div class="brand-gradient-border" aria-hidden="true"></div>
+                        <div class="project-header">
+                            <div class="project-icon" aria-hidden="true">🌉</div>
+                            <div class="project-status completed">已完成</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Twitter API Bridge</h3>
+                            <p class="project-description">
+                                Twitter API 桥接服务，提供稳定的 API 接口，支持推文搜索、用户信息获取、趋势分析等功能，突破 Twitter API 限制，无缝集成社交媒体数据。
+                            </p>
+                            <div class="project-features">
+                                <span class="project-feature">API 桥接</span>
+                                <span class="project-feature">推文搜索</span>
+                                <span class="project-feature">趋势分析</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- SKILLS -->
+                    <article class="project-card" role="listitem">
+                        <div class="brand-gradient-border" aria-hidden="true"></div>
+                        <div class="project-header">
+                            <div class="project-icon" aria-hidden="true">📋</div>
+                            <div class="project-status completed">已完成</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Career Planner Skill</h3>
+                            <p class="project-description">
+                                智能职业规划技能，基于用户背景和目标，提供个性化的职业发展路径建议和技能提升计划，让职业规划不再迷茫，AI 成为你的职业导师。
+                            </p>
+                            <div class="project-features">
+                                <span class="project-feature">职业规划</span>
+                                <span class="project-feature">路径建议</span>
+                                <span class="project-feature">技能评估</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" role="listitem">
+                        <div class="brand-gradient-border" aria-hidden="true"></div>
+                        <div class="project-header">
+                            <div class="project-icon" aria-hidden="true">📄</div>
+                            <div class="project-status completed">已完成</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Resume Builder Skill</h3>
+                            <p class="project-description">
+                                智能简历生成器，根据用户输入自动生成专业简历，支持多种模板、导出格式、自定义样式等功能，让简历制作自动化，求职更轻松。
+                            </p>
+                            <div class="project-features">
+                                <span class="project-feature">简历生成</span>
+                                <span class="project-feature">多种模板</span>
+                                <span class="project-feature">导出功能</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" role="listitem">
+                        <div class="brand-gradient-border" aria-hidden="true"></div>
+                        <div class="project-header">
+                            <div class="project-icon" aria-hidden="true">💼</div>
+                            <div class="project-status completed">已完成</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Job Interviewer Skill</h3>
+                            <p class="project-description">
+                                智能面试官技能，模拟真实面试场景，提供针对性的提问、实时反馈、表现评估等功能，让面试准备不再焦虑，AI 成为你的面试教练。
+                            </p>
+                            <div class="project-features">
+                                <span class="project-feature">模拟面试</span>
+                                <span class="project-feature">实时反馈</span>
+                                <span class="project-feature">表现评估</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- NEW PROJECTS -->
+                    <article class="project-card" role="listitem">
+                        <div class="brand-gradient-border" aria-hidden="true"></div>
+                        <div class="project-header">
+                            <div class="project-icon" aria-hidden="true">🤖</div>
+                            <div class="project-status running">运行中</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">AI Auto Research Hub</h3>
+                            <p class="project-description">
+                                智能自动化信息收集中心，整合深度研究对话、Tavily Search、SearXNG、Reddit、GitHub、Hacker News 等多数据源，支持多轮深度对话、逐步引导厘清需求，自动化收集 AI 相关信息、趋势分析、论文追踪，构建 AI 知识库，节省研究时间，聚焦创新。
+                            </p>
+                            <div class="project-features">
+                                <span class="project-feature">深度研究</span>
+                                <span class="project-feature">多轮对话</span>
+                                <span class="project-feature">智能分析</span>
+                                <span class="project-feature">多数据源</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" role="listitem">
+                        <div class="brand-gradient-border" aria-hidden="true"></div>
+                        <div class="project-header">
+                            <div class="project-icon" aria-hidden="true">🧠</div>
+                            <div class="project-status completed">已完成</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Smart Memory System</h3>
+                            <p class="project-description">
+                                智能记忆系统 v2.1，支持百度百科知识库查询，基于 OpenClaw 的记忆架构改造，实现语义相似度匹配、上下文注入、智能自动记忆、同义词扩展等功能，提供 REST-like API 接口，让 AI 记忆系统真正智能化，知识更权威。
+                            </p>
+                            <div class="project-features">
+                                <span class="project-feature">百度百科</span>
+                                <span class="project-feature">权威知识库</span>
+                                <span class="project-feature">语义匹配</span>
+                                <span class="project-feature">上下文注入</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" role="listitem">
+                        <div class="brand-gradient-border" aria-hidden="true"></div>
+                        <div class="project-header">
+                            <div class="project-icon" aria-hidden="true">📊</div>
+                            <div class="project-status completed">已完成</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Content Discovery Assistant</h3>
+                            <p class="project-description">
+                                AI 内容热点收集助手 v5.4，自动化收集 Hacker News、SearXNG、百度搜索等 AI 相关热点，支持百度百科知识库查询，智能分类 11 种内容方向，生成中文创作建议，支持自动发送到 Slack，让自媒体创作内容获取自动化。
+                            </p>
+                            <div class="project-features">
+                                <span class="project-feature">百度搜索</span>
+                                <span class="project-feature">百度百科</span>
+                                <span class="project-feature">热点收集</span>
+                                <span class="project-feature">智能分类</span>
+                                <span class="project-feature">自动推送</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- NEW PROJECT -->
+                    <article class="project-card" role="listitem">
+                        <div class="brand-gradient-border" aria-hidden="true"></div>
+                        <div class="project-header">
+                            <div class="project-icon" aria-hidden="true">🎨</div>
+                            <div class="project-status development">概念展示</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">AI Content Creator</h3>
+                            <p class="project-description">
+                                智能内容创作工具概念，通过串联多个百度千帆技能实现内容创作能力：使用 AI PPT 生成技能创建演示文稿，使用 AI 绘本生成技能创建配图绘本。基于现有技能组合，无需独立项目代码。
+                            </p>
+                            <div class="project-features">
+                                <span class="project-feature">技能串联</span>
+                                <span class="project-feature">AI PPT</span>
+                                <span class="project-feature">AI 绘本</span>
+                                <span class="project-feature">百度千帆</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section - 阶段 1: 添加品牌分隔线 -->
+        <section id="contact" class="fade-in-section" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="section-label">联系我</div>
+                    <h2 id="contact-title" class="section-title">开始合作</h2>
+                    <p class="contact-description">
+                        如果你有有趣的项目想法，或者想聊聊 AI 自动化、技能开发、开源合作等话题，随时联系我。
                     </p>
-                    <div class="skill-rating">
-                        <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+                    
+                    <!-- 品牌分隔线 -->
+                    <div class="brand-divider" aria-hidden="true"></div>
+                    
+                    <div class="contact-links">
+                        <a href="mailto:jackhappy123rt@gmail.com" class="contact-link" aria-label="发送邮件到 jackhappy123rt@gmail.com">
+                            📧 jackhappy123rt@gmail.com
+                        </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Projects Section -->
-    <section id="projects" class="fade-in-section">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-label">精选项目</div>
-                <h2 class="section-title">项目矩阵</h2>
-                <p class="section-description">
-                    持续开发开源项目，涵盖 AI 技能、自动化工具、研究系统等多个领域，总计 26+ 个项目，每个都有独特的创新点。
-                </p>
-            </div>
-            <div class="projects-grid">
-                <!-- FLAGSHIP -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">🚀</div>
-                        <div class="project-status featured">特色项目</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">AI Skills Assistant</h3>
-                        <p class="project-description">
-                            AI 技能管理助手，通过对话管理 70+ AI 技能。可以直接询问技能列表、搜索新技能、安装更新技能、查看技能详情，简单的对话式操作，无需复杂的前后端界面。
-                        </p>
-                        <div class="project-features">
-                            <span class="project-feature">70+ 技能</span>
-                            <span class="project-feature">对话管理</span>
-                            <span class="project-feature">简单易用</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- TOOLS -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">🏆</div>
-                        <div class="project-status completed">已完成</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Achievement System</h3>
-                        <p class="project-description">
-                            终端驱动的成就追踪系统，采用 CLI 工具和 JSON 存储架构，支持成就定义、进度追踪、统计分析等功能，让成就系统游戏化，激励持续进步。
-                        </p>
-                        <div class="project-features">
-                            <span class="project-feature">CLI 工具</span>
-                            <span class="project-feature">Python</span>
-                            <span class="project-feature">JSON 存储</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">🏪</div>
-                        <div class="project-status completed">已完成</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">AI Prompt Marketplace</h3>
-                        <p class="project-description">
-                            AI 提示词市场平台，前后端全栈开发，提供提示词发布、搜索、评价、交易等完整功能，打造 AI 创作者生态系统，连接创作者和用户。
-                        </p>
-                        <div class="project-features">
-                            <span class="project-feature">市场平台</span>
-                            <span class="project-feature">交易系统</span>
-                            <span class="project-feature">评价体系</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">🔄</div>
-                        <div class="project-status completed">已完成</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">AI Prompt to Skill</h3>
-                        <p class="project-description">
-                            自动转换 AI 提示词为 Clawdbot Skills 的自动化工具，支持从多平台采集提示词、质量评估、格式转换、自动打包发布，让创意变现自动化。
-                        </p>
-                        <div class="project-features">
-                            <span class="project-feature">自动化转换</span>
-                            <span class="project-feature">质量评估</span>
-                            <span class="project-feature">多平台采集</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">🔍</div>
-                        <div class="project-status running">运行中</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Moltbot Research</h3>
-                        <p class="project-description">
-                            AI 研究和趋势分析系统，整合百度搜索、百度学术检索、Tavily API、SearXNG 等多源数据收集，自动化收集和分析 AI 相关信息、学术论文、技术趋势，构建 AI 知识图谱，洞察未来方向。
-                        </p>
-                        <div class="project-features">
-                            <span class="project-feature">百度搜索</span>
-                            <span class="project-feature">学术检索</span>
-                            <span class="project-feature">多源聚合</span>
-                            <span class="project-feature">Tavily</span>
-                            <span class="project-feature">SearXNG</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">🌐</div>
-                        <div class="project-status completed">已完成</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">SearXNG Self-Hosted</h3>
-                        <p class="project-description">
-                            自托管隐私搜索引擎，采用 SearXNG 元搜索引擎架构，支持多引擎聚合、隐私保护、结果过滤等功能，掌控自己的搜索体验，拒绝数据追踪。
-                        </p>
-                        <div class="project-features">
-                            <span class="project-feature">隐私搜索</span>
-                            <span class="project-feature">自托管</span>
-                            <span class="project-feature">结果过滤</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">⚡</div>
-                        <div class="project-status running">运行中</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Automation Workflows</h3>
-                        <p class="project-description">
-                            智能自动化工作流系统，支持自定义触发器、任务调度、错误处理、日志记录等功能，让重复工作自动化，解放双手，专注创造。
-                        </p>
-                        <div class="project-features">
-                            <span class="project-feature">任务调度</span>
-                            <span class="project-feature">触发器</span>
-                            <span class="project-feature">错误处理</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">🌉</div>
-                        <div class="project-status completed">已完成</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Twitter API Bridge</h3>
-                        <p class="project-description">
-                            Twitter API 桥接服务，提供稳定的 API 接口，支持推文搜索、用户信息获取、趋势分析等功能，突破 Twitter API 限制，无缝集成社交媒体数据。
-                        </p>
-                        <div class="project-features">
-                            <span class="project-feature">API 桥接</span>
-                            <span class="project-feature">推文搜索</span>
-                            <span class="project-feature">趋势分析</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SKILLS -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">📋</div>
-                        <div class="project-status completed">已完成</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Career Planner Skill</h3>
-                        <p class="project-description">
-                            智能职业规划技能，基于用户背景和目标，提供个性化的职业发展路径建议和技能提升计划，让职业规划不再迷茫，AI 成为你的职业导师。
-                        </p>
-                        <div class="project-features">
-                            <span class="project-feature">职业规划</span>
-                            <span class="project-feature">路径建议</span>
-                            <span class="project-feature">技能评估</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">📄</div>
-                        <div class="project-status completed">已完成</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Resume Builder Skill</h3>
-                        <p class="project-description">
-                            智能简历生成器，根据用户输入自动生成专业简历，支持多种模板、导出格式、自定义样式等功能，让简历制作自动化，求职更轻松。
-                        </p>
-                        <div class="project-features">
-                            <span class="project-feature">简历生成</span>
-                            <span class="project-feature">多种模板</span>
-                            <span class="project-feature">导出功能</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">💼</div>
-                        <div class="project-status completed">已完成</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Job Interviewer Skill</h3>
-                        <p class="project-description">
-                            智能面试官技能，模拟真实面试场景，提供针对性的提问、实时反馈、表现评估等功能，让面试准备不再焦虑，AI 成为你的面试教练。
-                        </p>
-                        <div class="project-features">
-                            <span class="project-feature">模拟面试</span>
-                            <span class="project-feature">实时反馈</span>
-                            <span class="project-feature">表现评估</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- NEW PROJECTS -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">🤖</div>
-                        <div class="project-status running">运行中</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">AI Auto Research Hub</h3>
-                        <p class="project-description">
-                            智能自动化信息收集中心，整合深度研究对话、Tavily Search、SearXNG、Reddit、GitHub、Hacker News 等多数据源，支持多轮深度对话、逐步引导厘清需求，自动化收集 AI 相关信息、趋势分析、论文追踪，构建 AI 知识库，节省研究时间，聚焦创新。
-                        </p>
-                        <div class="project-features">
-                            <span class="project-feature">深度研究</span>
-                            <span class="project-feature">多轮对话</span>
-                            <span class="project-feature">智能分析</span>
-                            <span class="project-feature">多数据源</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">🧠</div>
-                        <div class="project-status completed">已完成</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Smart Memory System</h3>
-                        <p class="project-description">
-                            智能记忆系统 v2.1，支持百度百科知识库查询，基于 OpenClaw 的记忆架构改造，实现语义相似度匹配、上下文注入、智能自动记忆、同义词扩展等功能，提供 REST-like API 接口，让 AI 记忆系统真正智能化，知识更权威。
-                        </p>
-                        <div class="project-features">
-                            <span class="project-feature">百度百科</span>
-                            <span class="project-feature">权威知识库</span>
-                            <span class="project-feature">语义匹配</span>
-                            <span class="project-feature">上下文注入</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">📊</div>
-                        <div class="project-status completed">已完成</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Content Discovery Assistant</h3>
-                        <p class="project-description">
-                            AI 内容热点收集助手 v5.4，自动化收集 Hacker News、SearXNG、百度搜索等 AI 相关热点，支持百度百科知识库查询，智能分类 11 种内容方向，生成中文创作建议，支持自动发送到 Slack，让自媒体创作内容获取自动化。
-                        </p>
-                        <div class="project-features">
-                            <span class="project-feature">百度搜索</span>
-                            <span class="project-feature">百度百科</span>
-                            <span class="project-feature">热点收集</span>
-                            <span class="project-feature">智能分类</span>
-                            <span class="project-feature">自动推送</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- NEW PROJECT -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">🎨</div>
-                        <div class="project-status development">概念展示</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">AI Content Creator</h3>
-                        <p class="project-description">
-                            智能内容创作工具概念，通过串联多个百度千帆技能实现内容创作能力：使用 AI PPT 生成技能创建演示文稿，使用 AI 绘本生成技能创建配图绘本。基于现有技能组合，无需独立项目代码。
-                        </p>
-                        <div class="project-features">
-                            <span class="project-feature">技能串联</span>
-                            <span class="project-feature">AI PPT</span>
-                            <span class="project-feature">AI 绘本</span>
-                            <span class="project-feature">百度千帆</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="fade-in-section">
-        <div class="container">
-            <div class="contact-content">
-                <div class="section-label">联系我</div>
-                <h2 class="section-title">开始合作</h2>
-                <p class="contact-description">
-                    如果你有有趣的项目想法，或者想聊聊 AI 自动化、技能开发、开源合作等话题，随时联系我。
-                </p>
-                <div class="contact-links">
-                    <a href="mailto:jackhappy123rt@gmail.com" class="contact-link">
-                        📧 jackhappy123rt@gmail.com
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
+    <!-- Footer - 阶段 1: 添加品牌装饰 -->
+    <footer role="contentinfo">
         <div class="container">
             <div class="footer-content">
+                <!-- Footer 品牌 Logo -->
+                <div class="brand-logo" style="margin-bottom: var(--spacing-sm);">
+                    <div class="brand-logo-icon" style="width: 32px; height: 32px;">
+                        <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="footerLogoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#d4af37"/>
+                                    <stop offset="100%" style="stop-color:#f0d67a"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="20" cy="20" r="18" fill="none" stroke="url(#footerLogoGradient)" stroke-width="1.5" opacity="0.6"/>
+                            <path d="M20 6 L20 10 M6 20 L10 20 M34 20 L30 20 M20 34 L20 30" stroke="url(#footerLogoGradient)" stroke-width="1.5" stroke-linecap="round"/>
+                            <circle cx="10" cy="10" r="1.5" fill="url(#footerLogoGradient)"/>
+                            <circle cx="30" cy="10" r="1.5" fill="url(#footerLogoGradient)"/>
+                            <circle cx="30" cy="30" r="1.5" fill="url(#footerLogoGradient)"/>
+                            <text x="20" y="27" 
+                                  text-anchor="middle" 
+                                  font-family="Cormorant Garamond, Georgia, serif" 
+                                  font-size="20" 
+                                  font-weight="600" 
+                                  fill="url(#footerLogoGradient)">J</text>
+                        </svg>
+                    </div>
+                    <span class="brand-logo-text" style="font-size: 1.1rem;">Jack</span>
+                </div>
+                
                 <p class="footer-text">
                     © 2026 Jack. 用心构建每一个项目，探索 AI 自动化的无限可能。总计 26+ 开源项目，持续创新中。
                 </p>
-                <ul class="footer-links">
-                    <li><a href="https://github.com/hhhh124hhhh" target="_blank" rel="noopener">GitHub</a></li>
-                    <li><a href="mailto:jackhappy123rt@gmail.com">Email</a></li>
+                <ul class="footer-links" role="list">
+                    <li role="none"><a href="https://github.com/hhhh124hhhh" target="_blank" rel="noopener noreferrer" role="listitem">GitHub</a></li>
+                    <li role="none"><a href="mailto:jackhappy123rt@gmail.com" role="listitem">Email</a></li>
                 </ul>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- Scripts - 阶段 1: 添加字体加载检测 -->
     <script>
+        // 字体加载检测
+        document.documentElement.classList.add('font-loading');
+        document.fonts.ready.then(() => {
+            document.documentElement.classList.remove('font-loading');
+            document.documentElement.classList.add('font-loaded');
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            mobileMenuToggle.setAttribute('aria-expanded', navLinks.classList.contains('active'));
+        });
+
+        // Close mobile menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+
         // Navbar Scroll Effect
         const navbar = document.getElementById('navbar');
         let lastScrollY = window.scrollY;
@@ -1226,6 +1161,9 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
+                    // Update focus for accessibility
+                    target.setAttribute('tabindex', '-1');
+                    target.focus();
                 }
             });
         });
