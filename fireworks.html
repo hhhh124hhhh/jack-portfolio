@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新年快乐 - Happy New Year</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        canvas {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 2;
+            pointer-events: none;
+            color: #fff;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 8vw, 4rem);
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5),
+                         0 0 40px rgba(255, 215, 0, 0.3);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        p {
+            font-size: clamp(0.8rem, 3vw, 1.2rem);
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0.5rem;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.5),
+                             0 0 40px rgba(255, 215, 0, 0.3);
+            }
+            to {
+                text-shadow: 0 0 30px rgba(255, 255, 255, 0.8),
+                             0 0 60px rgba(255, 215, 0, 0.5);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                margin-bottom: 0.8rem;
+            }
+            p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="fireworks"></canvas>
+    <div class="content">
+        <h1>新年快乐</h1>
+        <p>Happy New Year</p>
+        <p>点击屏幕或等待自动播放烟花</p>
+    </div>
+
+    <script>
+        // 烟花效果 - Canvas 实现
+        const canvas = document.getElementById('fireworks');
+        const ctx = canvas.getContext('2d');
+
+        // 设置 canvas 尺寸
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        // 粒子类
+        class Particle {
+            constructor(x, y, color, velocity, alpha = 1) {
+                this.x = x;
+                this.y = y;
+                this.color = color;
+                this.velocity = velocity;
+                this.alpha = alpha;
+                this.friction = 0.98; // 摩擦力
+                this.gravity = 0.02; // 重力
+                this.decay = Math.random() * 0.015 + 0.005; // 消失速度
+            }
+
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.alpha;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+                ctx.restore();
+            }
+
+            update() {
+                this.velocity.x *= this.friction;
+                this.velocity.y *= this.friction;
+                this.velocity.y += this.gravity;
+                this.x += this.velocity.x;
+                this.y += this.velocity.y;
+                this.alpha -= this.decay;
+            }
+        }
+
+        // 烟花类
+        class Firework {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.particles = [];
+                this.hue = Math.random() * 360;
+                this.exploded = false;
+                this.explode();
+            }
+
+            explode() {
+                const particleCount = 100 + Math.random() * 50;
+                const colors = [
+                    `hsl(${this.hue}, 100%, 60%)`,
+                    `hsl(${this.hue + 30}, 100%, 60%)`,
+                    `hsl(${this.hue + 60}, 100%, 60%)`,
+                    `hsl(${this.hue + 180}, 100%, 60%)`,
+                    `hsl(${this.hue + 240}, 100%, 60%)`
+                ];
+
+                for (let i = 0; i < particleCount; i++) {
+                    const angle = (Math.PI * 2 / particleCount) * i;
+                    const velocity = {
+                        x: Math.cos(angle) * (Math.random() * 6 + 2),
+                        y: Math.sin(angle) * (Math.random() * 6 + 2)
+                    };
+                    const color = colors[Math.floor(Math.random() * colors.length)];
+                    this.particles.push(new Particle(this.x, this.y, color, velocity));
+                }
+            }
+
+            draw() {
+                this.particles.forEach(particle => particle.draw());
+            }
+
+            update() {
+                this.particles.forEach(particle => particle.update());
+                // 移除消失的粒子
+                this.particles = this.particles.filter(particle => particle.alpha > 0);
+            }
+
+            getAlive() {
+                return this.particles.length > 0;
+            }
+        }
+
+        // 存储所有烟花
+        let fireworks = [];
+
+        // 创建烟花
+        function createFirework(x, y) {
+            fireworks.push(new Firework(x, y));
+        }
+
+        // 动画循环
+        let lastTime = 0;
+        const targetFPS = 60;
+        const frameInterval = 1000 / targetFPS;
+
+        function animate(currentTime) {
+            requestAnimationFrame(animate);
+
+            const deltaTime = currentTime - lastTime;
+            if (deltaTime < frameInterval) return;
+
+            lastTime = currentTime - (deltaTime % frameInterval);
+
+            // 使用半透明背景实现拖尾效果
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.15)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // 更新和绘制所有烟花
+            fireworks.forEach(firework => {
+                firework.update();
+                firework.draw();
+            });
+
+            // 移除已消失的烟花
+            fireworks = fireworks.filter(firework => firework.getAlive());
+        }
+
+        // 点击触发烟花
+        canvas.addEventListener('click', (e) => {
+            createFirework(e.clientX, e.clientY);
+        });
+
+        // 触摸支持（移动端）
+        canvas.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            const touch = e.touches[0];
+            createFirework(touch.clientX, touch.clientY);
+        }, { passive: false });
+
+        // 自动播放烟花
+        let autoPlayInterval;
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(() => {
+                const x = Math.random() * canvas.width;
+                const y = Math.random() * (canvas.height * 0.6) + (canvas.height * 0.2);
+                createFirework(x, y);
+            }, 800 + Math.random() * 400);
+        }
+
+        // 停止自动播放（用户交互后）
+        function stopAutoPlay() {
+            if (autoPlayInterval) {
+                clearInterval(autoPlayInterval);
+                autoPlayInterval = null;
+            }
+        }
+
+        // 用户首次交互后停止自动播放
+        let userInteracted = false;
+        canvas.addEventListener('click', () => {
+            if (!userInteracted) {
+                userInteracted = true;
+                stopAutoPlay();
+            }
+        });
+
+        canvas.addEventListener('touchstart', () => {
+            if (!userInteracted) {
+                userInteracted = true;
+                stopAutoPlay();
+            }
+        });
+
+        // 启动
+        animate(0);
+        startAutoPlay();
+
+        // 性能优化：页面不可见时暂停动画
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                stopAutoPlay();
+            } else {
+                if (!userInteracted) {
+                    startAutoPlay();
+                }
+            }
+        });
+
+        console.log('烟花效果已启动！点击屏幕或等待自动播放');
+    </script>
+</body>
+</html>
