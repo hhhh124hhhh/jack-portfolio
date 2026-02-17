@@ -1,23 +1,23 @@
 /* ========================================
-   GitHub 项目展示重新设计 - 和精选项目相同的网格布局
+   GitHub 项目展示重新设计 - 增加宽度和最小宽度
    ========================================
    设计理念：
-   - 和精选项目使用相同的网格布局
+   - 增加容器宽度和最小宽度
    - 使用 minmax 让项目自适应宽度
-   - 容器宽度 1600px，更宽松
+   - 容器更宽，项目更宽松
    - 适中的排名数字，避免卡片过高
    - 电光蓝 + 深灰色的配色方案
    - 现代科技杂志风格
    ======================================== */
 
-/* 项目容器 - 和精选项目一致 */
+/* 项目容器 - 增加容器宽度 */
 .github-showcase-wrapper {
     position: relative;
     padding: 0 60px;
     margin: 40px auto;
     overflow: visible;
     width: 100%;
-    max-width: 1600px;
+    max-width: 1800px;
     box-sizing: border-box;
 }
 
@@ -68,11 +68,11 @@
     margin-left: 20px;
 }
 
-/* 项目网格 - 和精选项目相同的布局 */
+/* 项目网格 - 增加最小宽度 */
 .github-projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 2.5rem;
     margin-top: 40px;
     position: relative;
     width: 100%;
@@ -104,7 +104,7 @@
     gap: 16px;
     background: rgba(17, 17, 17, 0.95);
     border-radius: 12px;
-    padding: 28px;
+    padding: 30px;
     position: relative;
     overflow: visible;
     border-left: 3px solid #00f0ff;
@@ -282,18 +282,18 @@
    ======================================== */
 
 /* 平板端 */
-@media (max-width: 1400px) {
+@media (max-width: 1600px) {
     .github-showcase-wrapper {
         max-width: 100%;
         padding: 0 50px;
     }
     
     .github-projects-grid {
-        gap: 2rem;
+        gap: 2.5rem;
     }
     
     .project-card-horizontal {
-        padding: 26px;
+        padding: 28px;
     }
     
     .project-rank {
@@ -308,11 +308,11 @@
     }
     
     .github-projects-grid {
-        gap: 1.5rem;
+        gap: 2rem;
     }
     
     .project-card-horizontal {
-        padding: 24px;
+        padding: 26px;
         gap: 12px;
     }
     
