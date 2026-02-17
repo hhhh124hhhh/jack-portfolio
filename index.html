@@ -80,6 +80,9 @@
     <!-- Brand System CSS - 阶段 1 新增 -->
     <link rel="stylesheet" href="css/brand-system.css">
 
+    <!-- Project Card Horizontal CSS - 横版项目卡片 -->
+    <link rel="stylesheet" href="css/project-card-horizontal.css">
+
     <!-- Inline Critical CSS for Performance -->
     <style>
         /* Ambient Background with Particles */
@@ -1033,24 +1036,26 @@
 
                         <div class="github-projects-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: var(--spacing-md);">
                             <!-- Rank 1 -->
-                            <article class="project-card" role="listitem">
+                            <article class="project-card project-card-horizontal" role="listitem">
                                 <div class="brand-gradient-border" aria-hidden="true"></div>
-                                <div class="project-header">
-                                    <div class="project-rank" style="font-size: 2rem;" aria-label="第1名">🥇</div>
-                                    <a href="https://github.com/hhhh124hhhh/godot-mcp" target="_blank" rel="noopener noreferrer" class="project-status" style="background: var(--brand-gold-alpha-15); color: var(--brand-gold); border: 1px solid rgba(212, 175, 55, 0.3); text-decoration: none;">查看项目 →</a>
-                                </div>
-                                <div class="project-content">
-                                    <h3 class="project-title">godot-mcp</h3>
-                                    <p class="project-description">Godot 游戏引擎的 MCP（Model Context Protocol）集成，实现 AI 与游戏引擎的无缝连接。</p>
-                                    <div class="project-stats" style="display: flex; gap: var(--spacing-sm); margin: var(--spacing-sm) 0;">
-                                        <span style="color: var(--brand-gold); font-weight: 600;">⭐ 18</span>
-                                        <span style="color: var(--text-secondary);">👁️ 261</span>
+                                <div class="project-left">
+                                    <div class="project-rank" style="font-size: 2.5rem;" aria-label="第1名">🥇</div>
+                                    <div class="project-info">
+                                        <h3 class="project-title">godot-mcp</h3>
+                                        <div class="project-stats" style="display: flex; gap: var(--spacing-sm); margin: var(--spacing-xs) 0;">
+                                            <span style="color: var(--brand-gold); font-weight: 600;">⭐ 18</span>
+                                            <span style="color: var(--text-secondary);">👁️ 261</span>
+                                        </div>
                                     </div>
+                                </div>
+                                <div class="project-right">
+                                    <p class="project-description">Godot 游戏引擎的 MCP（Model Context Protocol）集成，实现 AI 与游戏引擎的无缝连接。</p>
                                     <div class="project-features">
                                         <span class="project-feature">Godot</span>
                                         <span class="project-feature">MCP</span>
                                         <span class="project-feature">游戏</span>
                                     </div>
+                                    <a href="https://github.com/hhhh124hhhh/godot-mcp" target="_blank" rel="noopener noreferrer" class="project-status" style="background: var(--brand-gold-alpha-15); color: var(--brand-gold); border: 1px solid rgba(212, 175, 55, 0.3); text-decoration: none;">查看项目 →</a>
                                 </div>
                             </article>
 
