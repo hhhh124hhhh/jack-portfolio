@@ -1,9 +1,9 @@
 /* ========================================
-   GitHub 项目展示重新设计 - 增加最小宽度和间距
+   GitHub 项目展示重新设计 - 大幅增加间距
    ========================================
    设计理念：
-   - 增加项目最小宽度，让卡片更宽
-   - 增加项目间距，让布局更宽松
+   - 大幅增加项目间距，避免重叠
+   - 增加项目最小宽度
    - 容器宽度 1400px（和精选项目一致）
    - 适中的排名数字，避免卡片过高
    - 电光蓝 + 深灰色的配色方案
@@ -68,11 +68,11 @@
     margin-left: 20px;
 }
 
-/* 项目网格 - 增加最小宽度和间距 */
+/* 项目网格 - 大幅增加间距 */
 .github-projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
-    gap: 3rem;
+    gap: 4rem;
     margin-top: 40px;
     position: relative;
     width: 100%;
@@ -97,7 +97,7 @@
     100% { transform: translate(60px, 60px); }
 }
 
-/* 项目卡片 - 增加内边距 */
+/* 项目卡片 */
 .project-card-horizontal {
     display: grid;
     grid-template-columns: 70px 1fr;
@@ -289,7 +289,7 @@
     }
     
     .github-projects-grid {
-        gap: 3rem;
+        gap: 4rem;
     }
     
     .project-card-horizontal {
@@ -308,7 +308,7 @@
     }
     
     .github-projects-grid {
-        gap: 2.5rem;
+        gap: 3.5rem;
     }
     
     .project-card-horizontal {
@@ -341,7 +341,7 @@
     
     .github-projects-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 3rem;
     }
     
     .project-card-horizontal {
@@ -379,7 +379,7 @@
     }
     
     .github-projects-grid {
-        gap: 2rem;
+        gap: 3rem;
     }
     
     .project-card-horizontal {
