@@ -1,21 +1,22 @@
 /* ========================================
-   GitHub 项目展示重新设计 - 紧凑全宽布局
+   GitHub 项目展示重新设计 - 和精选项目一致的间距
    ========================================
    设计理念：
-   - 全宽横屏布局，3 个项目排成一排
-   - 容器占据整个屏幕宽度
-   - 紧凑设计，确保所有内容都能显示
+   - 和精选项目使用相同的容器设置
+   - 3 个项目排成一排
+   - 适中的排名数字，避免卡片过高
    - 电光蓝 + 深灰色的配色方案
    - 现代科技杂志风格
    ======================================== */
 
-/* 项目容器 - 全宽 */
+/* 项目容器 - 和精选项目一致 */
 .github-showcase-wrapper {
     position: relative;
-    padding: 40px 3% 80px 3%;
-    margin-top: 40px;
+    padding: 0 var(--spacing-md);
+    margin: 40px auto;
     overflow: visible;
     width: 100%;
+    max-width: 1400px;
     box-sizing: border-box;
 }
 
@@ -66,7 +67,7 @@
     margin-left: 20px;
 }
 
-/* 项目网格 - 3 个项目排成一排，全宽 */
+/* 项目网格 - 3 个项目排成一排 */
 .github-projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -282,7 +283,8 @@
 /* 平板端 */
 @media (max-width: 1200px) {
     .github-showcase-wrapper {
-        padding: 40px 2% 80px 2%;
+        max-width: 100%;
+        padding: 0 var(--spacing-sm);
     }
     
     .github-projects-grid {
@@ -307,7 +309,7 @@
 /* 小屏平板 */
 @media (max-width: 992px) {
     .github-showcase-wrapper {
-        padding: 35px 2% 70px 2%;
+        padding: 0 var(--spacing-sm);
     }
     
     .github-projects-grid {
@@ -336,7 +338,7 @@
 /* 移动端 */
 @media (max-width: 768px) {
     .github-showcase-wrapper {
-        padding: 30px 2% 60px 2%;
+        padding: 0 var(--spacing-sm);
     }
     
     .github-showcase-wrapper .subsection-title {
