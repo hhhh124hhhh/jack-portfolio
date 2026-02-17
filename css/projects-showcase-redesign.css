@@ -1,18 +1,19 @@
 /* ========================================
-   GitHub 项目展示重新设计 - 增加间距避免缩到一起
+   GitHub 项目展示重新设计 - 增加间距和容器宽度
    ========================================
    设计理念：
    - 和精选项目使用相同的容器设置
-   - 3 个项目排成一排，间距足够大
+   - 3 个项目排成一排，间距更宽松
+   - 容器左右间距更宽
    - 适中的排名数字，避免卡片过高
    - 电光蓝 + 深灰色的配色方案
    - 现代科技杂志风格
    ======================================== */
 
-/* 项目容器 - 和精选项目一致 */
+/* 项目容器 - 增加左右间距 */
 .github-showcase-wrapper {
     position: relative;
-    padding: 0 var(--spacing-md);
+    padding: 0 60px;
     margin: 40px auto;
     overflow: visible;
     width: 100%;
@@ -67,11 +68,11 @@
     margin-left: 20px;
 }
 
-/* 项目网格 - 3 个项目排成一排，增大间距 */
+/* 项目网格 - 增加间距 */
 .github-projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    gap: 50px;
     margin-top: 40px;
     position: relative;
     width: 100%;
@@ -96,14 +97,14 @@
     100% { transform: translate(60px, 60px); }
 }
 
-/* 项目卡片 - 紧凑设计 */
+/* 项目卡片 - 增加内边距 */
 .project-card-horizontal {
     display: grid;
     grid-template-columns: 70px 1fr;
     gap: 16px;
     background: rgba(17, 17, 17, 0.95);
     border-radius: 12px;
-    padding: 20px;
+    padding: 24px;
     position: relative;
     overflow: visible;
     border-left: 3px solid #00f0ff;
@@ -284,16 +285,16 @@
 @media (max-width: 1200px) {
     .github-showcase-wrapper {
         max-width: 100%;
-        padding: 0 var(--spacing-sm);
+        padding: 0 40px;
     }
     
     .github-projects-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
+        gap: 40px;
     }
     
     .project-card-horizontal {
-        padding: 18px;
+        padding: 22px;
     }
     
     .project-rank {
@@ -304,16 +305,16 @@
 /* 小屏平板 */
 @media (max-width: 992px) {
     .github-showcase-wrapper {
-        padding: 0 var(--spacing-sm);
+        padding: 0 30px;
     }
     
     .github-projects-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 25px;
+        gap: 35px;
     }
     
     .project-card-horizontal {
-        padding: 16px;
+        padding: 20px;
         gap: 12px;
     }
     
@@ -333,7 +334,7 @@
 /* 移动端 */
 @media (max-width: 768px) {
     .github-showcase-wrapper {
-        padding: 0 var(--spacing-sm);
+        padding: 0 20px;
     }
     
     .github-showcase-wrapper .subsection-title {
@@ -342,12 +343,12 @@
     
     .github-projects-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 30px;
     }
     
     .project-card-horizontal {
         grid-template-columns: auto 1fr;
-        padding: 16px;
+        padding: 20px;
         gap: 14px;
     }
     
@@ -375,6 +376,10 @@
 
 /* 小屏手机 */
 @media (max-width: 480px) {
+    .github-showcase-wrapper {
+        padding: 0 15px;
+    }
+    
     .project-card-horizontal {
         grid-template-columns: 1fr;
         text-align: center;
