@@ -1,8 +1,8 @@
 /* ========================================
-   GitHub 项目展示重新设计 - 紧凑横版布局
+   GitHub 项目展示重新设计 - 舒适宽度布局
    ========================================
    设计理念：
-   - 紧凑的横版布局，3 个项目排成一排
+   - 舒适的横版布局，3 个项目排成一排
    - 适中的排名数字，避免卡片过高
    - 电光蓝 + 深灰色的配色方案
    - 现代科技杂志风格
@@ -63,11 +63,11 @@
     margin-left: 20px;
 }
 
-/* 项目网格 - 3 个项目排成一排 */
+/* 项目网格 - 3 个项目排成一排，增加间距 */
 .github-projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 30px;
     margin-top: 40px;
     position: relative;
 }
@@ -91,14 +91,14 @@
     100% { transform: translate(60px, 60px); }
 }
 
-/* 项目卡片 - 紧凑布局 */
+/* 项目卡片 - 舒适宽度 */
 .project-card-horizontal {
     display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 15px;
+    grid-template-columns: 80px 1fr;
+    gap: 20px;
     background: rgba(17, 17, 17, 0.95);
     border-radius: 12px;
-    padding: 20px;
+    padding: 24px;
     position: relative;
     overflow: hidden;
     border-left: 3px solid #00f0ff;
@@ -117,9 +117,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding-right: 15px;
+    padding-right: 20px;
     border-right: 1px solid rgba(0, 240, 255, 0.2);
-    min-width: 60px;
 }
 
 .project-rank {
@@ -173,10 +172,10 @@
 
 .project-title {
     font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: clamp(1rem, 3vw, 1.2rem);
+    font-size: clamp(1rem, 3vw, 1.25rem);
     font-weight: 600;
     color: #ffffff;
-    margin: 8px 0 6px 0;
+    margin: 10px 0 8px 0;
     line-height: 1.3;
 }
 
@@ -184,16 +183,16 @@
 .project-stats {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 6px;
 }
 
 .project-stats span {
     font-family: 'SF Mono', 'Consolas', monospace;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.7);
     background: rgba(0, 240, 255, 0.1);
-    padding: 4px 8px;
+    padding: 5px 10px;
     border-radius: 4px;
 }
 
@@ -201,7 +200,7 @@
 .project-right {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
     padding-left: 5px;
     justify-content: flex-start;
 }
@@ -209,8 +208,8 @@
 /* 项目描述 */
 .project-description {
     font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 0.9rem;
-    line-height: 1.5;
+    font-size: 0.95rem;
+    line-height: 1.6;
     color: rgba(255, 255, 255, 0.7);
     margin: 0;
 }
@@ -219,14 +218,14 @@
 .project-features {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 8px;
 }
 
 .project-feature {
     font-family: 'SF Mono', 'Consolas', monospace;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: 600;
-    padding: 4px 10px;
+    padding: 5px 12px;
     background: rgba(0, 240, 255, 0.15);
     color: #00f0ff;
     border-radius: 12px;
@@ -245,13 +244,13 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 8px 16px;
+    padding: 10px 18px;
     background: #00f0ff;
     color: #000;
     text-decoration: none;
     border-radius: 20px;
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
@@ -277,11 +276,11 @@
 @media (max-width: 1200px) {
     .github-projects-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
+        gap: 25px;
     }
     
     .project-card-horizontal {
-        padding: 16px;
+        padding: 20px;
     }
     
     .project-rank {
@@ -293,12 +292,12 @@
 @media (max-width: 992px) {
     .github-projects-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
+        gap: 20px;
     }
     
     .project-card-horizontal {
-        padding: 14px;
-        gap: 12px;
+        padding: 18px;
+        gap: 15px;
     }
     
     .project-rank {
@@ -310,7 +309,7 @@
     }
     
     .project-description {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
     }
 }
 
@@ -326,18 +325,18 @@
     
     .github-projects-grid {
         grid-template-columns: 1fr;
-        gap: 16px;
+        gap: 20px;
     }
     
     .project-card-horizontal {
         grid-template-columns: auto 1fr;
-        padding: 16px;
-        gap: 12px;
+        padding: 18px;
+        gap: 15px;
     }
     
     .project-left {
-        min-width: 50px;
-        padding-right: 12px;
+        min-width: 60px;
+        padding-right: 15px;
     }
     
     .project-rank {
@@ -349,7 +348,7 @@
     }
     
     .project-description {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
     }
     
     .project-status {
