@@ -1,15 +1,16 @@
 /* ========================================
-   GitHub 项目展示重新设计 - 增加容器宽度
+   GitHub 项目展示重新设计 - 和精选项目相同的网格布局
    ========================================
    设计理念：
-   - 增加容器宽度，让项目更宽松
-   - 3 个项目排成一排，间距更宽松
+   - 和精选项目使用相同的网格布局
+   - 使用 minmax 让项目自适应宽度
+   - 容器宽度 1600px，更宽松
    - 适中的排名数字，避免卡片过高
    - 电光蓝 + 深灰色的配色方案
    - 现代科技杂志风格
    ======================================== */
 
-/* 项目容器 - 增加容器宽度 */
+/* 项目容器 - 和精选项目一致 */
 .github-showcase-wrapper {
     position: relative;
     padding: 0 60px;
@@ -67,11 +68,11 @@
     margin-left: 20px;
 }
 
-/* 项目网格 - 增加间距 */
+/* 项目网格 - 和精选项目相同的布局 */
 .github-projects-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 60px;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
     margin-top: 40px;
     position: relative;
     width: 100%;
@@ -288,8 +289,7 @@
     }
     
     .github-projects-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 50px;
+        gap: 2rem;
     }
     
     .project-card-horizontal {
@@ -308,8 +308,7 @@
     }
     
     .github-projects-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 40px;
+        gap: 1.5rem;
     }
     
     .project-card-horizontal {
@@ -341,8 +340,7 @@
     }
     
     .github-projects-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 1.5rem;
     }
     
     .project-card-horizontal {
@@ -377,6 +375,10 @@
 @media (max-width: 480px) {
     .github-showcase-wrapper {
         padding: 0 15px;
+    }
+    
+    .github-projects-grid {
+        gap: 1.5rem;
     }
     
     .project-card-horizontal {
