@@ -1,23 +1,22 @@
 /* ========================================
-   GitHub 项目展示重新设计 - 增加间距和容器宽度
+   GitHub 项目展示重新设计 - 增加容器宽度
    ========================================
    设计理念：
-   - 和精选项目使用相同的容器设置
+   - 增加容器宽度，让项目更宽松
    - 3 个项目排成一排，间距更宽松
-   - 容器左右间距更宽
    - 适中的排名数字，避免卡片过高
    - 电光蓝 + 深灰色的配色方案
    - 现代科技杂志风格
    ======================================== */
 
-/* 项目容器 - 增加左右间距 */
+/* 项目容器 - 增加容器宽度 */
 .github-showcase-wrapper {
     position: relative;
     padding: 0 60px;
     margin: 40px auto;
     overflow: visible;
     width: 100%;
-    max-width: 1400px;
+    max-width: 1600px;
     box-sizing: border-box;
 }
 
@@ -72,7 +71,7 @@
 .github-projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
+    gap: 60px;
     margin-top: 40px;
     position: relative;
     width: 100%;
@@ -104,7 +103,7 @@
     gap: 16px;
     background: rgba(17, 17, 17, 0.95);
     border-radius: 12px;
-    padding: 24px;
+    padding: 28px;
     position: relative;
     overflow: visible;
     border-left: 3px solid #00f0ff;
@@ -282,9 +281,29 @@
    ======================================== */
 
 /* 平板端 */
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
     .github-showcase-wrapper {
         max-width: 100%;
+        padding: 0 50px;
+    }
+    
+    .github-projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 50px;
+    }
+    
+    .project-card-horizontal {
+        padding: 26px;
+    }
+    
+    .project-rank {
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+    }
+}
+
+/* 小屏平板 */
+@media (max-width: 1200px) {
+    .github-showcase-wrapper {
         padding: 0 40px;
     }
     
@@ -294,27 +313,7 @@
     }
     
     .project-card-horizontal {
-        padding: 22px;
-    }
-    
-    .project-rank {
-        font-size: clamp(1.8rem, 5vw, 2.5rem);
-    }
-}
-
-/* 小屏平板 */
-@media (max-width: 992px) {
-    .github-showcase-wrapper {
-        padding: 0 30px;
-    }
-    
-    .github-projects-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 35px;
-    }
-    
-    .project-card-horizontal {
-        padding: 20px;
+        padding: 24px;
         gap: 12px;
     }
     
