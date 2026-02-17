@@ -1,224 +1,208 @@
 /* ========================================
-   GitHub 项目展示重新设计 - 和精选项目一致的间距
+   GitHub 项目展示重新设计 - 和精选项目完全一致
    ========================================
+
    设计理念：
-   - 和精选项目使用相同的容器设置
-   - 3 个项目排成一排
-   - 适中的排名数字，避免卡片过高
-   - 电光蓝 + 深灰色的配色方案
-   - 现代科技杂志风格
+   - 和精选项目使用完全相同的容器设置
+   - 使用 .container 类，max-width: 1400px，padding: 0 var(--spacing-md)
+   - 项目卡片使用和精选项目一致的 .project-card 样式
+   - 3 个项目排成一排（桌面端）
+   - 保持品牌视觉系统的统一性
+
    ======================================== */
 
-/* 项目容器 - 和精选项目一致 */
+/* ========================================
+   外层容器 - 使用和精选项目完全相同的 .container 类
+   ======================================== */
+
 .github-showcase-wrapper {
-    position: relative;
-    padding: 0 var(--spacing-md);
-    margin: 40px auto;
-    overflow: visible;
-    width: 100%;
-    max-width: 1400px;
-    box-sizing: border-box;
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
 }
 
-/* 标题组 - 杂志风格 */
+/* ========================================
+   标题样式 - 继承精选项目的风格
+   ======================================== */
+
 .github-showcase-wrapper .subsection-title {
-    font-family: 'Helvetica Neue', 'Arial Black', sans-serif;
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-    font-weight: 900;
-    margin-bottom: 12px;
-    letter-spacing: -0.03em;
-    text-transform: uppercase;
-    color: #ffffff;
-    position: relative;
-    display: inline-block;
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
+    line-height: 1.2;
 }
 
-/* 标题装饰线条 */
-.github-showcase-wrapper .subsection-title::before {
-    content: '';
-    position: absolute;
-    left: -20px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 8px;
-    height: calc(100% + 10px);
-    background: linear-gradient(180deg, #00f0ff 0%, #00d4ff 100%);
-    border-radius: 2px;
-}
-
-.github-showcase-wrapper .subsection-title::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    width: 60px;
-    height: 4px;
-    background: #00f0ff;
-}
-
-/* 描述文本 */
 .github-showcase-wrapper .subsection-description {
-    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 400;
-    color: rgba(255,255,255,0.6);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
     max-width: 600px;
-    line-height: 1.6;
-    margin-left: 20px;
 }
 
-/* 项目网格 - 3 个项目排成一排 */
+/* ========================================
+   项目网格 - 3 列布局，和精选项目风格一致
+   ======================================== */
+
 .github-projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-top: 40px;
-    position: relative;
-    width: 100%;
+    gap: var(--spacing-md);
+    container-type: inline-size;
+    container-name: github-projects;
 }
 
-/* 背景网格装饰 */
-.github-projects-grid::before {
+/* ========================================
+   项目卡片 - 继承精选项目的 .project-card 样式
+   ======================================== */
+
+/* 基础卡片样式 - 和精选项目完全一致 */
+.project-card-horizontal {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.5s var(--transition-smooth);
+    position: relative;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+}
+
+/* 渐变边框装饰 */
+.project-card-horizontal .brand-gradient-border {
+    opacity: 0;
+    transition: opacity 0.5s var(--transition-smooth);
+}
+
+.project-card-horizontal:hover .brand-gradient-border {
+    opacity: 1;
+}
+
+/* 卡片悬停效果 - 和精选项目一致 */
+.project-card-horizontal::after {
     content: '';
     position: absolute;
     inset: 0;
-    background-image:
-        linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--brand-gold-alpha-15) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.5s var(--transition-smooth);
     pointer-events: none;
-    z-index: 0;
-    animation: gridMove 20s linear infinite;
 }
 
-@keyframes gridMove {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(60px, 60px); }
-}
-
-/* 项目卡片 - 紧凑设计 */
-.project-card-horizontal {
-    display: grid;
-    grid-template-columns: 70px 1fr;
-    gap: 16px;
-    background: rgba(17, 17, 17, 0.95);
-    border-radius: 12px;
-    padding: 20px;
-    position: relative;
-    overflow: visible;
-    border-left: 3px solid #00f0ff;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-sizing: border-box;
-    min-height: auto;
-    align-items: start;
-}
-
-/* 卡片悬停效果 */
 .project-card-horizontal:hover {
-    transform: translateY(-6px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 240, 255, 0.15);
+    background: var(--bg-card-hover);
+    border-color: var(--border-hover);
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-glow-hover);
 }
 
-/* 排名数字 - 紧凑设计 */
+.project-card-horizontal:hover::after {
+    opacity: 1;
+}
+
+/* ========================================
+   排名区域 - 横向布局
+   ======================================== */
+
 .project-left {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--spacing-md);
     align-items: center;
-    justify-content: flex-start;
-    padding-right: 16px;
-    border-right: 1px solid rgba(0, 240, 255, 0.2);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--border);
 }
 
+/* 排名数字 */
 .project-rank {
-    font-family: 'SF Mono', 'Consolas', monospace;
-    font-size: clamp(2rem, 6vw, 3rem);
-    font-weight: 700;
-    color: #00f0ff;
+    font-size: 2.5rem;
     line-height: 1;
-    text-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
-    animation: rankPulse 2s ease-in-out infinite;
 }
 
-@keyframes rankPulse {
-    0%, 100% { text-shadow: 0 0 20px rgba(0, 240, 255, 0.5); }
-    50% { text-shadow: 0 0 40px rgba(0, 240, 255, 0.8); }
+/* 不同排名的悬停效果 */
+.project-card-horizontal:nth-child(1):hover .project-rank {
+    animation: medalGold 0.6s ease;
 }
 
-/* 不同排名的颜色 */
-.project-card-horizontal:nth-child(1) .project-rank {
-    color: #ffd700;
-    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+.project-card-horizontal:nth-child(2):hover .project-rank {
+    animation: medalSilver 0.6s ease;
 }
 
-.project-card-horizontal:nth-child(1):hover {
-    border-left-color: #ffd700;
+.project-card-horizontal:nth-child(3):hover .project-rank {
+    animation: medalBronze 0.6s ease;
 }
 
-.project-card-horizontal:nth-child(2) .project-rank {
-    color: #c0c0c0;
-    text-shadow: 0 0 20px rgba(192, 192, 192, 0.5);
+@keyframes medalGold {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2) rotate(5deg); }
 }
 
-.project-card-horizontal:nth-child(2):hover {
-    border-left-color: #c0c0c0;
+@keyframes medalSilver {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15) rotate(-5deg); }
 }
 
-.project-card-horizontal:nth-child(3) .project-rank {
-    color: #cd7f32;
-    text-shadow: 0 0 20px rgba(205, 127, 50, 0.5);
-}
-
-.project-card-horizontal:nth-child(3):hover {
-    border-left-color: #cd7f32;
+@keyframes medalBronze {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1) rotate(3deg); }
 }
 
 /* 项目信息 */
 .project-info {
-    width: 100%;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    justify-content: center;
 }
 
 .project-title {
-    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: clamp(1rem, 3vw, 1.3rem);
+    font-family: var(--font-display);
+    font-size: 1.4rem;
     font-weight: 600;
-    color: #ffffff;
-    margin: 8px 0 6px 0;
-    line-height: 1.3;
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.2;
 }
 
-/* 统计数据 */
+/* 统计数据 - 横向排列 */
 .project-stats {
     display: flex;
-    flex-direction: column;
-    gap: 6px;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
 }
 
 .project-stats span {
-    font-family: 'SF Mono', 'Consolas', monospace;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: rgba(255,255,255, 0.7);
-    background: rgba(0, 240, 255, 0.1);
-    padding: 4px 10px;
-    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0.3rem 0.7rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
 }
 
-/* 右侧内容 */
+/* ========================================
+   右侧内容
+   ======================================== */
+
 .project-right {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    padding-left: 5px;
-    justify-content: flex-start;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
 }
 
 /* 项目描述 */
 .project-description {
-    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.7;
     margin: 0;
 }
 
@@ -226,24 +210,24 @@
 .project-features {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 0.5rem;
 }
 
 .project-feature {
-    font-family: 'SF Mono', 'Consolas', monospace;
-    font-size: 0.75rem;
-    font-weight: 600;
-    padding: 4px 10px;
-    background: rgba(0, 240, 255, 0.15);
-    color: #00f0ff;
-    border-radius: 12px;
-    border: 1px solid rgba(0, 240, 255, 0.2);
-    transition: all 0.3s ease;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.9rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    border: 1px solid var(--border);
+    transition: all 0.3s var(--transition-smooth);
 }
 
-/* 标签悬停效果 */
 .project-card-horizontal:hover .project-feature {
-    background: rgba(0, 240, 255, 0.25);
+    background: var(--brand-gold-alpha-15);
+    color: var(--brand-gold);
+    border-color: var(--brand-gold-alpha-30);
     transform: translateY(-2px);
 }
 
@@ -251,159 +235,218 @@
 .project-status {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 8px 16px;
-    background: #00f0ff;
-    color: #000;
+    justify-content: center;
+    padding: 0.6rem 1.2rem;
+    background: var(--brand-gold-alpha-15);
+    color: var(--brand-gold);
+    border: 1px solid var(--brand-gold-alpha-30);
     text-decoration: none;
     border-radius: 20px;
     font-weight: 600;
     font-size: 0.85rem;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: visible;
-    justify-content: center;
+    transition: all 0.3s var(--transition-smooth);
+    margin-top: auto;
+    text-align: center;
 }
 
-/* 按钮悬停效果 */
-.project-card-horizontal:hover .project-status {
+.project-status:hover {
+    background: var(--brand-gold);
+    color: var(--bg-primary);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 240, 255, 0.4);
-}
-
-/* 渐变边框装饰 */
-.brand-gradient-border {
-    display: none;
+    box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
 }
 
 /* ========================================
-   响应式设计
+   响应式设计 - 和精选项目保持一致
    ======================================== */
 
-/* 平板端 */
-@media (max-width: 1200px) {
-    .github-showcase-wrapper {
-        max-width: 100%;
-        padding: 0 var(--spacing-sm);
-    }
-    
+/* 大屏桌面 (1400px+) */
+@media (min-width: 1400px) {
     .github-projects-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-    }
-    
-    .project-card-horizontal {
-        padding: 18px;
-        gap: 14px;
-    }
-    
-    .project-rank {
-        font-size: clamp(1.8rem, 5vw, 2.5rem);
-    }
-    
-    .project-title {
-        font-size: clamp(0.95rem, 2.8vw, 1.2rem);
+        gap: var(--spacing-md);
     }
 }
 
-/* 小屏平板 */
-@media (max-width: 992px) {
-    .github-showcase-wrapper {
-        padding: 0 var(--spacing-sm);
-    }
-    
+/* 中等屏幕 (1200px - 1399px) */
+@media (max-width: 1399px) and (min-width: 1200px) {
     .github-projects-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 18px;
-    }
-    
-    .project-card-horizontal {
-        padding: 16px;
-        gap: 12px;
-    }
-    
-    .project-rank {
-        font-size: clamp(1.6rem, 5vw, 2.2rem);
-    }
-    
-    .project-title {
-        font-size: 0.95rem;
-    }
-    
-    .project-description {
-        font-size: 0.85rem;
+        gap: var(--spacing-md);
     }
 }
 
-/* 移动端 */
-@media (max-width: 768px) {
-    .github-showcase-wrapper {
-        padding: 0 var(--spacing-sm);
-    }
-    
-    .github-showcase-wrapper .subsection-title {
-        font-size: clamp(1.5rem, 4vw, 2.2rem);
-    }
-    
+/* 平板端 (992px - 1199px) - 保持 3 列但缩小间距 */
+@media (max-width: 1199px) and (min-width: 992px) {
     .github-projects-grid {
-        grid-template-columns: 1fr;
-        gap: 18px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-sm);
     }
-    
-    .project-card-horizontal {
-        grid-template-columns: auto 1fr;
-        padding: 16px;
-        gap: 14px;
-    }
-    
-    .project-left {
-        min-width: 60px;
-        padding-right: 14px;
-    }
-    
-    .project-rank {
-        font-size: clamp(1.8rem, 5vw, 2.5rem);
-    }
-    
-    .project-title {
-        font-size: 1.05rem;
-    }
-    
-    .project-description {
-        font-size: 0.9rem;
-    }
-    
-    .project-status {
-        width: 100%;
-    }
-}
 
-/* 小屏手机 */
-@media (max-width: 480px) {
-    .project-card-horizontal {
-        grid-template-columns: 1fr;
-        text-align: center;
+    .project-title {
+        font-size: 1.2rem;
     }
-    
-    .project-left {
-        flex-direction: row;
-        width: 100%;
-        justify-content: center;
-        border-right: none;
-        border-bottom: 1px solid rgba(0, 240, 255, 0.2);
-        padding-bottom: 10px;
-        padding-right: 0;
-    }
-    
+
     .project-rank {
         font-size: 2rem;
     }
-    
-    .project-info {
-        text-align: center;
+}
+
+/* 小屏平板 (768px - 991px) - 改为 2 列 */
+@media (max-width: 991px) and (min-width: 768px) {
+    .github-projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-sm);
     }
-    
-    .project-right {
-        padding-left: 0;
+
+    .project-title {
+        font-size: 1.2rem;
+    }
+
+    .project-rank {
+        font-size: 2rem;
+    }
+}
+
+/* 移动端 (576px - 767px) - 改为 1 列 */
+@media (max-width: 767px) and (min-width: 576px) {
+    .github-showcase-wrapper .subsection-title {
+        font-size: 1.6rem;
+    }
+
+    .github-projects-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .project-card-horizontal {
+        padding: var(--spacing-md);
+    }
+
+    .project-left {
+        grid-template-columns: auto 1fr;
+        gap: var(--spacing-sm);
+    }
+}
+
+/* 小屏手机 (575px 及以下) */
+@media (max-width: 575px) {
+    .github-showcase-wrapper .subsection-title {
+        font-size: 1.5rem;
+    }
+
+    .github-showcase-wrapper .subsection-description {
+        font-size: 1rem;
+    }
+
+    .github-projects-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .project-card-horizontal {
+        padding: var(--spacing-sm);
+    }
+
+    .project-left {
+        grid-template-columns: auto 1fr;
+        gap: var(--spacing-xs);
+        padding-bottom: var(--spacing-xs);
+    }
+
+    .project-title {
+        font-size: 1.1rem;
+    }
+
+    .project-rank {
+        font-size: 1.8rem;
+    }
+
+    .project-description {
+        font-size: 0.9rem;
+    }
+
+    .project-status {
+        width: 100%;
+    }
+
+    .project-stats {
+        gap: var(--spacing-xs);
+    }
+
+    .project-stats span {
+        font-size: 0.8rem;
+        padding: 0.25rem 0.5rem;
+    }
+}
+
+/* ========================================
+   容器查询 - 高级响应式
+   ======================================== */
+
+@container github-projects (min-width: 400px) {
+    .project-card-horizontal {
+        --card-padding: var(--spacing-md);
+    }
+}
+
+@container github-projects (min-width: 600px) {
+    .project-card-horizontal {
+        --card-padding: var(--spacing-lg);
+    }
+}
+
+/* ========================================
+   性能优化 - 减少重排
+   ======================================== */
+
+.project-card-horizontal {
+    will-change: transform;
+}
+
+.project-card-horizontal:hover {
+    will-change: transform, box-shadow;
+}
+
+/* ========================================
+   可访问性 - 减少动画
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .project-card-horizontal {
+        transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .project-card-horizontal:hover {
+        transform: none;
+    }
+
+    .project-card-horizontal .project-rank {
+        animation: none;
+    }
+
+    .project-card-horizontal::after {
+        display: none;
+    }
+}
+
+/* ========================================
+   打印样式
+   ======================================== */
+
+@media print {
+    .project-card-horizontal {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+
+    .project-card-horizontal:hover {
+        transform: none;
+    }
+
+    .project-card-horizontal::after,
+    .project-card-horizontal .brand-gradient-border {
+        display: none;
     }
 }
